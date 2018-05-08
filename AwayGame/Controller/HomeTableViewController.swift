@@ -1,5 +1,6 @@
+
 //
-//  ViewController.swift
+//  HomeTableViewController.swift
 //  AwayGame
 //
 //  Created by Blake Swaidner on 5/7/18.
@@ -8,7 +9,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class HomeTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

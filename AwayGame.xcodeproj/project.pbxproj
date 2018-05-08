@@ -9,11 +9,26 @@
 /* Begin PBXBuildFile section */
 		92E485D8569B6576B4B8E53A /* Pods_AwayGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD86D8DB69F99BDD0F42CF35 /* Pods_AwayGame.framework */; };
 		CB4BB7D720A0DC8E00F756D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BB7D620A0DC8E00F756D3 /* AppDelegate.swift */; };
-		CB4BB7D920A0DC8E00F756D3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BB7D820A0DC8E00F756D3 /* ViewController.swift */; };
+		CB4BB7D920A0DC8E00F756D3 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BB7D820A0DC8E00F756D3 /* HomeTableViewController.swift */; };
 		CB4BB7DC20A0DC8E00F756D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB4BB7DA20A0DC8E00F756D3 /* Main.storyboard */; };
 		CB4BB7DE20A0DC8E00F756D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB4BB7DD20A0DC8E00F756D3 /* Assets.xcassets */; };
 		CB4BB7E120A0DC8E00F756D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB4BB7DF20A0DC8E00F756D3 /* LaunchScreen.storyboard */; };
 		CB4BB7EC20A0E11100F756D3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB4BB7EB20A0E11100F756D3 /* GoogleService-Info.plist */; };
+		CB4BB7F020A0F5B100F756D3 /* Itenerary.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BB7EF20A0F5B100F756D3 /* Itenerary.swift */; };
+		CB4BB7F220A0F5DA00F756D3 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BB7F120A0F5DA00F756D3 /* Activity.swift */; };
+		CB4BB7F420A1042B00F756D3 /* CreateTripCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BB7F320A1042B00F756D3 /* CreateTripCell.swift */; };
+		CB4BB7F620A1046900F756D3 /* BookedTripsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BB7F520A1046900F756D3 /* BookedTripsCell.swift */; };
+		CB4BB7F820A1048900F756D3 /* DraftedTripsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BB7F720A1048900F756D3 /* DraftedTripsCell.swift */; };
+		CB4BB7FA20A1049700F756D3 /* PastTripsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BB7F920A1049700F756D3 /* PastTripsCell.swift */; };
+		CB4BB7FD20A1099600F756D3 /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BB7FC20A1099600F756D3 /* LoginPageViewController.swift */; };
+		CB4BB7FF20A109AC00F756D3 /* EmailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BB7FE20A109AB00F756D3 /* EmailLoginViewController.swift */; };
+		CB4BB80120A109D600F756D3 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BB80020A109D600F756D3 /* SearchTableViewController.swift */; };
+		CB4BB80320A109F100F756D3 /* ResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BB80220A109F100F756D3 /* ResultsTableViewController.swift */; };
+		CB4BB80520A10A0C00F756D3 /* IteneraryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BB80420A10A0C00F756D3 /* IteneraryTableViewController.swift */; };
+		CB4BB80820A10A4D00F756D3 /* UberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BB80720A10A4D00F756D3 /* UberCell.swift */; };
+		CB4BB80A20A10A6800F756D3 /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BB80920A10A6800F756D3 /* ActivityCell.swift */; };
+		CB4BB80F20A1EE8D00F756D3 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB4BB80E20A1EE8D00F756D3 /* Login.storyboard */; };
+		CB4BB81320A207EF00F756D3 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BB81220A207EF00F756D3 /* Theme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,12 +36,27 @@
 		BC0FA84464268D0D4AF996AD /* Pods-AwayGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AwayGame.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AwayGame/Pods-AwayGame.debug.xcconfig"; sourceTree = "<group>"; };
 		CB4BB7D320A0DC8E00F756D3 /* AwayGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AwayGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB4BB7D620A0DC8E00F756D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CB4BB7D820A0DC8E00F756D3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CB4BB7D820A0DC8E00F756D3 /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		CB4BB7DB20A0DC8E00F756D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CB4BB7DD20A0DC8E00F756D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB4BB7E020A0DC8E00F756D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CB4BB7E220A0DC8E00F756D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB4BB7EB20A0E11100F756D3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CB4BB7EF20A0F5B100F756D3 /* Itenerary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Itenerary.swift; sourceTree = "<group>"; };
+		CB4BB7F120A0F5DA00F756D3 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
+		CB4BB7F320A1042B00F756D3 /* CreateTripCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTripCell.swift; sourceTree = "<group>"; };
+		CB4BB7F520A1046900F756D3 /* BookedTripsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookedTripsCell.swift; sourceTree = "<group>"; };
+		CB4BB7F720A1048900F756D3 /* DraftedTripsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraftedTripsCell.swift; sourceTree = "<group>"; };
+		CB4BB7F920A1049700F756D3 /* PastTripsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastTripsCell.swift; sourceTree = "<group>"; };
+		CB4BB7FC20A1099600F756D3 /* LoginPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
+		CB4BB7FE20A109AB00F756D3 /* EmailLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginViewController.swift; sourceTree = "<group>"; };
+		CB4BB80020A109D600F756D3 /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
+		CB4BB80220A109F100F756D3 /* ResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsTableViewController.swift; sourceTree = "<group>"; };
+		CB4BB80420A10A0C00F756D3 /* IteneraryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IteneraryTableViewController.swift; sourceTree = "<group>"; };
+		CB4BB80720A10A4D00F756D3 /* UberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UberCell.swift; sourceTree = "<group>"; };
+		CB4BB80920A10A6800F756D3 /* ActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
+		CB4BB80E20A1EE8D00F756D3 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		CB4BB81220A207EF00F756D3 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		FD86D8DB69F99BDD0F42CF35 /* Pods_AwayGame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AwayGame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -83,11 +113,10 @@
 				CB4BB7EA20A0DCD700F756D3 /* Model */,
 				CB4BB7E920A0DCD300F756D3 /* View */,
 				CB4BB7E820A0DCCA00F756D3 /* Controller */,
+				CB4BB7ED20A0F47100F756D3 /* Storyboards */,
+				CB4BB7EE20A0F47F00F756D3 /* Theme */,
 				CB4BB7D620A0DC8E00F756D3 /* AppDelegate.swift */,
-				CB4BB7D820A0DC8E00F756D3 /* ViewController.swift */,
-				CB4BB7DA20A0DC8E00F756D3 /* Main.storyboard */,
 				CB4BB7DD20A0DC8E00F756D3 /* Assets.xcassets */,
-				CB4BB7DF20A0DC8E00F756D3 /* LaunchScreen.storyboard */,
 				CB4BB7EB20A0E11100F756D3 /* GoogleService-Info.plist */,
 				CB4BB7E220A0DC8E00F756D3 /* Info.plist */,
 			);
@@ -97,6 +126,12 @@
 		CB4BB7E820A0DCCA00F756D3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				CB4BB7D820A0DC8E00F756D3 /* HomeTableViewController.swift */,
+				CB4BB7FC20A1099600F756D3 /* LoginPageViewController.swift */,
+				CB4BB7FE20A109AB00F756D3 /* EmailLoginViewController.swift */,
+				CB4BB80020A109D600F756D3 /* SearchTableViewController.swift */,
+				CB4BB80220A109F100F756D3 /* ResultsTableViewController.swift */,
+				CB4BB80420A10A0C00F756D3 /* IteneraryTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -104,6 +139,8 @@
 		CB4BB7E920A0DCD300F756D3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CB4BB7FB20A1049B00F756D3 /* Home */,
+				CB4BB80620A10A1100F756D3 /* Itenerary */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -111,8 +148,48 @@
 		CB4BB7EA20A0DCD700F756D3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CB4BB7EF20A0F5B100F756D3 /* Itenerary.swift */,
+				CB4BB7F120A0F5DA00F756D3 /* Activity.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		CB4BB7ED20A0F47100F756D3 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				CB4BB7DF20A0DC8E00F756D3 /* LaunchScreen.storyboard */,
+				CB4BB7DA20A0DC8E00F756D3 /* Main.storyboard */,
+				CB4BB80E20A1EE8D00F756D3 /* Login.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		CB4BB7EE20A0F47F00F756D3 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				CB4BB81220A207EF00F756D3 /* Theme.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		CB4BB7FB20A1049B00F756D3 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				CB4BB7F320A1042B00F756D3 /* CreateTripCell.swift */,
+				CB4BB7F520A1046900F756D3 /* BookedTripsCell.swift */,
+				CB4BB7F720A1048900F756D3 /* DraftedTripsCell.swift */,
+				CB4BB7F920A1049700F756D3 /* PastTripsCell.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		CB4BB80620A10A1100F756D3 /* Itenerary */ = {
+			isa = PBXGroup;
+			children = (
+				CB4BB80720A10A4D00F756D3 /* UberCell.swift */,
+				CB4BB80920A10A6800F756D3 /* ActivityCell.swift */,
+			);
+			path = Itenerary;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,6 +257,7 @@
 				CB4BB7EC20A0E11100F756D3 /* GoogleService-Info.plist in Resources */,
 				CB4BB7DE20A0DC8E00F756D3 /* Assets.xcassets in Resources */,
 				CB4BB7DC20A0DC8E00F756D3 /* Main.storyboard in Resources */,
+				CB4BB80F20A1EE8D00F756D3 /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,8 +333,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB4BB7D920A0DC8E00F756D3 /* ViewController.swift in Sources */,
+				CB4BB80320A109F100F756D3 /* ResultsTableViewController.swift in Sources */,
+				CB4BB7FA20A1049700F756D3 /* PastTripsCell.swift in Sources */,
+				CB4BB7D920A0DC8E00F756D3 /* HomeTableViewController.swift in Sources */,
 				CB4BB7D720A0DC8E00F756D3 /* AppDelegate.swift in Sources */,
+				CB4BB7FD20A1099600F756D3 /* LoginPageViewController.swift in Sources */,
+				CB4BB80520A10A0C00F756D3 /* IteneraryTableViewController.swift in Sources */,
+				CB4BB7F420A1042B00F756D3 /* CreateTripCell.swift in Sources */,
+				CB4BB80A20A10A6800F756D3 /* ActivityCell.swift in Sources */,
+				CB4BB80820A10A4D00F756D3 /* UberCell.swift in Sources */,
+				CB4BB81320A207EF00F756D3 /* Theme.swift in Sources */,
+				CB4BB7FF20A109AC00F756D3 /* EmailLoginViewController.swift in Sources */,
+				CB4BB7F220A0F5DA00F756D3 /* Activity.swift in Sources */,
+				CB4BB7F620A1046900F756D3 /* BookedTripsCell.swift in Sources */,
+				CB4BB80120A109D600F756D3 /* SearchTableViewController.swift in Sources */,
+				CB4BB7F020A0F5B100F756D3 /* Itenerary.swift in Sources */,
+				CB4BB7F820A1048900F756D3 /* DraftedTripsCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
