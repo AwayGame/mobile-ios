@@ -17,7 +17,7 @@ class SavedTripsCell: UITableViewCell {
         self.selectionStyle = .none
     }
     
-    func configureCell(itenerary: Itenerary, indexPath: IndexPath) {
+    func configureCell(itenerary: Itenerary?, indexPath: IndexPath) {
         if indexPath.row == 0 {
             
         } else if indexPath.row == 1 {

@@ -6,7 +6,6 @@
 //  Copyright © 2018 AwayGame. All rights reserved.
 //
 
-import Kingfisher
 import UIKit
 
 protocol CreateTripDelegate: class {

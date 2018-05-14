@@ -29,6 +29,22 @@
 		CB4BB81320A207EF00F756D3 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BB81220A207EF00F756D3 /* Theme.swift */; };
 		CBF4136B20A490160038340F /* NavigationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4136A20A490160038340F /* NavigationHelper.swift */; };
 		CBF4136D20A4942C0038340F /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4136C20A4942C0038340F /* Info.swift */; };
+		CBF4137020A49A6A0038340F /* SearchTeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4136F20A49A6A0038340F /* SearchTeamCell.swift */; };
+		CBF4137220A49C8A0038340F /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4137120A49C8A0038340F /* CalendarCell.swift */; };
+		CBF4137420A49E5E0038340F /* ArrivalDepartureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4137320A49E5E0038340F /* ArrivalDepartureCell.swift */; };
+		CBF4137620A4BFBC0038340F /* NextButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4137520A4BFBC0038340F /* NextButtonCell.swift */; };
+		CBF4137820A5ED500038340F /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4137720A5ED500038340F /* Game.swift */; };
+		CBF4137A20A5EEBF0038340F /* NoGamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4137920A5EEBF0038340F /* NoGamesViewController.swift */; };
+		CBF4137F20A5F2120038340F /* ResultsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4137E20A5F2120038340F /* ResultsCell.swift */; };
+		CBF4138220A9CCBC0038340F /* PreferenceCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4138120A9CCBC0038340F /* PreferenceCollectionCell.swift */; };
+		CBF4138420A9CCEF0038340F /* GroupCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4138320A9CCEF0038340F /* GroupCollectionViewController.swift */; };
+		CBF4138620A9CCFF0038340F /* DiningCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4138520A9CCFF0038340F /* DiningCollectionViewController.swift */; };
+		CBF4138820A9CD150038340F /* ActivitiesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4138720A9CD150038340F /* ActivitiesCollectionViewController.swift */; };
+		CBF4138A20A9CD250038340F /* NightlifeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4138920A9CD250038340F /* NightlifeCollectionViewController.swift */; };
+		CBF4138D20A9D4160038340F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4138C20A9D4160038340F /* User.swift */; };
+		CBF4138F20A9D60E0038340F /* AppLaunch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBF4138E20A9D60E0038340F /* AppLaunch.storyboard */; };
+		CBF4139320A9D71B0038340F /* AppLaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4139220A9D71B0038340F /* AppLaunchViewController.swift */; };
+		CBF4139520A9D8820038340F /* LoginType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4139420A9D8820038340F /* LoginType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +73,22 @@
 		CB4BB81220A207EF00F756D3 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		CBF4136A20A490160038340F /* NavigationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationHelper.swift; sourceTree = "<group>"; };
 		CBF4136C20A4942C0038340F /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
+		CBF4136F20A49A6A0038340F /* SearchTeamCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTeamCell.swift; sourceTree = "<group>"; };
+		CBF4137120A49C8A0038340F /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
+		CBF4137320A49E5E0038340F /* ArrivalDepartureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalDepartureCell.swift; sourceTree = "<group>"; };
+		CBF4137520A4BFBC0038340F /* NextButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextButtonCell.swift; sourceTree = "<group>"; };
+		CBF4137720A5ED500038340F /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		CBF4137920A5EEBF0038340F /* NoGamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoGamesViewController.swift; sourceTree = "<group>"; };
+		CBF4137E20A5F2120038340F /* ResultsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsCell.swift; sourceTree = "<group>"; };
+		CBF4138120A9CCBC0038340F /* PreferenceCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceCollectionCell.swift; sourceTree = "<group>"; };
+		CBF4138320A9CCEF0038340F /* GroupCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCollectionViewController.swift; sourceTree = "<group>"; };
+		CBF4138520A9CCFF0038340F /* DiningCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiningCollectionViewController.swift; sourceTree = "<group>"; };
+		CBF4138720A9CD150038340F /* ActivitiesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesCollectionViewController.swift; sourceTree = "<group>"; };
+		CBF4138920A9CD250038340F /* NightlifeCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightlifeCollectionViewController.swift; sourceTree = "<group>"; };
+		CBF4138C20A9D4160038340F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		CBF4138E20A9D60E0038340F /* AppLaunch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AppLaunch.storyboard; sourceTree = "<group>"; };
+		CBF4139220A9D71B0038340F /* AppLaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLaunchViewController.swift; sourceTree = "<group>"; };
+		CBF4139420A9D8820038340F /* LoginType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginType.swift; sourceTree = "<group>"; };
 		FD86D8DB69F99BDD0F42CF35 /* Pods_AwayGame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AwayGame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -127,12 +159,9 @@
 		CB4BB7E820A0DCCA00F756D3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				CB4BB7D820A0DC8E00F756D3 /* HomeTableViewController.swift */,
-				CB4BB80020A109D600F756D3 /* SearchTableViewController.swift */,
-				CB4BB7FC20A1099600F756D3 /* LoginPageViewController.swift */,
-				CB4BB7FE20A109AB00F756D3 /* EmailLoginViewController.swift */,
-				CB4BB80220A109F100F756D3 /* ResultsTableViewController.swift */,
-				CB4BB80420A10A0C00F756D3 /* IteneraryTableViewController.swift */,
+				CBF4137B20A5EEC70038340F /* Main */,
+				CBF4137C20A5EEE30038340F /* Login */,
+				CBF4139220A9D71B0038340F /* AppLaunchViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -142,7 +171,10 @@
 			children = (
 				CB4BB7FB20A1049B00F756D3 /* Home */,
 				CBF4136E20A499F50038340F /* Search */,
+				CBF4137D20A5F1FB0038340F /* Results */,
+				CBF4138020A9CC650038340F /* Preferences */,
 				CB4BB80620A10A1100F756D3 /* Itenerary */,
+				CBF4137520A4BFBC0038340F /* NextButtonCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -152,6 +184,9 @@
 			children = (
 				CB4BB7EF20A0F5B100F756D3 /* Itenerary.swift */,
 				CB4BB7F120A0F5DA00F756D3 /* Activity.swift */,
+				CBF4137720A5ED500038340F /* Game.swift */,
+				CBF4138C20A9D4160038340F /* User.swift */,
+				CBF4139420A9D8820038340F /* LoginType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -159,9 +194,10 @@
 		CB4BB7ED20A0F47100F756D3 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				CBF4138E20A9D60E0038340F /* AppLaunch.storyboard */,
 				CB4BB7DF20A0DC8E00F756D3 /* LaunchScreen.storyboard */,
-				CB4BB7DA20A0DC8E00F756D3 /* Main.storyboard */,
 				CB4BB80E20A1EE8D00F756D3 /* Login.storyboard */,
+				CB4BB7DA20A0DC8E00F756D3 /* Main.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -204,8 +240,60 @@
 		CBF4136E20A499F50038340F /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				CBF4136F20A49A6A0038340F /* SearchTeamCell.swift */,
+				CBF4137120A49C8A0038340F /* CalendarCell.swift */,
+				CBF4137320A49E5E0038340F /* ArrivalDepartureCell.swift */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		CBF4137B20A5EEC70038340F /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				CB4BB7D820A0DC8E00F756D3 /* HomeTableViewController.swift */,
+				CB4BB80020A109D600F756D3 /* SearchTableViewController.swift */,
+				CBF4137920A5EEBF0038340F /* NoGamesViewController.swift */,
+				CB4BB80220A109F100F756D3 /* ResultsTableViewController.swift */,
+				CB4BB80420A10A0C00F756D3 /* IteneraryTableViewController.swift */,
+				CBF4138B20A9CD420038340F /* Preferences */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		CBF4137C20A5EEE30038340F /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				CB4BB7FE20A109AB00F756D3 /* EmailLoginViewController.swift */,
+				CB4BB7FC20A1099600F756D3 /* LoginPageViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		CBF4137D20A5F1FB0038340F /* Results */ = {
+			isa = PBXGroup;
+			children = (
+				CBF4137E20A5F2120038340F /* ResultsCell.swift */,
+			);
+			path = Results;
+			sourceTree = "<group>";
+		};
+		CBF4138020A9CC650038340F /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				CBF4138120A9CCBC0038340F /* PreferenceCollectionCell.swift */,
+			);
+			path = Preferences;
+			sourceTree = "<group>";
+		};
+		CBF4138B20A9CD420038340F /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				CBF4138320A9CCEF0038340F /* GroupCollectionViewController.swift */,
+				CBF4138520A9CCFF0038340F /* DiningCollectionViewController.swift */,
+				CBF4138720A9CD150038340F /* ActivitiesCollectionViewController.swift */,
+				CBF4138920A9CD250038340F /* NightlifeCollectionViewController.swift */,
+			);
+			path = Preferences;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,6 +359,7 @@
 			files = (
 				CB4BB7E120A0DC8E00F756D3 /* LaunchScreen.storyboard in Resources */,
 				CB4BB7EC20A0E11100F756D3 /* GoogleService-Info.plist in Resources */,
+				CBF4138F20A9D60E0038340F /* AppLaunch.storyboard in Resources */,
 				CB4BB7DE20A0DC8E00F756D3 /* Assets.xcassets in Resources */,
 				CB4BB7DC20A0DC8E00F756D3 /* Main.storyboard in Resources */,
 				CB4BB80F20A1EE8D00F756D3 /* Login.storyboard in Resources */,
@@ -307,9 +396,12 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-AwayGame/Pods-AwayGame-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/AlgoliaSearch-Client-Swift/AlgoliaSearch.framework",
 				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/InstantSearch-Core-Swift/InstantSearchCore.framework",
+				"${BUILT_PRODUCTS_DIR}/InstantSearch-iOS/InstantSearch.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
@@ -324,9 +416,12 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlgoliaSearch.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/InstantSearchCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/InstantSearch.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
@@ -350,21 +445,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB4BB80320A109F100F756D3 /* ResultsTableViewController.swift in Sources */,
+				CBF4138620A9CCFF0038340F /* DiningCollectionViewController.swift in Sources */,
 				CBF4136D20A4942C0038340F /* Info.swift in Sources */,
+				CBF4138A20A9CD250038340F /* NightlifeCollectionViewController.swift in Sources */,
+				CBF4138420A9CCEF0038340F /* GroupCollectionViewController.swift in Sources */,
 				CB4BB7D920A0DC8E00F756D3 /* HomeTableViewController.swift in Sources */,
 				CB4BB7D720A0DC8E00F756D3 /* AppDelegate.swift in Sources */,
 				CB4BB7FD20A1099600F756D3 /* LoginPageViewController.swift in Sources */,
+				CBF4138D20A9D4160038340F /* User.swift in Sources */,
+				CBF4139320A9D71B0038340F /* AppLaunchViewController.swift in Sources */,
+				CBF4137420A49E5E0038340F /* ArrivalDepartureCell.swift in Sources */,
+				CBF4137620A4BFBC0038340F /* NextButtonCell.swift in Sources */,
+				CBF4137A20A5EEBF0038340F /* NoGamesViewController.swift in Sources */,
+				CBF4139520A9D8820038340F /* LoginType.swift in Sources */,
 				CBF4136B20A490160038340F /* NavigationHelper.swift in Sources */,
 				CB4BB80520A10A0C00F756D3 /* IteneraryTableViewController.swift in Sources */,
+				CBF4138820A9CD150038340F /* ActivitiesCollectionViewController.swift in Sources */,
 				CB4BB7F420A1042B00F756D3 /* CreateTripCell.swift in Sources */,
 				CB4BB80A20A10A6800F756D3 /* ActivityCell.swift in Sources */,
 				CB4BB80820A10A4D00F756D3 /* UberCell.swift in Sources */,
+				CBF4137020A49A6A0038340F /* SearchTeamCell.swift in Sources */,
 				CB4BB81320A207EF00F756D3 /* Theme.swift in Sources */,
 				CB4BB7FF20A109AC00F756D3 /* EmailLoginViewController.swift in Sources */,
+				CBF4137220A49C8A0038340F /* CalendarCell.swift in Sources */,
+				CBF4137820A5ED500038340F /* Game.swift in Sources */,
 				CB4BB7F220A0F5DA00F756D3 /* Activity.swift in Sources */,
 				CB4BB7F620A1046900F756D3 /* SavedTripsCell.swift in Sources */,
+				CBF4138220A9CCBC0038340F /* PreferenceCollectionCell.swift in Sources */,
 				CB4BB80120A109D600F756D3 /* SearchTableViewController.swift in Sources */,
 				CB4BB7F020A0F5B100F756D3 /* Itenerary.swift in Sources */,
+				CBF4137F20A5F2120038340F /* ResultsCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

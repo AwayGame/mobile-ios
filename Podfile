@@ -12,5 +12,6 @@ target 'AwayGame' do
   pod 'Kingfisher', '~> 4.0'
   pod 'ObjectMapper', '~> 3.1'
   pod 'AlamofireObjectMapper', '~> 5.0'  
+  pod 'InstantSearch-iOS', '~> 2.0.0'
 
 end

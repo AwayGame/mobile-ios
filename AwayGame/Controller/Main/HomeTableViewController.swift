@@ -143,9 +143,7 @@ class HomeTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
        // Pass data if needed
     }
-    
-
-    
+        
 }
 
 // MARK: - CreateTripDelegate

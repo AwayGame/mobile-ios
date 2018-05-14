@@ -409,10 +409,10 @@
             </objects>
             <point key="canvasLocation" x="550" y="838"/>
         </scene>
-        <!--View Controller-->
+        <!--Login Page View Controller-->
         <scene sceneID="zvG-he-KhV">
             <objects>
-                <viewController id="oAH-G3-6M9" sceneMemberID="viewController">
+                <viewController id="oAH-G3-6M9" customClass="LoginPageViewController" customModule="AwayGame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cy1-8W-a3S">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
