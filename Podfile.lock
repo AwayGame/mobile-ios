@@ -3,6 +3,7 @@ PODS:
   - AlamofireObjectMapper (5.0.0):
     - Alamofire (~> 4.1)
     - ObjectMapper (~> 3.0)
+  - AlgoliaSearch-Client-Swift (5.1.0)
   - BoringSSL (9.1):
     - BoringSSL/Implementation (= 9.1)
     - BoringSSL/Interface (= 9.1)
@@ -64,6 +65,10 @@ PODS:
     - gRPC-Core (= 1.7.1)
     - gRPC-RxLibrary (= 1.7.1)
   - GTMSessionFetcher/Core (1.1.12)
+  - InstantSearch-Core-Swift (3.2.0):
+    - AlgoliaSearch-Client-Swift (~> 5.0)
+  - InstantSearch-iOS (2.0.1):
+    - InstantSearch-Core-Swift (~> 3.0)
   - Kingfisher (4.2.0)
   - leveldb-library (1.20)
   - nanopb (0.3.8):
@@ -79,6 +84,7 @@ DEPENDENCIES:
   - AlamofireObjectMapper (~> 5.0)
   - Firebase/Core
   - Firebase/Firestore
+  - InstantSearch-iOS (~> 2.0.0)
   - Kingfisher (~> 4.0)
   - ObjectMapper (~> 3.1)
 
@@ -86,6 +92,7 @@ SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - AlamofireObjectMapper
+    - AlgoliaSearch-Client-Swift
     - BoringSSL
     - Firebase
     - FirebaseAnalytics
@@ -99,6 +106,8 @@ SPEC REPOS:
     - gRPC-ProtoRPC
     - gRPC-RxLibrary
     - GTMSessionFetcher
+    - InstantSearch-Core-Swift
+    - InstantSearch-iOS
     - Kingfisher
     - leveldb-library
     - nanopb
@@ -108,6 +117,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
   AlamofireObjectMapper: 5fafc816351cbbc0d486611aaeba7461c0cbad49
+  AlgoliaSearch-Client-Swift: 9cd63f85d45c6e50f06c267439928c2211c1bfe4
   BoringSSL: 84318770d120503ab1a6aaf1df777c5ca053697e
   Firebase: 27321a925aa85520618255a7c630859e0502ccbd
   FirebaseAnalytics: 5b02a63ead2c3f0259cfc7f15e053e440587ecf8
@@ -121,12 +131,14 @@ SPEC CHECKSUMS:
   gRPC-ProtoRPC: b7259f51cbc19b77c7a38d96f52a00c3a4ea1637
   gRPC-RxLibrary: 4f46343e74e74a7ee8373ffeeaf772dfb330cbd7
   GTMSessionFetcher: ebaa1f79a5366922c1735f1566901f50beba23b7
+  InstantSearch-Core-Swift: 40cf5cf38d04d08d54f9d633f1551b19d989bf48
+  InstantSearch-iOS: e35549e03232c65f40d3bef672ff2d711fc85d09
   Kingfisher: 9ee7e788d8ba07c3f21ce0d43f33cec310a4f781
   leveldb-library: 44ef425bfde64f5b41daef86b38db2d13edbbee1
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
   Protobuf: 03eef2ee0b674770735cf79d9c4d3659cf6908e8
 
-PODFILE CHECKSUM: fd8accbe60cb2ba1a39e06454df90cc047e5a026
+PODFILE CHECKSUM: 400ac371df215414bb28db21f6fdd24237a6a6fd
 
 COCOAPODS: 1.5.0
