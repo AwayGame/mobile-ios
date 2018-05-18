@@ -17,6 +17,8 @@ class CreateTripCell: UITableViewCell {
     static let identifier = "CreateTripCell"
     
     @IBOutlet weak var createTripLabel: UILabel!
+    @IBOutlet weak var background: UIView!
+    @IBOutlet weak var addButton: UIButton!
     
     weak var delegate: CreateTripDelegate?
     
@@ -27,9 +29,32 @@ class CreateTripCell: UITableViewCell {
     }
     
     func configureCell() {
+        
+        styleBackground()
+        styleTripLabel()
+        styleAddButton()
+        
         createTripLabel.text = "Create a new trip"
-        createTripLabel.font = Theme.Font.h1
+        addButton.setTitle("+", for: .normal)
+
+    }
+    
+    // MARK: - Styling
+    
+    func styleBackground() {
+        background.clipsToBounds = true
+        background.layer.cornerRadius = 10.0
+        background.backgroundColor = Theme.Color.Background.primary
+    }
+    
+    func styleTripLabel() {
+        createTripLabel.font = Theme.Font.body
         createTripLabel.textColor = Theme.Color.black
+    }
+    
+    func styleAddButton() {
+        addButton.titleLabel?.font = Theme.Font.h1
+        addButton.setTitleColor(Theme.Color.black, for: .normal)
     }
     
     // MARK: - Actions
