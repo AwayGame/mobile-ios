@@ -21,8 +21,10 @@ class ArrivalDepartureCell: UITableViewCell {
     func configureCell() {
     }
     
-    // MARK: - Actions
+    func getTimeData() -> [String] {
     
-    @IBAction func addTripTapped(_ sender: Any) {
+        // Use labels
+        return ["11:00", "14:00"]
+    
     }
 }

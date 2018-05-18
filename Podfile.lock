@@ -4,12 +4,22 @@ PODS:
     - Alamofire (~> 4.1)
     - ObjectMapper (~> 3.0)
   - AlgoliaSearch-Client-Swift (5.1.0)
+  - Bolts (1.8.4):
+    - Bolts/AppLinks (= 1.8.4)
+    - Bolts/Tasks (= 1.8.4)
+  - Bolts/AppLinks (1.8.4):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.8.4)
   - BoringSSL (9.1):
     - BoringSSL/Implementation (= 9.1)
     - BoringSSL/Interface (= 9.1)
   - BoringSSL/Implementation (9.1):
     - BoringSSL/Interface (= 9.1)
   - BoringSSL/Interface (9.1)
+  - FBSDKCoreKit (4.28.0):
+    - Bolts (~> 1.7)
+  - FBSDKLoginKit (4.28.0):
+    - FBSDKCoreKit
   - Firebase/Core (4.6.0):
     - FirebaseAnalytics (= 4.0.5)
     - FirebaseCore (= 4.0.11)
@@ -78,22 +88,30 @@ PODS:
   - nanopb/encode (0.3.8)
   - ObjectMapper (3.1.0)
   - Protobuf (3.4.0)
+  - TwitterCore (3.0.2)
+  - TwitterKit (3.2.1):
+    - TwitterCore (>= 3.0.2)
 
 DEPENDENCIES:
   - Alamofire (~> 4.5)
   - AlamofireObjectMapper (~> 5.0)
+  - FBSDKLoginKit
   - Firebase/Core
   - Firebase/Firestore
   - InstantSearch-iOS (~> 2.0.0)
   - Kingfisher (~> 4.0)
   - ObjectMapper (~> 3.1)
+  - TwitterKit
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - AlamofireObjectMapper
     - AlgoliaSearch-Client-Swift
+    - Bolts
     - BoringSSL
+    - FBSDKCoreKit
+    - FBSDKLoginKit
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -113,12 +131,17 @@ SPEC REPOS:
     - nanopb
     - ObjectMapper
     - Protobuf
+    - TwitterCore
+    - TwitterKit
 
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
   AlamofireObjectMapper: 5fafc816351cbbc0d486611aaeba7461c0cbad49
   AlgoliaSearch-Client-Swift: 9cd63f85d45c6e50f06c267439928c2211c1bfe4
+  Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   BoringSSL: 84318770d120503ab1a6aaf1df777c5ca053697e
+  FBSDKCoreKit: ca961e279113f691fd83dc634c0bbad9d4e3f370
+  FBSDKLoginKit: b077381c27d800f21661757e8140cf2c80a91e4a
   Firebase: 27321a925aa85520618255a7c630859e0502ccbd
   FirebaseAnalytics: 5b02a63ead2c3f0259cfc7f15e053e440587ecf8
   FirebaseAuth: e58563adb207a43910a2ed87fecb9fa7d556df5a
@@ -138,7 +161,9 @@ SPEC CHECKSUMS:
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
   Protobuf: 03eef2ee0b674770735cf79d9c4d3659cf6908e8
+  TwitterCore: e0420b01e02e7d20e94690e37f43e75de219ab8d
+  TwitterKit: 205ac89824bbfe9e85a16c420d30bb7bcbedac45
 
-PODFILE CHECKSUM: 400ac371df215414bb28db21f6fdd24237a6a6fd
+PODFILE CHECKSUM: 7c6f7f3229f4a951190dd245e2ba8881196c8a63
 
 COCOAPODS: 1.5.0

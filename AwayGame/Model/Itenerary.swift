@@ -6,9 +6,10 @@
 //  Copyright © 2018 AwayGame. All rights reserved.
 //
 
+import Foundation
 
 class Itenerary {
     
     public var activities: [Activity]?
-    
+
 }

@@ -17,8 +17,8 @@ struct Theme {
         
         // TODO: Filler fonts
         
-        static let title: UIFont = UIFont.systemFont(ofSize: 24, weight: UIFont.Weight.heavy)
-        static let h1: UIFont = UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.heavy)
+        static let title: UIFont = UIFont.systemFont(ofSize: 24, weight: UIFont.Weight.bold)
+        static let h1: UIFont = UIFont.systemFont(ofSize: 24, weight: UIFont.Weight.medium)
         static let h2: UIFont = UIFont.systemFont(ofSize: 18, weight: UIFont.Weight.bold)
         static let body: UIFont = UIFont.systemFont(ofSize: 18, weight: UIFont.Weight.light)
         
@@ -32,12 +32,31 @@ struct Theme {
         
         static let white: UIColor = .white
         static let black: UIColor = .black
+        static let darkText: UIColor = UIColor(displayP3Red: 92.0/255.0, green: 92.0/255.0, blue: 92.0/255.0, alpha: 1.0)
         static let clear: UIColor = UIColor(displayP3Red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0)
         
-        struct Green {
-            static let primary: UIColor = UIColor(displayP3Red: 50.0/255.0, green: 235.0/255.0, blue: 189/255.0, alpha: 1.0)
-            static let secondary: UIColor = UIColor(displayP3Red: 70.0/255.0, green: 235.0/255.0, blue: 189/255.0, alpha: 1.0)
+        struct Login {
+            static let facebook: UIColor = UIColor(displayP3Red: 59.0/255.0, green: 89.0/255.0, blue: 152.0/255.0, alpha: 1.0)
+            static let twitter: UIColor = UIColor(displayP3Red: 0.0/255.0, green: 172.0/255.0, blue: 237.0/255.0, alpha: 1.0)
+            static let email: UIColor = UIColor(displayP3Red: 112.0/255.0, green: 112.0/255.0, blue: 112.0/255.0, alpha: 1.0)
         }
+        
+        struct Green {
+            static let primary: UIColor = UIColor(displayP3Red: 115.0/255.0, green: 183.0/255.0, blue: 87.0/255.0, alpha: 1.0)
+            static let secondary: UIColor = UIColor(displayP3Red: 115.0/255.0, green: 183.0/255.0, blue: 87.0/255.0, alpha: 1.0)
+        }
+        
+        struct Gradient {
+            static let green: UIColor = UIColor(displayP3Red: 115.0/255.0, green: 183.0/255.0, blue: 87.0/255.0, alpha: 1.0)
+            static let blue: UIColor = UIColor(displayP3Red: 0.0/255.0, green: 73.0/255.0, blue: 114.0/255.0, alpha: 0.9)
+        }
+        
+        struct Background {
+            static let primary: UIColor = UIColor(displayP3Red: 252.0/255.0, green: 249.0/255.0, blue: 249.0/255.0, alpha: 1.0)
+        }
+        
+        
+        
         
         // etc...
     }

@@ -6,6 +6,7 @@
 //  Copyright © 2018 AwayGame. All rights reserved.
 //
 
+import InstantSearch
 import UIKit
 
 class SearchTeamCell: UITableViewCell {

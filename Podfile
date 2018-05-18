@@ -13,5 +13,7 @@ target 'AwayGame' do
   pod 'ObjectMapper', '~> 3.1'
   pod 'AlamofireObjectMapper', '~> 5.0'  
   pod 'InstantSearch-iOS', '~> 2.0.0'
+  pod 'FBSDKLoginKit'
+  pod 'TwitterKit'
 
 end

@@ -27,6 +27,7 @@ class Activity: Mappable {
         location <- map["location"]
         hours <- map["hours"]
     }
+    
 }
 
 // MARK: - Location
@@ -44,9 +45,11 @@ struct Location: Mappable {
             longitude <- map["long"]
             mapsUrl <- map["mapsUrl"]
     }
+    
 }
 
 struct Hours: Mappable {
+    
     public var formattedHours: [String]?
     public var individualDaysData: [DayHours]?
     
@@ -54,8 +57,8 @@ struct Hours: Mappable {
     
     mutating func mapping(map: Map) {
         formattedHours <- map["formattedHours"]
-
     }
+    
 }
 
 struct DayHours: Mappable {
@@ -69,9 +72,11 @@ struct DayHours: Mappable {
         open <- map["open"]
         close <- map["close"]
     }
+    
 }
 
 struct OpenClose: Mappable {
+    
     public var day: Int?
     public var time: String?
     
@@ -81,4 +86,5 @@ struct OpenClose: Mappable {
         day <- map["day"]
         time <- map["time"]
     }
+    
 }

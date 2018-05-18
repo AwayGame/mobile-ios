@@ -7,12 +7,13 @@
 //  Copyright © 2018 AwayGame. All rights reserved.
 //
 
+import FirebaseAuth
 import MessageUI
 import UIKit
 
 class HomeTableViewController: UITableViewController {
 
-    private var iteneraryData: [[Itenerary]] = [[], [], []] {
+    private var iteneraryData: [[Itenerary]] = [[], []] {
         didSet {
             tableView.reloadData()
         }
@@ -35,6 +36,8 @@ class HomeTableViewController: UITableViewController {
         tableView.separatorStyle = .none
         tableView.allowsSelection = true
         tableView.backgroundColor = Theme.Color.white
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
     // MARK: - Firebase
@@ -55,6 +58,29 @@ class HomeTableViewController: UITableViewController {
                 createTripCell.delegate = self
                 return createTripCell
             }
+        } else if indexPath.section == 1 {
+            if let sectionHeaderCell = tableView.dequeueReusableCell(withIdentifier: SectionHeaderCell.identifier, for: indexPath) as? SectionHeaderCell {
+                sectionHeaderCell.configureCell(text: "Upcoming Trips")
+                return sectionHeaderCell
+            }
+        } else if indexPath.section == 2 {
+            
+        } else if indexPath.section == 3 {
+            if let sectionHeaderCell = tableView.dequeueReusableCell(withIdentifier: SectionHeaderCell.identifier, for: indexPath) as? SectionHeaderCell {
+                sectionHeaderCell.configureCell(text: "Past Trips")
+                return sectionHeaderCell
+            }
+        } else if indexPath.section == 4 {
+            
+        } else if indexPath.section == 5 {
+            if let sectionHeaderCell = tableView.dequeueReusableCell(withIdentifier: SectionHeaderCell.identifier, for: indexPath) as? SectionHeaderCell {
+                sectionHeaderCell.configureCell(text: "Settings")
+                return sectionHeaderCell
+            }
+        } else if indexPath.section == 6 {
+            if let settingsCell = tableView.dequeueReusableCell(withIdentifier: SettingsCell.identifier, for: indexPath) as? SettingsCell {
+                return settingsCell
+            }
         }
         
         return UITableViewCell()
@@ -62,25 +88,21 @@ class HomeTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
-            case 0:
-                return 1
-            case 1:
-                return iteneraryData[0].count
             case 2:
+                return iteneraryData[0].count
+            case 4:
                 return iteneraryData[1].count
-            case 3:
-                return iteneraryData[2].count
             default:
-                return 0
+                return 1
         }
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 4
+        return 7
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200 // TODO: - Update to true value later
+        return 100.0 // TODO: - Update to true value later
     }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -103,6 +125,15 @@ class HomeTableViewController: UITableViewController {
     }
     
     // MARK: - Actions
+    
+    func signOut() {
+        do {
+            try Auth.auth().signOut()
+            print("Sign out Successful")
+        } catch let error as Error {
+            print(error.localizedDescription)
+        }
+    }
     
     @objc func supportTapped() {
         let alertController = UIAlertController(title: "Contact Support", message: "Send an email to AwayGame support, we'll get back to you ASAP", preferredStyle: .alert)

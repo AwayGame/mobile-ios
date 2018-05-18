@@ -26,9 +26,4 @@ class CalendarCell: UITableViewCell {
 
     }
     
-    // MARK: - Actions
-    
-    @IBAction func addTripTapped(_ sender: Any) {
-
-    }
 }
