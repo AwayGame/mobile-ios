@@ -8,6 +8,14 @@
 
 import Foundation
 
-class User {
+final class User {
+    
+    static let currentUser = User()
+    private init () {}
+    
+    public var name: String?
+    public var email: String?
+    public var photoUrl: String?
+    public var uid: String?
     
 }

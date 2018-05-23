@@ -2,4 +2,84 @@
 <Bucket
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AwayGame/Controller/Login/LoginViewController.swift"
+            timestampString = "548732303.137257"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "LoginViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AwayGame.LoginViewController.logoImageView.getter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UIImageView&gt;"
+                  moduleName = "AwayGame"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/WD%20Passport/AwayGame/AwayGame/AwayGame/Controller/Login/LoginViewController.swift"
+                  timestampString = "548732305.344963"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "79">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AwayGame.LoginViewController.logoImageView.setter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UIImageView&gt;"
+                  moduleName = "AwayGame"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/WD%20Passport/AwayGame/AwayGame/AwayGame/Controller/Login/LoginViewController.swift"
+                  timestampString = "548732305.351487"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "86">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AwayGame.LoginViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; AwayGame.LoginViewController"
+                  moduleName = "AwayGame"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/WD%20Passport/AwayGame/AwayGame/AwayGame/Controller/Login/LoginViewController.swift"
+                  timestampString = "548732305.357527"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "452">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AwayGame.LoginViewController.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;AwayGame.LoginViewController&gt;"
+                  moduleName = "AwayGame"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/WD%20Passport/AwayGame/AwayGame/AwayGame/Controller/Login/LoginViewController.swift"
+                  timestampString = "548732305.361419"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "388">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

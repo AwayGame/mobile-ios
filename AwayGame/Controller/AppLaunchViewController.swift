@@ -24,6 +24,8 @@ class AppLaunchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+
     }
 
     func hideAllContainers() {
@@ -36,14 +38,34 @@ class AppLaunchViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         // Login
         handle = Auth.auth().addStateDidChangeListener { (auth, user) in
-            if let user = user {
-                self.proceedToHome()
+            if let user != nil {
+//                self.proceedToHome()
+//
+                let user = User()
+                user.email = Auth.auth().currentUser?.email
+                user.name = Auth.auth().currentUser?.displayName
+                user.uid = Auth.auth().currentUser?.uid
+
+                let api = AwayGameAPI()
+                api.verifyUser(with: user)
+                
+                
+//                Auth.auth().createUser(withEmail: "blake.swaidner@gmail.com", password: "ABC123", completion: { (user, error) in
+//                    if error != nil {
+//                        print(error)
+//                    } else {
+//                        print(user)
+//                        p
+//                    }
+//                })
+                
+                
             } else {
-                if UserDefaults.isFirstLaunch() {
-                    self.proceedToSignup()
-                } else {
-                    self.proceedToLogin()
-                }
+//                if UserDefaults.isFirstLaunch() {
+//                    self.proceedToSignup()
+//                } else {
+//                    self.proceedToLogin()
+//                }
             }
         }
     }

@@ -32,6 +32,7 @@
 		CB57BD9F20ACA36C004FEE89 /* AwayGameAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB57BD9E20ACA36C004FEE89 /* AwayGameAPI.swift */; };
 		CB57BDA120ADE2A4004FEE89 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB57BDA020ADE2A4004FEE89 /* SignupViewController.swift */; };
 		CB57BDA320ADE877004FEE89 /* UserDefaults+FirstLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB57BDA220ADE877004FEE89 /* UserDefaults+FirstLaunch.swift */; };
+		CB57BDA620B4F5C8004FEE89 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB57BDA520B4F5C8004FEE89 /* GoogleService-Info.plist */; };
 		CBF4136B20A490160038340F /* NavigationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4136A20A490160038340F /* NavigationHelper.swift */; };
 		CBF4136D20A4942C0038340F /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4136C20A4942C0038340F /* Info.swift */; };
 		CBF4137020A49A6A0038340F /* SearchTeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4136F20A49A6A0038340F /* SearchTeamCell.swift */; };
@@ -87,6 +88,7 @@
 		CB57BD9E20ACA36C004FEE89 /* AwayGameAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwayGameAPI.swift; sourceTree = "<group>"; };
 		CB57BDA020ADE2A4004FEE89 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		CB57BDA220ADE877004FEE89 /* UserDefaults+FirstLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+FirstLaunch.swift"; sourceTree = "<group>"; };
+		CB57BDA520B4F5C8004FEE89 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CBF4136A20A490160038340F /* NavigationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationHelper.swift; sourceTree = "<group>"; };
 		CBF4136C20A4942C0038340F /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
 		CBF4136F20A49A6A0038340F /* SearchTeamCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTeamCell.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 		CB4BB7D520A0DC8E00F756D3 /* AwayGame */ = {
 			isa = PBXGroup;
 			children = (
+				CB57BDA420B4F188004FEE89 /* AwayGameAPI */,
 				CB4BB7EA20A0DCD700F756D3 /* Model */,
 				CB4BB7E920A0DCD300F756D3 /* View */,
 				CB4BB7E820A0DCCA00F756D3 /* Controller */,
@@ -173,6 +176,7 @@
 				CB4BB7D620A0DC8E00F756D3 /* AppDelegate.swift */,
 				CB4BB7DD20A0DC8E00F756D3 /* Assets.xcassets */,
 				CB4BB7EB20A0E11100F756D3 /* GoogleService-Info.plist */,
+				CB57BDA520B4F5C8004FEE89 /* GoogleService-Info.plist */,
 				CB4BB7E220A0DC8E00F756D3 /* Info.plist */,
 			);
 			path = AwayGame;
@@ -254,13 +258,20 @@
 			path = Itenerary;
 			sourceTree = "<group>";
 		};
+		CB57BDA420B4F188004FEE89 /* AwayGameAPI */ = {
+			isa = PBXGroup;
+			children = (
+				CB57BD9E20ACA36C004FEE89 /* AwayGameAPI.swift */,
+				CB57BD9C20ACA354004FEE89 /* Router.swift */,
+			);
+			path = AwayGameAPI;
+			sourceTree = "<group>";
+		};
 		CBF4136920A490010038340F /* Util */ = {
 			isa = PBXGroup;
 			children = (
 				CBF4136A20A490160038340F /* NavigationHelper.swift */,
 				CBF4136C20A4942C0038340F /* Info.swift */,
-				CB57BD9C20ACA354004FEE89 /* Router.swift */,
-				CB57BD9E20ACA36C004FEE89 /* AwayGameAPI.swift */,
 				CB57BDA220ADE877004FEE89 /* UserDefaults+FirstLaunch.swift */,
 			);
 			path = Util;
@@ -408,6 +419,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB4BB7E120A0DC8E00F756D3 /* LaunchScreen.storyboard in Resources */,
+				CB57BDA620B4F5C8004FEE89 /* GoogleService-Info.plist in Resources */,
 				CB4BB7EC20A0E11100F756D3 /* GoogleService-Info.plist in Resources */,
 				CBF4138F20A9D60E0038340F /* AppLaunch.storyboard in Resources */,
 				CB4BB7DE20A0DC8E00F756D3 /* Assets.xcassets in Resources */,
@@ -700,7 +712,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = CR4T3XR3PC;
 				INFOPLIST_FILE = AwayGame/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -717,7 +729,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = CR4T3XR3PC;
 				INFOPLIST_FILE = AwayGame/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
