@@ -17,6 +17,7 @@ final class User: Mappable {
     public var email: String?
     public var photoUrl: String?
     public var uid: String?
+    public var tripIds: [String]?
     public var preferences: Preferences?
     public var trips: [Trip]?
     private init() {}

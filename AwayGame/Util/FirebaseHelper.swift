@@ -17,12 +17,16 @@ func initializeDatabaseSubscription() {
             print("Error fetching document: \(error!)")
             return
         }
-        let source = document.metadata.hasPendingWrites ? "Local" : "Server"
-        print("\(source) data: \(document.data())")
-        // Update the current user from the database
         
-        
-        //User.currentUser = Mapper<User>().map(JSONString: document.data())
-        //print("NEW USER: ", User.currentUser.name)
+        handleUpdate(data: document.data())
     }
+}
+
+func handleUpdate(data: [String: Any]) {
+    // Update the current user from the database
+    //AwayGameAPI.verifyUser(with: User.currentUser)
+    print("User has been updated")
+    // TODO: Use the following code below to update the user...
+    // guard let user = User(JSON: data) else { return }
+    // User.currentUser = user
 }
