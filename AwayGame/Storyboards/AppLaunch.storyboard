@@ -48,22 +48,22 @@
                         </subviews>
                         <color key="backgroundColor" red="0.32549019607843138" green="0.72549019607843135" blue="0.44705882352941173" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="krq-3B-Gec" firstAttribute="leading" secondItem="5Sv-Uu-q0v" secondAttribute="leading" id="4Mo-st-LLi"/>
-                            <constraint firstItem="krq-3B-Gec" firstAttribute="trailing" secondItem="5Sv-Uu-q0v" secondAttribute="trailing" id="7ib-nx-Fzq"/>
-                            <constraint firstItem="csI-Db-mC8" firstAttribute="bottom" secondItem="5Sv-Uu-q0v" secondAttribute="bottom" id="Ct6-5w-RWA"/>
-                            <constraint firstItem="aA5-o9-9Io" firstAttribute="leading" secondItem="5Sv-Uu-q0v" secondAttribute="leading" id="HPX-lC-58e"/>
-                            <constraint firstItem="csI-Db-mC8" firstAttribute="leading" secondItem="5Sv-Uu-q0v" secondAttribute="leading" id="R8s-7i-i4R"/>
-                            <constraint firstItem="krq-3B-Gec" firstAttribute="bottom" secondItem="5Sv-Uu-q0v" secondAttribute="bottom" id="SEN-Li-4Nt"/>
-                            <constraint firstItem="OGV-YR-aqM" firstAttribute="centerX" secondItem="AP1-6W-w7U" secondAttribute="centerX" id="aKJ-eD-n5e"/>
-                            <constraint firstItem="aA5-o9-9Io" firstAttribute="trailing" secondItem="5Sv-Uu-q0v" secondAttribute="trailing" id="gDS-By-x2w"/>
+                            <constraint firstItem="krq-3B-Gec" firstAttribute="leading" secondItem="oTl-vC-mzp" secondAttribute="leading" id="4Mo-st-LLi"/>
+                            <constraint firstItem="krq-3B-Gec" firstAttribute="trailing" secondItem="oTl-vC-mzp" secondAttribute="trailing" id="7ib-nx-Fzq"/>
+                            <constraint firstItem="csI-Db-mC8" firstAttribute="bottom" secondItem="oTl-vC-mzp" secondAttribute="bottom" id="Ct6-5w-RWA"/>
+                            <constraint firstItem="aA5-o9-9Io" firstAttribute="leading" secondItem="oTl-vC-mzp" secondAttribute="leading" id="HPX-lC-58e"/>
+                            <constraint firstItem="csI-Db-mC8" firstAttribute="leading" secondItem="oTl-vC-mzp" secondAttribute="leading" id="R8s-7i-i4R"/>
+                            <constraint firstItem="krq-3B-Gec" firstAttribute="bottom" secondItem="oTl-vC-mzp" secondAttribute="bottom" id="SEN-Li-4Nt"/>
+                            <constraint firstItem="OGV-YR-aqM" firstAttribute="centerX" secondItem="oTl-vC-mzp" secondAttribute="centerX" id="aKJ-eD-n5e"/>
+                            <constraint firstItem="aA5-o9-9Io" firstAttribute="trailing" secondItem="oTl-vC-mzp" secondAttribute="trailing" id="gDS-By-x2w"/>
                             <constraint firstItem="OGV-YR-aqM" firstAttribute="centerY" secondItem="AP1-6W-w7U" secondAttribute="centerY" id="gvt-7d-yZ0"/>
                             <constraint firstItem="csI-Db-mC8" firstAttribute="top" secondItem="AP1-6W-w7U" secondAttribute="top" id="hFe-1v-Vmp"/>
-                            <constraint firstItem="aA5-o9-9Io" firstAttribute="bottom" secondItem="5Sv-Uu-q0v" secondAttribute="bottom" id="iwQ-Rr-UwI"/>
-                            <constraint firstItem="csI-Db-mC8" firstAttribute="trailing" secondItem="5Sv-Uu-q0v" secondAttribute="trailing" id="s6d-Kg-ojt"/>
+                            <constraint firstItem="aA5-o9-9Io" firstAttribute="bottom" secondItem="oTl-vC-mzp" secondAttribute="bottom" id="iwQ-Rr-UwI"/>
+                            <constraint firstItem="csI-Db-mC8" firstAttribute="trailing" secondItem="oTl-vC-mzp" secondAttribute="trailing" id="s6d-Kg-ojt"/>
                             <constraint firstItem="aA5-o9-9Io" firstAttribute="top" secondItem="AP1-6W-w7U" secondAttribute="top" id="sqA-Qc-dTG"/>
                             <constraint firstItem="krq-3B-Gec" firstAttribute="top" secondItem="AP1-6W-w7U" secondAttribute="top" id="xY0-qy-dyW"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="5Sv-Uu-q0v"/>
+                        <viewLayoutGuide key="safeArea" id="oTl-vC-mzp"/>
                     </view>
                     <connections>
                         <outlet property="loginContainerView" destination="csI-Db-mC8" id="Ici-tn-HWb"/>
@@ -91,19 +91,19 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MV4-wB-UF7">
-                                        <rect key="frame" x="104.5" y="50" width="165" height="165"/>
+                                        <rect key="frame" x="104.5" y="100" width="165" height="165"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="165" id="VE5-OW-0m3"/>
                                             <constraint firstAttribute="height" constant="165" id="iZs-AI-O5N"/>
                                         </constraints>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pSf-1h-XMj">
-                                        <rect key="frame" x="20" y="265" width="335" height="50"/>
+                                        <rect key="frame" x="20" y="315" width="335" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KXD-R2-SyP">
                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="50"/>
                                             </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sND-Ut-qbd">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flogo-HexRBG-Wht-114" translatesAutoresizingMaskIntoConstraints="NO" id="sND-Ut-qbd">
                                                 <rect key="frame" x="11" y="11" width="28" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="28" id="SI2-06-dqV"/>
@@ -141,7 +141,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5L1-3O-knS">
-                                        <rect key="frame" x="20" y="340" width="335" height="50"/>
+                                        <rect key="frame" x="20" y="390" width="335" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W1y-0X-vNd">
                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="50"/>
@@ -149,7 +149,7 @@
                                                     <action selector="twitterButtonTapped:" destination="dX9-Ru-2li" eventType="touchUpInside" id="SQm-LE-nE9"/>
                                                 </connections>
                                             </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XX0-gJ-6nw">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Twitter_Social_Icon_Rounded_Square_White" translatesAutoresizingMaskIntoConstraints="NO" id="XX0-gJ-6nw">
                                                 <rect key="frame" x="11" y="11" width="28" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="28" id="oco-Kp-Yyb"/>
@@ -189,7 +189,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HXl-Zo-gWi">
-                                        <rect key="frame" x="20" y="415" width="335" height="50"/>
+                                        <rect key="frame" x="20" y="465" width="335" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YDv-Wt-OWV">
                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="50"/>
@@ -197,7 +197,7 @@
                                                     <action selector="emailButtonTapped:" destination="dX9-Ru-2li" eventType="touchUpInside" id="lSG-7q-T8L"/>
                                                 </connections>
                                             </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gS5-mh-jVV">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="email" translatesAutoresizingMaskIntoConstraints="NO" id="gS5-mh-jVV">
                                                 <rect key="frame" x="11" y="11" width="28" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="28" id="Gpw-D8-Su9"/>
@@ -236,7 +236,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6gw-8r-RX3">
-                                        <rect key="frame" x="164" y="473" width="46" height="30"/>
+                                        <rect key="frame" x="164" y="523" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="createAccountButtonTapped:" destination="dX9-Ru-2li" eventType="touchUpInside" id="yZ0-KJ-YA4"/>
@@ -248,7 +248,7 @@
                                     <constraint firstItem="pSf-1h-XMj" firstAttribute="top" secondItem="MV4-wB-UF7" secondAttribute="bottom" constant="50" id="2IL-mD-PEh"/>
                                     <constraint firstAttribute="trailing" secondItem="5L1-3O-knS" secondAttribute="trailing" constant="20" id="4HZ-Gh-l6c"/>
                                     <constraint firstItem="HXl-Zo-gWi" firstAttribute="leading" secondItem="tOk-tZ-r44" secondAttribute="leading" constant="20" id="AEX-dx-bH4"/>
-                                    <constraint firstItem="MV4-wB-UF7" firstAttribute="top" secondItem="tOk-tZ-r44" secondAttribute="top" constant="50" id="Ib8-ac-arM"/>
+                                    <constraint firstItem="MV4-wB-UF7" firstAttribute="top" secondItem="tOk-tZ-r44" secondAttribute="top" constant="100" id="Ib8-ac-arM"/>
                                     <constraint firstItem="5L1-3O-knS" firstAttribute="top" secondItem="pSf-1h-XMj" secondAttribute="bottom" constant="25" id="V9L-Bg-Oc1"/>
                                     <constraint firstItem="MV4-wB-UF7" firstAttribute="centerX" secondItem="tOk-tZ-r44" secondAttribute="centerX" id="ZTx-LS-926"/>
                                     <constraint firstItem="6gw-8r-RX3" firstAttribute="centerX" secondItem="tOk-tZ-r44" secondAttribute="centerX" id="b7E-yH-mYH"/>
@@ -265,14 +265,14 @@
                         <constraints>
                             <constraint firstItem="tOk-tZ-r44" firstAttribute="top" secondItem="jzE-yH-fpQ" secondAttribute="top" id="0nF-Ka-IYv"/>
                             <constraint firstItem="JEl-4h-7vk" firstAttribute="top" secondItem="jzE-yH-fpQ" secondAttribute="top" id="8FG-Jx-3Jn"/>
-                            <constraint firstAttribute="trailing" secondItem="tOk-tZ-r44" secondAttribute="trailing" id="EJB-k6-f8H"/>
-                            <constraint firstAttribute="trailing" secondItem="JEl-4h-7vk" secondAttribute="trailing" id="FRf-d7-u9H"/>
-                            <constraint firstAttribute="bottom" secondItem="tOk-tZ-r44" secondAttribute="bottom" id="M0R-np-qcV"/>
-                            <constraint firstItem="tOk-tZ-r44" firstAttribute="leading" secondItem="jzE-yH-fpQ" secondAttribute="leading" id="QtE-JM-JSA"/>
-                            <constraint firstAttribute="bottom" secondItem="JEl-4h-7vk" secondAttribute="bottom" id="ciV-I2-5E1"/>
-                            <constraint firstItem="JEl-4h-7vk" firstAttribute="leading" secondItem="jzE-yH-fpQ" secondAttribute="leading" id="ymG-lv-KJo"/>
+                            <constraint firstItem="J2H-B1-zBP" firstAttribute="trailing" secondItem="tOk-tZ-r44" secondAttribute="trailing" id="EJB-k6-f8H"/>
+                            <constraint firstItem="J2H-B1-zBP" firstAttribute="trailing" secondItem="JEl-4h-7vk" secondAttribute="trailing" id="FRf-d7-u9H"/>
+                            <constraint firstAttribute="bottom" secondItem="JEl-4h-7vk" secondAttribute="bottom" id="MFi-dd-fId"/>
+                            <constraint firstAttribute="bottom" secondItem="tOk-tZ-r44" secondAttribute="bottom" id="NSd-bu-gKv"/>
+                            <constraint firstItem="tOk-tZ-r44" firstAttribute="leading" secondItem="J2H-B1-zBP" secondAttribute="leading" id="QtE-JM-JSA"/>
+                            <constraint firstItem="JEl-4h-7vk" firstAttribute="leading" secondItem="J2H-B1-zBP" secondAttribute="leading" id="ymG-lv-KJo"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="zXy-1M-qn0"/>
+                        <viewLayoutGuide key="safeArea" id="J2H-B1-zBP"/>
                     </view>
                     <connections>
                         <outlet property="backgroundImageView" destination="JEl-4h-7vk" id="Hsp-Vo-1tJ"/>
@@ -283,8 +283,8 @@
                         <outlet property="facebookBackgroundView" destination="pSf-1h-XMj" id="Lh0-RV-fre"/>
                         <outlet property="facebookButtonLabel" destination="0Og-aS-Q7d" id="0p2-qT-0BC"/>
                         <outlet property="facebookLogoImageView" destination="sND-Ut-qbd" id="bBs-mV-vjh"/>
-                        <outlet property="gradientView" destination="tOk-tZ-r44" id="eA0-co-Q3R"/>
                         <outlet property="logoImageView" destination="MV4-wB-UF7" id="rl7-H3-6xX"/>
+                        <outlet property="tintView" destination="tOk-tZ-r44" id="Zfe-5r-z8f"/>
                         <outlet property="twitterBackgroundView" destination="5L1-3O-knS" id="JZf-QD-A9V"/>
                         <outlet property="twitterButtonLabel" destination="HZM-0M-MOz" id="XBZ-Uj-c6s"/>
                         <outlet property="twitterLogoImageView" destination="XX0-gJ-6nw" id="KRn-f1-92g"/>
@@ -485,19 +485,19 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RLX-AE-8zK">
-                                        <rect key="frame" x="104.5" y="50" width="165" height="165"/>
+                                        <rect key="frame" x="104.5" y="100" width="165" height="165"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="165" id="F5s-dW-hQs"/>
                                             <constraint firstAttribute="width" constant="165" id="Jsg-pi-NKw"/>
                                         </constraints>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6oj-ln-VhA">
-                                        <rect key="frame" x="20" y="265" width="335" height="50"/>
+                                        <rect key="frame" x="20" y="315" width="335" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kNW-uP-er2">
                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="50"/>
                                             </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RBR-wL-hcg">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flogo-HexRBG-Wht-100" translatesAutoresizingMaskIntoConstraints="NO" id="RBR-wL-hcg">
                                                 <rect key="frame" x="11" y="11" width="28" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="28" id="OFL-Jz-x1T"/>
@@ -535,7 +535,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5DR-fd-X2W">
-                                        <rect key="frame" x="20" y="340" width="335" height="50"/>
+                                        <rect key="frame" x="20" y="390" width="335" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zFB-kG-4IZ">
                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="50"/>
@@ -543,7 +543,7 @@
                                                     <action selector="twitterButtonTapped:" destination="npV-K7-rCn" eventType="touchUpInside" id="Q6g-FR-KJf"/>
                                                 </connections>
                                             </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Z5B-Jy-NZt">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Twitter_Social_Icon_Rounded_Square_White" translatesAutoresizingMaskIntoConstraints="NO" id="Z5B-Jy-NZt">
                                                 <rect key="frame" x="11" y="11" width="28" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="28" id="ebL-da-3Xf"/>
@@ -583,7 +583,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GP7-Em-dqh">
-                                        <rect key="frame" x="20" y="415" width="335" height="50"/>
+                                        <rect key="frame" x="20" y="465" width="335" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tFb-NK-nZ4">
                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="50"/>
@@ -591,7 +591,7 @@
                                                     <action selector="emailButtonTapped:" destination="npV-K7-rCn" eventType="touchUpInside" id="zy7-mx-QxH"/>
                                                 </connections>
                                             </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CBC-3P-FMg">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="email" translatesAutoresizingMaskIntoConstraints="NO" id="CBC-3P-FMg">
                                                 <rect key="frame" x="11" y="11" width="28" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="28" id="PCE-NX-pdD"/>
@@ -630,7 +630,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="joQ-qo-4GS">
-                                        <rect key="frame" x="164.5" y="473" width="46" height="30"/>
+                                        <rect key="frame" x="164.5" y="523" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="loginButtonTapped:" destination="npV-K7-rCn" eventType="touchUpInside" id="Mhe-Ph-BgQ"/>
@@ -639,7 +639,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="RLX-AE-8zK" firstAttribute="top" secondItem="vFT-Bs-HBM" secondAttribute="top" constant="50" id="9bz-4m-7Kd"/>
+                                    <constraint firstItem="RLX-AE-8zK" firstAttribute="top" secondItem="vFT-Bs-HBM" secondAttribute="top" constant="100" id="9bz-4m-7Kd"/>
                                     <constraint firstItem="GP7-Em-dqh" firstAttribute="leading" secondItem="vFT-Bs-HBM" secondAttribute="leading" constant="20" id="Aic-kW-JiG"/>
                                     <constraint firstItem="GP7-Em-dqh" firstAttribute="top" secondItem="5DR-fd-X2W" secondAttribute="bottom" constant="25" id="EEr-ia-Lf8"/>
                                     <constraint firstItem="RLX-AE-8zK" firstAttribute="centerX" secondItem="vFT-Bs-HBM" secondAttribute="centerX" id="Igg-DE-tgQ"/>
@@ -657,16 +657,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ftB-em-Mcc" firstAttribute="leading" secondItem="4Kd-O3-gDb" secondAttribute="leading" id="714-LW-TCn"/>
+                            <constraint firstItem="ftB-em-Mcc" firstAttribute="leading" secondItem="ezp-Q6-B2R" secondAttribute="leading" id="714-LW-TCn"/>
                             <constraint firstAttribute="bottom" secondItem="ftB-em-Mcc" secondAttribute="bottom" id="8OV-Po-gCy"/>
-                            <constraint firstAttribute="trailing" secondItem="vFT-Bs-HBM" secondAttribute="trailing" id="9bv-Wc-hCX"/>
+                            <constraint firstItem="ezp-Q6-B2R" firstAttribute="trailing" secondItem="vFT-Bs-HBM" secondAttribute="trailing" id="9bv-Wc-hCX"/>
                             <constraint firstItem="vFT-Bs-HBM" firstAttribute="top" secondItem="4Kd-O3-gDb" secondAttribute="top" id="CAk-B9-J5O"/>
-                            <constraint firstItem="vFT-Bs-HBM" firstAttribute="leading" secondItem="4Kd-O3-gDb" secondAttribute="leading" id="IMn-CU-BOS"/>
-                            <constraint firstAttribute="trailing" secondItem="ftB-em-Mcc" secondAttribute="trailing" id="N8E-Di-C3W"/>
+                            <constraint firstItem="vFT-Bs-HBM" firstAttribute="leading" secondItem="ezp-Q6-B2R" secondAttribute="leading" id="IMn-CU-BOS"/>
+                            <constraint firstItem="ezp-Q6-B2R" firstAttribute="trailing" secondItem="ftB-em-Mcc" secondAttribute="trailing" id="N8E-Di-C3W"/>
                             <constraint firstAttribute="bottom" secondItem="vFT-Bs-HBM" secondAttribute="bottom" id="W8N-5B-49A"/>
                             <constraint firstItem="ftB-em-Mcc" firstAttribute="top" secondItem="4Kd-O3-gDb" secondAttribute="top" id="Wxy-s4-jQi"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="dFv-uc-FWB"/>
+                        <viewLayoutGuide key="safeArea" id="ezp-Q6-B2R"/>
                     </view>
                     <connections>
                         <outlet property="backgroundImageView" destination="ftB-em-Mcc" id="zx9-IE-nto"/>
@@ -676,9 +676,9 @@
                         <outlet property="facebookBackgroundView" destination="6oj-ln-VhA" id="VPq-Hd-D05"/>
                         <outlet property="facebookButtonLabel" destination="gnK-T6-9qo" id="rB9-2V-LZd"/>
                         <outlet property="facebookLogoImageView" destination="RBR-wL-hcg" id="sSR-l1-TdJ"/>
-                        <outlet property="gradientView" destination="vFT-Bs-HBM" id="G5i-aZ-Ouk"/>
                         <outlet property="loginButton" destination="joQ-qo-4GS" id="e3c-8S-1J8"/>
                         <outlet property="logoImageView" destination="RLX-AE-8zK" id="WLO-uo-MUi"/>
+                        <outlet property="tintView" destination="vFT-Bs-HBM" id="Iaw-QC-GY2"/>
                         <outlet property="twitterBackgroundView" destination="5DR-fd-X2W" id="WJf-jC-tvo"/>
                         <outlet property="twitterButtonLabel" destination="6dc-UD-FHA" id="ID9-iN-yhf"/>
                         <outlet property="twitterLogoImageView" destination="Z5B-Jy-NZt" id="eXC-jO-Vkz"/>
@@ -691,5 +691,9 @@
     </scenes>
     <resources>
         <image name="AwayGameLogo" width="129" height="156"/>
+        <image name="Twitter_Social_Icon_Rounded_Square_White" width="400" height="400"/>
+        <image name="email" width="700" height="700"/>
+        <image name="flogo-HexRBG-Wht-100" width="100" height="100"/>
+        <image name="flogo-HexRBG-Wht-114" width="114" height="114"/>
     </resources>
 </document>

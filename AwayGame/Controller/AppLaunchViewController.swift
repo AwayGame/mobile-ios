@@ -44,8 +44,8 @@ class AppLaunchViewController: UIViewController {
             User.currentUser.uid = Auth.auth().currentUser?.uid
 
             AwayGameAPI.verifyUser(with: User.currentUser)
-            self.proceedToHome()
-                
+            //self.proceedToHome()
+              self.proceedToLogin()
             } else {
                 if UserDefaults.isFirstLaunch() {
                     self.proceedToSignup()

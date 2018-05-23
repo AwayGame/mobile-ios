@@ -15,10 +15,8 @@ protocol LoginToSignupDelegate: class {
 }
 
 class LoginViewController: UIViewController {
-    
-    let gradient = CAGradientLayer()
-    
-    @IBOutlet weak var gradientView: UIView!
+
+    @IBOutlet weak var tintView: UIView!
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var logoImageView: UIImageView!
     
@@ -51,7 +49,6 @@ class LoginViewController: UIViewController {
     }
 
     func setupViews() {
-        gradientView.layer.addSublayer(gradient)
         setupLabels()
         setupImages()
     }
@@ -64,33 +61,49 @@ class LoginViewController: UIViewController {
     }
     
     func setupImages() {
-        //backgroundImageView.image = ...
-        //logoImageView.image = ...
-        //facebookLogoImageView.image = ...
-        //twitterLogoImageView.image = ...
-        //emailLogoImageView.image = ...
+        backgroundImageView.image = #imageLiteral(resourceName: "signup-login background")
+        logoImageView.image = #imageLiteral(resourceName: "AwayGameLogo-Large")
+        facebookLogoImageView.image = #imageLiteral(resourceName: "flogo-HexRBG-Wht-114")
+        twitterLogoImageView.image = #imageLiteral(resourceName: "Twitter_Social_Icon_Rounded_Square_White")
+        emailLogoImageView.image = #imageLiteral(resourceName: "email")
+        emailLogoImageView.tintColor = Theme.Color.white
     }
     
     // MARK: - Styling
     
     func styleViews() {
-        styleGradient()
+        tintView.backgroundColor = Theme.Color.Green.primary
+        tintView.alpha = 0.6
         styleButtons()
     }
     
-    func styleGradient() {
-        gradient.frame = view.frame
-        gradient.colors = [Theme.Color.Gradient.green, Theme.Color.Gradient.blue]
-        gradient.locations = [0.0, 1.0]
+    func styleButtons() {
+        styleFacebookButton()
+        styleTwitterButton()
+        styleEmailButton()
     }
     
-    func styleButtons() {
+    func styleFacebookButton() {
         facebookBackgroundView.backgroundColor = Theme.Color.Login.facebook
-        twitterBackgroundView.backgroundColor = Theme.Color.Login.twitter
-        emailBackgroundView.backgroundColor = Theme.Color.clear
-        emailBackgroundView.layer.borderWidth = 1.0
-        emailBackgroundView.layer.borderColor = Theme.Color.Login.email.cgColor
+        facebookBackgroundView.layer.cornerRadius = 10.0
+        facebookBackgroundView.clipsToBounds = true
     }
+    
+    func styleTwitterButton() {
+        twitterBackgroundView.backgroundColor = Theme.Color.Login.twitter
+        twitterBackgroundView.layer.cornerRadius = 10.0
+        twitterBackgroundView.clipsToBounds = true
+    }
+    
+    func styleEmailButton() {
+        emailBackgroundView.backgroundColor = Theme.Color.clear
+        emailBackgroundView.layer.borderWidth = 2.0
+        emailBackgroundView.layer.borderColor = Theme.Color.Login.email.cgColor
+        emailBackgroundView.layer.cornerRadius = 10.0
+        emailBackgroundView.clipsToBounds = true
+        
+    }
+    
     
     // MARK: - Actions
     
