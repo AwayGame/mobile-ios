@@ -6,49 +6,53 @@
 //  Copyright © 2018 AwayGame. All rights reserved.
 //
 
-import InstantSearch
 import UIKit
 
-class SearchViewController: HitsTableViewController {
-
-    @IBOutlet weak var tableView: HitsTableWidget!
+class SearchViewController: UIViewController {
     
-    fileprivate var gameData: [Game] = []
-    private var cellHeights: [CGFloat] = [100.0, 400.0, 200.0, 50.0]
+    fileprivate var gameData: [Event] = [] {
+        didSet {
+            print(gameData)
+            if gameData.count > 0 {
+                self.performSegue(withIdentifier: "NextButtonSegue", sender: self)
+            }
+        }
+    }
+    
+    @IBOutlet weak var teamNameTextField: UITextField!
+
+    @IBOutlet weak var startTimeTextField: UITextField!
+    
+    @IBOutlet weak var endTimeTextField: UITextField!
+    
     
     // MARK: - Initialization
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        InstantSearch.shared.registerAllWidgets(in: self.view)
-        hitsTableView = tableView
     }
     
     override func viewDidAppear(_ animated: Bool) {
         self.title = "Search for a Game"
         setupNavigation(controller: self.navigationController, hidesBar: false)
     }
-    
-    // MARK: - HitsTableViewController
-    
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath, containing hit: [String : Any]) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "hitCell", for: indexPath)
-        
-        cell.textLabel?.text = hit["name"] as? String
-        
-        return cell
-    }
-    
+
     // MARK: - API
     
-    func findGames() -> [Game] {
+    func findGames() {
         // API Call goes here
-        gameData = [Game(), Game(), Game()]
+        AwayGameAPI.searchForGames(team: teamNameTextField.text ?? "", startDate:
+            startTimeTextField.text ?? "", endDate: endTimeTextField.text ?? "", completion: { events in
+                self.gameData = events
+        })
         
-        return gameData
     }
-
+    
+    
+    @IBAction func nextButtonTapped(_ sender: Any) {
+        findGames()
+    }
+    
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -59,7 +63,10 @@ class SearchViewController: HitsTableViewController {
             // Maybe send date/time info if needed
             
             if let resultsVC = segue.destination as? ResultsTableViewController {
+                print(gameData)
                 resultsVC.resultsData = self.gameData
+                resultsVC.arrivalTime = startTimeTextField.text ?? ""
+                resultsVC.departureTime = endTimeTextField.text ?? ""
             }
             
         }

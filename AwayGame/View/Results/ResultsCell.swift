@@ -12,12 +12,19 @@ class ResultsCell: UITableViewCell {
     
     // MARK: - Initialization
     
+    static let identifier = "ResultsCell"
+    
+    @IBOutlet weak var idLabel: UILabel!
+    @IBOutlet weak var gameLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.selectionStyle = .none
     }
     
-    func configureCell(game: Game?) {
+    func configureCell(event: Event?) {
+        idLabel.text = event?.id ?? ""
+        gameLabel.text = event?.name ?? ""
         
     }
 }
