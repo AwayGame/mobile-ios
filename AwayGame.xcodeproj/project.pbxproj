@@ -58,6 +58,7 @@
 		CBF4139E20A9DF8C0038340F /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4139D20A9DF8C0038340F /* PasswordViewController.swift */; };
 		CBF413A120A9E9500038340F /* EmailLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBF413A020A9E9500038340F /* EmailLogin.storyboard */; };
 		CBF413A520AC82280038340F /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF413A420AC82280038340F /* Trip.swift */; };
+		FE4BB63E20B5C5B100DE8FF5 /* FirebaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4BB63D20B5C5B100DE8FF5 /* FirebaseHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -116,6 +117,7 @@
 		CBF413A020A9E9500038340F /* EmailLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EmailLogin.storyboard; sourceTree = "<group>"; };
 		CBF413A420AC82280038340F /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		FD86D8DB69F99BDD0F42CF35 /* Pods_AwayGame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AwayGame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE4BB63D20B5C5B100DE8FF5 /* FirebaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FirebaseHelper.swift; path = ../../../../../../../../Applications/FirebaseHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -276,6 +278,7 @@
 				CBF4136A20A490160038340F /* NavigationHelper.swift */,
 				CBF4136C20A4942C0038340F /* Info.swift */,
 				CB57BDA220ADE877004FEE89 /* UserDefaults+FirstLaunch.swift */,
+				FE4BB63D20B5C5B100DE8FF5 /* FirebaseHelper.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -578,6 +581,7 @@
 				CB4BB7F020A0F5B100F756D3 /* Itenerary.swift in Sources */,
 				CBF4139C20A9DF820038340F /* EmailViewController.swift in Sources */,
 				CBF4137F20A5F2120038340F /* ResultsCell.swift in Sources */,
+				FE4BB63E20B5C5B100DE8FF5 /* FirebaseHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

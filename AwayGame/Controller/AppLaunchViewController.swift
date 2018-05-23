@@ -24,7 +24,6 @@ class AppLaunchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
 
     func hideAllContainers() {

@@ -19,7 +19,6 @@ final class User: Mappable {
     public var uid: String?
     public var preferences: Preferences?
     public var trips: [Trip]?
-    
     private init() {}
     
     required init?(map: Map) {
@@ -34,7 +33,6 @@ final class User: Mappable {
         preferences <- map["preferences"]
         trips <- map["trips"]
     }
-    
 }
 
 
