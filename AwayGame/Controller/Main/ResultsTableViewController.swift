@@ -10,8 +10,12 @@ import UIKit
 
 class ResultsTableViewController: UITableViewController {
 
-    public var resultsData: [Game?] = [] {
+    public var arrivalTime: String?
+    public var departureTime: String?
+    
+    public var resultsData: [Event?] = [] {
         didSet {
+            print(resultsData)
             tableView.reloadData()
         }
     }
@@ -36,11 +40,21 @@ class ResultsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        if let resultsCell = tableView.dequeueReusableCell(withIdentifier: ResultsCell.identifier, for: indexPath) as? ResultsCell {
+            resultsCell.configureCell(event: resultsData[indexPath.row])
+            return resultsCell
+        }
 
-        // Configure the cell...
-
-        return cell
+        return UITableViewCell()
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        guard let event = resultsData[indexPath.row] else {
+            return
+        }
+        
+        AwayGameAPI.createTrip(event: event, arrival: arrivalTime ?? "", depart: departureTime ?? "", preferences: Preferences())
     }
 
     /*

@@ -12,6 +12,8 @@ import Foundation
 enum Router: URLRequestConvertible {
     
     case verifyUser(parameters: Parameters)
+    case searchForGames(parameters: Parameters)
+    case createTrip(parameters: Parameters)
 
     static let baseURLString = "https://us-central1-awaygame-api.cloudfunctions.net/api"
 
@@ -19,10 +21,10 @@ enum Router: URLRequestConvertible {
         switch self {
         case .verifyUser:
             return .post
-//        case .readUser:
-//            return .get
-//        case .updateUser:
-//            return .put
+        case .searchForGames:
+            return .post
+        case .createTrip:
+            return .post
 //        case .destroyUser:
 //            return .delete
         }
@@ -32,7 +34,12 @@ enum Router: URLRequestConvertible {
         switch self {
         case .verifyUser:
             return "/user/verify"
+        case .searchForGames:
+            return "/ticketmaster/searchForGames"
+        case .createTrip:
+            return "/trip/createTrip"
         }
+        
     }
 
     // MARK: URLRequestConvertible
@@ -45,6 +52,10 @@ enum Router: URLRequestConvertible {
 
         switch self {
         case .verifyUser(let parameters):
+            urlRequest = try URLEncoding.default.encode(urlRequest, with: parameters)
+        case .searchForGames(let parameters):
+            urlRequest = try URLEncoding.default.encode(urlRequest, with: parameters)
+        case .createTrip(let parameters):
             urlRequest = try URLEncoding.default.encode(urlRequest, with: parameters)
         default:
             break

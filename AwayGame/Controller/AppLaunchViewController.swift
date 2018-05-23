@@ -24,7 +24,6 @@ class AppLaunchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
 
     }
 
@@ -38,34 +37,21 @@ class AppLaunchViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         // Login
         handle = Auth.auth().addStateDidChangeListener { (auth, user) in
-            if let user != nil {
-//                self.proceedToHome()
-//
-                let user = User()
-                user.email = Auth.auth().currentUser?.email
-                user.name = Auth.auth().currentUser?.displayName
-                user.uid = Auth.auth().currentUser?.uid
+            if user != nil {
+                
+            User.currentUser.email = Auth.auth().currentUser?.email
+            User.currentUser.name = Auth.auth().currentUser?.displayName
+            User.currentUser.uid = Auth.auth().currentUser?.uid
 
-                let api = AwayGameAPI()
-                api.verifyUser(with: user)
-                
-                
-//                Auth.auth().createUser(withEmail: "blake.swaidner@gmail.com", password: "ABC123", completion: { (user, error) in
-//                    if error != nil {
-//                        print(error)
-//                    } else {
-//                        print(user)
-//                        p
-//                    }
-//                })
-                
+            AwayGameAPI.verifyUser(with: User.currentUser)
+            self.proceedToHome()
                 
             } else {
-//                if UserDefaults.isFirstLaunch() {
-//                    self.proceedToSignup()
-//                } else {
-//                    self.proceedToLogin()
-//                }
+                if UserDefaults.isFirstLaunch() {
+                    self.proceedToSignup()
+                } else {
+                    self.proceedToLogin()
+                }
             }
         }
     }
