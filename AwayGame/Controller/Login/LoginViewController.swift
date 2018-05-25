@@ -7,6 +7,7 @@
 //
 
 import FBSDKCoreKit
+import FBSDKLoginKit
 import FirebaseAuth
 import UIKit
 
@@ -14,12 +15,18 @@ protocol LoginToSignupDelegate: class {
     func didSwitchToSignup()
 }
 
+protocol EmailSignInDelegate: class {
+    func userDidSignIn()
+}
+
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var blurView: UIVisualEffectView!
     @IBOutlet weak var tintView: UIView!
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var logoImageView: UIImageView!
     
+    @IBOutlet weak var facebookLoginButton: FBSDKLoginButton!
     @IBOutlet weak var facebookBackgroundView: UIView!
     @IBOutlet weak var facebookLogoImageView: UIImageView!
     @IBOutlet weak var facebookButtonLabel: UILabel!
@@ -35,15 +42,12 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var createAccountButton: UIButton!
     
     weak var delegate: LoginToSignupDelegate?
+    weak var emailDelegate: EmailSignInDelegate?
     
     // MARK: - Initialization
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if (FBSDKAccessToken.current() != nil) {
-            print("User is logged in")
-        }
-
         setupViews()
         styleViews()
     }
@@ -73,7 +77,11 @@ class LoginViewController: UIViewController {
     
     func styleViews() {
         tintView.backgroundColor = Theme.Color.Green.primary
-        tintView.alpha = 0.6
+        tintView.alpha = 0.63
+        let blur = UIBlurEffect(style: .regular)
+        blurView.effect = blur
+        
+        view.backgroundColor = Theme.Color.Background.darkGray
         styleButtons()
     }
     
@@ -85,13 +93,12 @@ class LoginViewController: UIViewController {
     
     func styleFacebookButton() {
         facebookBackgroundView.backgroundColor = Theme.Color.Login.facebook
-        facebookBackgroundView.layer.cornerRadius = 10.0
-        facebookBackgroundView.clipsToBounds = true
+        facebookBackgroundView.layer.cornerRadius = 5.0
     }
     
     func styleTwitterButton() {
         twitterBackgroundView.backgroundColor = Theme.Color.Login.twitter
-        twitterBackgroundView.layer.cornerRadius = 10.0
+        twitterBackgroundView.layer.cornerRadius = 5.0
         twitterBackgroundView.clipsToBounds = true
     }
     
@@ -99,7 +106,7 @@ class LoginViewController: UIViewController {
         emailBackgroundView.backgroundColor = Theme.Color.clear
         emailBackgroundView.layer.borderWidth = 2.0
         emailBackgroundView.layer.borderColor = Theme.Color.Login.email.cgColor
-        emailBackgroundView.layer.cornerRadius = 10.0
+        emailBackgroundView.layer.cornerRadius = 5.0
         emailBackgroundView.clipsToBounds = true
         
     }
@@ -108,34 +115,18 @@ class LoginViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction func facebookButtonTapped(_ sender: Any) {
+        let login = FBSDKLoginManager()
+        login.logIn(withReadPermissions: ["public_profile"], from: self) { (result, error) in
+            print("logged in with facebook")
+            print(result)
+        }
     }
     
     @IBAction func twitterButtonTapped(_ sender: Any) {
     }
     
     @IBAction func emailButtonTapped(_ sender: Any) {
-        if UserDefaults.standard.bool(forKey: "hasAccount") {
-            if UserDefaults.standard.string(forKey: "accountType") == "email" {
-                performSegue(withIdentifier: "EmailLoginSegue", sender: self)
-            }
-        } else {
-            
-            let email = "anonymoususer123@gmail.com"
-            let password = "12341234"
-            
-            Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
-                
-                if error != nil {
-                    
-                } else {
-                    print("User Signed in.")
-                    
-                }
-                
-            }
-            
-
-        }
+        performSegue(withIdentifier: "EmailLoginSegue", sender: self)
     }
     
     @IBAction func createAccountButtonTapped(_ sender: Any) {
@@ -143,14 +134,26 @@ class LoginViewController: UIViewController {
         print("tapped")
     }
     
-    /*
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "EmailLoginSegue" {
+            if let emailLoginVC = segue.destination as? EmailLoginViewController {
+                emailLoginVC.delegate = self
+            }
+        }
     }
-    */
-
+    
 }
+
+// MARK: - EmailLoginDelegate
+
+extension LoginViewController: EmailLoginDelegate {
+    func userSignedIn() {
+        emailDelegate?.userDidSignIn()
+    }
+}
+
+
+
+

@@ -39,7 +39,7 @@
                                 </connections>
                             </containerView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AwayGameLogo" translatesAutoresizingMaskIntoConstraints="NO" id="OGV-YR-aqM">
-                                <rect key="frame" x="112" y="258" width="150" height="150"/>
+                                <rect key="frame" x="112.5" y="258.5" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="68E-8P-goh"/>
                                     <constraint firstAttribute="height" constant="150" id="JZ6-H4-3xV"/>
@@ -76,6 +76,22 @@
             </objects>
             <point key="canvasLocation" x="-58" y="99"/>
         </scene>
+        <!--EmailLogin-->
+        <scene sceneID="4Yz-NE-7fP">
+            <objects>
+                <viewControllerPlaceholder storyboardName="EmailLogin" id="Gn9-ES-ZjZ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hdd-bv-qrW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-387" y="1340"/>
+        </scene>
+        <!--EmailSignUp-->
+        <scene sceneID="AzD-1Z-ZUd">
+            <objects>
+                <viewControllerPlaceholder storyboardName="EmailSignUp" id="sa0-1B-ESd" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZqY-Ie-L4m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="278" y="1340"/>
+        </scene>
         <!--Login View Controller-->
         <scene sceneID="DfV-kc-ZWr">
             <objects>
@@ -84,9 +100,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JEl-4h-7vk">
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rbD-DZ-oDH">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="uIq-q5-o6p">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="signup-login background" translatesAutoresizingMaskIntoConstraints="NO" id="JEl-4h-7vk">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="JEl-4h-7vk" firstAttribute="leading" secondItem="uIq-q5-o6p" secondAttribute="leading" id="RoG-7c-s1s"/>
+                                        <constraint firstAttribute="bottom" secondItem="JEl-4h-7vk" secondAttribute="bottom" id="caN-pP-23f"/>
+                                        <constraint firstAttribute="trailing" secondItem="JEl-4h-7vk" secondAttribute="trailing" id="dC8-vM-nmX"/>
+                                        <constraint firstItem="JEl-4h-7vk" firstAttribute="top" secondItem="uIq-q5-o6p" secondAttribute="top" id="hPC-2G-6iR"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="regular"/>
+                            </visualEffectView>
+                            <view alpha="0.63" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P5r-RQ-Uxu">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.26301039409999999" green="0.68416878169999995" blue="0.5455814216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tOk-tZ-r44">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
@@ -100,8 +136,11 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pSf-1h-XMj">
                                         <rect key="frame" x="20" y="315" width="335" height="50"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KXD-R2-SyP">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KXD-R2-SyP" customClass="FBSDKLoginButton">
                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="50"/>
+                                                <connections>
+                                                    <action selector="facebookButtonTapped:" destination="dX9-Ru-2li" eventType="touchUpInside" id="exP-5h-Ua5"/>
+                                                </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flogo-HexRBG-Wht-114" translatesAutoresizingMaskIntoConstraints="NO" id="sND-Ut-qbd">
                                                 <rect key="frame" x="11" y="11" width="28" height="28"/>
@@ -243,7 +282,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="pSf-1h-XMj" firstAttribute="top" secondItem="MV4-wB-UF7" secondAttribute="bottom" constant="50" id="2IL-mD-PEh"/>
                                     <constraint firstAttribute="trailing" secondItem="5L1-3O-knS" secondAttribute="trailing" constant="20" id="4HZ-Gh-l6c"/>
@@ -264,30 +303,37 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="tOk-tZ-r44" firstAttribute="top" secondItem="jzE-yH-fpQ" secondAttribute="top" id="0nF-Ka-IYv"/>
-                            <constraint firstItem="JEl-4h-7vk" firstAttribute="top" secondItem="jzE-yH-fpQ" secondAttribute="top" id="8FG-Jx-3Jn"/>
+                            <constraint firstAttribute="bottom" secondItem="rbD-DZ-oDH" secondAttribute="bottom" id="3WV-uk-5fz"/>
+                            <constraint firstItem="rbD-DZ-oDH" firstAttribute="leading" secondItem="J2H-B1-zBP" secondAttribute="leading" id="5CM-41-Glr"/>
                             <constraint firstItem="J2H-B1-zBP" firstAttribute="trailing" secondItem="tOk-tZ-r44" secondAttribute="trailing" id="EJB-k6-f8H"/>
-                            <constraint firstItem="J2H-B1-zBP" firstAttribute="trailing" secondItem="JEl-4h-7vk" secondAttribute="trailing" id="FRf-d7-u9H"/>
-                            <constraint firstAttribute="bottom" secondItem="JEl-4h-7vk" secondAttribute="bottom" id="MFi-dd-fId"/>
                             <constraint firstAttribute="bottom" secondItem="tOk-tZ-r44" secondAttribute="bottom" id="NSd-bu-gKv"/>
+                            <constraint firstItem="P5r-RQ-Uxu" firstAttribute="leading" secondItem="J2H-B1-zBP" secondAttribute="leading" id="PeU-33-SIh"/>
                             <constraint firstItem="tOk-tZ-r44" firstAttribute="leading" secondItem="J2H-B1-zBP" secondAttribute="leading" id="QtE-JM-JSA"/>
-                            <constraint firstItem="JEl-4h-7vk" firstAttribute="leading" secondItem="J2H-B1-zBP" secondAttribute="leading" id="ymG-lv-KJo"/>
+                            <constraint firstAttribute="bottom" secondItem="P5r-RQ-Uxu" secondAttribute="bottom" id="bcb-Ab-xPI"/>
+                            <constraint firstItem="P5r-RQ-Uxu" firstAttribute="trailing" secondItem="J2H-B1-zBP" secondAttribute="trailing" id="bz3-O8-JaY"/>
+                            <constraint firstItem="rbD-DZ-oDH" firstAttribute="top" secondItem="jzE-yH-fpQ" secondAttribute="top" id="cge-26-GYs"/>
+                            <constraint firstItem="J2H-B1-zBP" firstAttribute="trailing" secondItem="rbD-DZ-oDH" secondAttribute="trailing" id="pAF-dE-eqN"/>
+                            <constraint firstItem="P5r-RQ-Uxu" firstAttribute="top" secondItem="jzE-yH-fpQ" secondAttribute="top" id="zIZ-c1-6Qs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="J2H-B1-zBP"/>
                     </view>
                     <connections>
                         <outlet property="backgroundImageView" destination="JEl-4h-7vk" id="Hsp-Vo-1tJ"/>
+                        <outlet property="blurView" destination="rbD-DZ-oDH" id="pSB-81-oQ5"/>
                         <outlet property="createAccountButton" destination="6gw-8r-RX3" id="DXl-Dg-6se"/>
                         <outlet property="emailBackgroundView" destination="HXl-Zo-gWi" id="0aG-LA-QoT"/>
                         <outlet property="emailButtonLabel" destination="5NR-gw-4pG" id="C48-wA-Hd0"/>
                         <outlet property="emailLogoImageView" destination="gS5-mh-jVV" id="Mje-F2-ibj"/>
                         <outlet property="facebookBackgroundView" destination="pSf-1h-XMj" id="Lh0-RV-fre"/>
                         <outlet property="facebookButtonLabel" destination="0Og-aS-Q7d" id="0p2-qT-0BC"/>
+                        <outlet property="facebookLoginButton" destination="KXD-R2-SyP" id="Wp3-l7-b5A"/>
                         <outlet property="facebookLogoImageView" destination="sND-Ut-qbd" id="bBs-mV-vjh"/>
                         <outlet property="logoImageView" destination="MV4-wB-UF7" id="rl7-H3-6xX"/>
-                        <outlet property="tintView" destination="tOk-tZ-r44" id="Zfe-5r-z8f"/>
+                        <outlet property="tintView" destination="P5r-RQ-Uxu" id="A1n-Hr-QgY"/>
                         <outlet property="twitterBackgroundView" destination="5L1-3O-knS" id="JZf-QD-A9V"/>
                         <outlet property="twitterButtonLabel" destination="HZM-0M-MOz" id="XBZ-Uj-c6s"/>
                         <outlet property="twitterLogoImageView" destination="XX0-gJ-6nw" id="KRn-f1-92g"/>
+                        <segue destination="Gn9-ES-ZjZ" kind="presentation" identifier="EmailLoginSegue" id="OIz-EU-0C1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9NM-Xg-H9N" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -481,6 +527,10 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ftB-em-Mcc">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jm8-Xt-A2V">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.26301039409999999" green="0.68416878169999995" blue="0.5455814216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vFT-Bs-HBM">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
@@ -637,7 +687,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="RLX-AE-8zK" firstAttribute="top" secondItem="vFT-Bs-HBM" secondAttribute="top" constant="100" id="9bz-4m-7Kd"/>
                                     <constraint firstItem="GP7-Em-dqh" firstAttribute="leading" secondItem="vFT-Bs-HBM" secondAttribute="leading" constant="20" id="Aic-kW-JiG"/>
@@ -663,8 +713,12 @@
                             <constraint firstItem="vFT-Bs-HBM" firstAttribute="top" secondItem="4Kd-O3-gDb" secondAttribute="top" id="CAk-B9-J5O"/>
                             <constraint firstItem="vFT-Bs-HBM" firstAttribute="leading" secondItem="ezp-Q6-B2R" secondAttribute="leading" id="IMn-CU-BOS"/>
                             <constraint firstItem="ezp-Q6-B2R" firstAttribute="trailing" secondItem="ftB-em-Mcc" secondAttribute="trailing" id="N8E-Di-C3W"/>
+                            <constraint firstItem="jm8-Xt-A2V" firstAttribute="leading" secondItem="ezp-Q6-B2R" secondAttribute="leading" id="Pp2-FC-Tuy"/>
                             <constraint firstAttribute="bottom" secondItem="vFT-Bs-HBM" secondAttribute="bottom" id="W8N-5B-49A"/>
                             <constraint firstItem="ftB-em-Mcc" firstAttribute="top" secondItem="4Kd-O3-gDb" secondAttribute="top" id="Wxy-s4-jQi"/>
+                            <constraint firstAttribute="bottom" secondItem="jm8-Xt-A2V" secondAttribute="bottom" id="mGa-9H-Rvh"/>
+                            <constraint firstItem="jm8-Xt-A2V" firstAttribute="top" secondItem="4Kd-O3-gDb" secondAttribute="top" id="qnf-6p-bMz"/>
+                            <constraint firstItem="jm8-Xt-A2V" firstAttribute="trailing" secondItem="ezp-Q6-B2R" secondAttribute="trailing" id="zab-6K-q7v"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ezp-Q6-B2R"/>
                     </view>
@@ -678,10 +732,11 @@
                         <outlet property="facebookLogoImageView" destination="RBR-wL-hcg" id="sSR-l1-TdJ"/>
                         <outlet property="loginButton" destination="joQ-qo-4GS" id="e3c-8S-1J8"/>
                         <outlet property="logoImageView" destination="RLX-AE-8zK" id="WLO-uo-MUi"/>
-                        <outlet property="tintView" destination="vFT-Bs-HBM" id="Iaw-QC-GY2"/>
+                        <outlet property="tintView" destination="jm8-Xt-A2V" id="gNV-UE-T3o"/>
                         <outlet property="twitterBackgroundView" destination="5DR-fd-X2W" id="WJf-jC-tvo"/>
                         <outlet property="twitterButtonLabel" destination="6dc-UD-FHA" id="ID9-iN-yhf"/>
                         <outlet property="twitterLogoImageView" destination="Z5B-Jy-NZt" id="eXC-jO-Vkz"/>
+                        <segue destination="sa0-1B-ESd" kind="presentation" identifier="EmailSignUpSegue" id="bKS-of-gGu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XWc-gA-CVu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -695,5 +750,6 @@
         <image name="email" width="700" height="700"/>
         <image name="flogo-HexRBG-Wht-100" width="100" height="100"/>
         <image name="flogo-HexRBG-Wht-114" width="114" height="114"/>
+        <image name="signup-login background" width="125" height="271"/>
     </resources>
 </document>

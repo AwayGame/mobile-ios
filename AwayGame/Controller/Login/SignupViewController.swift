@@ -39,11 +39,7 @@ class SignupViewController: UIViewController {
     // MARK: - Initialization
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        if (FBSDKAccessToken.current() != nil) {
-            print("User is logged in")
-        }
-        
+        super.viewDidLoad()        
         setupViews()
         styleViews()
     }
@@ -88,26 +84,43 @@ class SignupViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction func facebookButtonTapped(_ sender: Any) {
+        signupWithFacebook()
     }
     
     @IBAction func twitterButtonTapped(_ sender: Any) {
+        signupWithTwitter()
     }
     
     @IBAction func emailButtonTapped(_ sender: Any) {
-
+        performSegue(withIdentifier: "EmailSignUpSegue", sender: self)
     }
+    
     @IBAction func loginButtonTapped(_ sender: Any) {
         delegate?.didSwitchToLogin()
     }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    // MARK: - Facebook
+    
+    func signupWithFacebook() {
+        
+    }
+    
+    
+    // MARK: - Twitter
+    
+    func signupWithTwitter() {
+        
+    }
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "EmailSignUpSegue" {
+            if let emailNameVC = segue.destination as? EmailNameViewController {
+                // set delegate
+            }
+        }
+    }
+ 
     
 }

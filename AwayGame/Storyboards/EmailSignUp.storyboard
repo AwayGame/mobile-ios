@@ -68,6 +68,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="nextButtonTapped:" destination="sQ6-vf-0OF" eventType="touchUpInside" id="8gr-hS-71u"/>
                                     <segue destination="Ux1-aN-ieG" kind="show" id="ZKq-64-Wis">
                                         <nil key="action"/>
                                     </segue>
@@ -101,6 +102,10 @@
                         <viewLayoutGuide key="safeArea" id="rbz-fC-qOH"/>
                     </view>
                     <navigationItem key="navigationItem" id="aZ6-AD-45s"/>
+                    <connections>
+                        <outlet property="firstNameTextField" destination="UXH-5a-Ell" id="Vwm-wX-EwU"/>
+                        <outlet property="lastNameTextField" destination="ykK-DK-tLt" id="lHI-pd-GTv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Em0-TR-yYF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -145,6 +150,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="nextButtonTapped:" destination="Ux1-aN-ieG" eventType="touchUpInside" id="01C-Xb-NFh"/>
                                     <segue destination="3pf-qj-FZ5" kind="show" id="0Jf-px-hoq">
                                         <nil key="action"/>
                                     </segue>
@@ -168,6 +174,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SHz-2B-M2r"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="Z2T-dL-UL8" id="YuX-qy-yb8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BIw-Hc-vi6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -218,6 +227,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="nextButtonTapped:" destination="3pf-qj-FZ5" eventType="touchUpInside" id="d26-RX-omh"/>
                                     <segue destination="mXT-vo-DZw" kind="show" id="6Bb-6P-5pg">
                                         <nil key="action"/>
                                     </segue>
@@ -245,6 +255,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hA4-4K-Gyr"/>
                     </view>
+                    <connections>
+                        <outlet property="passwordTextField" destination="Vax-ia-SzP" id="pJA-wQ-B1o"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qgz-aj-xOx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

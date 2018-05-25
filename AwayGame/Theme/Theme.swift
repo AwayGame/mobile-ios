@@ -42,7 +42,7 @@ struct Theme {
         }
         
         struct Green {
-            static let primary: UIColor = UIColor(displayP3Red: 115.0/255.0, green: 183.0/255.0, blue: 87.0/255.0, alpha: 1.0)
+            static let primary: UIColor = UIColor(displayP3Red: 80.0/255.0, green: 182.0/255.0, blue: 111.0/255.0, alpha: 1.0)
             static let secondary: UIColor = UIColor(displayP3Red: 115.0/255.0, green: 183.0/255.0, blue: 87.0/255.0, alpha: 1.0)
         }
         
@@ -53,6 +53,7 @@ struct Theme {
         
         struct Background {
             static let primary: UIColor = UIColor(displayP3Red: 252.0/255.0, green: 249.0/255.0, blue: 249.0/255.0, alpha: 1.0)
+            static let darkGray: UIColor = UIColor(displayP3Red: 142.0/255.0, green: 142.0/255.0, blue: 142.0/255.0, alpha: 1.0)
         }
         
         

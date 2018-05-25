@@ -34,6 +34,8 @@
 		CB57BDA320ADE877004FEE89 /* UserDefaults+FirstLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB57BDA220ADE877004FEE89 /* UserDefaults+FirstLaunch.swift */; };
 		CB57BDA620B4F5C8004FEE89 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB57BDA520B4F5C8004FEE89 /* GoogleService-Info.plist */; };
 		CB57BDA820B50530004FEE89 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB57BDA720B50530004FEE89 /* Preferences.swift */; };
+		CBCE1B9620B76B9D0010967E /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCE1B9520B76B9D0010967E /* Settings.swift */; };
+		CBCE1B9820B7D5A40010967E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCE1B9720B7D5A40010967E /* Constants.swift */; };
 		CBF4136B20A490160038340F /* NavigationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4136A20A490160038340F /* NavigationHelper.swift */; };
 		CBF4136D20A4942C0038340F /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4136C20A4942C0038340F /* Info.swift */; };
 		CBF4137020A49A6A0038340F /* SearchTeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4136F20A49A6A0038340F /* SearchTeamCell.swift */; };
@@ -91,6 +93,8 @@
 		CB57BDA220ADE877004FEE89 /* UserDefaults+FirstLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+FirstLaunch.swift"; sourceTree = "<group>"; };
 		CB57BDA520B4F5C8004FEE89 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CB57BDA720B50530004FEE89 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
+		CBCE1B9520B76B9D0010967E /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		CBCE1B9720B7D5A40010967E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CBF4136A20A490160038340F /* NavigationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationHelper.swift; sourceTree = "<group>"; };
 		CBF4136C20A4942C0038340F /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
 		CBF4136F20A49A6A0038340F /* SearchTeamCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTeamCell.swift; sourceTree = "<group>"; };
@@ -176,6 +180,7 @@
 				CB4BB7EE20A0F47F00F756D3 /* Theme */,
 				CBF4136920A490010038340F /* Util */,
 				CB4BB7D620A0DC8E00F756D3 /* AppDelegate.swift */,
+				CBCE1B9720B7D5A40010967E /* Constants.swift */,
 				CB4BB7DD20A0DC8E00F756D3 /* Assets.xcassets */,
 				CB4BB7EB20A0E11100F756D3 /* GoogleService-Info.plist */,
 				CB57BDA520B4F5C8004FEE89 /* GoogleService-Info.plist */,
@@ -187,10 +192,10 @@
 		CB4BB7E820A0DCCA00F756D3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				CBF4139220A9D71B0038340F /* AppLaunchViewController.swift */,
 				CBF4137B20A5EEC70038340F /* Main */,
 				CBF4137C20A5EEE30038340F /* Login */,
 				CBF4139820A9DF370038340F /* EmailSignUp */,
-				CBF4139220A9D71B0038340F /* AppLaunchViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -218,6 +223,7 @@
 				CBF4138C20A9D4160038340F /* User.swift */,
 				CBF4139420A9D8820038340F /* LoginType.swift */,
 				CB57BDA720B50530004FEE89 /* Preferences.swift */,
+				CBCE1B9520B76B9D0010967E /* Settings.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -225,10 +231,11 @@
 		CB4BB7ED20A0F47100F756D3 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				CB4BB7DF20A0DC8E00F756D3 /* LaunchScreen.storyboard */,
 				CBF4138E20A9D60E0038340F /* AppLaunch.storyboard */,
 				CB4BB7DA20A0DC8E00F756D3 /* Main.storyboard */,
-				CBF4139F20A9E9400038340F /* Email */,
-				CB4BB7DF20A0DC8E00F756D3 /* LaunchScreen.storyboard */,
+				CBF4139620A9DE860038340F /* EmailSignUp.storyboard */,
+				CBF413A020A9E9500038340F /* EmailLogin.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -306,8 +313,8 @@
 		CBF4137C20A5EEE30038340F /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				CB4BB7FC20A1099600F756D3 /* LoginViewController.swift */,
 				CB57BDA020ADE2A4004FEE89 /* SignupViewController.swift */,
+				CB4BB7FC20A1099600F756D3 /* LoginViewController.swift */,
 				CB4BB7FE20A109AB00F756D3 /* EmailLoginViewController.swift */,
 			);
 			path = Login;
@@ -348,15 +355,6 @@
 				CBF4139D20A9DF8C0038340F /* PasswordViewController.swift */,
 			);
 			path = EmailSignUp;
-			sourceTree = "<group>";
-		};
-		CBF4139F20A9E9400038340F /* Email */ = {
-			isa = PBXGroup;
-			children = (
-				CBF4139620A9DE860038340F /* EmailSignUp.storyboard */,
-				CBF413A020A9E9500038340F /* EmailLogin.storyboard */,
-			);
-			path = Email;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -540,6 +538,7 @@
 				CB4BB80320A109F100F756D3 /* ResultsTableViewController.swift in Sources */,
 				CB57BDA120ADE2A4004FEE89 /* SignupViewController.swift in Sources */,
 				CBF4138620A9CCFF0038340F /* DiningCollectionViewController.swift in Sources */,
+				CBCE1B9620B76B9D0010967E /* Settings.swift in Sources */,
 				CBF4136D20A4942C0038340F /* Info.swift in Sources */,
 				CBF4138A20A9CD250038340F /* NightlifeCollectionViewController.swift in Sources */,
 				CBF4139E20A9DF8C0038340F /* PasswordViewController.swift in Sources */,
@@ -558,6 +557,7 @@
 				CBF4137A20A5EEBF0038340F /* NoGamesViewController.swift in Sources */,
 				CB57BDA320ADE877004FEE89 /* UserDefaults+FirstLaunch.swift in Sources */,
 				CBF4139520A9D8820038340F /* LoginType.swift in Sources */,
+				CBCE1B9820B7D5A40010967E /* Constants.swift in Sources */,
 				CBF4136B20A490160038340F /* NavigationHelper.swift in Sources */,
 				CB4BB80520A10A0C00F756D3 /* IteneraryTableViewController.swift in Sources */,
 				CBF4138820A9CD150038340F /* ActivitiesCollectionViewController.swift in Sources */,

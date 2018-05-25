@@ -10,6 +10,8 @@ import UIKit
 
 class EmailViewController: UIViewController {
 
+    @IBOutlet weak var emailTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,7 +23,9 @@ class EmailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func nextButtonTapped(_ sender: Any) {
+    }
+    
     /*
     // MARK: - Navigation
 
