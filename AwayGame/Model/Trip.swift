@@ -10,6 +10,6 @@ import Foundation
 
 class Trip {
     
-    public var iteneraries: [Itenerary]?
+    public var iteneraries: [Itinerary]?
     
 }

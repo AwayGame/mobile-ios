@@ -13,7 +13,7 @@ import UIKit
 
 class HomeTableViewController: UITableViewController {
 
-    private var iteneraryData: [[Itenerary]] = [[], []] {
+    private var ItineraryData: [[Itinerary]] = [[], []] {
         didSet {
             tableView.reloadData()
         }
@@ -89,9 +89,9 @@ class HomeTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
             case 2:
-                return iteneraryData[0].count
+                return ItineraryData[0].count
             case 4:
-                return iteneraryData[1].count
+                return ItineraryData[1].count
             default:
                 return 1
         }

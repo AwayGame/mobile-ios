@@ -1,5 +1,5 @@
 //
-//  Itenerary.swift
+//  Itinerary.swift
 //  AwayGame
 //
 //  Created by Blake Swaidner on 5/7/18.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Itenerary {
+class Itinerary {
     
     public var activities: [Activity]?
 
