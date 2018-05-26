@@ -8,14 +8,17 @@
 
 import FBSDKCoreKit
 import FBSDKLoginKit
+import Firebase
 import FirebaseAuth
+import TwitterKit
+import TwitterCore
 import UIKit
 
 protocol LoginToSignupDelegate: class {
     func didSwitchToSignup()
 }
 
-protocol EmailSignInDelegate: class {
+protocol SignInDelegate: class {
     func userDidSignIn()
 }
 
@@ -42,7 +45,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var createAccountButton: UIButton!
     
     weak var delegate: LoginToSignupDelegate?
-    weak var emailDelegate: EmailSignInDelegate?
+    weak var signInDelegate: SignInDelegate?
     
     // MARK: - Initialization
     
@@ -50,6 +53,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         setupViews()
         styleViews()
+        facebookLoginButton.delegate = self
     }
 
     func setupViews() {
@@ -80,8 +84,12 @@ class LoginViewController: UIViewController {
         tintView.alpha = 0.63
         let blur = UIBlurEffect(style: .regular)
         blurView.effect = blur
-        
         view.backgroundColor = Theme.Color.Background.darkGray
+        
+        facebookButtonLabel.font = Theme.Font.h1
+        twitterButtonLabel.font = Theme.Font.h1
+        emailButtonLabel.font = Theme.Font.h1
+
         styleButtons()
     }
     
@@ -115,14 +123,28 @@ class LoginViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction func facebookButtonTapped(_ sender: Any) {
-        let login = FBSDKLoginManager()
-        login.logIn(withReadPermissions: ["public_profile"], from: self) { (result, error) in
-            print("logged in with facebook")
-            print(result)
-        }
+        print("facebook tapped")
     }
     
     @IBAction func twitterButtonTapped(_ sender: Any) {
+        
+        Twitter.sharedInstance().logIn { (session, error) in
+    
+            if (session != nil) {
+                print("signed in as \(session?.userName)");
+                let client = TWTRAPIClient.withCurrentUser()
+                
+                client.requestEmail { email, error in
+                    if (email != nil) {
+                        print("signed in as \(session?.userName)");
+                    } else {
+                        print("error: \(error?.localizedDescription)");
+                    }
+                }
+            } else {
+                print("error: \(error?.localizedDescription)");
+            }
+        }
     }
     
     @IBAction func emailButtonTapped(_ sender: Any) {
@@ -149,11 +171,38 @@ class LoginViewController: UIViewController {
 // MARK: - EmailLoginDelegate
 
 extension LoginViewController: EmailLoginDelegate {
+    
     func userSignedIn() {
-        emailDelegate?.userDidSignIn()
+        signInDelegate?.userDidSignIn()
     }
+    
 }
 
+// MARK: - FBSDKLoginButtonDelegate
 
-
-
+extension LoginViewController: FBSDKLoginButtonDelegate {
+    
+    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
+        
+    }
+    
+    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+        if let error = error {
+            print(error.localizedDescription)
+            return
+        }
+        let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+        
+        Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            print("User signed in")
+            self.signInDelegate?.userDidSignIn()
+        }
+        
+        
+    }
+    
+}

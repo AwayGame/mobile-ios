@@ -93,7 +93,7 @@ class AppLaunchViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "LoginEmbedSegue", let loginVC = segue.destination as? LoginViewController  {
             loginVC.delegate = self
-            loginVC.emailDelegate = self
+            loginVC.signInDelegate = self
         }
         
         if segue.identifier == "SignupEmbedSegue", let signupVC = segue.destination as? SignupViewController  {
@@ -121,7 +121,7 @@ extension AppLaunchViewController: SignupToLoginDelegate {
 
 // MARK: - EmailSignInDelegate
 
-extension AppLaunchViewController: EmailSignInDelegate {
+extension AppLaunchViewController: SignInDelegate {
     func userDidSignIn() {
         proceedToDashboard()
     }

@@ -18,7 +18,7 @@ struct Theme {
         // TODO: Filler fonts
         
         static let title: UIFont = UIFont.systemFont(ofSize: 24, weight: UIFont.Weight.bold)
-        static let h1: UIFont = UIFont.systemFont(ofSize: 24, weight: UIFont.Weight.medium)
+        static let h1: UIFont = UIFont(name: "DINAlternate-Bold", size: 16)!
         static let h2: UIFont = UIFont.systemFont(ofSize: 18, weight: UIFont.Weight.bold)
         static let body: UIFont = UIFont.systemFont(ofSize: 18, weight: UIFont.Weight.light)
         

@@ -10,4 +10,9 @@ import Foundation
 
 class Preferences {
     
+    public var group: [String?] = []
+    public var food: [String?] = []
+    public var interests: [String?] = []
+    public var nightlife: [String?] = []
+
 }
