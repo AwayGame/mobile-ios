@@ -67,7 +67,7 @@ class InterestsCollectionViewController: UICollectionViewController {
 
 // MARK: - UICollectionViewDelegateFlowLayout
 
-extension FoodCollectionViewController: UICollectionViewDelegateFlowLayout {
+extension InterestsCollectionViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if indexPath.section == 0 {

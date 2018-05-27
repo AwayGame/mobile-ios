@@ -6,8 +6,11 @@
 //  Copyright © 2018 AwayGame. All rights reserved.
 //
 
-import FBSDKCoreKit
+import FBSDKLoginKit
+import Firebase
 import FirebaseAuth
+import TwitterKit
+import TwitterCore
 import UIKit
 
 protocol SignupToLoginDelegate: class {

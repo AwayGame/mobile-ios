@@ -7,9 +7,14 @@
 //  Copyright © 2018 AwayGame. All rights reserved.
 //
 
+import FBSDKLoginKit
 import FirebaseAuth
 import MessageUI
 import UIKit
+
+protocol HomeDelegate: class {
+    func userDidLogout()
+}
 
 class HomeTableViewController: UITableViewController {
 
@@ -19,10 +24,11 @@ class HomeTableViewController: UITableViewController {
         }
     }
     
+    weak var delegate: HomeDelegate?
+    
     override func viewDidAppear(_ animated: Bool) {
         self.title = "AwayGame"
         setupNavigation(controller: self.navigationController, hidesBar: false)
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(supportTapped))
     }
     
     override func viewDidLoad() {
@@ -74,12 +80,14 @@ class HomeTableViewController: UITableViewController {
             
         } else if indexPath.section == 5 {
             if let sectionHeaderCell = tableView.dequeueReusableCell(withIdentifier: SectionHeaderCell.identifier, for: indexPath) as? SectionHeaderCell {
-                sectionHeaderCell.configureCell(text: "Settings")
+                sectionHeaderCell.configureCell(text: "More")
                 return sectionHeaderCell
             }
         } else if indexPath.section == 6 {
-            if let settingsCell = tableView.dequeueReusableCell(withIdentifier: SettingsCell.identifier, for: indexPath) as? SettingsCell {
-                return settingsCell
+            if let moreCell = tableView.dequeueReusableCell(withIdentifier: MoreCell.identifier, for: indexPath) as? MoreCell {
+                moreCell.configureCell()
+                moreCell.delegate = self
+                return moreCell
             }
         }
         
@@ -135,15 +143,6 @@ class HomeTableViewController: UITableViewController {
         }
     }
     
-    @objc func supportTapped() {
-        let alertController = UIAlertController(title: "Contact Support", message: "Send an email to AwayGame support, we'll get back to you ASAP", preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        alertController.addAction(UIAlertAction(title: "Send Email", style: .default, handler: { (alert) in
-                self.sendEmail()
-        }))
-        present(alertController, animated: true, completion: nil)
-    }
-    
     // MARK: - Email
     
     func sendEmail() {
@@ -172,7 +171,11 @@ class HomeTableViewController: UITableViewController {
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-       // Pass data if needed
+       if segue.identifier == "SettingsSegue" {
+            if let settingsVC = segue.destination as? SettingsViewController {
+                settingsVC.delegate = self
+            }
+        }
     }
         
 }
@@ -190,5 +193,41 @@ extension HomeTableViewController: CreateTripDelegate {
 // MARK: - MFMailComposeViewControllerDelegate
 
 extension HomeTableViewController: MFMailComposeViewControllerDelegate {
+    
+}
+
+// MARK: - MoreCellDelegate
+
+extension HomeTableViewController: MoreCellDelegate {
+    func supportTapped() {
+        let alertController = UIAlertController(title: "Contact Support", message: "Send an email to AwayGame support, we'll get back to you ASAP", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alertController.addAction(UIAlertAction(title: "Send Email", style: .default, handler: { (alert) in
+            self.sendEmail()
+        }))
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    func settingsTapped() {
+        performSegue(withIdentifier: "SettingsSegue", sender: self)
+    }
+
+}
+
+// MARK: - SettingsDelegate
+
+extension HomeTableViewController: SettingsDelegate {
+    
+    func userDidLogout() {
+        delegate?.userDidLogout()
+        // Put this in FirebaseHelper
+        do {
+            try Auth.auth().signOut()
+            FBSDKLoginManager.init().logOut()
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
+        print("USER LOGGED OUT.")
+    }
     
 }

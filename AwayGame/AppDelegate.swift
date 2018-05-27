@@ -30,12 +30,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: - Facebook/Twitter
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-        if url.absoluteString == "" {
+        if url.absoluteString.lowercased().range(of: "fb") != nil {
             let handled: Bool = FBSDKApplicationDelegate.sharedInstance().application(app, open: url, sourceApplication: options[.sourceApplication] as? String, annotation: options[.annotation])
             return handled
-        } else {
+        } else if url.absoluteString.lowercased().range(of: "twitter") != nil {
             return Twitter.sharedInstance().application(app, open: url, options: options)
         }
+        return false
     }
     
     func applicationWillResignActive(_ application: UIApplication) {

@@ -467,13 +467,46 @@
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SettingsCell" rowHeight="120" id="LXj-1O-t3X" customClass="SettingsCell" customModule="AwayGame" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MoreCell" rowHeight="120" id="LXj-1O-t3X" customClass="MoreCell" customModule="AwayGame" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="359" width="375" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LXj-1O-t3X" id="iAk-CY-Ijf">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="SDW-Pn-dNA">
+                                            <rect key="frame" x="20" y="20" width="335" height="79.5"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wd1-PG-5c7">
+                                                    <rect key="frame" x="0.0" y="0.0" width="157.5" height="79.5"/>
+                                                    <color key="backgroundColor" red="0.94791666666666663" green="0.94076797387777789" blue="0.93853081597222221" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <connections>
+                                                        <action selector="supportButtonTapped:" destination="LXj-1O-t3X" eventType="touchUpInside" id="4mY-se-Pe1"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kqM-Zv-8YB">
+                                                    <rect key="frame" x="177.5" y="0.0" width="157.5" height="79.5"/>
+                                                    <color key="backgroundColor" red="0.94791666666666663" green="0.94076797387777789" blue="0.93853081597222221" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <connections>
+                                                        <action selector="settingsButtonTapped:" destination="LXj-1O-t3X" eventType="touchUpInside" id="5o5-NM-d02"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="SDW-Pn-dNA" secondAttribute="bottom" constant="20" id="0qo-xi-NCr"/>
+                                        <constraint firstAttribute="trailing" secondItem="SDW-Pn-dNA" secondAttribute="trailing" constant="20" id="kus-da-TJl"/>
+                                        <constraint firstItem="SDW-Pn-dNA" firstAttribute="leading" secondItem="iAk-CY-Ijf" secondAttribute="leading" constant="20" id="qqA-aF-KOh"/>
+                                        <constraint firstItem="SDW-Pn-dNA" firstAttribute="top" secondItem="iAk-CY-Ijf" secondAttribute="top" constant="20" id="wDO-bf-dbe"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="settingsButton" destination="kqM-Zv-8YB" id="yAR-eT-Jkd"/>
+                                    <outlet property="supportButton" destination="Wd1-PG-5c7" id="cfU-kn-sWa"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -484,11 +517,20 @@
                     <navigationItem key="navigationItem" id="I9Y-90-YAR"/>
                     <connections>
                         <segue destination="ZkY-Aq-Qhd" kind="show" identifier="CreateTripSegue" id="But-rQ-TSs"/>
+                        <segue destination="dNN-vZ-kqS" kind="show" identifier="SettingsSegue" id="rv6-Fy-DqW"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3GZ-eL-hzD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1586" y="99"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="4Ef-sS-4ut">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Settings" id="dNN-vZ-kqS" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jTp-C6-1ia" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1585" y="548"/>
         </scene>
         <!--Main-->
         <scene sceneID="e1f-ZZ-1Z1">

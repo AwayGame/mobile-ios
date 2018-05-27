@@ -24,11 +24,6 @@ class AppLaunchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        do {
-            try Auth.auth().signOut()
-        } catch {
-            
-        }
 
     }
 
@@ -44,12 +39,14 @@ class AppLaunchViewController: UIViewController {
         // Firebase Login Listener
         handle = Auth.auth().addStateDidChangeListener { (auth, user) in
             if user != nil {
+                
                 User.currentUser.email = Auth.auth().currentUser?.email
                 User.currentUser.name = Auth.auth().currentUser?.displayName
                 User.currentUser.uid = Auth.auth().currentUser?.uid
-                
                 AwayGameAPI.verifyUser(with: User.currentUser)
+                
                 self.proceedToDashboard()
+                
             } else {
                 if UserDefaults.isFirstLaunch() {
                     self.proceedToSignup()
@@ -124,5 +121,13 @@ extension AppLaunchViewController: SignupToLoginDelegate {
 extension AppLaunchViewController: SignInDelegate {
     func userDidSignIn() {
         proceedToDashboard()
+    }
+}
+
+// MARK: - HomeDelegate
+
+extension AppLaunchViewController: HomeDelegate {
+    func userDidLogout() {
+        proceedToLogin()
     }
 }

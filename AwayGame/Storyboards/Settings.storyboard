@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pWo-hp-QlH">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Settings View Controller-->
+        <scene sceneID="Zb9-sl-mkt">
+            <objects>
+                <viewController id="pWo-hp-QlH" customClass="SettingsViewController" customModule="AwayGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VRR-bj-GQf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UvE-Pn-Hsj">
+                                <rect key="frame" x="166" y="120" width="42" height="30"/>
+                                <state key="normal" title="About"/>
+                                <connections>
+                                    <action selector="aboutTapped:" destination="pWo-hp-QlH" eventType="touchUpInside" id="BGY-ai-IyF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MzP-27-ugU">
+                                <rect key="frame" x="140" y="250" width="94" height="30"/>
+                                <state key="normal" title="awaygame.co"/>
+                                <connections>
+                                    <action selector="websiteTapped:" destination="pWo-hp-QlH" eventType="touchUpInside" id="qOW-YL-Unu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WEj-Rw-rNW">
+                                <rect key="frame" x="163" y="380" width="48" height="30"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logoutTapped:" destination="pWo-hp-QlH" eventType="touchUpInside" id="Nay-a4-KPb"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8A2-ws-Wg2">
+                                <rect key="frame" x="166.5" y="510" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="MzP-27-ugU" firstAttribute="top" secondItem="UvE-Pn-Hsj" secondAttribute="bottom" constant="100" id="74G-5W-K8f"/>
+                            <constraint firstItem="UvE-Pn-Hsj" firstAttribute="top" secondItem="mWd-YN-asx" secondAttribute="top" constant="100" id="HfM-Vr-uSa"/>
+                            <constraint firstItem="MzP-27-ugU" firstAttribute="centerX" secondItem="VRR-bj-GQf" secondAttribute="centerX" id="IQ3-wL-ltN"/>
+                            <constraint firstItem="WEj-Rw-rNW" firstAttribute="centerX" secondItem="VRR-bj-GQf" secondAttribute="centerX" id="WoE-pC-Dvl"/>
+                            <constraint firstItem="8A2-ws-Wg2" firstAttribute="centerX" secondItem="VRR-bj-GQf" secondAttribute="centerX" id="eGh-br-VeQ"/>
+                            <constraint firstItem="8A2-ws-Wg2" firstAttribute="top" secondItem="WEj-Rw-rNW" secondAttribute="bottom" constant="100" id="iDs-75-6sE"/>
+                            <constraint firstItem="UvE-Pn-Hsj" firstAttribute="centerX" secondItem="VRR-bj-GQf" secondAttribute="centerX" id="sRx-IP-6oU"/>
+                            <constraint firstItem="WEj-Rw-rNW" firstAttribute="top" secondItem="MzP-27-ugU" secondAttribute="bottom" constant="100" id="wds-vQ-WEc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mWd-YN-asx"/>
+                    </view>
+                    <connections>
+                        <outlet property="aboutButton" destination="UvE-Pn-Hsj" id="Nrz-Dj-uDU"/>
+                        <outlet property="copyrightLabel" destination="8A2-ws-Wg2" id="2fO-nx-bQo"/>
+                        <outlet property="logoutButton" destination="WEj-Rw-rNW" id="Ls8-pa-xbW"/>
+                        <outlet property="websiteButton" destination="MzP-27-ugU" id="oxd-RB-ARD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b9r-72-hno" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1585" y="837"/>
+        </scene>
+    </scenes>
+</document>

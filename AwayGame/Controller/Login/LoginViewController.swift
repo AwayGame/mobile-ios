@@ -191,6 +191,9 @@ extension LoginViewController: FBSDKLoginButtonDelegate {
             print(error.localizedDescription)
             return
         }
+        
+        // TODO: - Error when user taps cancel on facebook button
+        
         let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
         
         Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
@@ -201,8 +204,6 @@ extension LoginViewController: FBSDKLoginButtonDelegate {
             print("User signed in")
             self.signInDelegate?.userDidSignIn()
         }
-        
-        
     }
     
 }
