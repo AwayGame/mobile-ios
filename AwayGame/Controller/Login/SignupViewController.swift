@@ -6,8 +6,11 @@
 //  Copyright © 2018 AwayGame. All rights reserved.
 //
 
-import FBSDKCoreKit
+import FBSDKLoginKit
+import Firebase
 import FirebaseAuth
+import TwitterKit
+import TwitterCore
 import UIKit
 
 protocol SignupToLoginDelegate: class {
@@ -16,9 +19,7 @@ protocol SignupToLoginDelegate: class {
 
 class SignupViewController: UIViewController {
     
-    let gradient = CAGradientLayer()
-    
-    @IBOutlet weak var gradientView: UIView!
+    @IBOutlet weak var tintView: UIView!
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var logoImageView: UIImageView!
     
@@ -41,17 +42,12 @@ class SignupViewController: UIViewController {
     // MARK: - Initialization
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        if (FBSDKAccessToken.current() != nil) {
-            print("User is logged in")
-        }
-        
+        super.viewDidLoad()        
         setupViews()
         styleViews()
     }
     
     func setupViews() {
-        gradientView.layer.addSublayer(gradient)
         setupLabels()
         setupImages()
     }
@@ -64,26 +60,22 @@ class SignupViewController: UIViewController {
     }
     
     func setupImages() {
-        //backgroundImageView.image = ...
-        //logoImageView.image = ...
-        //facebookLogoImageView.image = ...
-        //twitterLogoImageView.image = ...
-        //emailLogoImageView.image = ...
+        backgroundImageView.image = #imageLiteral(resourceName: "signup-login background")
+        logoImageView.image = #imageLiteral(resourceName: "AwayGameLogo-Large")
+        facebookLogoImageView.image = #imageLiteral(resourceName: "flogo-HexRBG-Wht-114")
+        twitterLogoImageView.image = #imageLiteral(resourceName: "Twitter_Social_Icon_Rounded_Square_White")
+        emailLogoImageView.image = #imageLiteral(resourceName: "email")
+        emailLogoImageView.tintColor = Theme.Color.white
     }
     
     // MARK: - Styling
     
     func styleViews() {
-        styleGradient()
+        tintView.backgroundColor = Theme.Color.Green.primary
+        tintView.alpha = 0.6
         styleButtons()
     }
-    
-    func styleGradient() {
-        gradient.frame = view.frame
-        gradient.colors = [Theme.Color.Gradient.green, Theme.Color.Gradient.blue]
-        gradient.locations = [0.0, 1.0]
-    }
-    
+
     func styleButtons() {
         facebookBackgroundView.backgroundColor = Theme.Color.Login.facebook
         twitterBackgroundView.backgroundColor = Theme.Color.Login.twitter
@@ -95,26 +87,43 @@ class SignupViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction func facebookButtonTapped(_ sender: Any) {
+        signupWithFacebook()
     }
     
     @IBAction func twitterButtonTapped(_ sender: Any) {
+        signupWithTwitter()
     }
     
     @IBAction func emailButtonTapped(_ sender: Any) {
-
+        performSegue(withIdentifier: "EmailSignUpSegue", sender: self)
     }
+    
     @IBAction func loginButtonTapped(_ sender: Any) {
         delegate?.didSwitchToLogin()
     }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    // MARK: - Facebook
+    
+    func signupWithFacebook() {
+        
+    }
+    
+    
+    // MARK: - Twitter
+    
+    func signupWithTwitter() {
+        
+    }
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "EmailSignUpSegue" {
+            if let emailNameVC = segue.destination as? EmailNameViewController {
+                // set delegate
+            }
+        }
+    }
+ 
     
 }

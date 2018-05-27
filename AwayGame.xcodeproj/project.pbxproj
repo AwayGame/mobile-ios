@@ -14,7 +14,7 @@
 		CB4BB7DE20A0DC8E00F756D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB4BB7DD20A0DC8E00F756D3 /* Assets.xcassets */; };
 		CB4BB7E120A0DC8E00F756D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB4BB7DF20A0DC8E00F756D3 /* LaunchScreen.storyboard */; };
 		CB4BB7EC20A0E11100F756D3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB4BB7EB20A0E11100F756D3 /* GoogleService-Info.plist */; };
-		CB4BB7F020A0F5B100F756D3 /* Itenerary.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BB7EF20A0F5B100F756D3 /* Itenerary.swift */; };
+		CB4BB7F020A0F5B100F756D3 /* Itinerary.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BB7EF20A0F5B100F756D3 /* Itinerary.swift */; };
 		CB4BB7F220A0F5DA00F756D3 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BB7F120A0F5DA00F756D3 /* Activity.swift */; };
 		CB4BB7F420A1042B00F756D3 /* CreateTripCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BB7F320A1042B00F756D3 /* CreateTripCell.swift */; };
 		CB4BB7F620A1046900F756D3 /* SavedTripsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BB7F520A1046900F756D3 /* SavedTripsCell.swift */; };
@@ -22,18 +22,24 @@
 		CB4BB7FF20A109AC00F756D3 /* EmailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BB7FE20A109AB00F756D3 /* EmailLoginViewController.swift */; };
 		CB4BB80120A109D600F756D3 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BB80020A109D600F756D3 /* SearchViewController.swift */; };
 		CB4BB80320A109F100F756D3 /* ResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BB80220A109F100F756D3 /* ResultsTableViewController.swift */; };
-		CB4BB80520A10A0C00F756D3 /* IteneraryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BB80420A10A0C00F756D3 /* IteneraryTableViewController.swift */; };
+		CB4BB80520A10A0C00F756D3 /* ItineraryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BB80420A10A0C00F756D3 /* ItineraryTableViewController.swift */; };
 		CB4BB80820A10A4D00F756D3 /* UberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BB80720A10A4D00F756D3 /* UberCell.swift */; };
 		CB4BB80A20A10A6800F756D3 /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BB80920A10A6800F756D3 /* ActivityCell.swift */; };
 		CB4BB81320A207EF00F756D3 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BB81220A207EF00F756D3 /* Theme.swift */; };
 		CB57BD9920AC943A004FEE89 /* SectionHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB57BD9820AC943A004FEE89 /* SectionHeaderCell.swift */; };
-		CB57BD9B20AC97DA004FEE89 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB57BD9A20AC97DA004FEE89 /* SettingsCell.swift */; };
+		CB57BD9B20AC97DA004FEE89 /* MoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB57BD9A20AC97DA004FEE89 /* MoreCell.swift */; };
 		CB57BD9D20ACA354004FEE89 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB57BD9C20ACA354004FEE89 /* Router.swift */; };
 		CB57BD9F20ACA36C004FEE89 /* AwayGameAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB57BD9E20ACA36C004FEE89 /* AwayGameAPI.swift */; };
 		CB57BDA120ADE2A4004FEE89 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB57BDA020ADE2A4004FEE89 /* SignupViewController.swift */; };
 		CB57BDA320ADE877004FEE89 /* UserDefaults+FirstLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB57BDA220ADE877004FEE89 /* UserDefaults+FirstLaunch.swift */; };
 		CB57BDA620B4F5C8004FEE89 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB57BDA520B4F5C8004FEE89 /* GoogleService-Info.plist */; };
 		CB57BDA820B50530004FEE89 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB57BDA720B50530004FEE89 /* Preferences.swift */; };
+		CBCE1B9620B76B9D0010967E /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCE1B9520B76B9D0010967E /* Settings.swift */; };
+		CBCE1B9820B7D5A40010967E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCE1B9720B7D5A40010967E /* Constants.swift */; };
+		CBCE1B9B20B9162C0010967E /* GroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCE1B9A20B9162C0010967E /* GroupTableViewController.swift */; };
+		CBCE1B9D20B91CB50010967E /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCE1B9C20B91CB50010967E /* GroupTableViewCell.swift */; };
+		CBCE1B9F20BA5A4D0010967E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCE1B9E20BA5A4D0010967E /* SettingsViewController.swift */; };
+		CBCE1BA120BA5A840010967E /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBCE1BA020BA5A840010967E /* Settings.storyboard */; };
 		CBF4136B20A490160038340F /* NavigationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4136A20A490160038340F /* NavigationHelper.swift */; };
 		CBF4136D20A4942C0038340F /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4136C20A4942C0038340F /* Info.swift */; };
 		CBF4137020A49A6A0038340F /* SearchTeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4136F20A49A6A0038340F /* SearchTeamCell.swift */; };
@@ -41,12 +47,10 @@
 		CBF4137420A49E5E0038340F /* ArrivalDepartureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4137320A49E5E0038340F /* ArrivalDepartureCell.swift */; };
 		CBF4137620A4BFBC0038340F /* NextButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4137520A4BFBC0038340F /* NextButtonCell.swift */; };
 		CBF4137820A5ED500038340F /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4137720A5ED500038340F /* Event.swift */; };
-		CBF4137A20A5EEBF0038340F /* NoGamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4137920A5EEBF0038340F /* NoGamesViewController.swift */; };
 		CBF4137F20A5F2120038340F /* ResultsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4137E20A5F2120038340F /* ResultsCell.swift */; };
 		CBF4138220A9CCBC0038340F /* PreferenceCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4138120A9CCBC0038340F /* PreferenceCollectionCell.swift */; };
-		CBF4138420A9CCEF0038340F /* GroupCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4138320A9CCEF0038340F /* GroupCollectionViewController.swift */; };
-		CBF4138620A9CCFF0038340F /* DiningCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4138520A9CCFF0038340F /* DiningCollectionViewController.swift */; };
-		CBF4138820A9CD150038340F /* ActivitiesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4138720A9CD150038340F /* ActivitiesCollectionViewController.swift */; };
+		CBF4138620A9CCFF0038340F /* FoodCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4138520A9CCFF0038340F /* FoodCollectionViewController.swift */; };
+		CBF4138820A9CD150038340F /* InterestsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4138720A9CD150038340F /* InterestsCollectionViewController.swift */; };
 		CBF4138A20A9CD250038340F /* NightlifeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4138920A9CD250038340F /* NightlifeCollectionViewController.swift */; };
 		CBF4138D20A9D4160038340F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4138C20A9D4160038340F /* User.swift */; };
 		CBF4138F20A9D60E0038340F /* AppLaunch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBF4138E20A9D60E0038340F /* AppLaunch.storyboard */; };
@@ -71,7 +75,7 @@
 		CB4BB7E020A0DC8E00F756D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CB4BB7E220A0DC8E00F756D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB4BB7EB20A0E11100F756D3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		CB4BB7EF20A0F5B100F756D3 /* Itenerary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Itenerary.swift; sourceTree = "<group>"; };
+		CB4BB7EF20A0F5B100F756D3 /* Itinerary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Itinerary.swift; sourceTree = "<group>"; };
 		CB4BB7F120A0F5DA00F756D3 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		CB4BB7F320A1042B00F756D3 /* CreateTripCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTripCell.swift; sourceTree = "<group>"; };
 		CB4BB7F520A1046900F756D3 /* SavedTripsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedTripsCell.swift; sourceTree = "<group>"; };
@@ -79,18 +83,24 @@
 		CB4BB7FE20A109AB00F756D3 /* EmailLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginViewController.swift; sourceTree = "<group>"; };
 		CB4BB80020A109D600F756D3 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		CB4BB80220A109F100F756D3 /* ResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsTableViewController.swift; sourceTree = "<group>"; };
-		CB4BB80420A10A0C00F756D3 /* IteneraryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IteneraryTableViewController.swift; sourceTree = "<group>"; };
+		CB4BB80420A10A0C00F756D3 /* ItineraryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItineraryTableViewController.swift; sourceTree = "<group>"; };
 		CB4BB80720A10A4D00F756D3 /* UberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UberCell.swift; sourceTree = "<group>"; };
 		CB4BB80920A10A6800F756D3 /* ActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
 		CB4BB81220A207EF00F756D3 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		CB57BD9820AC943A004FEE89 /* SectionHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderCell.swift; sourceTree = "<group>"; };
-		CB57BD9A20AC97DA004FEE89 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
+		CB57BD9A20AC97DA004FEE89 /* MoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreCell.swift; sourceTree = "<group>"; };
 		CB57BD9C20ACA354004FEE89 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		CB57BD9E20ACA36C004FEE89 /* AwayGameAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwayGameAPI.swift; sourceTree = "<group>"; };
 		CB57BDA020ADE2A4004FEE89 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		CB57BDA220ADE877004FEE89 /* UserDefaults+FirstLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+FirstLaunch.swift"; sourceTree = "<group>"; };
 		CB57BDA520B4F5C8004FEE89 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CB57BDA720B50530004FEE89 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
+		CBCE1B9520B76B9D0010967E /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		CBCE1B9720B7D5A40010967E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		CBCE1B9A20B9162C0010967E /* GroupTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewController.swift; sourceTree = "<group>"; };
+		CBCE1B9C20B91CB50010967E /* GroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
+		CBCE1B9E20BA5A4D0010967E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		CBCE1BA020BA5A840010967E /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		CBF4136A20A490160038340F /* NavigationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationHelper.swift; sourceTree = "<group>"; };
 		CBF4136C20A4942C0038340F /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
 		CBF4136F20A49A6A0038340F /* SearchTeamCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTeamCell.swift; sourceTree = "<group>"; };
@@ -98,12 +108,10 @@
 		CBF4137320A49E5E0038340F /* ArrivalDepartureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalDepartureCell.swift; sourceTree = "<group>"; };
 		CBF4137520A4BFBC0038340F /* NextButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextButtonCell.swift; sourceTree = "<group>"; };
 		CBF4137720A5ED500038340F /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
-		CBF4137920A5EEBF0038340F /* NoGamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoGamesViewController.swift; sourceTree = "<group>"; };
 		CBF4137E20A5F2120038340F /* ResultsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsCell.swift; sourceTree = "<group>"; };
 		CBF4138120A9CCBC0038340F /* PreferenceCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceCollectionCell.swift; sourceTree = "<group>"; };
-		CBF4138320A9CCEF0038340F /* GroupCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCollectionViewController.swift; sourceTree = "<group>"; };
-		CBF4138520A9CCFF0038340F /* DiningCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiningCollectionViewController.swift; sourceTree = "<group>"; };
-		CBF4138720A9CD150038340F /* ActivitiesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesCollectionViewController.swift; sourceTree = "<group>"; };
+		CBF4138520A9CCFF0038340F /* FoodCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCollectionViewController.swift; sourceTree = "<group>"; };
+		CBF4138720A9CD150038340F /* InterestsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestsCollectionViewController.swift; sourceTree = "<group>"; };
 		CBF4138920A9CD250038340F /* NightlifeCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightlifeCollectionViewController.swift; sourceTree = "<group>"; };
 		CBF4138C20A9D4160038340F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CBF4138E20A9D60E0038340F /* AppLaunch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AppLaunch.storyboard; sourceTree = "<group>"; };
@@ -187,10 +195,9 @@
 		CB4BB7E820A0DCCA00F756D3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				CBF4137B20A5EEC70038340F /* Main */,
-				CBF4137C20A5EEE30038340F /* Login */,
-				CBF4139820A9DF370038340F /* EmailSignUp */,
 				CBF4139220A9D71B0038340F /* AppLaunchViewController.swift */,
+				CBF4137C20A5EEE30038340F /* Login */,
+				CBF4137B20A5EEC70038340F /* Main */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -212,12 +219,13 @@
 			isa = PBXGroup;
 			children = (
 				CBF413A420AC82280038340F /* Trip.swift */,
-				CB4BB7EF20A0F5B100F756D3 /* Itenerary.swift */,
+				CB4BB7EF20A0F5B100F756D3 /* Itinerary.swift */,
 				CB4BB7F120A0F5DA00F756D3 /* Activity.swift */,
 				CBF4137720A5ED500038340F /* Event.swift */,
 				CBF4138C20A9D4160038340F /* User.swift */,
 				CBF4139420A9D8820038340F /* LoginType.swift */,
 				CB57BDA720B50530004FEE89 /* Preferences.swift */,
+				CBCE1B9520B76B9D0010967E /* Settings.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -225,10 +233,12 @@
 		CB4BB7ED20A0F47100F756D3 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				CBF4138E20A9D60E0038340F /* AppLaunch.storyboard */,
-				CB4BB7DA20A0DC8E00F756D3 /* Main.storyboard */,
-				CBF4139F20A9E9400038340F /* Email */,
 				CB4BB7DF20A0DC8E00F756D3 /* LaunchScreen.storyboard */,
+				CBF4138E20A9D60E0038340F /* AppLaunch.storyboard */,
+				CBCE1BA020BA5A840010967E /* Settings.storyboard */,
+				CB4BB7DA20A0DC8E00F756D3 /* Main.storyboard */,
+				CBF4139620A9DE860038340F /* EmailSignUp.storyboard */,
+				CBF413A020A9E9500038340F /* EmailLogin.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -247,7 +257,7 @@
 				CB4BB7F320A1042B00F756D3 /* CreateTripCell.swift */,
 				CB4BB7F520A1046900F756D3 /* SavedTripsCell.swift */,
 				CB57BD9820AC943A004FEE89 /* SectionHeaderCell.swift */,
-				CB57BD9A20AC97DA004FEE89 /* SettingsCell.swift */,
+				CB57BD9A20AC97DA004FEE89 /* MoreCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -274,6 +284,7 @@
 			isa = PBXGroup;
 			children = (
 				CBF4136A20A490160038340F /* NavigationHelper.swift */,
+				CBCE1B9720B7D5A40010967E /* Constants.swift */,
 				CBF4136C20A4942C0038340F /* Info.swift */,
 				CB57BDA220ADE877004FEE89 /* UserDefaults+FirstLaunch.swift */,
 			);
@@ -294,11 +305,14 @@
 			isa = PBXGroup;
 			children = (
 				CB4BB7D820A0DC8E00F756D3 /* HomeTableViewController.swift */,
+				CBCE1B9E20BA5A4D0010967E /* SettingsViewController.swift */,
 				CB4BB80020A109D600F756D3 /* SearchViewController.swift */,
-				CBF4137920A5EEBF0038340F /* NoGamesViewController.swift */,
 				CB4BB80220A109F100F756D3 /* ResultsTableViewController.swift */,
-				CB4BB80420A10A0C00F756D3 /* IteneraryTableViewController.swift */,
-				CBF4138B20A9CD420038340F /* Preferences */,
+				CBCE1B9A20B9162C0010967E /* GroupTableViewController.swift */,
+				CBF4138520A9CCFF0038340F /* FoodCollectionViewController.swift */,
+				CBF4138720A9CD150038340F /* InterestsCollectionViewController.swift */,
+				CBF4138920A9CD250038340F /* NightlifeCollectionViewController.swift */,
+				CB4BB80420A10A0C00F756D3 /* ItineraryTableViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -306,9 +320,9 @@
 		CBF4137C20A5EEE30038340F /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				CB4BB7FC20A1099600F756D3 /* LoginViewController.swift */,
 				CB57BDA020ADE2A4004FEE89 /* SignupViewController.swift */,
-				CB4BB7FE20A109AB00F756D3 /* EmailLoginViewController.swift */,
+				CB4BB7FC20A1099600F756D3 /* LoginViewController.swift */,
+				CBF4139820A9DF370038340F /* Email */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -325,36 +339,18 @@
 			isa = PBXGroup;
 			children = (
 				CBF4138120A9CCBC0038340F /* PreferenceCollectionCell.swift */,
+				CBCE1B9C20B91CB50010967E /* GroupTableViewCell.swift */,
 			);
 			path = Preferences;
 			sourceTree = "<group>";
 		};
-		CBF4138B20A9CD420038340F /* Preferences */ = {
+		CBF4139820A9DF370038340F /* Email */ = {
 			isa = PBXGroup;
 			children = (
-				CBF4138320A9CCEF0038340F /* GroupCollectionViewController.swift */,
-				CBF4138520A9CCFF0038340F /* DiningCollectionViewController.swift */,
-				CBF4138720A9CD150038340F /* ActivitiesCollectionViewController.swift */,
-				CBF4138920A9CD250038340F /* NightlifeCollectionViewController.swift */,
-			);
-			path = Preferences;
-			sourceTree = "<group>";
-		};
-		CBF4139820A9DF370038340F /* EmailSignUp */ = {
-			isa = PBXGroup;
-			children = (
+				CB4BB7FE20A109AB00F756D3 /* EmailLoginViewController.swift */,
 				CBF4139920A9DF750038340F /* EmailNameViewController.swift */,
 				CBF4139B20A9DF820038340F /* EmailViewController.swift */,
 				CBF4139D20A9DF8C0038340F /* PasswordViewController.swift */,
-			);
-			path = EmailSignUp;
-			sourceTree = "<group>";
-		};
-		CBF4139F20A9E9400038340F /* Email */ = {
-			isa = PBXGroup;
-			children = (
-				CBF4139620A9DE860038340F /* EmailSignUp.storyboard */,
-				CBF413A020A9E9500038340F /* EmailLogin.storyboard */,
 			);
 			path = Email;
 			sourceTree = "<group>";
@@ -395,6 +391,11 @@
 					CB4BB7D220A0DC8E00F756D3 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -427,6 +428,7 @@
 				CBF4138F20A9D60E0038340F /* AppLaunch.storyboard in Resources */,
 				CB4BB7DE20A0DC8E00F756D3 /* Assets.xcassets in Resources */,
 				CBF4139720A9DE860038340F /* EmailSignUp.storyboard in Resources */,
+				CBCE1BA120BA5A840010967E /* Settings.storyboard in Resources */,
 				CBF413A120A9E9500038340F /* EmailLogin.storyboard in Resources */,
 				CB4BB7DC20A0DC8E00F756D3 /* Main.storyboard in Resources */,
 			);
@@ -539,35 +541,38 @@
 				CBF4139A20A9DF750038340F /* EmailNameViewController.swift in Sources */,
 				CB4BB80320A109F100F756D3 /* ResultsTableViewController.swift in Sources */,
 				CB57BDA120ADE2A4004FEE89 /* SignupViewController.swift in Sources */,
-				CBF4138620A9CCFF0038340F /* DiningCollectionViewController.swift in Sources */,
+				CBF4138620A9CCFF0038340F /* FoodCollectionViewController.swift in Sources */,
+				CBCE1B9620B76B9D0010967E /* Settings.swift in Sources */,
 				CBF4136D20A4942C0038340F /* Info.swift in Sources */,
 				CBF4138A20A9CD250038340F /* NightlifeCollectionViewController.swift in Sources */,
 				CBF4139E20A9DF8C0038340F /* PasswordViewController.swift in Sources */,
+				CBCE1B9F20BA5A4D0010967E /* SettingsViewController.swift in Sources */,
 				CB57BD9D20ACA354004FEE89 /* Router.swift in Sources */,
 				CB57BDA820B50530004FEE89 /* Preferences.swift in Sources */,
-				CBF4138420A9CCEF0038340F /* GroupCollectionViewController.swift in Sources */,
 				CB57BD9920AC943A004FEE89 /* SectionHeaderCell.swift in Sources */,
 				CB4BB7D920A0DC8E00F756D3 /* HomeTableViewController.swift in Sources */,
 				CB4BB7D720A0DC8E00F756D3 /* AppDelegate.swift in Sources */,
 				CB4BB7FD20A1099600F756D3 /* LoginViewController.swift in Sources */,
 				CBF4138D20A9D4160038340F /* User.swift in Sources */,
+				CBCE1B9D20B91CB50010967E /* GroupTableViewCell.swift in Sources */,
 				CBF4139320A9D71B0038340F /* AppLaunchViewController.swift in Sources */,
 				CBF413A520AC82280038340F /* Trip.swift in Sources */,
 				CBF4137420A49E5E0038340F /* ArrivalDepartureCell.swift in Sources */,
 				CBF4137620A4BFBC0038340F /* NextButtonCell.swift in Sources */,
-				CBF4137A20A5EEBF0038340F /* NoGamesViewController.swift in Sources */,
 				CB57BDA320ADE877004FEE89 /* UserDefaults+FirstLaunch.swift in Sources */,
+				CBCE1B9B20B9162C0010967E /* GroupTableViewController.swift in Sources */,
 				CBF4139520A9D8820038340F /* LoginType.swift in Sources */,
+				CBCE1B9820B7D5A40010967E /* Constants.swift in Sources */,
 				CBF4136B20A490160038340F /* NavigationHelper.swift in Sources */,
-				CB4BB80520A10A0C00F756D3 /* IteneraryTableViewController.swift in Sources */,
-				CBF4138820A9CD150038340F /* ActivitiesCollectionViewController.swift in Sources */,
+				CB4BB80520A10A0C00F756D3 /* ItineraryTableViewController.swift in Sources */,
+				CBF4138820A9CD150038340F /* InterestsCollectionViewController.swift in Sources */,
 				CB4BB7F420A1042B00F756D3 /* CreateTripCell.swift in Sources */,
 				CB4BB80A20A10A6800F756D3 /* ActivityCell.swift in Sources */,
 				CB4BB80820A10A4D00F756D3 /* UberCell.swift in Sources */,
 				CBF4137020A49A6A0038340F /* SearchTeamCell.swift in Sources */,
 				CB4BB81320A207EF00F756D3 /* Theme.swift in Sources */,
 				CB4BB7FF20A109AC00F756D3 /* EmailLoginViewController.swift in Sources */,
-				CB57BD9B20AC97DA004FEE89 /* SettingsCell.swift in Sources */,
+				CB57BD9B20AC97DA004FEE89 /* MoreCell.swift in Sources */,
 				CBF4137220A49C8A0038340F /* CalendarCell.swift in Sources */,
 				CB57BD9F20ACA36C004FEE89 /* AwayGameAPI.swift in Sources */,
 				CBF4137820A5ED500038340F /* Event.swift in Sources */,
@@ -575,7 +580,7 @@
 				CB4BB7F620A1046900F756D3 /* SavedTripsCell.swift in Sources */,
 				CBF4138220A9CCBC0038340F /* PreferenceCollectionCell.swift in Sources */,
 				CB4BB80120A109D600F756D3 /* SearchViewController.swift in Sources */,
-				CB4BB7F020A0F5B100F756D3 /* Itenerary.swift in Sources */,
+				CB4BB7F020A0F5B100F756D3 /* Itinerary.swift in Sources */,
 				CBF4139C20A9DF820038340F /* EmailViewController.swift in Sources */,
 				CBF4137F20A5F2120038340F /* ResultsCell.swift in Sources */,
 			);
@@ -715,6 +720,7 @@
 			baseConfigurationReference = BC0FA84464268D0D4AF996AD /* Pods-AwayGame.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CR4T3XR3PC;
 				INFOPLIST_FILE = AwayGame/Info.plist;
@@ -722,6 +728,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.AwayGame.AwayGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -732,6 +739,7 @@
 			baseConfigurationReference = 28AF8AA9864EEC04093B98D2 /* Pods-AwayGame.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CR4T3XR3PC;
 				INFOPLIST_FILE = AwayGame/Info.plist;
@@ -739,6 +747,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.AwayGame.AwayGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

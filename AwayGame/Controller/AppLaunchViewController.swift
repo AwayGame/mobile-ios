@@ -35,16 +35,17 @@ class AppLaunchViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        // Login
+        
+        // Firebase Login Listener
         handle = Auth.auth().addStateDidChangeListener { (auth, user) in
             if user != nil {
                 
-            User.currentUser.email = Auth.auth().currentUser?.email
-            User.currentUser.name = Auth.auth().currentUser?.displayName
-            User.currentUser.uid = Auth.auth().currentUser?.uid
-
-            AwayGameAPI.verifyUser(with: User.currentUser)
-            self.proceedToHome()
+                User.currentUser.email = Auth.auth().currentUser?.email
+                User.currentUser.name = Auth.auth().currentUser?.displayName
+                User.currentUser.uid = Auth.auth().currentUser?.uid
+                AwayGameAPI.verifyUser(with: User.currentUser)
+                
+                self.proceedToDashboard()
                 
             } else {
                 if UserDefaults.isFirstLaunch() {
@@ -54,6 +55,7 @@ class AppLaunchViewController: UIViewController {
                 }
             }
         }
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -61,35 +63,25 @@ class AppLaunchViewController: UIViewController {
     }
     
     // MARK: - Login
-    
-    func getLoginType() {//} -> LoginType? {
-        //return UserDefaults.standard.object(forKey: "login_type")
-    }
-    
-    func proceedToHome() {
+        
+    func proceedToDashboard() {
         hideAllContainers()
-        mainContainerView.frame.origin.y -= 20.0
         mainContainerView.isHidden = false
-        UIView.transition(with: mainContainerView, duration: 1.5, options: .transitionCrossDissolve, animations: {
-            self.mainContainerView.frame.origin.y += 20.0
+        UIView.transition(with: mainContainerView, duration: 1.0, options: .transitionCrossDissolve, animations: {
         }, completion: nil)
     }
     
     func proceedToLogin() {
         hideAllContainers()
-        loginContainerView.frame.origin.y -= 20.0
         loginContainerView.isHidden = false
-        UIView.transition(with: loginContainerView, duration: 1.5, options: .transitionCrossDissolve, animations: {
-            self.loginContainerView.frame.origin.y += 20.0
+        UIView.transition(with: loginContainerView, duration: 1.0, options: .transitionCrossDissolve, animations: {
         }, completion: nil)
     }
     
     func proceedToSignup() {
         hideAllContainers()
-        signupContainerView.frame.origin.y -= 20.0
         signupContainerView.isHidden = false
-        UIView.transition(with: signupContainerView, duration: 1.5, options: .transitionCrossDissolve, animations: {
-            self.signupContainerView.frame.origin.y += 20.0
+        UIView.transition(with: signupContainerView, duration: 1.0, options: .transitionCrossDissolve, animations: {
         }, completion: nil)
     }
     
@@ -98,6 +90,7 @@ class AppLaunchViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "LoginEmbedSegue", let loginVC = segue.destination as? LoginViewController  {
             loginVC.delegate = self
+            loginVC.signInDelegate = self
         }
         
         if segue.identifier == "SignupEmbedSegue", let signupVC = segue.destination as? SignupViewController  {
@@ -119,6 +112,22 @@ extension AppLaunchViewController: LoginToSignupDelegate {
 
 extension AppLaunchViewController: SignupToLoginDelegate {
     func didSwitchToLogin() {
+        proceedToLogin()
+    }
+}
+
+// MARK: - EmailSignInDelegate
+
+extension AppLaunchViewController: SignInDelegate {
+    func userDidSignIn() {
+        proceedToDashboard()
+    }
+}
+
+// MARK: - HomeDelegate
+
+extension AppLaunchViewController: HomeDelegate {
+    func userDidLogout() {
         proceedToLogin()
     }
 }

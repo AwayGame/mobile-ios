@@ -54,7 +54,8 @@ class ResultsTableViewController: UITableViewController {
             return
         }
         
-        AwayGameAPI.createTrip(event: event, arrival: arrivalTime ?? "", depart: departureTime ?? "", preferences: Preferences())
+        
+        
     }
 
     /*
