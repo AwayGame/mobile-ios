@@ -31,9 +31,10 @@ final class AwayGameAPI {
             }
             
             User.currentUser = user
+            initializeDatabaseSubscription()
             print(User.currentUser.photoUrl)
             print(User.currentUser.name)
-            
+
         }
     }
     
