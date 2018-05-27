@@ -10,8 +10,7 @@ import UIKit
 
 class ResultsTableViewController: UITableViewController {
 
-    public var arrivalTime: String?
-    public var departureTime: String?
+    public var itineraryRequest: ItineraryRequest?
     
     public var resultsData: [Event?] = [] {
         didSet {
@@ -53,19 +52,23 @@ class ResultsTableViewController: UITableViewController {
         guard let event = resultsData[indexPath.row] else {
             return
         }
+        itineraryRequest?.lat = event.latitude ?? ""
+        itineraryRequest?.long = event.longitude ?? ""
+        itineraryRequest?.eventId = event.id ?? ""
+        itineraryRequest?.eventName = event.name ?? ""
         
-        
+        performSegue(withIdentifier: "GroupSegue", sender: self)
         
     }
 
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "GroupSegue" {
+            if let groupVC = segue.destination as? GroupTableViewController {
+                groupVC.itineraryRequest = self.itineraryRequest
+            }
+        }
     }
-    */
 
 }

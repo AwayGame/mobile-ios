@@ -56,7 +56,7 @@ class NightlifeCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.section == 0 {
             if let preferenceCell = collectionView.dequeueReusableCell(withReuseIdentifier: PreferenceCollectionCell.identifier, for: indexPath) as? PreferenceCollectionCell {
-                preferenceCell.configureCell(title: Constants.Preferences.Nightlife.text[indexPath.row], image: nil)
+                preferenceCell.configureCell(title: Preferences.Nightlife.text[indexPath.row], image: nil)
                 return preferenceCell
             }
         }

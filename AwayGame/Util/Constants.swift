@@ -8,36 +8,35 @@
 
 import UIKit
 
-struct Constants {
-    
-    struct Preferences {
+// 
+
+struct Preferences {
         
-        struct Group {
-            static let text: [String?] = ["Friends", "Significant Other", "Family", "Colleagues", "Just me"]
-            static let images: [UIImage?] = []
-        }
-        
-        struct Food {
-            static let text: [String?] = ["Local Cuisine", "Fast Food", "Upscale", "Famous Spots", "Fast Casual", "Tapas", "Bar Food", "Street Food", "Coffee Shops", "Intimate"]
-            static let images: [UIImage?] = []
-        }
-        
-        struct Interests {
-            static let text: [String?] = ["Shopping", "Museums", "Famous Sights", "Shows", "Guided Tours", "Active Tourism", "Special Events", "Health/Wellness", "Historic Places", "Nightlife"]
-            static let images: [UIImage?] = []
-        }
-        
-        struct Nightlife {
-            static let text: [String?] = ["Sports Bars", "Party Bars", "Breweries", "Nightclubs", "Dance Halls", "Cocktail Lounges", "Wine Bars", "Speakeasies", "Themed Bars", "Pubs"]
-            static let images: [UIImage?] = []
-        }
-        
-        
+    struct Group {
+        static let text: [String?] = ["Friends", "Significant Other", "Family", "Colleagues", "Just me"]
+        static let images: [UIImage?] = [nil,nil,nil,nil,nil]
     }
     
+    struct Food {
+        static let text: [String?] = ["Local Cuisine", "Fast Food", "Upscale", "Famous Spots", "Fast Casual", "Tapas", "Bar Food", "Street Food", "Coffee Shops", "Intimate"]
+        static let images: [UIImage?] = []
+    }
     
+    struct Interests {
+        static let text: [String?] = ["Shopping", "Museums", "Famous Sights", "Shows", "Guided Tours", "Active Tourism", "Special Events", "Health/Wellness", "Historic Places", "Nightlife"]
+        static let images: [UIImage?] = []
+    }
     
+    struct Nightlife {
+        static let text: [String?] = ["Sports Bars", "Party Bars", "Breweries", "Nightclubs", "Dance Halls", "Cocktail Lounges", "Wine Bars", "Speakeasies", "Themed Bars", "Pubs"]
+        static let images: [UIImage?] = []
+    }
+}
+
+struct Support {
     
-    
-    
+    static let email = "support@awaygame.co"
+    static let subject = "AwayGame Support"
+    static let message = "<p>Hello<p>" // TODO
+
 }

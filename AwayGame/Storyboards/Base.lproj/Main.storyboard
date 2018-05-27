@@ -20,25 +20,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1S6-lE-Vws">
-                                <rect key="frame" x="20" y="248" width="335" height="30"/>
+                                <rect key="frame" x="20" y="148.5" width="335" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a8G-1q-W2E">
-                                <rect key="frame" x="20" y="318" width="335" height="30"/>
+                                <rect key="frame" x="20" y="218.5" width="335" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="05w-PN-TlY">
-                                <rect key="frame" x="20" y="388" width="335" height="30"/>
+                                <rect key="frame" x="20" y="288.5" width="335" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b7v-Ss-wA8">
-                                <rect key="frame" x="164" y="458" width="46" height="30"/>
+                                <rect key="frame" x="164" y="358.5" width="46" height="30"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -51,7 +51,7 @@
                         <constraints>
                             <constraint firstItem="a8G-1q-W2E" firstAttribute="top" secondItem="1S6-lE-Vws" secondAttribute="bottom" constant="40" id="94D-TZ-eyO"/>
                             <constraint firstItem="05w-PN-TlY" firstAttribute="leading" secondItem="A8D-uy-85N" secondAttribute="leading" constant="20" id="JQ0-WZ-UGi"/>
-                            <constraint firstItem="a8G-1q-W2E" firstAttribute="centerY" secondItem="luJ-Zo-01b" secondAttribute="centerY" id="Koe-4e-NKU"/>
+                            <constraint firstItem="a8G-1q-W2E" firstAttribute="centerY" secondItem="luJ-Zo-01b" secondAttribute="centerY" constant="-100" id="Koe-4e-NKU"/>
                             <constraint firstItem="a8G-1q-W2E" firstAttribute="centerX" secondItem="luJ-Zo-01b" secondAttribute="centerX" id="UoS-YQ-GtD"/>
                             <constraint firstItem="A8D-uy-85N" firstAttribute="trailing" secondItem="a8G-1q-W2E" secondAttribute="trailing" constant="20" id="XV7-C4-pqU"/>
                             <constraint firstItem="A8D-uy-85N" firstAttribute="trailing" secondItem="1S6-lE-Vws" secondAttribute="trailing" constant="20" id="YMt-uN-24i"/>
@@ -346,11 +346,10 @@
             </objects>
             <point key="canvasLocation" x="7319" y="65"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Group Table View Controller-->
         <scene sceneID="dDw-9h-adI">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="S2L-sQ-xk9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController id="nud-oc-G6h" sceneMemberID="viewController">
+                <tableViewController id="nud-oc-G6h" customClass="GroupTableViewController" customModule="AwayGame" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Di0-x1-IwC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -412,6 +411,7 @@
                         <segue destination="nsE-i7-Qxv" kind="show" identifier="FoodSegue" id="htu-an-RbD"/>
                     </connections>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S2L-sQ-xk9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3149.5999999999999" y="63.418290854572717"/>
         </scene>
@@ -428,7 +428,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EDT-7F-Hga" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="788" y="881"/>
+            <point key="canvasLocation" x="653.60000000000002" y="522.18890554722645"/>
         </scene>
     </scenes>
 </document>

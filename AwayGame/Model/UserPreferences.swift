@@ -1,5 +1,5 @@
 //
-//  Preferences.swift
+//  UserPreferences.swift
 //  AwayGame
 //
 //  Created by Blake Swaidner on 5/22/18.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Preferences {
+class UserPreferences {
     
     public var group: [String?] = []
     public var food: [String?] = []
