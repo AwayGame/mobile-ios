@@ -60,7 +60,6 @@ class SignupViewController: UIViewController {
     }
     
     func setupImages() {
-        backgroundImageView.image = #imageLiteral(resourceName: "signup-login background")
         logoImageView.image = #imageLiteral(resourceName: "AwayGameLogo-Large")
         facebookLogoImageView.image = #imageLiteral(resourceName: "flogo-HexRBG-Wht-114")
         twitterLogoImageView.image = #imageLiteral(resourceName: "Twitter_Social_Icon_Rounded_Square_White")
@@ -71,8 +70,6 @@ class SignupViewController: UIViewController {
     // MARK: - Styling
     
     func styleViews() {
-        tintView.backgroundColor = Theme.Color.Green.primary
-        tintView.alpha = 0.6
         styleButtons()
     }
 

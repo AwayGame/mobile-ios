@@ -10,10 +10,9 @@ import UIKit
 
 class ResultsTableViewController: UITableViewController {
 
-    public var arrivalTime: String?
-    public var departureTime: String?
+    public var tripRequest: TripRequest?
     
-    public var resultsData: [Event?] = [] {
+    public var resultsData: [Event]? = [] {
         didSet {
             print(resultsData)
             tableView.reloadData()
@@ -22,50 +21,71 @@ class ResultsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.separatorStyle = .none
         
     }
 
     // MARK: - Tableview data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return resultsData.count
+        if section == 1 {
+            return resultsData?.count ?? 0
+        } else {
+            return 1
+        }
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200.0
+        if indexPath.section == 0 {
+            return SectionHeaderCell.height
+        } else {
+            return ResultsCell.height
+        }
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let resultsCell = tableView.dequeueReusableCell(withIdentifier: ResultsCell.identifier, for: indexPath) as? ResultsCell {
-            resultsCell.configureCell(event: resultsData[indexPath.row])
-            return resultsCell
+        
+        if indexPath.section == 0 {
+            if let sectionHeaderCell = tableView.dequeueReusableCell(withIdentifier: SectionHeaderCell.identifier, for: indexPath) as? SectionHeaderCell {
+                sectionHeaderCell.configureCell(text: "Which game?")
+                return sectionHeaderCell
+            }
+        } else {
+            if let resultsCell = tableView.dequeueReusableCell(withIdentifier: ResultsCell.identifier, for: indexPath) as? ResultsCell {
+                resultsCell.configureCell(event: resultsData?[indexPath.row])
+                return resultsCell
+            }
         }
-
+        
         return UITableViewCell()
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        guard let event = resultsData[indexPath.row] else {
+        guard let event = resultsData?[indexPath.row] else {
             return
         }
+        tripRequest?.lat = event.latitude ?? ""
+        tripRequest?.long = event.longitude ?? ""
+        tripRequest?.eventId = event.id ?? ""
+        tripRequest?.eventName = event.name ?? ""
         
-        
+        performSegue(withIdentifier: "GroupSegue", sender: self)
         
     }
 
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "GroupSegue" {
+            if let groupVC = segue.destination as? GroupTableViewController {
+                groupVC.tripRequest = self.tripRequest
+            }
+        }
     }
-    */
 
 }

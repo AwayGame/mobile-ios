@@ -18,8 +18,9 @@ struct Theme {
         // TODO: Filler fonts
         
         static let title: UIFont = UIFont.systemFont(ofSize: 24, weight: UIFont.Weight.bold)
-        static let h1: UIFont = UIFont(name: "DINAlternate-Bold", size: 16)!
+        static let h1: UIFont = UIFont(name: "DINAlternate-Bold", size: 24)!
         static let h2: UIFont = UIFont.systemFont(ofSize: 18, weight: UIFont.Weight.bold)
+        static let p1: UIFont = UIFont(name: "DINAlternate-Bold", size: 19)!
         static let body: UIFont = UIFont.systemFont(ofSize: 18, weight: UIFont.Weight.light)
         
     }
@@ -42,8 +43,10 @@ struct Theme {
         }
         
         struct Green {
-            static let primary: UIColor = UIColor(displayP3Red: 80.0/255.0, green: 182.0/255.0, blue: 111.0/255.0, alpha: 1.0)
+            static let primary: UIColor = UIColor(displayP3Red: 83.0/255.0, green: 185.0/255.0, blue: 114.0/255.0, alpha: 1.0)
             static let secondary: UIColor = UIColor(displayP3Red: 115.0/255.0, green: 183.0/255.0, blue: 87.0/255.0, alpha: 1.0)
+            static let selected: UIColor = UIColor(displayP3Red: 83.0/255.0, green: 185.0/255.0, blue: 114.0/255.0, alpha: 0.15)
+            static let border: UIColor = UIColor(displayP3Red: 83.0/255.0, green: 185.0/255.0, blue: 114.0/255.0, alpha: 0.80)
         }
         
         struct Gradient {
@@ -53,6 +56,7 @@ struct Theme {
         
         struct Background {
             static let primary: UIColor = UIColor(displayP3Red: 252.0/255.0, green: 249.0/255.0, blue: 249.0/255.0, alpha: 1.0)
+            static let highlighted: UIColor = UIColor(displayP3Red: 242.0/255.0, green: 239.0/255.0, blue: 239.0/255.0, alpha: 1.0)
             static let darkGray: UIColor = UIColor(displayP3Red: 142.0/255.0, green: 142.0/255.0, blue: 142.0/255.0, alpha: 1.0)
         }
         

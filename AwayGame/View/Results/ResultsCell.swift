@@ -13,6 +13,7 @@ class ResultsCell: UITableViewCell {
     // MARK: - Initialization
     
     static let identifier = "ResultsCell"
+    static let height: CGFloat = 200.0
     
     @IBOutlet weak var idLabel: UILabel!
     @IBOutlet weak var gameLabel: UILabel!

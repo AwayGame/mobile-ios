@@ -33,15 +33,16 @@
 		CB57BDA120ADE2A4004FEE89 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB57BDA020ADE2A4004FEE89 /* SignupViewController.swift */; };
 		CB57BDA320ADE877004FEE89 /* UserDefaults+FirstLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB57BDA220ADE877004FEE89 /* UserDefaults+FirstLaunch.swift */; };
 		CB57BDA620B4F5C8004FEE89 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB57BDA520B4F5C8004FEE89 /* GoogleService-Info.plist */; };
-		CB57BDA820B50530004FEE89 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB57BDA720B50530004FEE89 /* Preferences.swift */; };
+		CB57BDA820B50530004FEE89 /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB57BDA720B50530004FEE89 /* UserPreferences.swift */; };
+		CBADC0B920BE6727007A7A95 /* NextButtonCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBADC0B820BE6727007A7A95 /* NextButtonCollectionCell.swift */; };
 		CBCE1B9620B76B9D0010967E /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCE1B9520B76B9D0010967E /* Settings.swift */; };
 		CBCE1B9820B7D5A40010967E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCE1B9720B7D5A40010967E /* Constants.swift */; };
 		CBCE1B9B20B9162C0010967E /* GroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCE1B9A20B9162C0010967E /* GroupTableViewController.swift */; };
 		CBCE1B9D20B91CB50010967E /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCE1B9C20B91CB50010967E /* GroupTableViewCell.swift */; };
 		CBCE1B9F20BA5A4D0010967E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCE1B9E20BA5A4D0010967E /* SettingsViewController.swift */; };
 		CBCE1BA120BA5A840010967E /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBCE1BA020BA5A840010967E /* Settings.storyboard */; };
+		CBCE1BA320BB17A80010967E /* TripRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCE1BA220BB17A80010967E /* TripRequest.swift */; };
 		CBF4136B20A490160038340F /* NavigationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4136A20A490160038340F /* NavigationHelper.swift */; };
-		CBF4136D20A4942C0038340F /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4136C20A4942C0038340F /* Info.swift */; };
 		CBF4137020A49A6A0038340F /* SearchTeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4136F20A49A6A0038340F /* SearchTeamCell.swift */; };
 		CBF4137220A49C8A0038340F /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4137120A49C8A0038340F /* CalendarCell.swift */; };
 		CBF4137420A49E5E0038340F /* ArrivalDepartureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4137320A49E5E0038340F /* ArrivalDepartureCell.swift */; };
@@ -49,13 +50,10 @@
 		CBF4137820A5ED500038340F /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4137720A5ED500038340F /* Event.swift */; };
 		CBF4137F20A5F2120038340F /* ResultsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4137E20A5F2120038340F /* ResultsCell.swift */; };
 		CBF4138220A9CCBC0038340F /* PreferenceCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4138120A9CCBC0038340F /* PreferenceCollectionCell.swift */; };
-		CBF4138620A9CCFF0038340F /* FoodCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4138520A9CCFF0038340F /* FoodCollectionViewController.swift */; };
-		CBF4138820A9CD150038340F /* InterestsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4138720A9CD150038340F /* InterestsCollectionViewController.swift */; };
-		CBF4138A20A9CD250038340F /* NightlifeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4138920A9CD250038340F /* NightlifeCollectionViewController.swift */; };
+		CBF4138620A9CCFF0038340F /* PreferencesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4138520A9CCFF0038340F /* PreferencesCollectionViewController.swift */; };
 		CBF4138D20A9D4160038340F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4138C20A9D4160038340F /* User.swift */; };
 		CBF4138F20A9D60E0038340F /* AppLaunch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBF4138E20A9D60E0038340F /* AppLaunch.storyboard */; };
 		CBF4139320A9D71B0038340F /* AppLaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4139220A9D71B0038340F /* AppLaunchViewController.swift */; };
-		CBF4139520A9D8820038340F /* LoginType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4139420A9D8820038340F /* LoginType.swift */; };
 		CBF4139720A9DE860038340F /* EmailSignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBF4139620A9DE860038340F /* EmailSignUp.storyboard */; };
 		CBF4139A20A9DF750038340F /* EmailNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4139920A9DF750038340F /* EmailNameViewController.swift */; };
 		CBF4139C20A9DF820038340F /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4139B20A9DF820038340F /* EmailViewController.swift */; };
@@ -95,15 +93,16 @@
 		CB57BDA020ADE2A4004FEE89 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		CB57BDA220ADE877004FEE89 /* UserDefaults+FirstLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+FirstLaunch.swift"; sourceTree = "<group>"; };
 		CB57BDA520B4F5C8004FEE89 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		CB57BDA720B50530004FEE89 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
+		CB57BDA720B50530004FEE89 /* UserPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferences.swift; sourceTree = "<group>"; };
+		CBADC0B820BE6727007A7A95 /* NextButtonCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextButtonCollectionCell.swift; sourceTree = "<group>"; };
 		CBCE1B9520B76B9D0010967E /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		CBCE1B9720B7D5A40010967E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CBCE1B9A20B9162C0010967E /* GroupTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewController.swift; sourceTree = "<group>"; };
 		CBCE1B9C20B91CB50010967E /* GroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
 		CBCE1B9E20BA5A4D0010967E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		CBCE1BA020BA5A840010967E /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		CBCE1BA220BB17A80010967E /* TripRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripRequest.swift; sourceTree = "<group>"; };
 		CBF4136A20A490160038340F /* NavigationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationHelper.swift; sourceTree = "<group>"; };
-		CBF4136C20A4942C0038340F /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
 		CBF4136F20A49A6A0038340F /* SearchTeamCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTeamCell.swift; sourceTree = "<group>"; };
 		CBF4137120A49C8A0038340F /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
 		CBF4137320A49E5E0038340F /* ArrivalDepartureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalDepartureCell.swift; sourceTree = "<group>"; };
@@ -111,13 +110,10 @@
 		CBF4137720A5ED500038340F /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		CBF4137E20A5F2120038340F /* ResultsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsCell.swift; sourceTree = "<group>"; };
 		CBF4138120A9CCBC0038340F /* PreferenceCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceCollectionCell.swift; sourceTree = "<group>"; };
-		CBF4138520A9CCFF0038340F /* FoodCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCollectionViewController.swift; sourceTree = "<group>"; };
-		CBF4138720A9CD150038340F /* InterestsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestsCollectionViewController.swift; sourceTree = "<group>"; };
-		CBF4138920A9CD250038340F /* NightlifeCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightlifeCollectionViewController.swift; sourceTree = "<group>"; };
+		CBF4138520A9CCFF0038340F /* PreferencesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesCollectionViewController.swift; sourceTree = "<group>"; };
 		CBF4138C20A9D4160038340F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CBF4138E20A9D60E0038340F /* AppLaunch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AppLaunch.storyboard; sourceTree = "<group>"; };
 		CBF4139220A9D71B0038340F /* AppLaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLaunchViewController.swift; sourceTree = "<group>"; };
-		CBF4139420A9D8820038340F /* LoginType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginType.swift; sourceTree = "<group>"; };
 		CBF4139620A9DE860038340F /* EmailSignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EmailSignUp.storyboard; sourceTree = "<group>"; };
 		CBF4139920A9DF750038340F /* EmailNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailNameViewController.swift; sourceTree = "<group>"; };
 		CBF4139B20A9DF820038340F /* EmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
@@ -207,12 +203,12 @@
 		CB4BB7E920A0DCD300F756D3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CBADC0BA20BF6121007A7A95 /* General */,
 				CB4BB7FB20A1049B00F756D3 /* Home */,
 				CBF4136E20A499F50038340F /* Search */,
 				CBF4137D20A5F1FB0038340F /* Results */,
 				CBF4138020A9CC650038340F /* Preferences */,
 				CB4BB80620A10A1100F756D3 /* Itenerary */,
-				CBF4137520A4BFBC0038340F /* NextButtonCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -225,9 +221,9 @@
 				CB4BB7F120A0F5DA00F756D3 /* Activity.swift */,
 				CBF4137720A5ED500038340F /* Event.swift */,
 				CBF4138C20A9D4160038340F /* User.swift */,
-				CBF4139420A9D8820038340F /* LoginType.swift */,
-				CB57BDA720B50530004FEE89 /* Preferences.swift */,
+				CB57BDA720B50530004FEE89 /* UserPreferences.swift */,
 				CBCE1B9520B76B9D0010967E /* Settings.swift */,
+				CBCE1BA220BB17A80010967E /* TripRequest.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -235,12 +231,12 @@
 		CB4BB7ED20A0F47100F756D3 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				CB4BB7DF20A0DC8E00F756D3 /* LaunchScreen.storyboard */,
 				CBF4138E20A9D60E0038340F /* AppLaunch.storyboard */,
-				CBCE1BA020BA5A840010967E /* Settings.storyboard */,
-				CB4BB7DA20A0DC8E00F756D3 /* Main.storyboard */,
-				CBF4139620A9DE860038340F /* EmailSignUp.storyboard */,
 				CBF413A020A9E9500038340F /* EmailLogin.storyboard */,
+				CBF4139620A9DE860038340F /* EmailSignUp.storyboard */,
+				CB4BB7DF20A0DC8E00F756D3 /* LaunchScreen.storyboard */,
+				CB4BB7DA20A0DC8E00F756D3 /* Main.storyboard */,
+				CBCE1BA020BA5A840010967E /* Settings.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -258,7 +254,6 @@
 			children = (
 				CB4BB7F320A1042B00F756D3 /* CreateTripCell.swift */,
 				CB4BB7F520A1046900F756D3 /* SavedTripsCell.swift */,
-				CB57BD9820AC943A004FEE89 /* SectionHeaderCell.swift */,
 				CB57BD9A20AC97DA004FEE89 /* MoreCell.swift */,
 			);
 			path = Home;
@@ -282,12 +277,19 @@
 			path = AwayGameAPI;
 			sourceTree = "<group>";
 		};
+		CBADC0BA20BF6121007A7A95 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				CB57BD9820AC943A004FEE89 /* SectionHeaderCell.swift */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
 		CBF4136920A490010038340F /* Util */ = {
 			isa = PBXGroup;
 			children = (
 				CBF4136A20A490160038340F /* NavigationHelper.swift */,
 				CBCE1B9720B7D5A40010967E /* Constants.swift */,
-				CBF4136C20A4942C0038340F /* Info.swift */,
 				CB57BDA220ADE877004FEE89 /* UserDefaults+FirstLaunch.swift */,
 				FE8E69D020B5D5FD00BCED6A /* FirebaseHelper.swift */,
 			);
@@ -312,9 +314,7 @@
 				CB4BB80020A109D600F756D3 /* SearchViewController.swift */,
 				CB4BB80220A109F100F756D3 /* ResultsTableViewController.swift */,
 				CBCE1B9A20B9162C0010967E /* GroupTableViewController.swift */,
-				CBF4138520A9CCFF0038340F /* FoodCollectionViewController.swift */,
-				CBF4138720A9CD150038340F /* InterestsCollectionViewController.swift */,
-				CBF4138920A9CD250038340F /* NightlifeCollectionViewController.swift */,
+				CBF4138520A9CCFF0038340F /* PreferencesCollectionViewController.swift */,
 				CB4BB80420A10A0C00F756D3 /* ItineraryTableViewController.swift */,
 			);
 			path = Main;
@@ -341,8 +341,10 @@
 		CBF4138020A9CC650038340F /* Preferences */ = {
 			isa = PBXGroup;
 			children = (
-				CBF4138120A9CCBC0038340F /* PreferenceCollectionCell.swift */,
 				CBCE1B9C20B91CB50010967E /* GroupTableViewCell.swift */,
+				CBF4138120A9CCBC0038340F /* PreferenceCollectionCell.swift */,
+				CBF4137520A4BFBC0038340F /* NextButtonCell.swift */,
+				CBADC0B820BE6727007A7A95 /* NextButtonCollectionCell.swift */,
 			);
 			path = Preferences;
 			sourceTree = "<group>";
@@ -544,14 +546,12 @@
 				CBF4139A20A9DF750038340F /* EmailNameViewController.swift in Sources */,
 				CB4BB80320A109F100F756D3 /* ResultsTableViewController.swift in Sources */,
 				CB57BDA120ADE2A4004FEE89 /* SignupViewController.swift in Sources */,
-				CBF4138620A9CCFF0038340F /* FoodCollectionViewController.swift in Sources */,
+				CBF4138620A9CCFF0038340F /* PreferencesCollectionViewController.swift in Sources */,
 				CBCE1B9620B76B9D0010967E /* Settings.swift in Sources */,
-				CBF4136D20A4942C0038340F /* Info.swift in Sources */,
-				CBF4138A20A9CD250038340F /* NightlifeCollectionViewController.swift in Sources */,
 				CBF4139E20A9DF8C0038340F /* PasswordViewController.swift in Sources */,
 				CBCE1B9F20BA5A4D0010967E /* SettingsViewController.swift in Sources */,
 				CB57BD9D20ACA354004FEE89 /* Router.swift in Sources */,
-				CB57BDA820B50530004FEE89 /* Preferences.swift in Sources */,
+				CB57BDA820B50530004FEE89 /* UserPreferences.swift in Sources */,
 				CB57BD9920AC943A004FEE89 /* SectionHeaderCell.swift in Sources */,
 				CB4BB7D920A0DC8E00F756D3 /* HomeTableViewController.swift in Sources */,
 				CB4BB7D720A0DC8E00F756D3 /* AppDelegate.swift in Sources */,
@@ -564,15 +564,14 @@
 				CBF4137620A4BFBC0038340F /* NextButtonCell.swift in Sources */,
 				CB57BDA320ADE877004FEE89 /* UserDefaults+FirstLaunch.swift in Sources */,
 				CBCE1B9B20B9162C0010967E /* GroupTableViewController.swift in Sources */,
-				CBF4139520A9D8820038340F /* LoginType.swift in Sources */,
 				CBCE1B9820B7D5A40010967E /* Constants.swift in Sources */,
 				CBF4136B20A490160038340F /* NavigationHelper.swift in Sources */,
 				CB4BB80520A10A0C00F756D3 /* ItineraryTableViewController.swift in Sources */,
-				CBF4138820A9CD150038340F /* InterestsCollectionViewController.swift in Sources */,
 				CB4BB7F420A1042B00F756D3 /* CreateTripCell.swift in Sources */,
 				CB4BB80A20A10A6800F756D3 /* ActivityCell.swift in Sources */,
 				CB4BB80820A10A4D00F756D3 /* UberCell.swift in Sources */,
 				CBF4137020A49A6A0038340F /* SearchTeamCell.swift in Sources */,
+				CBCE1BA320BB17A80010967E /* TripRequest.swift in Sources */,
 				CB4BB81320A207EF00F756D3 /* Theme.swift in Sources */,
 				CB4BB7FF20A109AC00F756D3 /* EmailLoginViewController.swift in Sources */,
 				CB57BD9B20AC97DA004FEE89 /* MoreCell.swift in Sources */,
@@ -584,6 +583,7 @@
 				CBF4138220A9CCBC0038340F /* PreferenceCollectionCell.swift in Sources */,
 				CB4BB80120A109D600F756D3 /* SearchViewController.swift in Sources */,
 				CB4BB7F020A0F5B100F756D3 /* Itinerary.swift in Sources */,
+				CBADC0B920BE6727007A7A95 /* NextButtonCollectionCell.swift in Sources */,
 				CBF4139C20A9DF820038340F /* EmailViewController.swift in Sources */,
 				CBF4137F20A5F2120038340F /* ResultsCell.swift in Sources */,
 				FE8E69D120B5D5FD00BCED6A /* FirebaseHelper.swift in Sources */,

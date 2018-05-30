@@ -151,13 +151,13 @@ class HomeTableViewController: UITableViewController {
             let mailVC = MFMailComposeViewController()
             mailVC.mailComposeDelegate = self
             
-            mailVC.setToRecipients([Info.Support.email])
-            mailVC.setSubject(Info.Support.subject)
-            mailVC.setMessageBody(Info.Support.message, isHTML: true)
+            mailVC.setToRecipients([Support.email])
+            mailVC.setSubject(Support.subject)
+            mailVC.setMessageBody(Support.message, isHTML: true)
             
             present(mailVC, animated: true)
         } else {
-            if let url = URL(string: "mailto:\(Info.Support.email)") {
+            if let url = URL(string: "mailto:\(Support.email)") {
                 UIApplication.shared.open(url)
             }
         }
