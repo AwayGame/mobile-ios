@@ -38,14 +38,18 @@ class MoreCell: UITableViewCell {
     // MARK: - Styling
     
     func styleViews() {
-        supportButton.setTitle("Support", for: .normal)
-        supportButton.titleLabel?.font = Theme.Font.h1
-        supportButton.layer.cornerRadius = 10.0
-        
-        settingsButton.setTitle("Settings", for: .normal)
-        settingsButton.titleLabel?.font = Theme.Font.h1
-        settingsButton.layer.cornerRadius = 10.0
+        styleButton(btn: settingsButton, title: "Settings")
+        styleButton(btn: supportButton, title: "Support")
     }
+    
+    func styleButton(btn: UIButton, title: String) {
+        btn.setTitle(title, for: .normal)
+        btn.titleLabel?.font = Theme.Font.p1
+        btn.setTitleColor(Theme.Color.darkText, for: .normal)
+        btn.layer.cornerRadius = 10.0
+    }
+    
+    // MARK: - Actions
 
     @IBAction func supportButtonTapped(_ sender: Any) {
         delegate?.supportTapped()

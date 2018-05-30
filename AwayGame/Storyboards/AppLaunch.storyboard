@@ -20,6 +20,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mA1-Bx-A1C">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="707"/>
+                            </imageView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aA5-o9-9Io" userLabel="mainContainer">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <connections>
@@ -49,16 +52,20 @@
                         <color key="backgroundColor" red="0.32549019607843138" green="0.72549019607843135" blue="0.44705882352941173" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="krq-3B-Gec" firstAttribute="leading" secondItem="oTl-vC-mzp" secondAttribute="leading" id="4Mo-st-LLi"/>
+                            <constraint firstItem="oTl-vC-mzp" firstAttribute="trailing" secondItem="mA1-Bx-A1C" secondAttribute="trailing" id="76o-Bf-e7y"/>
                             <constraint firstItem="krq-3B-Gec" firstAttribute="trailing" secondItem="oTl-vC-mzp" secondAttribute="trailing" id="7ib-nx-Fzq"/>
                             <constraint firstItem="csI-Db-mC8" firstAttribute="bottom" secondItem="oTl-vC-mzp" secondAttribute="bottom" id="Ct6-5w-RWA"/>
                             <constraint firstItem="aA5-o9-9Io" firstAttribute="leading" secondItem="oTl-vC-mzp" secondAttribute="leading" id="HPX-lC-58e"/>
                             <constraint firstItem="csI-Db-mC8" firstAttribute="leading" secondItem="oTl-vC-mzp" secondAttribute="leading" id="R8s-7i-i4R"/>
                             <constraint firstItem="krq-3B-Gec" firstAttribute="bottom" secondItem="oTl-vC-mzp" secondAttribute="bottom" id="SEN-Li-4Nt"/>
                             <constraint firstItem="OGV-YR-aqM" firstAttribute="centerX" secondItem="oTl-vC-mzp" secondAttribute="centerX" id="aKJ-eD-n5e"/>
+                            <constraint firstAttribute="bottom" secondItem="mA1-Bx-A1C" secondAttribute="bottom" constant="-40" id="eiN-xb-zgH"/>
                             <constraint firstItem="aA5-o9-9Io" firstAttribute="trailing" secondItem="oTl-vC-mzp" secondAttribute="trailing" id="gDS-By-x2w"/>
                             <constraint firstItem="OGV-YR-aqM" firstAttribute="centerY" secondItem="AP1-6W-w7U" secondAttribute="centerY" id="gvt-7d-yZ0"/>
                             <constraint firstItem="csI-Db-mC8" firstAttribute="top" secondItem="AP1-6W-w7U" secondAttribute="top" id="hFe-1v-Vmp"/>
+                            <constraint firstItem="mA1-Bx-A1C" firstAttribute="top" secondItem="AP1-6W-w7U" secondAttribute="top" id="ioh-4t-gbx"/>
                             <constraint firstItem="aA5-o9-9Io" firstAttribute="bottom" secondItem="oTl-vC-mzp" secondAttribute="bottom" id="iwQ-Rr-UwI"/>
+                            <constraint firstItem="mA1-Bx-A1C" firstAttribute="leading" secondItem="oTl-vC-mzp" secondAttribute="leading" id="mxZ-Wr-uih"/>
                             <constraint firstItem="csI-Db-mC8" firstAttribute="trailing" secondItem="oTl-vC-mzp" secondAttribute="trailing" id="s6d-Kg-ojt"/>
                             <constraint firstItem="aA5-o9-9Io" firstAttribute="top" secondItem="AP1-6W-w7U" secondAttribute="top" id="sqA-Qc-dTG"/>
                             <constraint firstItem="krq-3B-Gec" firstAttribute="top" secondItem="AP1-6W-w7U" secondAttribute="top" id="xY0-qy-dyW"/>
@@ -100,29 +107,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rbD-DZ-oDH">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="uIq-q5-o6p">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="signup-login background" translatesAutoresizingMaskIntoConstraints="NO" id="JEl-4h-7vk">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                        </imageView>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="JEl-4h-7vk" firstAttribute="leading" secondItem="uIq-q5-o6p" secondAttribute="leading" id="RoG-7c-s1s"/>
-                                        <constraint firstAttribute="bottom" secondItem="JEl-4h-7vk" secondAttribute="bottom" id="caN-pP-23f"/>
-                                        <constraint firstAttribute="trailing" secondItem="JEl-4h-7vk" secondAttribute="trailing" id="dC8-vM-nmX"/>
-                                        <constraint firstItem="JEl-4h-7vk" firstAttribute="top" secondItem="uIq-q5-o6p" secondAttribute="top" id="hPC-2G-6iR"/>
-                                    </constraints>
-                                </view>
-                                <blurEffect style="regular"/>
-                            </visualEffectView>
-                            <view alpha="0.63" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P5r-RQ-Uxu">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" red="0.26301039409999999" green="0.68416878169999995" blue="0.5455814216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login-background" translatesAutoresizingMaskIntoConstraints="NO" id="AOb-qH-ovH">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="707"/>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tOk-tZ-r44">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
@@ -303,23 +290,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="tOk-tZ-r44" firstAttribute="top" secondItem="jzE-yH-fpQ" secondAttribute="top" id="0nF-Ka-IYv"/>
-                            <constraint firstAttribute="bottom" secondItem="rbD-DZ-oDH" secondAttribute="bottom" id="3WV-uk-5fz"/>
-                            <constraint firstItem="rbD-DZ-oDH" firstAttribute="leading" secondItem="J2H-B1-zBP" secondAttribute="leading" id="5CM-41-Glr"/>
+                            <constraint firstItem="AOb-qH-ovH" firstAttribute="leading" secondItem="J2H-B1-zBP" secondAttribute="leading" id="2ap-Dv-a0L"/>
+                            <constraint firstItem="J2H-B1-zBP" firstAttribute="bottom" secondItem="AOb-qH-ovH" secondAttribute="bottom" constant="-40" id="Baf-9o-eCb"/>
                             <constraint firstItem="J2H-B1-zBP" firstAttribute="trailing" secondItem="tOk-tZ-r44" secondAttribute="trailing" id="EJB-k6-f8H"/>
+                            <constraint firstItem="AOb-qH-ovH" firstAttribute="top" secondItem="jzE-yH-fpQ" secondAttribute="top" id="Lad-ND-SbC"/>
                             <constraint firstAttribute="bottom" secondItem="tOk-tZ-r44" secondAttribute="bottom" id="NSd-bu-gKv"/>
-                            <constraint firstItem="P5r-RQ-Uxu" firstAttribute="leading" secondItem="J2H-B1-zBP" secondAttribute="leading" id="PeU-33-SIh"/>
                             <constraint firstItem="tOk-tZ-r44" firstAttribute="leading" secondItem="J2H-B1-zBP" secondAttribute="leading" id="QtE-JM-JSA"/>
-                            <constraint firstAttribute="bottom" secondItem="P5r-RQ-Uxu" secondAttribute="bottom" id="bcb-Ab-xPI"/>
-                            <constraint firstItem="P5r-RQ-Uxu" firstAttribute="trailing" secondItem="J2H-B1-zBP" secondAttribute="trailing" id="bz3-O8-JaY"/>
-                            <constraint firstItem="rbD-DZ-oDH" firstAttribute="top" secondItem="jzE-yH-fpQ" secondAttribute="top" id="cge-26-GYs"/>
-                            <constraint firstItem="J2H-B1-zBP" firstAttribute="trailing" secondItem="rbD-DZ-oDH" secondAttribute="trailing" id="pAF-dE-eqN"/>
-                            <constraint firstItem="P5r-RQ-Uxu" firstAttribute="top" secondItem="jzE-yH-fpQ" secondAttribute="top" id="zIZ-c1-6Qs"/>
+                            <constraint firstItem="J2H-B1-zBP" firstAttribute="trailing" secondItem="AOb-qH-ovH" secondAttribute="trailing" id="wx8-Rw-syd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="J2H-B1-zBP"/>
                     </view>
                     <connections>
-                        <outlet property="backgroundImageView" destination="JEl-4h-7vk" id="Hsp-Vo-1tJ"/>
-                        <outlet property="blurView" destination="rbD-DZ-oDH" id="pSB-81-oQ5"/>
                         <outlet property="createAccountButton" destination="6gw-8r-RX3" id="DXl-Dg-6se"/>
                         <outlet property="emailBackgroundView" destination="HXl-Zo-gWi" id="0aG-LA-QoT"/>
                         <outlet property="emailButtonLabel" destination="5NR-gw-4pG" id="C48-wA-Hd0"/>
@@ -329,7 +310,6 @@
                         <outlet property="facebookLoginButton" destination="KXD-R2-SyP" id="Wp3-l7-b5A"/>
                         <outlet property="facebookLogoImageView" destination="sND-Ut-qbd" id="bBs-mV-vjh"/>
                         <outlet property="logoImageView" destination="MV4-wB-UF7" id="rl7-H3-6xX"/>
-                        <outlet property="tintView" destination="P5r-RQ-Uxu" id="A1n-Hr-QgY"/>
                         <outlet property="twitterBackgroundView" destination="5L1-3O-knS" id="JZf-QD-A9V"/>
                         <outlet property="twitterButtonLabel" destination="HZM-0M-MOz" id="XBZ-Uj-c6s"/>
                         <outlet property="twitterLogoImageView" destination="XX0-gJ-6nw" id="KRn-f1-92g"/>
@@ -566,13 +546,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ftB-em-Mcc">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login-background" translatesAutoresizingMaskIntoConstraints="NO" id="ftB-em-Mcc">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="707"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jm8-Xt-A2V">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" red="0.26301039409999999" green="0.68416878169999995" blue="0.5455814216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vFT-Bs-HBM">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
@@ -750,17 +726,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ftB-em-Mcc" firstAttribute="leading" secondItem="ezp-Q6-B2R" secondAttribute="leading" id="714-LW-TCn"/>
-                            <constraint firstAttribute="bottom" secondItem="ftB-em-Mcc" secondAttribute="bottom" id="8OV-Po-gCy"/>
+                            <constraint firstAttribute="bottom" secondItem="ftB-em-Mcc" secondAttribute="bottom" constant="-40" id="8OV-Po-gCy"/>
                             <constraint firstItem="ezp-Q6-B2R" firstAttribute="trailing" secondItem="vFT-Bs-HBM" secondAttribute="trailing" id="9bv-Wc-hCX"/>
                             <constraint firstItem="vFT-Bs-HBM" firstAttribute="top" secondItem="4Kd-O3-gDb" secondAttribute="top" id="CAk-B9-J5O"/>
                             <constraint firstItem="vFT-Bs-HBM" firstAttribute="leading" secondItem="ezp-Q6-B2R" secondAttribute="leading" id="IMn-CU-BOS"/>
                             <constraint firstItem="ezp-Q6-B2R" firstAttribute="trailing" secondItem="ftB-em-Mcc" secondAttribute="trailing" id="N8E-Di-C3W"/>
-                            <constraint firstItem="jm8-Xt-A2V" firstAttribute="leading" secondItem="ezp-Q6-B2R" secondAttribute="leading" id="Pp2-FC-Tuy"/>
                             <constraint firstAttribute="bottom" secondItem="vFT-Bs-HBM" secondAttribute="bottom" id="W8N-5B-49A"/>
                             <constraint firstItem="ftB-em-Mcc" firstAttribute="top" secondItem="4Kd-O3-gDb" secondAttribute="top" id="Wxy-s4-jQi"/>
-                            <constraint firstAttribute="bottom" secondItem="jm8-Xt-A2V" secondAttribute="bottom" id="mGa-9H-Rvh"/>
-                            <constraint firstItem="jm8-Xt-A2V" firstAttribute="top" secondItem="4Kd-O3-gDb" secondAttribute="top" id="qnf-6p-bMz"/>
-                            <constraint firstItem="jm8-Xt-A2V" firstAttribute="trailing" secondItem="ezp-Q6-B2R" secondAttribute="trailing" id="zab-6K-q7v"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ezp-Q6-B2R"/>
                     </view>
@@ -774,7 +746,6 @@
                         <outlet property="facebookLogoImageView" destination="RBR-wL-hcg" id="sSR-l1-TdJ"/>
                         <outlet property="loginButton" destination="joQ-qo-4GS" id="e3c-8S-1J8"/>
                         <outlet property="logoImageView" destination="RLX-AE-8zK" id="WLO-uo-MUi"/>
-                        <outlet property="tintView" destination="jm8-Xt-A2V" id="gNV-UE-T3o"/>
                         <outlet property="twitterBackgroundView" destination="5DR-fd-X2W" id="WJf-jC-tvo"/>
                         <outlet property="twitterButtonLabel" destination="6dc-UD-FHA" id="ID9-iN-yhf"/>
                         <outlet property="twitterLogoImageView" destination="Z5B-Jy-NZt" id="eXC-jO-Vkz"/>
@@ -792,6 +763,6 @@
         <image name="email" width="700" height="700"/>
         <image name="flogo-HexRBG-Wht-100" width="100" height="100"/>
         <image name="flogo-HexRBG-Wht-114" width="114" height="114"/>
-        <image name="signup-login background" width="125" height="271"/>
+        <image name="login-background" width="1217" height="813"/>
     </resources>
 </document>

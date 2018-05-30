@@ -10,7 +10,7 @@ import UIKit
 
 class SearchViewController: UIViewController {
     
-    public var itineraryRequest = ItineraryRequest()
+    public var tripRequest = TripRequest()
     
     fileprivate var gameData: [Event] = [] {
         didSet {
@@ -22,11 +22,8 @@ class SearchViewController: UIViewController {
     }
     
     @IBOutlet weak var teamNameTextField: UITextField!
-
     @IBOutlet weak var startTimeTextField: UITextField!
-    
     @IBOutlet weak var endTimeTextField: UITextField!
-    
     
     // MARK: - Initialization
     
@@ -44,15 +41,15 @@ class SearchViewController: UIViewController {
     func findGames() {
         // API Call goes here
         AwayGameAPI.searchForGames(team: teamNameTextField.text ?? "", startDate:
-            itineraryRequest.arrivalTime ?? "", endDate: itineraryRequest.departureTime ?? "", completion: { events in
+            tripRequest.arrivalTime ?? "", endDate: tripRequest.departureTime ?? "", completion: { events in
                 self.gameData = events
         })
         
     }
 
     @IBAction func nextButtonTapped(_ sender: Any) {
-        itineraryRequest.arrivalTime = startTimeTextField.text ?? ""
-        itineraryRequest.departureTime = endTimeTextField.text ?? ""
+        tripRequest.arrivalTime = startTimeTextField.text ?? ""
+        tripRequest.departureTime = endTimeTextField.text ?? ""
         findGames()
     }
     
@@ -68,7 +65,7 @@ class SearchViewController: UIViewController {
             if let resultsVC = segue.destination as? ResultsTableViewController {
                 print(gameData)
                 
-                resultsVC.itineraryRequest = self.itineraryRequest
+                resultsVC.tripRequest = self.tripRequest
                 resultsVC.resultsData = self.gameData
                 
             }

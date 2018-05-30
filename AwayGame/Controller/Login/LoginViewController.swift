@@ -69,7 +69,6 @@ class LoginViewController: UIViewController {
     }
     
     func setupImages() {
-        backgroundImageView.image = #imageLiteral(resourceName: "signup-login background")
         logoImageView.image = #imageLiteral(resourceName: "AwayGameLogo-Large")
         facebookLogoImageView.image = #imageLiteral(resourceName: "flogo-HexRBG-Wht-114")
         twitterLogoImageView.image = #imageLiteral(resourceName: "Twitter_Social_Icon_Rounded_Square_White")
@@ -80,12 +79,6 @@ class LoginViewController: UIViewController {
     // MARK: - Styling
     
     func styleViews() {
-        tintView.backgroundColor = Theme.Color.Green.primary
-        tintView.alpha = 0.63
-        let blur = UIBlurEffect(style: .regular)
-        blurView.effect = blur
-        view.backgroundColor = Theme.Color.Background.darkGray
-        
         facebookButtonLabel.font = Theme.Font.h1
         twitterButtonLabel.font = Theme.Font.h1
         emailButtonLabel.font = Theme.Font.h1

@@ -8,11 +8,17 @@
 
 import Foundation
 
+enum PreferenceType {
+    case Food
+    case Interest
+    case Nightlife
+}
+
 class UserPreferences {
     
-    public var group: [String?] = []
-    public var food: [String?] = []
-    public var interests: [String?] = []
-    public var nightlife: [String?] = []
+    public var group: String? = ""
+    public var food: [String]? = []
+    public var interests: [String]? = []
+    public var nightlife: [String]? = []
 
 }

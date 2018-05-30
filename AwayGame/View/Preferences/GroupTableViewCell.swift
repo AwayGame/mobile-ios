@@ -11,6 +11,7 @@ import UIKit
 class GroupTableViewCell: UITableViewCell {
     
     static let identifier = "GroupCell"
+    static let height: CGFloat = 136.0
     
     @IBOutlet weak var roundedView: UIView!
     @IBOutlet weak var groupLabel: UILabel!
@@ -19,6 +20,8 @@ class GroupTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         roundedView.clipsToBounds = true
+        roundedView.layer.cornerRadius = 10.0
+        self.selectionStyle = .none
     }
     
     func configureCell(text: String?, image: UIImage?) {
@@ -26,18 +29,45 @@ class GroupTableViewCell: UITableViewCell {
         styleViews()
     }
     
+    // MARK: - Styling
+    
     func styleViews() {
-        roundedView.backgroundColor = Theme.Color.Background.primary
-        roundedView.layer.cornerRadius = 10.0
-        groupLabel.font = Theme.Font.h1
+        styleNormal()
+        groupLabel.font = Theme.Font.p1
         groupLabel.textColor = Theme.Color.darkText
+    }
+    
+    func styleSelected() {
+        roundedView.backgroundColor = Theme.Color.Green.selected
+        roundedView.layer.borderColor = Theme.Color.Green.border.cgColor
+        roundedView.layer.borderWidth = 1.0
+    }
+    
+    func styleHighlighted() {
+        roundedView.backgroundColor = Theme.Color.Background.highlighted
+        roundedView.layer.borderWidth = 0.0
+    }
+    
+    func styleNormal() {
+        roundedView.backgroundColor = Theme.Color.Background.primary
+        roundedView.layer.borderWidth = 0.0
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        roundedView.backgroundColor = Theme.Color.Green.selected
-        roundedView.layer.borderColor = Theme.Color.Green.border.cgColor
-        roundedView.layer.borderWidth = 1.0
+        if selected == true {
+            styleSelected()
+        } else {
+            styleNormal()
+        }
+    }
+    
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        if highlighted {
+            styleHighlighted()
+        } else {
+            styleNormal()
+        }
     }
     
 }

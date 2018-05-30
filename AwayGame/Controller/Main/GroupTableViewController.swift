@@ -10,11 +10,12 @@ import UIKit
 
 class GroupTableViewController: UITableViewController {
 
-    public var itineraryRequest: ItineraryRequest?
+    public var tripRequest: TripRequest?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.allowsSelection = true
+        tableView.separatorStyle = .none
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -24,42 +25,86 @@ class GroupTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
+        if section == 1 {
             return Preferences.Group.text.count
         } else {
-            return 0 // 1 for next button
+            return 1
         }
     }
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let groupCell = tableView.dequeueReusableCell(withIdentifier: GroupTableViewCell.identifier, for: indexPath) as? GroupTableViewCell {
-            groupCell.configureCell(text: Preferences.Group.text[indexPath.row], image: Preferences.Group.images[indexPath.row])
-            return groupCell
+        
+        if indexPath.section == 0 {
+            if let sectionHeaderCell = tableView.dequeueReusableCell(withIdentifier: SectionHeaderCell.identifier, for: indexPath) as? SectionHeaderCell {
+                sectionHeaderCell.configureCell(text: Preferences.Group.title)
+                return sectionHeaderCell
+            }
+        } else if indexPath.section == 1 {
+            if let groupCell = tableView.dequeueReusableCell(withIdentifier: GroupTableViewCell.identifier, for: indexPath) as? GroupTableViewCell {
+                groupCell.configureCell(text: Preferences.Group.text[indexPath.row], image: Preferences.Group.images[indexPath.row])
+                return groupCell
+            }
+        } else if indexPath.section == 2 {
+            if let nextCell = tableView.dequeueReusableCell(withIdentifier: NextButtonCell.identifier, for: indexPath) as? NextButtonCell {
+                nextCell.configureCell()
+                nextCell.delegate = self
+                return nextCell
+            }
         }
+        
         return UITableViewCell()
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200.0
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let groupCell = tableView.dequeueReusableCell(withIdentifier: GroupTableViewCell.identifier, for: indexPath) as? GroupTableViewCell {
-            groupCell.setSelected(true, animated: true)
+        if indexPath.section == 0 {
+            return SectionHeaderCell.height
+        } else if indexPath.section == 1 {
+            return GroupTableViewCell.height
+        } else {
+            return NextButtonCell.height
         }
-    }
+    }    
+
     
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        if segue.identifier == "NextSegue" {
+            if let preferencesVC = segue.destination as? PreferencesCollectionViewController {
+                
+                if let index = tableView.indexPathForSelectedRow {
+                    if let cell = tableView.cellForRow(at: index) as? GroupTableViewCell {
+                        tripRequest?.preferences?.group = cell.groupLabel.text ?? ""
+                        print("Group type: ", tripRequest?.preferences?.group ?? "error")
+                    }
+                }
+                
+                preferencesVC.setup(with: tripRequest?.eventName ?? "", textData: Preferences.Food.text, imageData: Preferences.Food.images)
+                
+                preferencesVC.tripRequest = self.tripRequest
+                preferencesVC.type = .Food
+                
+            }
+        }
     }
+    
+}
 
+// MARK: - NextDelegate
 
+extension GroupTableViewController: NextDelegate {
+    
+    func didTapNext() {
+        if tableView.indexPathForSelectedRow != nil {
+            performSegue(withIdentifier: "NextSegue", sender: self)
+        } else {
+            print ("Must select group type")
+        }
+    }
+    
 }
