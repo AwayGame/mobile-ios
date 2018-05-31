@@ -63,37 +63,29 @@ final class AwayGameAPI {
             
     }
     
-    class func createTrip(event: Event?, arrival: String?, depart: String?, preferences: Preferences) {
-        
-        guard let event = event else { return }
-        guard let arrive = arrival else { return }
-        guard let depart = depart else { return }
-        guard let lat = event.latitude else { return }
-        guard let long = event.longitude else { return }
-        
-        
-        print(event.longitude)
+    class func createTrip(request: TripRequest?, completion: @escaping (String?) -> ()) {
         
         let parameters: [String: Any] = [
-            "lat": Double(lat) ?? "",
-            "long": Double(long) ?? "",
-            "arrivalTime": arrive,
-            "departureTime": depart,
+            "lat": request?.lat,
+            "long": request?.long,
+            "arrivalTime": request?.arrivalTime ?? "",
+            "departureTime": request?.departureTime ?? "",
+            "gameId": request?.eventId ?? "",
+            "userId": User.currentUser.uid ?? "",
             "preferences": [
-                "dayActivities" : ["specialEvents"],
-                "nightActivities" : ["cocktailLounges"],
-                "food" : ["upscale"]
+                "dayActivities" : request?.preferences?.interests ?? [],
+                "nightActivities" : request?.preferences?.nightlife ?? [],
+                "food" : request?.preferences?.food ?? []
             ]
         ]
-        
         
         // TODO: Change responseJSON to responseObject with Mappable functionality
         
         Alamofire.request(Router.createTrip(parameters: parameters)).responseJSON { response in
-        
+            print("\n\n--------------------------")
             print("TRIP\n\n")
             print(response.result.value)
-            
+            completion(response.description)
 //            guard let eventsList = response.result.value else {
 //                print("ERROR")
 //                return

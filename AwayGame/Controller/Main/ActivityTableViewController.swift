@@ -1,5 +1,5 @@
 //
-//  ItineraryTableViewController.swift
+//  ActivityTableViewController.swift
 //  AwayGame
 //
 //  Created by Blake Swaidner on 5/30/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ItineraryTableViewController: UITableViewController {
+class ActivityTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
