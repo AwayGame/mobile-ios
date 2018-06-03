@@ -7,10 +7,16 @@
 //
 
 import UIKit
+import InstantSearch
+import InstantSearchCore
 
-class SearchViewController: UIViewController {
+class SearchViewController: HitsTableViewController {
     
     public var tripRequest = TripRequest()
+    
+    // MARK: Properties
+    @IBOutlet weak var teamInstantSearchField: TextFieldWidget!
+    @IBOutlet weak var teamSearchResults: HitsTableWidget!
     
     fileprivate var gameData: [Event] = [] {
         didSet {
@@ -21,14 +27,23 @@ class SearchViewController: UIViewController {
         }
     }
     
-    @IBOutlet weak var teamNameTextField: UITextField!
+    @IBOutlet weak var teamNameTextField: InstantSearch!
     @IBOutlet weak var startTimeTextField: UITextField!
     @IBOutlet weak var endTimeTextField: UITextField!
     
     // MARK: - Initialization
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        hitsTableView = teamSearchResults
+        InstantSearch.shared.registerAllWidgets(in: self.view)
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath, containing hit: [String : Any]) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "hitCell", for: indexPath)
+        
+        cell.textLabel?.text = hit["name"] as? String
+        
+        return cell
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -36,21 +51,9 @@ class SearchViewController: UIViewController {
         setupNavigation(controller: self.navigationController, hidesBar: false)
     }
 
-    // MARK: - API
-    
-    func findGames() {
-        // API Call goes here
-        AwayGameAPI.searchForGames(team: teamNameTextField.text ?? "", startDate:
-            tripRequest.arrivalTime ?? "", endDate: tripRequest.departureTime ?? "", completion: { events in
-                self.gameData = events
-        })
-        
-    }
-
     @IBAction func nextButtonTapped(_ sender: Any) {
         tripRequest.arrivalTime = startTimeTextField.text ?? ""
         tripRequest.departureTime = endTimeTextField.text ?? ""
-        findGames()
     }
     
     // MARK: - Navigation
