@@ -86,6 +86,9 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
+  - NVActivityIndicatorView (4.0.0):
+    - NVActivityIndicatorView/Presenter (= 4.0.0)
+  - NVActivityIndicatorView/Presenter (4.0.0)
   - ObjectMapper (3.1.0)
   - Protobuf (3.4.0)
   - TwitterCore (3.0.2)
@@ -100,6 +103,7 @@ DEPENDENCIES:
   - Firebase/Firestore
   - InstantSearch-iOS (~> 2.0.0)
   - Kingfisher (~> 4.0)
+  - NVActivityIndicatorView
   - ObjectMapper (~> 3.1)
   - TwitterKit
 
@@ -129,6 +133,7 @@ SPEC REPOS:
     - Kingfisher
     - leveldb-library
     - nanopb
+    - NVActivityIndicatorView
     - ObjectMapper
     - Protobuf
     - TwitterCore
@@ -159,11 +164,12 @@ SPEC CHECKSUMS:
   Kingfisher: 9ee7e788d8ba07c3f21ce0d43f33cec310a4f781
   leveldb-library: 44ef425bfde64f5b41daef86b38db2d13edbbee1
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  NVActivityIndicatorView: 54c9b93b6f25a4f467512680c0c90c09a1095cf2
   ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
   Protobuf: 03eef2ee0b674770735cf79d9c4d3659cf6908e8
   TwitterCore: e0420b01e02e7d20e94690e37f43e75de219ab8d
   TwitterKit: 205ac89824bbfe9e85a16c420d30bb7bcbedac45
 
-PODFILE CHECKSUM: 7c6f7f3229f4a951190dd245e2ba8881196c8a63
+PODFILE CHECKSUM: 58e2d889b4fe66b434738c4f78a0cde68276b305
 
 COCOAPODS: 1.5.0

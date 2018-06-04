@@ -22,7 +22,6 @@
 		CB4BB7FF20A109AC00F756D3 /* EmailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BB7FE20A109AB00F756D3 /* EmailLoginViewController.swift */; };
 		CB4BB80120A109D600F756D3 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BB80020A109D600F756D3 /* SearchViewController.swift */; };
 		CB4BB80320A109F100F756D3 /* ResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BB80220A109F100F756D3 /* ResultsTableViewController.swift */; };
-		CB4BB80520A10A0C00F756D3 /* ItineraryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BB80420A10A0C00F756D3 /* ItineraryTableViewController.swift */; };
 		CB4BB80820A10A4D00F756D3 /* UberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BB80720A10A4D00F756D3 /* UberCell.swift */; };
 		CB4BB80A20A10A6800F756D3 /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BB80920A10A6800F756D3 /* ActivityCell.swift */; };
 		CB4BB81320A207EF00F756D3 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BB81220A207EF00F756D3 /* Theme.swift */; };
@@ -34,6 +33,10 @@
 		CB57BDA320ADE877004FEE89 /* UserDefaults+FirstLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB57BDA220ADE877004FEE89 /* UserDefaults+FirstLaunch.swift */; };
 		CB57BDA620B4F5C8004FEE89 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB57BDA520B4F5C8004FEE89 /* GoogleService-Info.plist */; };
 		CB57BDA820B50530004FEE89 /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB57BDA720B50530004FEE89 /* UserPreferences.swift */; };
+		CB62238820C031E500690031 /* ActivityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB62238720C031E500690031 /* ActivityCollectionViewCell.swift */; };
+		CB765ABB20BF6D8400912B51 /* TripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB765ABA20BF6D8400912B51 /* TripViewController.swift */; };
+		CB765ABD20BF6DA300912B51 /* ItineraryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB765ABC20BF6DA300912B51 /* ItineraryTableViewController.swift */; };
+		CB765ABF20BF6DBF00912B51 /* ActivityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB765ABE20BF6DBF00912B51 /* ActivityTableViewController.swift */; };
 		CBADC0B920BE6727007A7A95 /* NextButtonCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBADC0B820BE6727007A7A95 /* NextButtonCollectionCell.swift */; };
 		CBCE1B9620B76B9D0010967E /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCE1B9520B76B9D0010967E /* Settings.swift */; };
 		CBCE1B9820B7D5A40010967E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCE1B9720B7D5A40010967E /* Constants.swift */; };
@@ -82,7 +85,6 @@
 		CB4BB7FE20A109AB00F756D3 /* EmailLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginViewController.swift; sourceTree = "<group>"; };
 		CB4BB80020A109D600F756D3 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		CB4BB80220A109F100F756D3 /* ResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsTableViewController.swift; sourceTree = "<group>"; };
-		CB4BB80420A10A0C00F756D3 /* ItineraryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItineraryTableViewController.swift; sourceTree = "<group>"; };
 		CB4BB80720A10A4D00F756D3 /* UberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UberCell.swift; sourceTree = "<group>"; };
 		CB4BB80920A10A6800F756D3 /* ActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
 		CB4BB81220A207EF00F756D3 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
@@ -94,6 +96,10 @@
 		CB57BDA220ADE877004FEE89 /* UserDefaults+FirstLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+FirstLaunch.swift"; sourceTree = "<group>"; };
 		CB57BDA520B4F5C8004FEE89 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CB57BDA720B50530004FEE89 /* UserPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferences.swift; sourceTree = "<group>"; };
+		CB62238720C031E500690031 /* ActivityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCollectionViewCell.swift; sourceTree = "<group>"; };
+		CB765ABA20BF6D8400912B51 /* TripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripViewController.swift; sourceTree = "<group>"; };
+		CB765ABC20BF6DA300912B51 /* ItineraryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItineraryTableViewController.swift; sourceTree = "<group>"; };
+		CB765ABE20BF6DBF00912B51 /* ActivityTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTableViewController.swift; sourceTree = "<group>"; };
 		CBADC0B820BE6727007A7A95 /* NextButtonCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextButtonCollectionCell.swift; sourceTree = "<group>"; };
 		CBCE1B9520B76B9D0010967E /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		CBCE1B9720B7D5A40010967E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -262,8 +268,9 @@
 		CB4BB80620A10A1100F756D3 /* Itenerary */ = {
 			isa = PBXGroup;
 			children = (
-				CB4BB80720A10A4D00F756D3 /* UberCell.swift */,
 				CB4BB80920A10A6800F756D3 /* ActivityCell.swift */,
+				CB62238720C031E500690031 /* ActivityCollectionViewCell.swift */,
+				CB4BB80720A10A4D00F756D3 /* UberCell.swift */,
 			);
 			path = Itenerary;
 			sourceTree = "<group>";
@@ -315,7 +322,9 @@
 				CB4BB80220A109F100F756D3 /* ResultsTableViewController.swift */,
 				CBCE1B9A20B9162C0010967E /* GroupTableViewController.swift */,
 				CBF4138520A9CCFF0038340F /* PreferencesCollectionViewController.swift */,
-				CB4BB80420A10A0C00F756D3 /* ItineraryTableViewController.swift */,
+				CB765ABA20BF6D8400912B51 /* TripViewController.swift */,
+				CB765ABC20BF6DA300912B51 /* ItineraryTableViewController.swift */,
+				CB765ABE20BF6DBF00912B51 /* ActivityTableViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -479,6 +488,7 @@
 				"${BUILT_PRODUCTS_DIR}/InstantSearch-Core-Swift/InstantSearchCore.framework",
 				"${BUILT_PRODUCTS_DIR}/InstantSearch-iOS/InstantSearch.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
@@ -502,6 +512,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/InstantSearchCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/InstantSearch.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
@@ -543,6 +554,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB62238820C031E500690031 /* ActivityCollectionViewCell.swift in Sources */,
+				CB765ABF20BF6DBF00912B51 /* ActivityTableViewController.swift in Sources */,
 				CBF4139A20A9DF750038340F /* EmailNameViewController.swift in Sources */,
 				CB4BB80320A109F100F756D3 /* ResultsTableViewController.swift in Sources */,
 				CB57BDA120ADE2A4004FEE89 /* SignupViewController.swift in Sources */,
@@ -560,13 +573,13 @@
 				CBCE1B9D20B91CB50010967E /* GroupTableViewCell.swift in Sources */,
 				CBF4139320A9D71B0038340F /* AppLaunchViewController.swift in Sources */,
 				CBF413A520AC82280038340F /* Trip.swift in Sources */,
+				CB765ABB20BF6D8400912B51 /* TripViewController.swift in Sources */,
 				CBF4137420A49E5E0038340F /* ArrivalDepartureCell.swift in Sources */,
 				CBF4137620A4BFBC0038340F /* NextButtonCell.swift in Sources */,
 				CB57BDA320ADE877004FEE89 /* UserDefaults+FirstLaunch.swift in Sources */,
 				CBCE1B9B20B9162C0010967E /* GroupTableViewController.swift in Sources */,
 				CBCE1B9820B7D5A40010967E /* Constants.swift in Sources */,
 				CBF4136B20A490160038340F /* NavigationHelper.swift in Sources */,
-				CB4BB80520A10A0C00F756D3 /* ItineraryTableViewController.swift in Sources */,
 				CB4BB7F420A1042B00F756D3 /* CreateTripCell.swift in Sources */,
 				CB4BB80A20A10A6800F756D3 /* ActivityCell.swift in Sources */,
 				CB4BB80820A10A4D00F756D3 /* UberCell.swift in Sources */,
@@ -574,6 +587,7 @@
 				CBCE1BA320BB17A80010967E /* TripRequest.swift in Sources */,
 				CB4BB81320A207EF00F756D3 /* Theme.swift in Sources */,
 				CB4BB7FF20A109AC00F756D3 /* EmailLoginViewController.swift in Sources */,
+				CB765ABD20BF6DA300912B51 /* ItineraryTableViewController.swift in Sources */,
 				CB57BD9B20AC97DA004FEE89 /* MoreCell.swift in Sources */,
 				CBF4137220A49C8A0038340F /* CalendarCell.swift in Sources */,
 				CB57BD9F20ACA36C004FEE89 /* AwayGameAPI.swift in Sources */,

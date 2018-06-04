@@ -69,8 +69,8 @@ class ResultsTableViewController: UITableViewController {
         guard let event = resultsData?[indexPath.row] else {
             return
         }
-        tripRequest?.lat = event.latitude ?? ""
-        tripRequest?.long = event.longitude ?? ""
+        tripRequest?.lat = Double(event.latitude ?? "")
+        tripRequest?.long = Double(event.longitude ?? "")
         tripRequest?.eventId = event.id ?? ""
         tripRequest?.eventName = event.name ?? ""
         

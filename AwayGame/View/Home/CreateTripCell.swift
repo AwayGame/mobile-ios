@@ -48,7 +48,7 @@ class CreateTripCell: UITableViewCell {
     }
     
     func styleTripLabel() {
-        createTripLabel.font = Theme.Font.body
+        createTripLabel.font = Theme.Font.p1
         createTripLabel.textColor = Theme.Color.black
     }
     
