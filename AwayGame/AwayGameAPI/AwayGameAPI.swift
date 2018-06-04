@@ -66,8 +66,8 @@ final class AwayGameAPI {
     class func createTrip(request: TripRequest?, completion: @escaping (String?) -> ()) {
         
         let parameters: [String: Any] = [
-            "lat": request?.lat,
-            "long": request?.long,
+            "lat": request?.lat ?? "",
+            "long": request?.long ?? "",
             "arrivalTime": request?.arrivalTime ?? "",
             "departureTime": request?.departureTime ?? "",
             "gameId": request?.eventId ?? "",
@@ -78,6 +78,8 @@ final class AwayGameAPI {
                 "food" : request?.preferences?.food ?? []
             ]
         ]
+        
+        print(parameters)
         
         // TODO: Change responseJSON to responseObject with Mappable functionality
         
