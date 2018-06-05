@@ -6,8 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -330,31 +328,28 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" red="0.67499438860000005" green="0.94602633250000001" blue="0.56876108719999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CreateTripCell" rowHeight="73" id="kqD-X0-GBH" customClass="CreateTripCell" customModule="AwayGame" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="73"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CreateTripCell" rowHeight="131" id="kqD-X0-GBH" customClass="CreateTripCell" customModule="AwayGame" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="131"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kqD-X0-GBH" id="Twr-ED-1pj" customClass="CreateTripCell" customModule="AwayGame" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="72.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="130.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fro-1T-qoO">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="73"/>
-                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="73" id="EBr-BI-5s7"/>
-                                                <constraint firstAttribute="width" constant="375" id="vvf-Nr-bE1"/>
-                                            </constraints>
+                                            <rect key="frame" x="20" y="20" width="335" height="90.5"/>
+                                            <color key="backgroundColor" red="0.32549019610000002" green="0.72549019609999998" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create a trip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OIp-Pn-b7F">
-                                            <rect key="frame" x="36" y="31" width="94.5" height="11"/>
+                                            <rect key="frame" x="20" y="55" width="94.5" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WVC-DF-vIg">
-                                            <rect key="frame" x="283" y="0.0" width="72" height="72"/>
+                                            <rect key="frame" x="325" y="50.5" width="30" height="30"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" secondItem="WVC-DF-vIg" secondAttribute="height" multiplier="1:1" id="O87-7k-4h3"/>
+                                                <constraint firstAttribute="height" constant="30" id="Xhf-eM-Feb"/>
+                                                <constraint firstAttribute="width" constant="30" id="Xry-U4-Os8"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="50"/>
                                             <state key="normal" title="+">
@@ -366,16 +361,14 @@
                                         </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="WVC-DF-vIg" firstAttribute="top" secondItem="Twr-ED-1pj" secondAttribute="top" id="6gB-Y4-ZcC"/>
-                                        <constraint firstItem="fro-1T-qoO" firstAttribute="leading" secondItem="Twr-ED-1pj" secondAttribute="leading" id="EBx-zx-A8m"/>
-                                        <constraint firstItem="fro-1T-qoO" firstAttribute="top" secondItem="Twr-ED-1pj" secondAttribute="top" id="EGq-Y0-wYd"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="OIp-Pn-b7F" secondAttribute="bottom" constant="20" id="Luq-Wb-PdC"/>
-                                        <constraint firstItem="OIp-Pn-b7F" firstAttribute="leading" secondItem="Twr-ED-1pj" secondAttribute="leadingMargin" constant="20" id="Pnc-3c-wW8"/>
-                                        <constraint firstItem="OIp-Pn-b7F" firstAttribute="top" secondItem="Twr-ED-1pj" secondAttribute="topMargin" constant="20" id="Zkk-BG-BY9"/>
-                                        <constraint firstAttribute="bottom" secondItem="fro-1T-qoO" secondAttribute="bottom" id="asP-2z-UZS"/>
+                                        <constraint firstItem="fro-1T-qoO" firstAttribute="leading" secondItem="Twr-ED-1pj" secondAttribute="leading" constant="20" id="EBx-zx-A8m"/>
+                                        <constraint firstItem="fro-1T-qoO" firstAttribute="top" secondItem="Twr-ED-1pj" secondAttribute="top" constant="20" id="EGq-Y0-wYd"/>
+                                        <constraint firstItem="OIp-Pn-b7F" firstAttribute="leading" secondItem="Twr-ED-1pj" secondAttribute="leading" constant="20" id="EeI-c6-7FT"/>
+                                        <constraint firstItem="OIp-Pn-b7F" firstAttribute="centerY" secondItem="Twr-ED-1pj" secondAttribute="centerY" id="U1I-WI-q7S"/>
+                                        <constraint firstAttribute="bottom" secondItem="fro-1T-qoO" secondAttribute="bottom" constant="20" id="asP-2z-UZS"/>
                                         <constraint firstAttribute="trailing" secondItem="WVC-DF-vIg" secondAttribute="trailing" constant="20" id="bvH-Oh-jCc"/>
-                                        <constraint firstAttribute="bottom" secondItem="WVC-DF-vIg" secondAttribute="bottom" id="nik-Kp-Veq"/>
-                                        <constraint firstAttribute="trailing" secondItem="fro-1T-qoO" secondAttribute="trailing" id="sHa-O8-LcU"/>
+                                        <constraint firstItem="WVC-DF-vIg" firstAttribute="centerY" secondItem="Twr-ED-1pj" secondAttribute="centerY" id="mMI-fO-A1c"/>
+                                        <constraint firstAttribute="trailing" secondItem="fro-1T-qoO" secondAttribute="trailing" constant="20" id="sHa-O8-LcU"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -385,7 +378,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SectionHeaderCell" rowHeight="127" id="XfF-9e-kzu" customClass="SectionHeaderCell" customModule="AwayGame" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="101" width="375" height="127"/>
+                                <rect key="frame" x="0.0" y="159" width="375" height="127"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XfF-9e-kzu" id="wpm-ye-s2Z">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="126.5"/>
@@ -420,7 +413,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="131" id="pcG-wf-MY6">
-                                <rect key="frame" x="0.0" y="228" width="375" height="131"/>
+                                <rect key="frame" x="0.0" y="286" width="375" height="131"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pcG-wf-MY6" id="NGv-Yt-cGZ">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="130.5"/>
@@ -448,7 +441,7 @@
                                 </tableViewCellContentView>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MoreCell" rowHeight="120" id="LXj-1O-t3X" customClass="MoreCell" customModule="AwayGame" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="359" width="375" height="120"/>
+                                <rect key="frame" x="0.0" y="417" width="375" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LXj-1O-t3X" id="iAk-CY-Ijf">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
@@ -502,7 +495,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3GZ-eL-hzD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1586" y="99"/>
+            <point key="canvasLocation" x="1584.8" y="98.50074962518741"/>
         </scene>
         <!--Settings-->
         <scene sceneID="4Ef-sS-4ut">

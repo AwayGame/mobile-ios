@@ -110,6 +110,17 @@ class PreferencesCollectionViewController: UICollectionViewController {
                 preferencesVC.type = .Nightlife
                 preferencesVC.setup(with: tripRequest?.eventName ?? "", textData: Preferences.Nightlife.text, imageData: Preferences.Nightlife.images)
             }
+        } else if segue.identifier == "TripSegue" {
+            if let tripVC = segue.destination as? TripViewController {
+                if let paths = collectionView?.indexPathsForSelectedItems {
+                    for indexPath in paths {
+                        if let cell = collectionView?.cellForItem(at: indexPath) as? PreferenceCollectionCell {
+                            tripRequest?.preferences?.nightlife?.append(cell.preferenceLabel.text ?? "")
+                        }
+                    }
+                }
+                tripVC.tripRequest = self.tripRequest
+            }
         }
     }
     
@@ -143,6 +154,8 @@ extension PreferencesCollectionViewController: NextDelegate {
             performSegue(withIdentifier: "InterestsSegue", sender: self)
         } else if type == .Interest {
             performSegue(withIdentifier: "NightlifeSegue", sender: self)
+        } else if type == .Nightlife {
+            performSegue(withIdentifier: "TripSegue", sender: self)
         }
         
     }

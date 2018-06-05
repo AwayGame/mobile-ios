@@ -10,8 +10,8 @@ import Foundation
 
 class TripRequest {
     
-    public var lat: String?
-    public var long: String?
+    public var lat: Double?
+    public var long: Double?
     public var preferences: UserPreferences? = UserPreferences()
     public var arrivalTime: String?
     public var departureTime: String?

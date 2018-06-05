@@ -15,5 +15,6 @@ target 'AwayGame' do
   pod 'InstantSearch-iOS', '~> 2.0.0'
   pod 'FBSDKLoginKit'
   pod 'TwitterKit'
+  pod 'NVActivityIndicatorView'
 
 end
