@@ -26,8 +26,8 @@ struct Preferences {
     
     struct Interest {
         static let title: String = "What do you want to do?"
-        static let text: [String] = ["Shopping", "Museums", "Famous Sights", "Shows", "Guided Tours", "Active Tourism", "Special Events", "Health/Wellness", "Historic Places", "Nightlife"]
-        static let images: [UIImage] = [#imageLiteral(resourceName: "shopping-1"), #imageLiteral(resourceName: "museum-1"), #imageLiteral(resourceName: "famoussight-1"), #imageLiteral(resourceName: "show-1"), #imageLiteral(resourceName: "tour-1"), #imageLiteral(resourceName: "active-1"), #imageLiteral(resourceName: "specialevent-1"), #imageLiteral(resourceName: "wellness-1"), #imageLiteral(resourceName: "historical-2"), #imageLiteral(resourceName: "nightlife")]
+        static let text: [String] = ["Shopping", "Museums", "Famous Sights", "Shows", "Guided Tours", "Active Tourism", "Special Events", "Health/Wellness", "Historic Places", "Parks"]
+        static let images: [UIImage] = [#imageLiteral(resourceName: "shopping-1"), #imageLiteral(resourceName: "museum-1"), #imageLiteral(resourceName: "famoussight-1"), #imageLiteral(resourceName: "show-1"), #imageLiteral(resourceName: "tour-1"), #imageLiteral(resourceName: "active-1"), #imageLiteral(resourceName: "specialevent-1"), #imageLiteral(resourceName: "wellness-1"), #imageLiteral(resourceName: "historical-2"), #imageLiteral(resourceName: "parks")]
     }
     
     struct Nightlife {

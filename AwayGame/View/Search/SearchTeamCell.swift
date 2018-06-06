@@ -1,36 +1,29 @@
 //
-//  SearchTeamCell.swift
+//  SearchHitCell.swift
 //  AwayGame
 //
 //  Created by Blake Swaidner on 5/10/18.
 //  Copyright © 2018 AwayGame. All rights reserved.
 //
 
-import InstantSearch
 import UIKit
 
-class SearchTeamCell: UITableViewCell {
+class SearchHitCell: UITableViewCell {
     
-    static let identifier = "SearchTeamCell"
+    static let identifier = "SearchHitCell"
+    static let height: CGFloat = 50.0
     
-    @IBOutlet weak var cellTitleLabel: UILabel!
-    @IBOutlet weak var teamSearchBar: UISearchBar!
-    // MARK: - Initialization
+    @IBOutlet weak var teamLabel: UILabel!
     
     override func awakeFromNib() {
-        self.selectionStyle = .none
+        self.backgroundColor = Theme.Color.Background.primary
+        teamLabel.textColor = Theme.Color.darkText
+        teamLabel.font = Theme.Font.p1
     }
     
-    func configureCell() {
-        cellTitleLabel.text = "Team"
-        teamSearchBar.barStyle = .default
-        teamSearchBar.placeholder = "Team"
+    func configureCell(with team: String?) {
+        teamLabel.text = team ?? ""
     }
-    
-    // MARK: - Actions
     
 }
 
-extension SearchTeamCell: UISearchBarDelegate {
-    
-}
