@@ -31,12 +31,12 @@
 		CB57BD9F20ACA36C004FEE89 /* AwayGameAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB57BD9E20ACA36C004FEE89 /* AwayGameAPI.swift */; };
 		CB57BDA120ADE2A4004FEE89 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB57BDA020ADE2A4004FEE89 /* SignupViewController.swift */; };
 		CB57BDA320ADE877004FEE89 /* UserDefaults+FirstLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB57BDA220ADE877004FEE89 /* UserDefaults+FirstLaunch.swift */; };
-		CB57BDA620B4F5C8004FEE89 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB57BDA520B4F5C8004FEE89 /* GoogleService-Info.plist */; };
 		CB57BDA820B50530004FEE89 /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB57BDA720B50530004FEE89 /* UserPreferences.swift */; };
 		CB62238820C031E500690031 /* ActivityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB62238720C031E500690031 /* ActivityCollectionViewCell.swift */; };
 		CB765ABB20BF6D8400912B51 /* TripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB765ABA20BF6D8400912B51 /* TripViewController.swift */; };
 		CB765ABD20BF6DA300912B51 /* ItineraryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB765ABC20BF6DA300912B51 /* ItineraryTableViewController.swift */; };
 		CB765ABF20BF6DBF00912B51 /* ActivityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB765ABE20BF6DBF00912B51 /* ActivityTableViewController.swift */; };
+		CB8A9A4520C8C88D00A9E354 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8A9A4420C8C88D00A9E354 /* Review.swift */; };
 		CBADC0B920BE6727007A7A95 /* NextButtonCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBADC0B820BE6727007A7A95 /* NextButtonCollectionCell.swift */; };
 		CBCE1B9620B76B9D0010967E /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCE1B9520B76B9D0010967E /* Settings.swift */; };
 		CBCE1B9820B7D5A40010967E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCE1B9720B7D5A40010967E /* Constants.swift */; };
@@ -93,12 +93,12 @@
 		CB57BD9E20ACA36C004FEE89 /* AwayGameAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwayGameAPI.swift; sourceTree = "<group>"; };
 		CB57BDA020ADE2A4004FEE89 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		CB57BDA220ADE877004FEE89 /* UserDefaults+FirstLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+FirstLaunch.swift"; sourceTree = "<group>"; };
-		CB57BDA520B4F5C8004FEE89 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CB57BDA720B50530004FEE89 /* UserPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferences.swift; sourceTree = "<group>"; };
 		CB62238720C031E500690031 /* ActivityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCollectionViewCell.swift; sourceTree = "<group>"; };
 		CB765ABA20BF6D8400912B51 /* TripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripViewController.swift; sourceTree = "<group>"; };
 		CB765ABC20BF6DA300912B51 /* ItineraryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItineraryTableViewController.swift; sourceTree = "<group>"; };
 		CB765ABE20BF6DBF00912B51 /* ActivityTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTableViewController.swift; sourceTree = "<group>"; };
+		CB8A9A4420C8C88D00A9E354 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		CBADC0B820BE6727007A7A95 /* NextButtonCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextButtonCollectionCell.swift; sourceTree = "<group>"; };
 		CBCE1B9520B76B9D0010967E /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		CBCE1B9720B7D5A40010967E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -188,7 +188,6 @@
 				CB4BB7D620A0DC8E00F756D3 /* AppDelegate.swift */,
 				CB4BB7DD20A0DC8E00F756D3 /* Assets.xcassets */,
 				CB4BB7EB20A0E11100F756D3 /* GoogleService-Info.plist */,
-				CB57BDA520B4F5C8004FEE89 /* GoogleService-Info.plist */,
 				CB4BB7E220A0DC8E00F756D3 /* Info.plist */,
 			);
 			path = AwayGame;
@@ -223,6 +222,7 @@
 				CBF413A420AC82280038340F /* Trip.swift */,
 				CB4BB7EF20A0F5B100F756D3 /* Itinerary.swift */,
 				CB4BB7F120A0F5DA00F756D3 /* Activity.swift */,
+				CB8A9A4420C8C88D00A9E354 /* Review.swift */,
 				CBF4137720A5ED500038340F /* Event.swift */,
 				CBF4138C20A9D4160038340F /* User.swift */,
 				CB57BDA720B50530004FEE89 /* UserPreferences.swift */,
@@ -434,7 +434,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB4BB7E120A0DC8E00F756D3 /* LaunchScreen.storyboard in Resources */,
-				CB57BDA620B4F5C8004FEE89 /* GoogleService-Info.plist in Resources */,
 				CB4BB7EC20A0E11100F756D3 /* GoogleService-Info.plist in Resources */,
 				CBF4138F20A9D60E0038340F /* AppLaunch.storyboard in Resources */,
 				CB4BB7DE20A0DC8E00F756D3 /* Assets.xcassets in Resources */,
@@ -594,6 +593,7 @@
 				CB4BB80120A109D600F756D3 /* SearchViewController.swift in Sources */,
 				CB4BB7F020A0F5B100F756D3 /* Itinerary.swift in Sources */,
 				CBADC0B920BE6727007A7A95 /* NextButtonCollectionCell.swift in Sources */,
+				CB8A9A4520C8C88D00A9E354 /* Review.swift in Sources */,
 				CBF4139C20A9DF820038340F /* EmailViewController.swift in Sources */,
 				CBF4137F20A5F2120038340F /* ResultsCell.swift in Sources */,
 				FE8E69D120B5D5FD00BCED6A /* FirebaseHelper.swift in Sources */,

@@ -17,5 +17,6 @@ class TripRequest {
     public var departureTime: String?
     public var eventId: String?
     public var eventName: String?
+    public var event: Event?
     
 }

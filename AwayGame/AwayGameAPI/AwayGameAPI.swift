@@ -63,7 +63,7 @@ final class AwayGameAPI {
             
     }
     
-    class func createTrip(request: TripRequest?, completion: @escaping (String?) -> ()) {
+    class func createTrip(request: TripRequest?, completion: @escaping (Trip) -> ()) {
         
         let parameters: [String: Any] = [
             "lat": request?.lat ?? "",
@@ -79,22 +79,32 @@ final class AwayGameAPI {
             ]
         ]
         
+        let tempParameters: [String: Any] = [
+            "lat": 38.0406,
+            "long": -84.5037,
+            "userId": User.currentUser.uid ?? "",
+            "preferences": [
+                "dayActivities": ["shopping", "historicalPlaces"],
+                "nightActivities": ["cocktailLounges", "breweries", "sportsbars"],
+                "food": ["barFood", "coffeeShops", "upscale", "fastFood"]
+            ],
+            "arrivalTime": "2018-09-21T19:00:00.000Z",
+            "departureTime": "2018-09-23T16:00:00.000Z",
+            "gameId": "Z7r9jZ1AeaMft"
+        ]
+        
         print(parameters)
         
-        // TODO: Change responseJSON to responseObject with Mappable functionality
-        
-        Alamofire.request(Router.createTrip(parameters: parameters)).responseJSON { response in
+        Alamofire.request(Router.createTrip(parameters: tempParameters)).responseObject { (response: DataResponse<Trip>) in
             print("\n\n--------------------------")
             print("TRIP\n\n")
-            print(response.result.value)
-            completion(response.description)
-//            guard let eventsList = response.result.value else {
-//                print("ERROR")
-//                return
-//            }
-//            events = eventsList
-//            completion(events)
+            print(response)
             
+            guard let tempTrip = response.result.value else {
+                print("ERROR")
+                return
+            }
+            completion(tempTrip)
         }
         
         

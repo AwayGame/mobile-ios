@@ -12,6 +12,7 @@ import UIKit
 class TripViewController: UIViewController {
 
     public var tripRequest: TripRequest?
+    public var trip: Trip?
     
     @IBOutlet weak var tripContainerView: UIView!
     @IBOutlet weak var loadingBackgroundView: UIView!
@@ -24,11 +25,13 @@ class TripViewController: UIViewController {
         super.viewDidLoad()
         setupLoadingScreen()
         AwayGameAPI.createTrip(request: tripRequest) { response in
-            self.tempLabel.text = response
+            self.trip = response
             self.tearDownLoadingScreen()
+            
+            if let itineraryVC = self.childViewControllers[0] as? ItineraryTableViewController {
+                itineraryVC.trip = self.trip
+            }
         }
-        
-        // Do any additional setup after loading the view.
     }
 
     func setupLoadingScreen() {
@@ -50,15 +53,5 @@ class TripViewController: UIViewController {
             self.loadingIndicator.stopAnimating()
         }
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

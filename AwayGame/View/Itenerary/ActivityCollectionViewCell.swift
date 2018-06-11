@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ActivityCollectionViewCell: UICollectionViewCell {
     
@@ -25,8 +26,14 @@ class ActivityCollectionViewCell: UICollectionViewCell {
         titleLabel.font = Theme.Font.p1
     }
     
-    func configureCell(event: Event?) {
-
+    func configureCell(activity: Activity?) {
+        print("\n\nsetting labels\n\n")
+        print(activity?.name)
+        print(activity?.startTime)
+        print(activity?.photos)
+        //titleLabel.text = activity?.name ?? ""
+        //timeLabel.text = activity?.startTime ?? ""
+        //activityImageView.kf.setImage(with: URL(string: activity.ph))
     }
     
     // MARK: - Styling

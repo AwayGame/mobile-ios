@@ -6,10 +6,16 @@
 //  Copyright © 2018 AwayGame. All rights reserved.
 //
 
-import Foundation
+import ObjectMapper
 
-class Itinerary {
+class Itinerary: Mappable {
     
     public var activities: [Activity]?
+    
+    required init?(map: Map) {}
+    
+    func mapping(map: Map) {
+        activities <- map["activities"]
+    }
 
 }

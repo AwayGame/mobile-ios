@@ -11,21 +11,39 @@ import ObjectMapper
 class Activity: Mappable {
     
     public var name: String?
+    public var category: String?
+    public var timeframe: String?
+    public var startTime: String?
     public var placeId: String?
     public var phone: String?
     public var address: String?
     public var location: Location?
+    public var website: String?
     public var hours: Hours?
+    public var reviews: [Review]?
+    public var rating: Double?
+    public var subcategory: String?
+    public var backups: [Activity]?
+    public var photos: [String : String]?
     
     required init?(map: Map) {}
     
     func mapping(map: Map) {
         name <- map["name"]
+        category <- map["category"]
+        timeframe <- map["timeframe"]
+        startTime <- map["startTime"]
         placeId <- map["placeId"]
         phone <- map["phone"]
         address <- map["address"]
         location <- map["location"]
+        website <- map["website"]
         hours <- map["hours"]
+        reviews <- map["reviews"]
+        rating <- map["rating"]
+        subcategory <- map["subcategory"]
+        backups <- map["backups"]
+        photos <- map["photos"]
     }
     
 }

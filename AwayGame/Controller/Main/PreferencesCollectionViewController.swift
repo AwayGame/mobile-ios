@@ -89,7 +89,7 @@ class PreferencesCollectionViewController: UICollectionViewController {
                 if let paths = collectionView?.indexPathsForSelectedItems {
                     for indexPath in paths {
                         if let cell = collectionView?.cellForItem(at: indexPath) as? PreferenceCollectionCell {
-                            tripRequest?.preferences?.food?.append(cell.preferenceLabel.text ?? "")
+                            tripRequest?.preferences?.food?.append(Preferences.Food.requestStrings[indexPath.row])
                         }
                     }
                 }
@@ -102,7 +102,7 @@ class PreferencesCollectionViewController: UICollectionViewController {
                 if let paths = collectionView?.indexPathsForSelectedItems {
                     for indexPath in paths {
                         if let cell = collectionView?.cellForItem(at: indexPath) as? PreferenceCollectionCell {
-                            tripRequest?.preferences?.interests?.append(cell.preferenceLabel.text ?? "")
+                            tripRequest?.preferences?.interests?.append(Preferences.Interest.requestStrings[indexPath.row])
                         }
                     }
                 }
@@ -115,7 +115,7 @@ class PreferencesCollectionViewController: UICollectionViewController {
                 if let paths = collectionView?.indexPathsForSelectedItems {
                     for indexPath in paths {
                         if let cell = collectionView?.cellForItem(at: indexPath) as? PreferenceCollectionCell {
-                            tripRequest?.preferences?.nightlife?.append(cell.preferenceLabel.text ?? "")
+                            tripRequest?.preferences?.nightlife?.append(Preferences.Nightlife.requestStrings[indexPath.row])
                         }
                     }
                 }
