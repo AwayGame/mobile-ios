@@ -14,58 +14,32 @@ class ActivityCell: UITableViewCell {
     static let height: CGFloat = 120.0
     
     var activity: Activity?
-    @IBOutlet weak var pageControl: UIPageControl!
+
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var activityImageView: UIImageView!
     @IBOutlet weak var roundedView: UIView!
-    @IBOutlet weak var collectionView: UICollectionView!
     
     // MARK: - Initialization
     
+    func setup() {
+        roundedView.layer.cornerRadius = 10.0
+        roundedView.clipsToBounds = true
+        timeLabel.font = Theme.Font.p1
+        timeLabel.textColor = Theme.Color.darkText
+        titleLabel.font = Theme.Font.p1
+        titleLabel.textColor = Theme.Color.darkText
+        
+    }
+    
     func configureCell(with activity: Activity?) {
+        setup()
         print("ActivityCell configured")
         self.activity = activity
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.backgroundColor = Theme.Color.clear
-        collectionView.register(ActivityCollectionViewCell.self, forCellWithReuseIdentifier: ActivityCollectionViewCell.identifier)
-        collectionView.reloadData()
-        print(activity?.name)
+        titleLabel.text = activity?.name ?? ""
+        timeLabel.text = activity?.startTime ?? ""
+        
     }
 
-}
-
-// MARK: - UICollectionViewDataSource
-
-extension ActivityCell: UICollectionViewDataSource {
-
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return 1
-    }
-
-
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
-    }
-
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let activityCell = collectionView.dequeueReusableCell(withReuseIdentifier: ActivityCollectionViewCell.identifier, for: indexPath) as? ActivityCollectionViewCell {
-            activityCell.configureCell(activity: activity)
-            print("HEEEEERE")
-            return activityCell
-        }
-        return UICollectionViewCell()
-    }
-
-}
-
-// MARK: - UICollectionViewDelegateFlowLayout
-
-extension ActivityCell: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: self.bounds.width, height: self.bounds.height)
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 8, left: 20, bottom: 20, right: 20)
-    }
 }
 

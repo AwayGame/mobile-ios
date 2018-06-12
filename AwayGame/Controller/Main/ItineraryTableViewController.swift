@@ -36,7 +36,6 @@ class ItineraryTableViewController: UITableViewController {
             guard let trip = trip else { return UITableViewCell()}
             guard let itineraries = trip.itineraries else { return UITableViewCell()}
             activityCell.configureCell(with: itineraries[0].activities?[indexPath.row])
-            print("here")
             return activityCell
         }
         return UITableViewCell()
@@ -46,14 +45,23 @@ class ItineraryTableViewController: UITableViewController {
         return 200.0
     }
 
-    /*
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "ActivitySegue", sender: indexPath)
+    }
+    
+
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "ActivitySegue" {
+            if let activityVC = segue.destination as? ActivityTableViewController {
+                guard let itineraries = trip?.itineraries else { return }
+                guard let indexPath = sender as? IndexPath else { return }
+                activityVC.activity = itineraries[0].activities?[indexPath.row]
+            }
+        }
+        
     }
-    */
+
 
 }
