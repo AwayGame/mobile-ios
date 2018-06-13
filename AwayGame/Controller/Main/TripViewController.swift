@@ -11,6 +11,8 @@ import UIKit
 
 class TripViewController: UIViewController {
 
+    // MARK: - Properties
+    
     public var tripRequest: TripRequest?
     public var trip: Trip?
     
@@ -20,6 +22,8 @@ class TripViewController: UIViewController {
     @IBOutlet weak var loadingLabel: UILabel!
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var tempLabel: UILabel!
+    
+    // MARK: - Initialization
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,15 +37,20 @@ class TripViewController: UIViewController {
             }
         }
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        setupNavigation(controller: self.navigationController, hidesBar: true)
+    }
 
     func setupLoadingScreen() {
         loadingBackgroundView.alpha = 1.0
         tripContainerView.isHidden = true
         loadingBackgroundView.backgroundColor = Theme.Color.Green.primary
         loadingLabel.text = "Building your AwayGame..."
+        loadingLabel.textColor = Theme.Color.white
         logoImageView.image = #imageLiteral(resourceName: "AwayGameLogo")
         loadingIndicator.color = Theme.Color.white
-        loadingIndicator.type = .audioEqualizer
+        loadingIndicator.type = .ballSpinFadeLoader
         loadingIndicator.startAnimating()
     }
 
@@ -49,8 +58,8 @@ class TripViewController: UIViewController {
         UIView.animate(withDuration: 1.0) {
             self.loadingBackgroundView.alpha = 0.0
             self.tripContainerView.isHidden = false
-            self.loadingLabel.text = "Building your AwayGame..."
             self.loadingIndicator.stopAnimating()
+            setupNavigation(controller: self.navigationController, hidesBar: false)
         }
     }
 

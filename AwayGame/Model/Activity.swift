@@ -24,7 +24,7 @@ class Activity: Mappable {
     public var rating: Double?
     public var subcategory: String?
     public var backups: [Activity]?
-    public var photos: [String : String]?
+    public var photos: [String]?
     
     required init?(map: Map) {}
     

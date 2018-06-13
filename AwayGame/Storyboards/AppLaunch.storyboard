@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="707"/>
                             </imageView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aA5-o9-9Io" userLabel="mainContainer">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="707"/>
                                 <connections>
                                     <segue destination="fce-O5-d66" kind="embed" id="doT-WL-tY3"/>
                                 </connections>
@@ -62,7 +62,7 @@
                             <constraint firstItem="OGV-YR-aqM" firstAttribute="centerY" secondItem="AP1-6W-w7U" secondAttribute="centerY" id="gvt-7d-yZ0"/>
                             <constraint firstItem="csI-Db-mC8" firstAttribute="top" secondItem="AP1-6W-w7U" secondAttribute="top" id="hFe-1v-Vmp"/>
                             <constraint firstItem="mA1-Bx-A1C" firstAttribute="top" secondItem="AP1-6W-w7U" secondAttribute="top" id="ioh-4t-gbx"/>
-                            <constraint firstItem="aA5-o9-9Io" firstAttribute="bottom" secondItem="oTl-vC-mzp" secondAttribute="bottom" id="iwQ-Rr-UwI"/>
+                            <constraint firstItem="aA5-o9-9Io" firstAttribute="bottom" secondItem="oTl-vC-mzp" secondAttribute="bottom" constant="40" id="iwQ-Rr-UwI"/>
                             <constraint firstItem="mA1-Bx-A1C" firstAttribute="leading" secondItem="oTl-vC-mzp" secondAttribute="leading" id="mxZ-Wr-uih"/>
                             <constraint firstItem="csI-Db-mC8" firstAttribute="trailing" secondItem="oTl-vC-mzp" secondAttribute="trailing" id="s6d-Kg-ojt"/>
                             <constraint firstItem="aA5-o9-9Io" firstAttribute="top" secondItem="AP1-6W-w7U" secondAttribute="top" id="sqA-Qc-dTG"/>
@@ -323,7 +323,7 @@
             <objects>
                 <tableViewController id="pMB-NU-FAA" customClass="HomeTableViewController" customModule="AwayGame" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ncb-qW-AtA">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="707"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" red="0.67499438860000005" green="0.94602633250000001" blue="0.56876108719999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

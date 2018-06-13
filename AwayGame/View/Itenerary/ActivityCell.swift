@@ -36,9 +36,12 @@ class ActivityCell: UITableViewCell {
         setup()
         print("ActivityCell configured")
         self.activity = activity
-        titleLabel.text = activity?.name ?? ""
-        timeLabel.text = activity?.startTime ?? ""
-        
+        guard let activity = activity else { return }
+        titleLabel.text = activity.name ?? ""
+        timeLabel.text = activity.startTime ?? ""
+        if !(activity.photos?.isEmpty ?? true) {
+            activityImageView.kf.setImage(with: URL(string: activity.photos?[0] ?? ""))
+        }
     }
 
 }

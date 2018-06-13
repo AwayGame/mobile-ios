@@ -33,6 +33,8 @@
 		CB57BDA320ADE877004FEE89 /* UserDefaults+FirstLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB57BDA220ADE877004FEE89 /* UserDefaults+FirstLaunch.swift */; };
 		CB57BDA820B50530004FEE89 /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB57BDA720B50530004FEE89 /* UserPreferences.swift */; };
 		CB62238820C031E500690031 /* ActivityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB62238720C031E500690031 /* ActivityCollectionViewCell.swift */; };
+		CB709D8E20D0874D00EA7C81 /* TripHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB709D8D20D0874D00EA7C81 /* TripHeaderCell.swift */; };
+		CB709D9020D0903C00EA7C81 /* TicketmasterImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB709D8F20D0903C00EA7C81 /* TicketmasterImage.swift */; };
 		CB765ABB20BF6D8400912B51 /* TripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB765ABA20BF6D8400912B51 /* TripViewController.swift */; };
 		CB765ABD20BF6DA300912B51 /* ItineraryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB765ABC20BF6DA300912B51 /* ItineraryTableViewController.swift */; };
 		CB765ABF20BF6DBF00912B51 /* ActivityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB765ABE20BF6DBF00912B51 /* ActivityTableViewController.swift */; };
@@ -95,6 +97,8 @@
 		CB57BDA220ADE877004FEE89 /* UserDefaults+FirstLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+FirstLaunch.swift"; sourceTree = "<group>"; };
 		CB57BDA720B50530004FEE89 /* UserPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferences.swift; sourceTree = "<group>"; };
 		CB62238720C031E500690031 /* ActivityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCollectionViewCell.swift; sourceTree = "<group>"; };
+		CB709D8D20D0874D00EA7C81 /* TripHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripHeaderCell.swift; sourceTree = "<group>"; };
+		CB709D8F20D0903C00EA7C81 /* TicketmasterImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketmasterImage.swift; sourceTree = "<group>"; };
 		CB765ABA20BF6D8400912B51 /* TripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripViewController.swift; sourceTree = "<group>"; };
 		CB765ABC20BF6DA300912B51 /* ItineraryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItineraryTableViewController.swift; sourceTree = "<group>"; };
 		CB765ABE20BF6DBF00912B51 /* ActivityTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTableViewController.swift; sourceTree = "<group>"; };
@@ -224,6 +228,7 @@
 				CB4BB7F120A0F5DA00F756D3 /* Activity.swift */,
 				CB8A9A4420C8C88D00A9E354 /* Review.swift */,
 				CBF4137720A5ED500038340F /* Event.swift */,
+				CB709D8F20D0903C00EA7C81 /* TicketmasterImage.swift */,
 				CBF4138C20A9D4160038340F /* User.swift */,
 				CB57BDA720B50530004FEE89 /* UserPreferences.swift */,
 				CBCE1B9520B76B9D0010967E /* Settings.swift */,
@@ -268,6 +273,7 @@
 			children = (
 				CB4BB80920A10A6800F756D3 /* ActivityCell.swift */,
 				CB62238720C031E500690031 /* ActivityCollectionViewCell.swift */,
+				CB709D8D20D0874D00EA7C81 /* TripHeaderCell.swift */,
 				CB4BB80720A10A4D00F756D3 /* UberCell.swift */,
 			);
 			path = Itenerary;
@@ -573,6 +579,7 @@
 				CBF4137420A49E5E0038340F /* ArrivalDepartureCell.swift in Sources */,
 				CBF4137620A4BFBC0038340F /* NextButtonCell.swift in Sources */,
 				CB57BDA320ADE877004FEE89 /* UserDefaults+FirstLaunch.swift in Sources */,
+				CB709D8E20D0874D00EA7C81 /* TripHeaderCell.swift in Sources */,
 				CBCE1B9B20B9162C0010967E /* GroupTableViewController.swift in Sources */,
 				CBCE1B9820B7D5A40010967E /* Constants.swift in Sources */,
 				CBF4136B20A490160038340F /* NavigationHelper.swift in Sources */,
@@ -587,6 +594,7 @@
 				CB57BD9B20AC97DA004FEE89 /* MoreCell.swift in Sources */,
 				CB57BD9F20ACA36C004FEE89 /* AwayGameAPI.swift in Sources */,
 				CBF4137820A5ED500038340F /* Event.swift in Sources */,
+				CB709D9020D0903C00EA7C81 /* TicketmasterImage.swift in Sources */,
 				CB4BB7F220A0F5DA00F756D3 /* Activity.swift in Sources */,
 				CB4BB7F620A1046900F756D3 /* SavedTripsCell.swift in Sources */,
 				CBF4138220A9CCBC0038340F /* PreferenceCollectionCell.swift in Sources */,
@@ -736,12 +744,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CR4T3XR3PC;
+				DEVELOPMENT_TEAM = AJ7H86ML8P;
 				INFOPLIST_FILE = AwayGame/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.AwayGame.AwayGame;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.awaygame.app-awaygame";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -755,12 +764,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CR4T3XR3PC;
+				DEVELOPMENT_TEAM = AJ7H86ML8P;
 				INFOPLIST_FILE = AwayGame/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.AwayGame.AwayGame;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.awaygame.app-awaygame";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
