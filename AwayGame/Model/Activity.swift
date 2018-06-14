@@ -25,6 +25,7 @@ class Activity: Mappable {
     public var subcategory: String?
     public var backups: [Activity]?
     public var photos: [String]?
+    public var mapsUrl: String?
     
     required init?(map: Map) {}
     
@@ -44,6 +45,7 @@ class Activity: Mappable {
         subcategory <- map["subcategory"]
         backups <- map["backups"]
         photos <- map["photos"]
+        mapsUrl <- map["mapsUrl"]
     }
     
 }
@@ -54,14 +56,12 @@ struct Location: Mappable {
         
     public var latitude: Double?
     public var longitude: Double?
-    public var mapsUrl: String?
         
     init?(map: Map) {}
         
     mutating func mapping(map: Map) {
             latitude <- map["lat"]
             longitude <- map["long"]
-            mapsUrl <- map["mapsUrl"]
     }
     
 }

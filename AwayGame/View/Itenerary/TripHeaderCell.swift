@@ -16,6 +16,8 @@ protocol TripDelegate: class {
 
 class TripHeaderCell: UITableViewCell {
     
+    // TODO: Change to Paging Cell to use for both itineraries and activities
+    
     static let identifier = "TripHeaderCell"
     static let height: CGFloat = 120.0
     

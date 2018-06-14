@@ -79,19 +79,6 @@ final class AwayGameAPI {
             ]
         ]
         
-//        let tempParameters: [String: Any] = [
-//            "lat": 38.0406,
-//            "long": -84.5037,
-//            "userId": User.currentUser.uid ?? "",
-//            "preferences": [
-//                "dayActivities": ["shopping", "historicalPlaces"],
-//                "nightActivities": ["cocktailLounges", "breweries", "sportsbars"],
-//                "food": ["barFood", "coffeeShops", "upscale", "fastFood"]
-//            ],
-//            "arrivalTime": "2018-09-21T19:00:00.000Z",
-//            "departureTime": "2018-09-23T16:00:00.000Z",
-//            "gameId": "Z7r9jZ1AeaMft"
-//        ]
         
         print(parameters)
         

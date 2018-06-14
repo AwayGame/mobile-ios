@@ -35,12 +35,12 @@
 		CB62238820C031E500690031 /* ActivityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB62238720C031E500690031 /* ActivityCollectionViewCell.swift */; };
 		CB709D8E20D0874D00EA7C81 /* TripHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB709D8D20D0874D00EA7C81 /* TripHeaderCell.swift */; };
 		CB709D9020D0903C00EA7C81 /* TicketmasterImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB709D8F20D0903C00EA7C81 /* TicketmasterImage.swift */; };
+		CB709D9320D1EC2F00EA7C81 /* ActivityDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB709D9220D1EC2F00EA7C81 /* ActivityDetailsCell.swift */; };
 		CB765ABB20BF6D8400912B51 /* TripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB765ABA20BF6D8400912B51 /* TripViewController.swift */; };
 		CB765ABD20BF6DA300912B51 /* ItineraryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB765ABC20BF6DA300912B51 /* ItineraryTableViewController.swift */; };
 		CB765ABF20BF6DBF00912B51 /* ActivityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB765ABE20BF6DBF00912B51 /* ActivityTableViewController.swift */; };
 		CB8A9A4520C8C88D00A9E354 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8A9A4420C8C88D00A9E354 /* Review.swift */; };
 		CBADC0B920BE6727007A7A95 /* NextButtonCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBADC0B820BE6727007A7A95 /* NextButtonCollectionCell.swift */; };
-		CBCE1B9620B76B9D0010967E /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCE1B9520B76B9D0010967E /* Settings.swift */; };
 		CBCE1B9820B7D5A40010967E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCE1B9720B7D5A40010967E /* Constants.swift */; };
 		CBCE1B9B20B9162C0010967E /* GroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCE1B9A20B9162C0010967E /* GroupTableViewController.swift */; };
 		CBCE1B9D20B91CB50010967E /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCE1B9C20B91CB50010967E /* GroupTableViewCell.swift */; };
@@ -49,7 +49,6 @@
 		CBCE1BA320BB17A80010967E /* TripRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCE1BA220BB17A80010967E /* TripRequest.swift */; };
 		CBF4136B20A490160038340F /* NavigationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4136A20A490160038340F /* NavigationHelper.swift */; };
 		CBF4137020A49A6A0038340F /* SearchTeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4136F20A49A6A0038340F /* SearchTeamCell.swift */; };
-		CBF4137420A49E5E0038340F /* ArrivalDepartureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4137320A49E5E0038340F /* ArrivalDepartureCell.swift */; };
 		CBF4137620A4BFBC0038340F /* NextButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4137520A4BFBC0038340F /* NextButtonCell.swift */; };
 		CBF4137820A5ED500038340F /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4137720A5ED500038340F /* Event.swift */; };
 		CBF4137F20A5F2120038340F /* ResultsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4137E20A5F2120038340F /* ResultsCell.swift */; };
@@ -99,12 +98,12 @@
 		CB62238720C031E500690031 /* ActivityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCollectionViewCell.swift; sourceTree = "<group>"; };
 		CB709D8D20D0874D00EA7C81 /* TripHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripHeaderCell.swift; sourceTree = "<group>"; };
 		CB709D8F20D0903C00EA7C81 /* TicketmasterImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketmasterImage.swift; sourceTree = "<group>"; };
+		CB709D9220D1EC2F00EA7C81 /* ActivityDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailsCell.swift; sourceTree = "<group>"; };
 		CB765ABA20BF6D8400912B51 /* TripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripViewController.swift; sourceTree = "<group>"; };
 		CB765ABC20BF6DA300912B51 /* ItineraryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItineraryTableViewController.swift; sourceTree = "<group>"; };
 		CB765ABE20BF6DBF00912B51 /* ActivityTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTableViewController.swift; sourceTree = "<group>"; };
 		CB8A9A4420C8C88D00A9E354 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		CBADC0B820BE6727007A7A95 /* NextButtonCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextButtonCollectionCell.swift; sourceTree = "<group>"; };
-		CBCE1B9520B76B9D0010967E /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		CBCE1B9720B7D5A40010967E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CBCE1B9A20B9162C0010967E /* GroupTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewController.swift; sourceTree = "<group>"; };
 		CBCE1B9C20B91CB50010967E /* GroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
@@ -113,7 +112,6 @@
 		CBCE1BA220BB17A80010967E /* TripRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripRequest.swift; sourceTree = "<group>"; };
 		CBF4136A20A490160038340F /* NavigationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationHelper.swift; sourceTree = "<group>"; };
 		CBF4136F20A49A6A0038340F /* SearchTeamCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTeamCell.swift; sourceTree = "<group>"; };
-		CBF4137320A49E5E0038340F /* ArrivalDepartureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalDepartureCell.swift; sourceTree = "<group>"; };
 		CBF4137520A4BFBC0038340F /* NextButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextButtonCell.swift; sourceTree = "<group>"; };
 		CBF4137720A5ED500038340F /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		CBF4137E20A5F2120038340F /* ResultsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsCell.swift; sourceTree = "<group>"; };
@@ -231,7 +229,6 @@
 				CB709D8F20D0903C00EA7C81 /* TicketmasterImage.swift */,
 				CBF4138C20A9D4160038340F /* User.swift */,
 				CB57BDA720B50530004FEE89 /* UserPreferences.swift */,
-				CBCE1B9520B76B9D0010967E /* Settings.swift */,
 				CBCE1BA220BB17A80010967E /* TripRequest.swift */,
 			);
 			path = Model;
@@ -275,6 +272,7 @@
 				CB62238720C031E500690031 /* ActivityCollectionViewCell.swift */,
 				CB709D8D20D0874D00EA7C81 /* TripHeaderCell.swift */,
 				CB4BB80720A10A4D00F756D3 /* UberCell.swift */,
+				CB709D9220D1EC2F00EA7C81 /* ActivityDetailsCell.swift */,
 			);
 			path = Itenerary;
 			sourceTree = "<group>";
@@ -311,7 +309,6 @@
 			isa = PBXGroup;
 			children = (
 				CBF4136F20A49A6A0038340F /* SearchTeamCell.swift */,
-				CBF4137320A49E5E0038340F /* ArrivalDepartureCell.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -562,7 +559,6 @@
 				CB4BB80320A109F100F756D3 /* ResultsTableViewController.swift in Sources */,
 				CB57BDA120ADE2A4004FEE89 /* SignupViewController.swift in Sources */,
 				CBF4138620A9CCFF0038340F /* PreferencesCollectionViewController.swift in Sources */,
-				CBCE1B9620B76B9D0010967E /* Settings.swift in Sources */,
 				CBF4139E20A9DF8C0038340F /* PasswordViewController.swift in Sources */,
 				CBCE1B9F20BA5A4D0010967E /* SettingsViewController.swift in Sources */,
 				CB57BD9D20ACA354004FEE89 /* Router.swift in Sources */,
@@ -576,13 +572,13 @@
 				CBF4139320A9D71B0038340F /* AppLaunchViewController.swift in Sources */,
 				CBF413A520AC82280038340F /* Trip.swift in Sources */,
 				CB765ABB20BF6D8400912B51 /* TripViewController.swift in Sources */,
-				CBF4137420A49E5E0038340F /* ArrivalDepartureCell.swift in Sources */,
 				CBF4137620A4BFBC0038340F /* NextButtonCell.swift in Sources */,
 				CB57BDA320ADE877004FEE89 /* UserDefaults+FirstLaunch.swift in Sources */,
 				CB709D8E20D0874D00EA7C81 /* TripHeaderCell.swift in Sources */,
 				CBCE1B9B20B9162C0010967E /* GroupTableViewController.swift in Sources */,
 				CBCE1B9820B7D5A40010967E /* Constants.swift in Sources */,
 				CBF4136B20A490160038340F /* NavigationHelper.swift in Sources */,
+				CB709D9320D1EC2F00EA7C81 /* ActivityDetailsCell.swift in Sources */,
 				CB4BB7F420A1042B00F756D3 /* CreateTripCell.swift in Sources */,
 				CB4BB80A20A10A6800F756D3 /* ActivityCell.swift in Sources */,
 				CB4BB80820A10A4D00F756D3 /* UberCell.swift in Sources */,

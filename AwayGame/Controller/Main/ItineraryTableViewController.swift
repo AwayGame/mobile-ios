@@ -41,6 +41,12 @@ class ItineraryTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             if let headerCell = tableView.dequeueReusableCell(withIdentifier: TripHeaderCell.identifier, for: indexPath) as? TripHeaderCell {
+                let dateFormatterGet = DateFormatter()
+                dateFormatterGet.dateFormat = "yyyy-MM-dd"
+                let dateFormatterPrint = DateFormatter()
+                dateFormatterPrint.dateFormat = "MMMM dd"
+                let date: Date? = dateFormatterGet.date(from: currentItinerary?.date ?? "")
+                headerCell.configureCell(withTitle: dateFormatterPrint.string(from: date!))
                 headerCell.delegate = self
                 return headerCell
             }

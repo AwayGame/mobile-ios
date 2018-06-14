@@ -51,6 +51,7 @@ class SearchViewController: HitsTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         styleViews()
+        datePicker.minuteInterval = 15
         hitsTableView = teamSearchResults
         InstantSearch.shared.registerAllWidgets(in: self.view)
     }
@@ -154,7 +155,7 @@ class SearchViewController: HitsTableViewController {
         let dateFormatter = DateFormatter()
         let neatFormatter = DateFormatter()
         neatFormatter.dateFormat = "EEEE, MMM d HH:mm"
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:00"
         if buttonType == .arrive {
             arriveString = dateFormatter.string(from: (datePicker?.date) ?? Date())
             arriveButton.setTitle(neatFormatter.string(from: (datePicker?.date) ?? Date()), for: .normal)

@@ -29,7 +29,8 @@ class ActivityCell: UITableViewCell {
         timeLabel.textColor = Theme.Color.darkText
         titleLabel.font = Theme.Font.p1
         titleLabel.textColor = Theme.Color.darkText
-        
+        activityImageView.layer.cornerRadius = 10.0
+        activityImageView.clipsToBounds = true
     }
     
     func configureCell(with activity: Activity?) {
