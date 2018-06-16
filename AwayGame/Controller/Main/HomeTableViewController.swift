@@ -17,12 +17,14 @@ protocol HomeDelegate: class {
 }
 
 class HomeTableViewController: UITableViewController {
-
-    private var ItineraryData: [[Itinerary]] = [[], []] {
+    
+    var tripStubData: [[TripStub]] = [[], []] {
         didSet {
             tableView.reloadData()
         }
     }
+    
+    
     
     weak var delegate: HomeDelegate?
     
@@ -33,7 +35,6 @@ class HomeTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupFirebase()
         setupTableView()
     }
     
@@ -46,15 +47,28 @@ class HomeTableViewController: UITableViewController {
         tableView.dataSource = self
     }
     
+    
+    
     // MARK: - Firebase
     
     func setupFirebase() {
-        
-        // TODO: - Setup firebase reference for data
-        //         When data is set, it will populate tableview
-        
+        initializeDatabaseSubscription()
     }
     
+    func updateTripStubs(forUser user: User) {
+        guard let stubs = user.tripStubs else { return }
+        tripStubData = [[],[]]
+        for stub in stubs {
+            if let deleted = stub.isDeleted, !deleted {
+                if let isCompleted = stub.isCompleted, isCompleted {
+                    tripStubData[1].append(stub)
+                } else {
+                    tripStubData[0].append(stub)
+                }
+            }
+        }
+    }
+        
     // MARK: - Tableview data source
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -64,24 +78,35 @@ class HomeTableViewController: UITableViewController {
                 createTripCell.delegate = self
                 return createTripCell
             }
-        } else if indexPath.section == 1 {
+        } else if indexPath.section == 1 || indexPath.section == 3 || indexPath.section == 5 {
+            
+            var title = ""
+            if indexPath.section == 1 {
+                title = "Upcoming Trips"
+            } else if indexPath.section == 3 {
+                 title = "Past Trips"
+            } else {
+                 title = "More"
+            }
+            
             if let sectionHeaderCell = tableView.dequeueReusableCell(withIdentifier: SectionHeaderCell.identifier, for: indexPath) as? SectionHeaderCell {
-                sectionHeaderCell.configureCell(text: "Upcoming Trips")
+                sectionHeaderCell.configureCell(text: title)
                 return sectionHeaderCell
             }
-        } else if indexPath.section == 2 {
+        } else if indexPath.section == 2 || indexPath.section == 4 {
             
-        } else if indexPath.section == 3 {
-            if let sectionHeaderCell = tableView.dequeueReusableCell(withIdentifier: SectionHeaderCell.identifier, for: indexPath) as? SectionHeaderCell {
-                sectionHeaderCell.configureCell(text: "Past Trips")
-                return sectionHeaderCell
-            }
-        } else if indexPath.section == 4 {
+            let index = indexPath.section == 2 ? 0 : 1
             
-        } else if indexPath.section == 5 {
-            if let sectionHeaderCell = tableView.dequeueReusableCell(withIdentifier: SectionHeaderCell.identifier, for: indexPath) as? SectionHeaderCell {
-                sectionHeaderCell.configureCell(text: "More")
-                return sectionHeaderCell
+            if tripStubData[index].isEmpty {
+                if let noSavedTripsCell = tableView.dequeueReusableCell(withIdentifier: NoSavedTripsCell.identifier, for: indexPath) as? NoSavedTripsCell {
+                    noSavedTripsCell.configureCell(indexPath: indexPath)
+                    return noSavedTripsCell
+                }
+            } else {
+                if let savedTripCell = tableView.dequeueReusableCell(withIdentifier: SavedTripCell.identifier, for: indexPath) as? SavedTripCell {
+                    savedTripCell.configureCell(tripStub: tripStubData[index][indexPath.row])
+                    return savedTripCell
+                }
             }
         } else if indexPath.section == 6 {
             if let moreCell = tableView.dequeueReusableCell(withIdentifier: MoreCell.identifier, for: indexPath) as? MoreCell {
@@ -97,9 +122,19 @@ class HomeTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
             case 2:
-                return ItineraryData[0].count
+                if tripStubData[0].isEmpty {
+                    return 1
+                    
+                } else {
+                    return tripStubData[0].count
+                }
             case 4:
-                return ItineraryData[1].count
+                if tripStubData[1].isEmpty {
+                    return 1
+                    
+                } else {
+                    return tripStubData[1].count
+            }
             default:
                 return 1
         }
@@ -110,23 +145,39 @@ class HomeTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100.0 // TODO: - Update to true value later
+        switch indexPath.section {
+        case 0:
+            return CreateTripCell.height
+        case 1, 3, 5:
+            return SectionHeaderCell.height
+        case 2, 4:
+            return SavedTripCell.height
+        case 6:
+            return MoreCell.height
+        default:
+            return 0.0
+        }
     }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        if indexPath.section == 0 {
-            return false
+        if indexPath.section == 2 || indexPath.section == 4 {
+            return true
         }
-        return true
+        return false
     }
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt: IndexPath) -> [UITableViewRowAction]? {
-
+        if tripStubData.isEmpty { return [] }
+        
+        let index = editActionsForRowAt.section == 2 ? 0 : 1
+        let stub = tripStubData[index][editActionsForRowAt.row]
+        
         let delete = UITableViewRowAction(style: .default, title: "Delete") { action, index in
             print("delete tapped")
-            // TODO: Remove from data source and make POST request to delete
+            AwayGameAPI.deleteTrip(stub, user: User.currentUser, completion: {
+                print("trip deleted")
+            })
         }
-        
         delete.backgroundColor = .red
         
         return [delete]
@@ -176,6 +227,13 @@ class HomeTableViewController: UITableViewController {
                 settingsVC.delegate = self
             }
         }
+        
+        if segue.identifier == "CreateTripSegue" {
+            if let searchVC = segue.destination as? SearchViewController {
+                searchVC.delegate = self
+            }
+        }
+        
     }
         
 }
@@ -230,4 +288,14 @@ extension HomeTableViewController: SettingsDelegate {
         print("USER LOGGED OUT.")
     }
     
+}
+
+extension HomeTableViewController: UserDelegate {
+    func user(_ user: User, didSaveTrip trip: Trip) {
+        navigationController?.popViewController(animated: false)
+        print("Saving trip...")
+        AwayGameAPI.saveTrip(trip, user: user, completion: {
+            "TRIP SAVED"
+        })
+    }
 }

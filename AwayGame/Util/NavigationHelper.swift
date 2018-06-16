@@ -17,3 +17,4 @@ func setupNavigation(controller: UINavigationController?, hidesBar: Bool) {
     navigation.isTranslucent = true
     navigation.barTintColor = Theme.Color.Green.primary
 }
+

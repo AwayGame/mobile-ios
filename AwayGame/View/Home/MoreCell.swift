@@ -16,6 +16,7 @@ protocol MoreCellDelegate: class {
 class MoreCell: UITableViewCell {
     
     static let identifier = "MoreCell"
+    static let height: CGFloat = 80.0
     
     @IBOutlet weak var supportButton: UIButton!
     @IBOutlet weak var settingsButton: UIButton!

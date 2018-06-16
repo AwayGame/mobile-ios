@@ -15,6 +15,7 @@ class PreferencesCollectionViewController: UICollectionViewController {
     public var textData: [String]?
     public var imageData: [UIImage]?
     
+    weak var delegate: UserDelegate?
     
     // MARK: - Initialization
     
@@ -95,6 +96,7 @@ class PreferencesCollectionViewController: UICollectionViewController {
                 }
                 preferencesVC.tripRequest = self.tripRequest
                 preferencesVC.type = .Interest
+                preferencesVC.delegate = self
                 preferencesVC.setup(with: tripRequest?.eventName ?? "", textData: Preferences.Interest.text, imageData: Preferences.Interest.images)
             }
         } else if segue.identifier == "NightlifeSegue" {
@@ -108,6 +110,7 @@ class PreferencesCollectionViewController: UICollectionViewController {
                 }
                 preferencesVC.tripRequest = self.tripRequest
                 preferencesVC.type = .Nightlife
+                preferencesVC.delegate = self
                 preferencesVC.setup(with: tripRequest?.eventName ?? "", textData: Preferences.Nightlife.text, imageData: Preferences.Nightlife.images)
             }
         } else if segue.identifier == "TripSegue" {
@@ -120,6 +123,7 @@ class PreferencesCollectionViewController: UICollectionViewController {
                     }
                 }
                 tripVC.tripRequest = self.tripRequest
+                tripVC.delegate = self
             }
         }
     }
@@ -160,4 +164,12 @@ extension PreferencesCollectionViewController: NextDelegate {
         
     }
     
+}
+
+extension PreferencesCollectionViewController: UserDelegate {
+    func user(_ user: User, didSaveTrip trip: Trip) {
+        navigationController?.popViewController(animated: false)
+        print("popping Preferences...")
+        delegate?.user(user, didSaveTrip: trip)
+    }
 }

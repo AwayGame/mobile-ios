@@ -11,9 +11,7 @@ import AlamofireObjectMapper
 
 final class AwayGameAPI {
     
-    class func verifyUser(with user: User) {
-
-        // TODO: Make closure/callback for verify user
+    class func verifyUser(with user: User, completion: @escaping (User) -> ()) {
         
         let parameters: [String: Any] = [
             "name": user.name ?? "",
@@ -29,12 +27,7 @@ final class AwayGameAPI {
                 print("ERROR")
                 return
             }
-            
-            User.currentUser = user
-            initializeDatabaseSubscription()
-            print(User.currentUser.photoUrl)
-            print(User.currentUser.name)
-
+            completion(user)
         }
     }
     
@@ -97,6 +90,50 @@ final class AwayGameAPI {
             completion(tempTrip)
         }
         
+        
+    }
+    
+    class func saveTrip(_ trip: Trip, user: User, completion: @escaping () -> ()) {
+        
+        guard let JSONString = trip.toJSONString(prettyPrint: false) else { return }
+        
+        print("\n\n\(JSONString) \n\n")
+        
+        let parameters: [String: Any] = [
+            "userId": user.uid ?? "",
+            "trip": JSONString
+        ]
+        
+        Alamofire.request(Router.saveTrip(parameters: parameters)).responseObject { (response: DataResponse<Trip>) in
+            print("\n\n--------------------------")
+            print("SAVED\n\n")
+            print(response)
+            
+            print(response.result)
+            print(response.result.value)
+
+            completion()
+        }
+        
+    }
+    
+    class func deleteTrip(_ tripStub: TripStub, user: User, completion: @escaping () -> ()) {
+        
+        let parameters: [String: Any] = [
+            "userId": user.uid ?? "",
+            "tripId": tripStub.id ?? ""
+        ]
+        
+        Alamofire.request(Router.deleteTrip(parameters: parameters)).responseObject { (response: DataResponse<Trip>) in
+            print("\n\n--------------------------")
+            print("DELETED\n\n")
+            print(response)
+            
+            print(response.result)
+            print(response.result.value)
+            
+            completion()
+        }
         
     }
 

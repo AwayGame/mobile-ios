@@ -12,6 +12,8 @@ class ResultsTableViewController: UITableViewController {
 
     public var tripRequest: TripRequest?
     
+    weak var delegate: UserDelegate?
+    
     public var resultsData: [Event]? = [] {
         didSet {
             print(resultsData)
@@ -84,8 +86,17 @@ class ResultsTableViewController: UITableViewController {
         if segue.identifier == "GroupSegue" {
             if let groupVC = segue.destination as? GroupTableViewController {
                 groupVC.tripRequest = self.tripRequest
+                groupVC.delegate = self
             }
         }
     }
 
+}
+
+extension ResultsTableViewController: UserDelegate {
+    func user(_ user: User, didSaveTrip trip: Trip) {
+       print("popping RESULTS...")
+        navigationController?.popViewController(animated: false)
+        delegate?.user(user, didSaveTrip: trip)
+    }
 }

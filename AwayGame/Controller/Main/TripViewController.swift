@@ -16,6 +16,8 @@ class TripViewController: UIViewController {
     public var tripRequest: TripRequest?
     public var trip: Trip?
     
+    weak var delegate: UserDelegate?
+    
     @IBOutlet weak var tripContainerView: UIView!
     @IBOutlet weak var loadingBackgroundView: UIView!
     @IBOutlet weak var loadingIndicator: NVActivityIndicatorView!
@@ -34,6 +36,7 @@ class TripViewController: UIViewController {
             
             if let itineraryVC = self.childViewControllers[0] as? ItineraryTableViewController {
                 itineraryVC.trip = self.trip
+                itineraryVC.delegate = self
             }
         }
     }
@@ -64,3 +67,14 @@ class TripViewController: UIViewController {
     }
 
 }
+
+// MARK: - User Delegate
+
+extension TripViewController: UserDelegate {
+    func user(_ user: User, didSaveTrip trip: Trip) {
+        print("popping TRIP...")
+        navigationController?.popViewController(animated: false)
+        delegate?.user(user, didSaveTrip: trip)
+    }
+}
+

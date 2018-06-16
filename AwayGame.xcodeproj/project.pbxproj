@@ -16,7 +16,7 @@
 		CB4BB7F020A0F5B100F756D3 /* Itinerary.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BB7EF20A0F5B100F756D3 /* Itinerary.swift */; };
 		CB4BB7F220A0F5DA00F756D3 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BB7F120A0F5DA00F756D3 /* Activity.swift */; };
 		CB4BB7F420A1042B00F756D3 /* CreateTripCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BB7F320A1042B00F756D3 /* CreateTripCell.swift */; };
-		CB4BB7F620A1046900F756D3 /* SavedTripsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BB7F520A1046900F756D3 /* SavedTripsCell.swift */; };
+		CB4BB7F620A1046900F756D3 /* SavedTripCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BB7F520A1046900F756D3 /* SavedTripCell.swift */; };
 		CB4BB7FD20A1099600F756D3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BB7FC20A1099600F756D3 /* LoginViewController.swift */; };
 		CB4BB7FF20A109AC00F756D3 /* EmailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BB7FE20A109AB00F756D3 /* EmailLoginViewController.swift */; };
 		CB4BB80120A109D600F756D3 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BB80020A109D600F756D3 /* SearchViewController.swift */; };
@@ -50,6 +50,9 @@
 		CB709DBD20D56C8400EA7C81 /* NameInput.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB709DBC20D56C8400EA7C81 /* NameInput.storyboard */; };
 		CB709DBF20D56C9100EA7C81 /* EmailInput.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB709DBE20D56C9100EA7C81 /* EmailInput.storyboard */; };
 		CB709DC120D56CA100EA7C81 /* PasswordInput.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB709DC020D56CA100EA7C81 /* PasswordInput.storyboard */; };
+		CB709DC320D5799D00EA7C81 /* TripStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB709DC220D5799D00EA7C81 /* TripStub.swift */; };
+		CB709DC520D5875500EA7C81 /* HomeTableViewController+FirebaseSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB709DC420D5875500EA7C81 /* HomeTableViewController+FirebaseSubscription.swift */; };
+		CB709DC720D58F4900EA7C81 /* NoSavedTripsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB709DC620D58F4900EA7C81 /* NoSavedTripsCell.swift */; };
 		CB765ABB20BF6D8400912B51 /* TripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB765ABA20BF6D8400912B51 /* TripViewController.swift */; };
 		CB765ABD20BF6DA300912B51 /* ItineraryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB765ABC20BF6DA300912B51 /* ItineraryTableViewController.swift */; };
 		CB765ABF20BF6DBF00912B51 /* ActivityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB765ABE20BF6DBF00912B51 /* ActivityTableViewController.swift */; };
@@ -75,7 +78,7 @@
 		CBF4139C20A9DF820038340F /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4139B20A9DF820038340F /* EmailViewController.swift */; };
 		CBF4139E20A9DF8C0038340F /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4139D20A9DF8C0038340F /* PasswordViewController.swift */; };
 		CBF413A520AC82280038340F /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF413A420AC82280038340F /* Trip.swift */; };
-		FE8E69D120B5D5FD00BCED6A /* FirebaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8E69D020B5D5FD00BCED6A /* FirebaseHelper.swift */; };
+		FE8E69D120B5D5FD00BCED6A /* FirebaseSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8E69D020B5D5FD00BCED6A /* FirebaseSubscription.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,7 +94,7 @@
 		CB4BB7EF20A0F5B100F756D3 /* Itinerary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Itinerary.swift; sourceTree = "<group>"; };
 		CB4BB7F120A0F5DA00F756D3 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		CB4BB7F320A1042B00F756D3 /* CreateTripCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTripCell.swift; sourceTree = "<group>"; };
-		CB4BB7F520A1046900F756D3 /* SavedTripsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedTripsCell.swift; sourceTree = "<group>"; };
+		CB4BB7F520A1046900F756D3 /* SavedTripCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedTripCell.swift; sourceTree = "<group>"; };
 		CB4BB7FC20A1099600F756D3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CB4BB7FE20A109AB00F756D3 /* EmailLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginViewController.swift; sourceTree = "<group>"; };
 		CB4BB80020A109D600F756D3 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -125,6 +128,9 @@
 		CB709DBC20D56C8400EA7C81 /* NameInput.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NameInput.storyboard; sourceTree = "<group>"; };
 		CB709DBE20D56C9100EA7C81 /* EmailInput.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EmailInput.storyboard; sourceTree = "<group>"; };
 		CB709DC020D56CA100EA7C81 /* PasswordInput.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PasswordInput.storyboard; sourceTree = "<group>"; };
+		CB709DC220D5799D00EA7C81 /* TripStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripStub.swift; sourceTree = "<group>"; };
+		CB709DC420D5875500EA7C81 /* HomeTableViewController+FirebaseSubscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeTableViewController+FirebaseSubscription.swift"; sourceTree = "<group>"; };
+		CB709DC620D58F4900EA7C81 /* NoSavedTripsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoSavedTripsCell.swift; sourceTree = "<group>"; };
 		CB765ABA20BF6D8400912B51 /* TripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripViewController.swift; sourceTree = "<group>"; };
 		CB765ABC20BF6DA300912B51 /* ItineraryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItineraryTableViewController.swift; sourceTree = "<group>"; };
 		CB765ABE20BF6DBF00912B51 /* ActivityTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTableViewController.swift; sourceTree = "<group>"; };
@@ -151,7 +157,7 @@
 		CBF4139D20A9DF8C0038340F /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
 		CBF413A420AC82280038340F /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		FD86D8DB69F99BDD0F42CF35 /* Pods_AwayGame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AwayGame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FE8E69D020B5D5FD00BCED6A /* FirebaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseHelper.swift; sourceTree = "<group>"; };
+		FE8E69D020B5D5FD00BCED6A /* FirebaseSubscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseSubscription.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,6 +261,7 @@
 				CBF4138C20A9D4160038340F /* User.swift */,
 				CB57BDA720B50530004FEE89 /* UserPreferences.swift */,
 				CBCE1BA220BB17A80010967E /* TripRequest.swift */,
+				CB709DC220D5799D00EA7C81 /* TripStub.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -285,8 +292,9 @@
 			isa = PBXGroup;
 			children = (
 				CB4BB7F320A1042B00F756D3 /* CreateTripCell.swift */,
-				CB4BB7F520A1046900F756D3 /* SavedTripsCell.swift */,
+				CB4BB7F520A1046900F756D3 /* SavedTripCell.swift */,
 				CB57BD9A20AC97DA004FEE89 /* MoreCell.swift */,
+				CB709DC620D58F4900EA7C81 /* NoSavedTripsCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -384,7 +392,7 @@
 				CBF4136A20A490160038340F /* NavigationHelper.swift */,
 				CBCE1B9720B7D5A40010967E /* Constants.swift */,
 				CB57BDA220ADE877004FEE89 /* UserDefaults+FirstLaunch.swift */,
-				FE8E69D020B5D5FD00BCED6A /* FirebaseHelper.swift */,
+				FE8E69D020B5D5FD00BCED6A /* FirebaseSubscription.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -401,6 +409,7 @@
 			isa = PBXGroup;
 			children = (
 				CB4BB7D820A0DC8E00F756D3 /* HomeTableViewController.swift */,
+				CB709DC420D5875500EA7C81 /* HomeTableViewController+FirebaseSubscription.swift */,
 				CBCE1B9E20BA5A4D0010967E /* SettingsViewController.swift */,
 				CB4BB80020A109D600F756D3 /* SearchViewController.swift */,
 				CB4BB80220A109F100F756D3 /* ResultsTableViewController.swift */,
@@ -668,11 +677,14 @@
 				CB765ABB20BF6D8400912B51 /* TripViewController.swift in Sources */,
 				CBF4137620A4BFBC0038340F /* NextButtonCell.swift in Sources */,
 				CB57BDA320ADE877004FEE89 /* UserDefaults+FirstLaunch.swift in Sources */,
+				CB709DC320D5799D00EA7C81 /* TripStub.swift in Sources */,
 				CB709D8E20D0874D00EA7C81 /* TripHeaderCell.swift in Sources */,
 				CBCE1B9B20B9162C0010967E /* GroupTableViewController.swift in Sources */,
 				CBCE1B9820B7D5A40010967E /* Constants.swift in Sources */,
+				CB709DC520D5875500EA7C81 /* HomeTableViewController+FirebaseSubscription.swift in Sources */,
 				CB709D9E20D551DA00EA7C81 /* ActivityMapsTableViewCell.swift in Sources */,
 				CBF4136B20A490160038340F /* NavigationHelper.swift in Sources */,
+				CB709DC720D58F4900EA7C81 /* NoSavedTripsCell.swift in Sources */,
 				CB4BB7F420A1042B00F756D3 /* CreateTripCell.swift in Sources */,
 				CB4BB80A20A10A6800F756D3 /* ActivityCell.swift in Sources */,
 				CB4BB80820A10A4D00F756D3 /* UberCell.swift in Sources */,
@@ -686,7 +698,7 @@
 				CBF4137820A5ED500038340F /* Event.swift in Sources */,
 				CB709D9020D0903C00EA7C81 /* TicketmasterImage.swift in Sources */,
 				CB4BB7F220A0F5DA00F756D3 /* Activity.swift in Sources */,
-				CB4BB7F620A1046900F756D3 /* SavedTripsCell.swift in Sources */,
+				CB4BB7F620A1046900F756D3 /* SavedTripCell.swift in Sources */,
 				CBF4138220A9CCBC0038340F /* PreferenceCollectionCell.swift in Sources */,
 				CB4BB80120A109D600F756D3 /* SearchViewController.swift in Sources */,
 				CB4BB7F020A0F5B100F756D3 /* Itinerary.swift in Sources */,
@@ -695,7 +707,7 @@
 				CB8A9A4520C8C88D00A9E354 /* Review.swift in Sources */,
 				CBF4139C20A9DF820038340F /* EmailViewController.swift in Sources */,
 				CBF4137F20A5F2120038340F /* ResultsCell.swift in Sources */,
-				FE8E69D120B5D5FD00BCED6A /* FirebaseHelper.swift in Sources */,
+				FE8E69D120B5D5FD00BCED6A /* FirebaseSubscription.swift in Sources */,
 				CB709D9C20D551CB00EA7C81 /* ActivityRatingTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
