@@ -20,7 +20,6 @@ class AppLaunchViewController: UIViewController {
     
     @IBOutlet weak var mainContainerView: UIView!
     @IBOutlet weak var loginContainerView: UIView!
-    @IBOutlet weak var signupContainerView: UIView!
     
     // MARK: - Initialization
     
@@ -32,7 +31,6 @@ class AppLaunchViewController: UIViewController {
         logoImageView.isHidden = true
         mainContainerView.isHidden = true
         loginContainerView.isHidden = true
-        signupContainerView.isHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -55,11 +53,7 @@ class AppLaunchViewController: UIViewController {
                 }
 
             } else {
-                if UserDefaults.isFirstLaunch() {
-                    self.proceedToSignup()
-                } else {
-                    self.proceedToLogin()
-                }
+                self.proceedToLogin()
             }
         }
     }
@@ -83,24 +77,13 @@ class AppLaunchViewController: UIViewController {
         UIView.transition(with: loginContainerView, duration: 1.0, options: .transitionCrossDissolve, animations: {
         }, completion: nil)
     }
-    
-    func proceedToSignup() {
-        hideAllContainers()
-        signupContainerView.isHidden = false
-        UIView.transition(with: signupContainerView, duration: 1.0, options: .transitionCrossDissolve, animations: {
-        }, completion: nil)
-    }
+
     
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "LoginEmbedSegue", let loginVC = segue.destination as? LoginViewController  {
-            loginVC.delegate = self
             loginVC.signInDelegate = self
-        }
-        
-        if segue.identifier == "SignupEmbedSegue", let signupVC = segue.destination as? SignupViewController  {
-            signupVC.delegate = self
         }
         
         if segue.identifier == "HomeEmbedSegue", let navVC = segue.destination as? UINavigationController {
@@ -111,22 +94,6 @@ class AppLaunchViewController: UIViewController {
         
     }
     
-}
-
-// MARK: - LoginToSignupDelegate
-
-extension AppLaunchViewController: LoginToSignupDelegate {
-    func didSwitchToSignup() {
-        proceedToSignup()
-    }
-}
-
-// MARK: - SignuptoLoginDelegate
-
-extension AppLaunchViewController: SignupToLoginDelegate {
-    func didSwitchToLogin() {
-        proceedToLogin()
-    }
 }
 
 // MARK: - EmailSignInDelegate

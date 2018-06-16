@@ -14,22 +14,17 @@ import TwitterKit
 import TwitterCore
 import UIKit
 
-protocol LoginToSignupDelegate: class {
-    func didSwitchToSignup()
-}
-
 protocol SignInDelegate: class {
     func userDidSignIn()
 }
 
 class LoginViewController: UIViewController {
 
-    @IBOutlet weak var blurView: UIVisualEffectView!
-    @IBOutlet weak var tintView: UIView!
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var logoImageView: UIImageView!
     
-    @IBOutlet weak var facebookLoginButton: FBSDKLoginButton!
+    let facebookSDKButton = FBSDKLoginButton()
+    @IBOutlet weak var facebookLoginButton: UIButton!
     @IBOutlet weak var facebookBackgroundView: UIView!
     @IBOutlet weak var facebookLogoImageView: UIImageView!
     @IBOutlet weak var facebookButtonLabel: UILabel!
@@ -44,7 +39,6 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var createAccountButton: UIButton!
     
-    weak var delegate: LoginToSignupDelegate?
     weak var signInDelegate: SignInDelegate?
     
     // MARK: - Initialization
@@ -53,7 +47,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         setupViews()
         styleViews()
-        facebookLoginButton.delegate = self
+        facebookSDKButton.delegate = self
     }
 
     func setupViews() {
@@ -65,7 +59,7 @@ class LoginViewController: UIViewController {
         facebookButtonLabel.text = "Log in with Facebook"
         twitterButtonLabel.text = "Log in with Twitter"
         emailButtonLabel.text = "Log in with Email"
-        createAccountButton.setTitle("Don't have an account?", for: .normal)
+        createAccountButton.setTitle("Create Account", for: .normal)
     }
     
     func setupImages() {
@@ -109,7 +103,6 @@ class LoginViewController: UIViewController {
         emailBackgroundView.layer.borderColor = Theme.Color.Login.email.cgColor
         emailBackgroundView.layer.cornerRadius = 5.0
         emailBackgroundView.clipsToBounds = true
-        
     }
     
     
@@ -117,16 +110,15 @@ class LoginViewController: UIViewController {
     
     @IBAction func facebookButtonTapped(_ sender: Any) {
         print("facebook tapped")
+        facebookSDKButton.sendActions(for: .touchUpInside)
+        
     }
     
     @IBAction func twitterButtonTapped(_ sender: Any) {
-        
         Twitter.sharedInstance().logIn { (session, error) in
-    
             if (session != nil) {
                 print("signed in as \(session?.userName)");
                 let client = TWTRAPIClient.withCurrentUser()
-                
                 client.requestEmail { email, error in
                     if (email != nil) {
                         print("signed in as \(session?.userName)");
@@ -139,15 +131,16 @@ class LoginViewController: UIViewController {
             }
         }
     }
-    
+
     @IBAction func emailButtonTapped(_ sender: Any) {
         performSegue(withIdentifier: "EmailLoginSegue", sender: self)
     }
-    
+        
     @IBAction func createAccountButtonTapped(_ sender: Any) {
-        delegate?.didSwitchToSignup()
-        print("tapped")
+        performSegue(withIdentifier: "CreateAccountSegue", sender: self)
     }
+    
+
     
     // MARK: - Navigation
     
