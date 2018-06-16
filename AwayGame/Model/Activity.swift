@@ -11,9 +11,11 @@ import ObjectMapper
 class Activity: Mappable {
     
     public var name: String?
+    public var description: String?
     public var category: String?
     public var timeframe: String?
     public var startTime: String?
+    public var date: String?
     public var placeId: String?
     public var phone: String?
     public var address: String?
@@ -31,6 +33,7 @@ class Activity: Mappable {
     
     func mapping(map: Map) {
         name <- map["name"]
+        description <- map["description"]
         category <- map["category"]
         timeframe <- map["timeframe"]
         startTime <- map["startTime"]
@@ -48,6 +51,11 @@ class Activity: Mappable {
         mapsUrl <- map["mapsUrl"]
     }
     
+    var displayImage: String? {
+        guard let photos = photos else { return "" }
+        return photos.count > 0 ? photos.first : ""
+    }
+
 }
 
 // MARK: - Location

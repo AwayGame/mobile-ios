@@ -40,9 +40,7 @@ class ActivityCell: UITableViewCell {
         guard let activity = activity else { return }
         titleLabel.text = activity.name ?? ""
         timeLabel.text = activity.startTime ?? ""
-        if !(activity.photos?.isEmpty ?? true) {
-            activityImageView.kf.setImage(with: URL(string: activity.photos?[0] ?? ""))
-        }
+        activityImageView.kf.setImage(with: URL(string: activity.displayImage ?? ""))
     }
 
 }

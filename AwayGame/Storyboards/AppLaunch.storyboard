@@ -81,18 +81,18 @@
             </objects>
             <point key="canvasLocation" x="-58" y="99"/>
         </scene>
-        <!--EmailLogin-->
+        <!--Login-->
         <scene sceneID="4Yz-NE-7fP">
             <objects>
-                <viewControllerPlaceholder storyboardName="EmailLogin" id="Gn9-ES-ZjZ" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Login" id="Gn9-ES-ZjZ" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hdd-bv-qrW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-387" y="1340"/>
         </scene>
-        <!--EmailSignUp-->
+        <!--NameInput-->
         <scene sceneID="AzD-1Z-ZUd">
             <objects>
-                <viewControllerPlaceholder storyboardName="EmailSignUp" id="sa0-1B-ESd" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="NameInput" id="sa0-1B-ESd" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZqY-Ie-L4m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="278" y="1340"/>
@@ -495,7 +495,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3GZ-eL-hzD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1584.8" y="98.50074962518741"/>
+            <point key="canvasLocation" x="1626" y="99"/>
         </scene>
         <!--Settings-->
         <scene sceneID="4Ef-sS-4ut">
@@ -503,12 +503,12 @@
                 <viewControllerPlaceholder storyboardName="Settings" id="dNN-vZ-kqS" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jTp-C6-1ia" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1585" y="548"/>
+            <point key="canvasLocation" x="1625" y="548"/>
         </scene>
-        <!--Main-->
+        <!--Search-->
         <scene sceneID="e1f-ZZ-1Z1">
             <objects>
-                <viewControllerPlaceholder storyboardName="Main" id="ZkY-Aq-Qhd" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Search" id="ZkY-Aq-Qhd" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yj6-HG-Ex0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2239" y="98"/>

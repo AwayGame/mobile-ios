@@ -29,7 +29,7 @@ class ActivityTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return section == 0 ? 1 : 5
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -38,16 +38,64 @@ class ActivityTableViewController: UITableViewController {
                 return pageCell
             }
         } else {
-            if let activityDetailsCell = tableView.dequeueReusableCell(withIdentifier: ActivityDetailsCell.identifier, for: indexPath) as? ActivityDetailsCell {
-                activityDetailsCell.configureCell(with: activity)
-                return activityDetailsCell
+            
+            switch indexPath.row {
+            case 0:
+                if let activityImageCell = tableView.dequeueReusableCell(withIdentifier: ActivityImageTableViewCell.identifier, for: indexPath) as? ActivityImageTableViewCell {
+                    activityImageCell.configureCell(withActivity: activity)
+                    return activityImageCell
+                }
+                break
+            case 1:
+                if let activityDescriptionCell = tableView.dequeueReusableCell(withIdentifier: ActivityDescriptionTableViewCell.identifier, for: indexPath) as? ActivityDescriptionTableViewCell {
+                    ActivityDescriptionTableViewCell.height = activityDescriptionCell.sizeThatFits(CGSize(width: tableView.bounds.width - 80.0, height: .greatestFiniteMagnitude)).height
+                    activityDescriptionCell.configureCell(withActivity: activity)
+                    return activityDescriptionCell
+                }
+                break
+            case 2:
+                if let activityDateTimeCell = tableView.dequeueReusableCell(withIdentifier: ActivityDateTimeTableViewCell.identifier, for: indexPath) as? ActivityDateTimeTableViewCell {
+                    activityDateTimeCell.configureCell(withActivity: activity)
+                    return activityDateTimeCell
+                }
+                break
+            case 3:
+                if let activityRatingCell = tableView.dequeueReusableCell(withIdentifier: ActivityRatingTableViewCell.identifier, for: indexPath) as? ActivityRatingTableViewCell {
+                    activityRatingCell.configureCell(withActivity: activity)
+                    return activityRatingCell
+                }
+                break
+            case 4:
+                if let activityMapsCell = tableView.dequeueReusableCell(withIdentifier: ActivityMapsTableViewCell.identifier, for: indexPath) as? ActivityMapsTableViewCell {
+                    activityMapsCell.configureCell(withActivity: activity)
+                    return activityMapsCell
+                }
+                break
+            default:
+                return UITableViewCell()
             }
+
         }
         return UITableViewCell()
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return indexPath.section == 0 ? TripHeaderCell.height : ActivityDetailsCell.height
+        if indexPath.section == 0 { return TripHeaderCell.height}
+        
+        switch indexPath.row {
+        case 0 :
+            return ActivityImageTableViewCell.height
+        case 1:
+            return ActivityDescriptionTableViewCell.height
+        case 2:
+            return ActivityDateTimeTableViewCell.height
+        case 3:
+            return ActivityRatingTableViewCell.height
+        case 4:
+            return ActivityMapsTableViewCell.height
+        default:
+            return 0.0
+        }
     }
 
 }
