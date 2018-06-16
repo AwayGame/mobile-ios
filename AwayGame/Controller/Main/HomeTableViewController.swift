@@ -76,6 +76,7 @@ class HomeTableViewController: UITableViewController {
             if let createTripCell = tableView.dequeueReusableCell(withIdentifier: CreateTripCell.identifier, for: indexPath) as? CreateTripCell {
                 createTripCell.configureCell()
                 createTripCell.delegate = self
+                print(createTripCell.bounds.width)
                 return createTripCell
             }
         } else if indexPath.section == 1 || indexPath.section == 3 || indexPath.section == 5 {
