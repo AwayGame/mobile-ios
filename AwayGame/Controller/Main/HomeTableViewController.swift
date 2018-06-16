@@ -18,19 +18,30 @@ protocol HomeDelegate: class {
 
 class HomeTableViewController: UITableViewController {
     
+    let profileImageView = ProfileImageView(frame: CGRect(origin: .zero, size: CGSize(width: 36.0, height: 36.0)), imageUrl: User.currentUser.photoUrl)
+    
+    private var user = User.currentUser {
+        didSet {
+            updateProfileImage()
+        }
+    }
+    
     var tripStubData: [[TripStub]] = [[], []] {
         didSet {
             tableView.reloadData()
         }
     }
     
-    
-    
     weak var delegate: HomeDelegate?
     
     override func viewDidAppear(_ animated: Bool) {
         self.title = "AwayGame"
         setupNavigation(controller: self.navigationController, hidesBar: false)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: profileImageView)
+    }
+    
+    func updateProfileImage() {
+        profileImageView.setImageUrl(User.currentUser.photoUrl)
     }
     
     override func viewDidLoad() {
@@ -46,8 +57,6 @@ class HomeTableViewController: UITableViewController {
         tableView.delegate = self
         tableView.dataSource = self
     }
-    
-    
     
     // MARK: - Firebase
     

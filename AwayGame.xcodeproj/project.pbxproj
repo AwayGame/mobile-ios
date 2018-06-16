@@ -52,6 +52,7 @@
 		CB709DC320D5799D00EA7C81 /* TripStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB709DC220D5799D00EA7C81 /* TripStub.swift */; };
 		CB709DC520D5875500EA7C81 /* HomeTableViewController+FirebaseSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB709DC420D5875500EA7C81 /* HomeTableViewController+FirebaseSubscription.swift */; };
 		CB709DC720D58F4900EA7C81 /* NoSavedTripsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB709DC620D58F4900EA7C81 /* NoSavedTripsCell.swift */; };
+		CB709DC920D5C4DC00EA7C81 /* ProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB709DC820D5C4DC00EA7C81 /* ProfileImageView.swift */; };
 		CB765ABB20BF6D8400912B51 /* TripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB765ABA20BF6D8400912B51 /* TripViewController.swift */; };
 		CB765ABD20BF6DA300912B51 /* ItineraryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB765ABC20BF6DA300912B51 /* ItineraryTableViewController.swift */; };
 		CB765ABF20BF6DBF00912B51 /* ActivityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB765ABE20BF6DBF00912B51 /* ActivityTableViewController.swift */; };
@@ -129,6 +130,7 @@
 		CB709DC220D5799D00EA7C81 /* TripStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripStub.swift; sourceTree = "<group>"; };
 		CB709DC420D5875500EA7C81 /* HomeTableViewController+FirebaseSubscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeTableViewController+FirebaseSubscription.swift"; sourceTree = "<group>"; };
 		CB709DC620D58F4900EA7C81 /* NoSavedTripsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoSavedTripsCell.swift; sourceTree = "<group>"; };
+		CB709DC820D5C4DC00EA7C81 /* ProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageView.swift; sourceTree = "<group>"; };
 		CB765ABA20BF6D8400912B51 /* TripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripViewController.swift; sourceTree = "<group>"; };
 		CB765ABC20BF6DA300912B51 /* ItineraryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItineraryTableViewController.swift; sourceTree = "<group>"; };
 		CB765ABE20BF6DBF00912B51 /* ActivityTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTableViewController.swift; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 				CB4BB7F520A1046900F756D3 /* SavedTripCell.swift */,
 				CB57BD9A20AC97DA004FEE89 /* MoreCell.swift */,
 				CB709DC620D58F4900EA7C81 /* NoSavedTripsCell.swift */,
+				CB709DC820D5C4DC00EA7C81 /* ProfileImageView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -678,6 +681,7 @@
 				CBCE1B9B20B9162C0010967E /* GroupTableViewController.swift in Sources */,
 				CBCE1B9820B7D5A40010967E /* Constants.swift in Sources */,
 				CB709DC520D5875500EA7C81 /* HomeTableViewController+FirebaseSubscription.swift in Sources */,
+				CB709DC920D5C4DC00EA7C81 /* ProfileImageView.swift in Sources */,
 				CB709D9E20D551DA00EA7C81 /* ActivityMapsTableViewCell.swift in Sources */,
 				CBF4136B20A490160038340F /* NavigationHelper.swift in Sources */,
 				CB709DC720D58F4900EA7C81 /* NoSavedTripsCell.swift in Sources */,

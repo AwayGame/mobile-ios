@@ -41,6 +41,8 @@ class AppLaunchViewController: UIViewController {
                 User.currentUser.email = Auth.auth().currentUser?.email
                 User.currentUser.name = Auth.auth().currentUser?.displayName
                 User.currentUser.uid = Auth.auth().currentUser?.uid
+                User.currentUser.photoUrl = Auth.auth().currentUser?.photoURL?.absoluteString
+                
                 AwayGameAPI.verifyUser(with: User.currentUser) {user in
                     User.currentUser = user
                     print(User.currentUser.photoUrl)
