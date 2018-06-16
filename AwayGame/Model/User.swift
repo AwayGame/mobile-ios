@@ -11,11 +11,7 @@ import Foundation
 
 final class User: Mappable {
     
-    static var currentUser = User() {
-        didSet {
-             
-        }
-    }
+    static var currentUser = User()
     
     public var name: String?
     public var email: String?

@@ -10,8 +10,8 @@ import UIKit
 
 func setupNavigation(controller: UINavigationController?, hidesBar: Bool) {
     guard let navigation = controller?.navigationBar else { return }
+    controller?.isNavigationBarHidden = hidesBar
     controller?.hidesBarsOnTap = hidesBar
-    controller?.hidesBarsOnSwipe = hidesBar
     navigation.tintColor = Theme.Color.white
     navigation.titleTextAttributes = [NSAttributedStringKey.font : Theme.Font.title, NSAttributedStringKey.foregroundColor : Theme.Color.white]
     navigation.isTranslucent = true

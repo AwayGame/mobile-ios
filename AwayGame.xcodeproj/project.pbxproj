@@ -10,7 +10,6 @@
 		92E485D8569B6576B4B8E53A /* Pods_AwayGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD86D8DB69F99BDD0F42CF35 /* Pods_AwayGame.framework */; };
 		CB4BB7D720A0DC8E00F756D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BB7D620A0DC8E00F756D3 /* AppDelegate.swift */; };
 		CB4BB7D920A0DC8E00F756D3 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BB7D820A0DC8E00F756D3 /* HomeTableViewController.swift */; };
-		CB4BB7DC20A0DC8E00F756D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB4BB7DA20A0DC8E00F756D3 /* Main.storyboard */; };
 		CB4BB7DE20A0DC8E00F756D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB4BB7DD20A0DC8E00F756D3 /* Assets.xcassets */; };
 		CB4BB7E120A0DC8E00F756D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB4BB7DF20A0DC8E00F756D3 /* LaunchScreen.storyboard */; };
 		CB4BB7EC20A0E11100F756D3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB4BB7EB20A0E11100F756D3 /* GoogleService-Info.plist */; };
@@ -31,14 +30,31 @@
 		CB57BD9F20ACA36C004FEE89 /* AwayGameAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB57BD9E20ACA36C004FEE89 /* AwayGameAPI.swift */; };
 		CB57BDA120ADE2A4004FEE89 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB57BDA020ADE2A4004FEE89 /* SignupViewController.swift */; };
 		CB57BDA320ADE877004FEE89 /* UserDefaults+FirstLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB57BDA220ADE877004FEE89 /* UserDefaults+FirstLaunch.swift */; };
-		CB57BDA620B4F5C8004FEE89 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB57BDA520B4F5C8004FEE89 /* GoogleService-Info.plist */; };
 		CB57BDA820B50530004FEE89 /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB57BDA720B50530004FEE89 /* UserPreferences.swift */; };
 		CB62238820C031E500690031 /* ActivityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB62238720C031E500690031 /* ActivityCollectionViewCell.swift */; };
+		CB709D8E20D0874D00EA7C81 /* TripHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB709D8D20D0874D00EA7C81 /* TripHeaderCell.swift */; };
+		CB709D9020D0903C00EA7C81 /* TicketmasterImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB709D8F20D0903C00EA7C81 /* TicketmasterImage.swift */; };
+		CB709D9620D5519000EA7C81 /* ActivityImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB709D9520D5519000EA7C81 /* ActivityImageTableViewCell.swift */; };
+		CB709D9820D551A000EA7C81 /* ActivityDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB709D9720D551A000EA7C81 /* ActivityDescriptionTableViewCell.swift */; };
+		CB709D9A20D551BB00EA7C81 /* ActivityDateTimeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB709D9920D551BB00EA7C81 /* ActivityDateTimeTableViewCell.swift */; };
+		CB709D9C20D551CB00EA7C81 /* ActivityRatingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB709D9B20D551CB00EA7C81 /* ActivityRatingTableViewCell.swift */; };
+		CB709D9E20D551DA00EA7C81 /* ActivityMapsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB709D9D20D551DA00EA7C81 /* ActivityMapsTableViewCell.swift */; };
+		CB709DA120D569B800EA7C81 /* Trip.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB709DA020D569B800EA7C81 /* Trip.storyboard */; };
+		CB709DA520D569CA00EA7C81 /* Activity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB709DA420D569CA00EA7C81 /* Activity.storyboard */; };
+		CB709DA720D569F300EA7C81 /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB709DA620D569F300EA7C81 /* Preferences.storyboard */; };
+		CB709DA920D56A0B00EA7C81 /* Groups.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB709DA820D56A0B00EA7C81 /* Groups.storyboard */; };
+		CB709DAB20D56A1900EA7C81 /* Results.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB709DAA20D56A1900EA7C81 /* Results.storyboard */; };
+		CB709DAD20D56A2600EA7C81 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB709DAC20D56A2600EA7C81 /* Search.storyboard */; };
+		CB709DB220D56AE400EA7C81 /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB709DB120D56AE400EA7C81 /* About.storyboard */; };
+		CB709DB720D56B8800EA7C81 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB709DB620D56B8800EA7C81 /* Login.storyboard */; };
+		CB709DBD20D56C8400EA7C81 /* NameInput.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB709DBC20D56C8400EA7C81 /* NameInput.storyboard */; };
+		CB709DBF20D56C9100EA7C81 /* EmailInput.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB709DBE20D56C9100EA7C81 /* EmailInput.storyboard */; };
+		CB709DC120D56CA100EA7C81 /* PasswordInput.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB709DC020D56CA100EA7C81 /* PasswordInput.storyboard */; };
 		CB765ABB20BF6D8400912B51 /* TripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB765ABA20BF6D8400912B51 /* TripViewController.swift */; };
 		CB765ABD20BF6DA300912B51 /* ItineraryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB765ABC20BF6DA300912B51 /* ItineraryTableViewController.swift */; };
 		CB765ABF20BF6DBF00912B51 /* ActivityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB765ABE20BF6DBF00912B51 /* ActivityTableViewController.swift */; };
+		CB8A9A4520C8C88D00A9E354 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8A9A4420C8C88D00A9E354 /* Review.swift */; };
 		CBADC0B920BE6727007A7A95 /* NextButtonCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBADC0B820BE6727007A7A95 /* NextButtonCollectionCell.swift */; };
-		CBCE1B9620B76B9D0010967E /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCE1B9520B76B9D0010967E /* Settings.swift */; };
 		CBCE1B9820B7D5A40010967E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCE1B9720B7D5A40010967E /* Constants.swift */; };
 		CBCE1B9B20B9162C0010967E /* GroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCE1B9A20B9162C0010967E /* GroupTableViewController.swift */; };
 		CBCE1B9D20B91CB50010967E /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCE1B9C20B91CB50010967E /* GroupTableViewCell.swift */; };
@@ -47,7 +63,6 @@
 		CBCE1BA320BB17A80010967E /* TripRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCE1BA220BB17A80010967E /* TripRequest.swift */; };
 		CBF4136B20A490160038340F /* NavigationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4136A20A490160038340F /* NavigationHelper.swift */; };
 		CBF4137020A49A6A0038340F /* SearchTeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4136F20A49A6A0038340F /* SearchTeamCell.swift */; };
-		CBF4137420A49E5E0038340F /* ArrivalDepartureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4137320A49E5E0038340F /* ArrivalDepartureCell.swift */; };
 		CBF4137620A4BFBC0038340F /* NextButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4137520A4BFBC0038340F /* NextButtonCell.swift */; };
 		CBF4137820A5ED500038340F /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4137720A5ED500038340F /* Event.swift */; };
 		CBF4137F20A5F2120038340F /* ResultsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4137E20A5F2120038340F /* ResultsCell.swift */; };
@@ -56,11 +71,9 @@
 		CBF4138D20A9D4160038340F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4138C20A9D4160038340F /* User.swift */; };
 		CBF4138F20A9D60E0038340F /* AppLaunch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBF4138E20A9D60E0038340F /* AppLaunch.storyboard */; };
 		CBF4139320A9D71B0038340F /* AppLaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4139220A9D71B0038340F /* AppLaunchViewController.swift */; };
-		CBF4139720A9DE860038340F /* EmailSignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBF4139620A9DE860038340F /* EmailSignUp.storyboard */; };
 		CBF4139A20A9DF750038340F /* EmailNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4139920A9DF750038340F /* EmailNameViewController.swift */; };
 		CBF4139C20A9DF820038340F /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4139B20A9DF820038340F /* EmailViewController.swift */; };
 		CBF4139E20A9DF8C0038340F /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4139D20A9DF8C0038340F /* PasswordViewController.swift */; };
-		CBF413A120A9E9500038340F /* EmailLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBF413A020A9E9500038340F /* EmailLogin.storyboard */; };
 		CBF413A520AC82280038340F /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF413A420AC82280038340F /* Trip.swift */; };
 		FE8E69D120B5D5FD00BCED6A /* FirebaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8E69D020B5D5FD00BCED6A /* FirebaseHelper.swift */; };
 /* End PBXBuildFile section */
@@ -71,7 +84,6 @@
 		CB4BB7D320A0DC8E00F756D3 /* AwayGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AwayGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB4BB7D620A0DC8E00F756D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB4BB7D820A0DC8E00F756D3 /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
-		CB4BB7DB20A0DC8E00F756D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CB4BB7DD20A0DC8E00F756D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB4BB7E020A0DC8E00F756D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CB4BB7E220A0DC8E00F756D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -93,14 +105,31 @@
 		CB57BD9E20ACA36C004FEE89 /* AwayGameAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwayGameAPI.swift; sourceTree = "<group>"; };
 		CB57BDA020ADE2A4004FEE89 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		CB57BDA220ADE877004FEE89 /* UserDefaults+FirstLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+FirstLaunch.swift"; sourceTree = "<group>"; };
-		CB57BDA520B4F5C8004FEE89 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CB57BDA720B50530004FEE89 /* UserPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferences.swift; sourceTree = "<group>"; };
 		CB62238720C031E500690031 /* ActivityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCollectionViewCell.swift; sourceTree = "<group>"; };
+		CB709D8D20D0874D00EA7C81 /* TripHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripHeaderCell.swift; sourceTree = "<group>"; };
+		CB709D8F20D0903C00EA7C81 /* TicketmasterImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketmasterImage.swift; sourceTree = "<group>"; };
+		CB709D9520D5519000EA7C81 /* ActivityImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityImageTableViewCell.swift; sourceTree = "<group>"; };
+		CB709D9720D551A000EA7C81 /* ActivityDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDescriptionTableViewCell.swift; sourceTree = "<group>"; };
+		CB709D9920D551BB00EA7C81 /* ActivityDateTimeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDateTimeTableViewCell.swift; sourceTree = "<group>"; };
+		CB709D9B20D551CB00EA7C81 /* ActivityRatingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityRatingTableViewCell.swift; sourceTree = "<group>"; };
+		CB709D9D20D551DA00EA7C81 /* ActivityMapsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityMapsTableViewCell.swift; sourceTree = "<group>"; };
+		CB709DA020D569B800EA7C81 /* Trip.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Trip.storyboard; sourceTree = "<group>"; };
+		CB709DA420D569CA00EA7C81 /* Activity.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Activity.storyboard; sourceTree = "<group>"; };
+		CB709DA620D569F300EA7C81 /* Preferences.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Preferences.storyboard; sourceTree = "<group>"; };
+		CB709DA820D56A0B00EA7C81 /* Groups.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Groups.storyboard; sourceTree = "<group>"; };
+		CB709DAA20D56A1900EA7C81 /* Results.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Results.storyboard; sourceTree = "<group>"; };
+		CB709DAC20D56A2600EA7C81 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		CB709DB120D56AE400EA7C81 /* About.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
+		CB709DB620D56B8800EA7C81 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		CB709DBC20D56C8400EA7C81 /* NameInput.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NameInput.storyboard; sourceTree = "<group>"; };
+		CB709DBE20D56C9100EA7C81 /* EmailInput.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EmailInput.storyboard; sourceTree = "<group>"; };
+		CB709DC020D56CA100EA7C81 /* PasswordInput.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PasswordInput.storyboard; sourceTree = "<group>"; };
 		CB765ABA20BF6D8400912B51 /* TripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripViewController.swift; sourceTree = "<group>"; };
 		CB765ABC20BF6DA300912B51 /* ItineraryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItineraryTableViewController.swift; sourceTree = "<group>"; };
 		CB765ABE20BF6DBF00912B51 /* ActivityTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTableViewController.swift; sourceTree = "<group>"; };
+		CB8A9A4420C8C88D00A9E354 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		CBADC0B820BE6727007A7A95 /* NextButtonCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextButtonCollectionCell.swift; sourceTree = "<group>"; };
-		CBCE1B9520B76B9D0010967E /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		CBCE1B9720B7D5A40010967E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CBCE1B9A20B9162C0010967E /* GroupTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewController.swift; sourceTree = "<group>"; };
 		CBCE1B9C20B91CB50010967E /* GroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
@@ -109,7 +138,6 @@
 		CBCE1BA220BB17A80010967E /* TripRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripRequest.swift; sourceTree = "<group>"; };
 		CBF4136A20A490160038340F /* NavigationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationHelper.swift; sourceTree = "<group>"; };
 		CBF4136F20A49A6A0038340F /* SearchTeamCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTeamCell.swift; sourceTree = "<group>"; };
-		CBF4137320A49E5E0038340F /* ArrivalDepartureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalDepartureCell.swift; sourceTree = "<group>"; };
 		CBF4137520A4BFBC0038340F /* NextButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextButtonCell.swift; sourceTree = "<group>"; };
 		CBF4137720A5ED500038340F /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		CBF4137E20A5F2120038340F /* ResultsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsCell.swift; sourceTree = "<group>"; };
@@ -118,11 +146,9 @@
 		CBF4138C20A9D4160038340F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CBF4138E20A9D60E0038340F /* AppLaunch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AppLaunch.storyboard; sourceTree = "<group>"; };
 		CBF4139220A9D71B0038340F /* AppLaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLaunchViewController.swift; sourceTree = "<group>"; };
-		CBF4139620A9DE860038340F /* EmailSignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EmailSignUp.storyboard; sourceTree = "<group>"; };
 		CBF4139920A9DF750038340F /* EmailNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailNameViewController.swift; sourceTree = "<group>"; };
 		CBF4139B20A9DF820038340F /* EmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
 		CBF4139D20A9DF8C0038340F /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
-		CBF413A020A9E9500038340F /* EmailLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EmailLogin.storyboard; sourceTree = "<group>"; };
 		CBF413A420AC82280038340F /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		FD86D8DB69F99BDD0F42CF35 /* Pods_AwayGame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AwayGame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE8E69D020B5D5FD00BCED6A /* FirebaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseHelper.swift; sourceTree = "<group>"; };
@@ -188,7 +214,6 @@
 				CB4BB7D620A0DC8E00F756D3 /* AppDelegate.swift */,
 				CB4BB7DD20A0DC8E00F756D3 /* Assets.xcassets */,
 				CB4BB7EB20A0E11100F756D3 /* GoogleService-Info.plist */,
-				CB57BDA520B4F5C8004FEE89 /* GoogleService-Info.plist */,
 				CB4BB7E220A0DC8E00F756D3 /* Info.plist */,
 			);
 			path = AwayGame;
@@ -213,6 +238,7 @@
 				CBF4137D20A5F1FB0038340F /* Results */,
 				CBF4138020A9CC650038340F /* Preferences */,
 				CB4BB80620A10A1100F756D3 /* Itenerary */,
+				CB709D9420D5515000EA7C81 /* Activitiy */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -223,10 +249,11 @@
 				CBF413A420AC82280038340F /* Trip.swift */,
 				CB4BB7EF20A0F5B100F756D3 /* Itinerary.swift */,
 				CB4BB7F120A0F5DA00F756D3 /* Activity.swift */,
+				CB8A9A4420C8C88D00A9E354 /* Review.swift */,
 				CBF4137720A5ED500038340F /* Event.swift */,
+				CB709D8F20D0903C00EA7C81 /* TicketmasterImage.swift */,
 				CBF4138C20A9D4160038340F /* User.swift */,
 				CB57BDA720B50530004FEE89 /* UserPreferences.swift */,
-				CBCE1B9520B76B9D0010967E /* Settings.swift */,
 				CBCE1BA220BB17A80010967E /* TripRequest.swift */,
 			);
 			path = Model;
@@ -235,12 +262,13 @@
 		CB4BB7ED20A0F47100F756D3 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				CBF4138E20A9D60E0038340F /* AppLaunch.storyboard */,
-				CBF413A020A9E9500038340F /* EmailLogin.storyboard */,
-				CBF4139620A9DE860038340F /* EmailSignUp.storyboard */,
 				CB4BB7DF20A0DC8E00F756D3 /* LaunchScreen.storyboard */,
-				CB4BB7DA20A0DC8E00F756D3 /* Main.storyboard */,
-				CBCE1BA020BA5A840010967E /* Settings.storyboard */,
+				CBF4138E20A9D60E0038340F /* AppLaunch.storyboard */,
+				CB709DB420D56B5900EA7C81 /* Login */,
+				CB709DB520D56B7000EA7C81 /* Signup */,
+				CB709DB320D56B0600EA7C81 /* UserSelection */,
+				CB709DB020D56ABB00EA7C81 /* Home */,
+				CB709D9F20D5699A00EA7C81 /* Trip */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -268,6 +296,7 @@
 			children = (
 				CB4BB80920A10A6800F756D3 /* ActivityCell.swift */,
 				CB62238720C031E500690031 /* ActivityCollectionViewCell.swift */,
+				CB709D8D20D0874D00EA7C81 /* TripHeaderCell.swift */,
 				CB4BB80720A10A4D00F756D3 /* UberCell.swift */,
 			);
 			path = Itenerary;
@@ -280,6 +309,65 @@
 				CB57BD9C20ACA354004FEE89 /* Router.swift */,
 			);
 			path = AwayGameAPI;
+			sourceTree = "<group>";
+		};
+		CB709D9420D5515000EA7C81 /* Activitiy */ = {
+			isa = PBXGroup;
+			children = (
+				CB709D9520D5519000EA7C81 /* ActivityImageTableViewCell.swift */,
+				CB709D9720D551A000EA7C81 /* ActivityDescriptionTableViewCell.swift */,
+				CB709D9920D551BB00EA7C81 /* ActivityDateTimeTableViewCell.swift */,
+				CB709D9B20D551CB00EA7C81 /* ActivityRatingTableViewCell.swift */,
+				CB709D9D20D551DA00EA7C81 /* ActivityMapsTableViewCell.swift */,
+			);
+			path = Activitiy;
+			sourceTree = "<group>";
+		};
+		CB709D9F20D5699A00EA7C81 /* Trip */ = {
+			isa = PBXGroup;
+			children = (
+				CB709DA020D569B800EA7C81 /* Trip.storyboard */,
+				CB709DA420D569CA00EA7C81 /* Activity.storyboard */,
+			);
+			path = Trip;
+			sourceTree = "<group>";
+		};
+		CB709DB020D56ABB00EA7C81 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				CBCE1BA020BA5A840010967E /* Settings.storyboard */,
+				CB709DB120D56AE400EA7C81 /* About.storyboard */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		CB709DB320D56B0600EA7C81 /* UserSelection */ = {
+			isa = PBXGroup;
+			children = (
+				CB709DAC20D56A2600EA7C81 /* Search.storyboard */,
+				CB709DAA20D56A1900EA7C81 /* Results.storyboard */,
+				CB709DA820D56A0B00EA7C81 /* Groups.storyboard */,
+				CB709DA620D569F300EA7C81 /* Preferences.storyboard */,
+			);
+			path = UserSelection;
+			sourceTree = "<group>";
+		};
+		CB709DB420D56B5900EA7C81 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				CB709DB620D56B8800EA7C81 /* Login.storyboard */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		CB709DB520D56B7000EA7C81 /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				CB709DBC20D56C8400EA7C81 /* NameInput.storyboard */,
+				CB709DBE20D56C9100EA7C81 /* EmailInput.storyboard */,
+				CB709DC020D56CA100EA7C81 /* PasswordInput.storyboard */,
+			);
+			path = Signup;
 			sourceTree = "<group>";
 		};
 		CBADC0BA20BF6121007A7A95 /* General */ = {
@@ -305,7 +393,6 @@
 			isa = PBXGroup;
 			children = (
 				CBF4136F20A49A6A0038340F /* SearchTeamCell.swift */,
-				CBF4137320A49E5E0038340F /* ArrivalDepartureCell.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -433,15 +520,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB709DBF20D56C9100EA7C81 /* EmailInput.storyboard in Resources */,
+				CB709DA920D56A0B00EA7C81 /* Groups.storyboard in Resources */,
+				CB709DC120D56CA100EA7C81 /* PasswordInput.storyboard in Resources */,
 				CB4BB7E120A0DC8E00F756D3 /* LaunchScreen.storyboard in Resources */,
-				CB57BDA620B4F5C8004FEE89 /* GoogleService-Info.plist in Resources */,
+				CB709DB220D56AE400EA7C81 /* About.storyboard in Resources */,
 				CB4BB7EC20A0E11100F756D3 /* GoogleService-Info.plist in Resources */,
+				CB709DAD20D56A2600EA7C81 /* Search.storyboard in Resources */,
+				CB709DA520D569CA00EA7C81 /* Activity.storyboard in Resources */,
+				CB709DB720D56B8800EA7C81 /* Login.storyboard in Resources */,
 				CBF4138F20A9D60E0038340F /* AppLaunch.storyboard in Resources */,
+				CB709DA120D569B800EA7C81 /* Trip.storyboard in Resources */,
 				CB4BB7DE20A0DC8E00F756D3 /* Assets.xcassets in Resources */,
-				CBF4139720A9DE860038340F /* EmailSignUp.storyboard in Resources */,
+				CB709DBD20D56C8400EA7C81 /* NameInput.storyboard in Resources */,
+				CB709DAB20D56A1900EA7C81 /* Results.storyboard in Resources */,
 				CBCE1BA120BA5A840010967E /* Settings.storyboard in Resources */,
-				CBF413A120A9E9500038340F /* EmailLogin.storyboard in Resources */,
-				CB4BB7DC20A0DC8E00F756D3 /* Main.storyboard in Resources */,
+				CB709DA720D569F300EA7C81 /* Preferences.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -557,9 +651,9 @@
 				CB4BB80320A109F100F756D3 /* ResultsTableViewController.swift in Sources */,
 				CB57BDA120ADE2A4004FEE89 /* SignupViewController.swift in Sources */,
 				CBF4138620A9CCFF0038340F /* PreferencesCollectionViewController.swift in Sources */,
-				CBCE1B9620B76B9D0010967E /* Settings.swift in Sources */,
 				CBF4139E20A9DF8C0038340F /* PasswordViewController.swift in Sources */,
 				CBCE1B9F20BA5A4D0010967E /* SettingsViewController.swift in Sources */,
+				CB709D9A20D551BB00EA7C81 /* ActivityDateTimeTableViewCell.swift in Sources */,
 				CB57BD9D20ACA354004FEE89 /* Router.swift in Sources */,
 				CB57BDA820B50530004FEE89 /* UserPreferences.swift in Sources */,
 				CB57BD9920AC943A004FEE89 /* SectionHeaderCell.swift in Sources */,
@@ -568,14 +662,16 @@
 				CB4BB7FD20A1099600F756D3 /* LoginViewController.swift in Sources */,
 				CBF4138D20A9D4160038340F /* User.swift in Sources */,
 				CBCE1B9D20B91CB50010967E /* GroupTableViewCell.swift in Sources */,
+				CB709D9620D5519000EA7C81 /* ActivityImageTableViewCell.swift in Sources */,
 				CBF4139320A9D71B0038340F /* AppLaunchViewController.swift in Sources */,
 				CBF413A520AC82280038340F /* Trip.swift in Sources */,
 				CB765ABB20BF6D8400912B51 /* TripViewController.swift in Sources */,
-				CBF4137420A49E5E0038340F /* ArrivalDepartureCell.swift in Sources */,
 				CBF4137620A4BFBC0038340F /* NextButtonCell.swift in Sources */,
 				CB57BDA320ADE877004FEE89 /* UserDefaults+FirstLaunch.swift in Sources */,
+				CB709D8E20D0874D00EA7C81 /* TripHeaderCell.swift in Sources */,
 				CBCE1B9B20B9162C0010967E /* GroupTableViewController.swift in Sources */,
 				CBCE1B9820B7D5A40010967E /* Constants.swift in Sources */,
+				CB709D9E20D551DA00EA7C81 /* ActivityMapsTableViewCell.swift in Sources */,
 				CBF4136B20A490160038340F /* NavigationHelper.swift in Sources */,
 				CB4BB7F420A1042B00F756D3 /* CreateTripCell.swift in Sources */,
 				CB4BB80A20A10A6800F756D3 /* ActivityCell.swift in Sources */,
@@ -588,29 +684,25 @@
 				CB57BD9B20AC97DA004FEE89 /* MoreCell.swift in Sources */,
 				CB57BD9F20ACA36C004FEE89 /* AwayGameAPI.swift in Sources */,
 				CBF4137820A5ED500038340F /* Event.swift in Sources */,
+				CB709D9020D0903C00EA7C81 /* TicketmasterImage.swift in Sources */,
 				CB4BB7F220A0F5DA00F756D3 /* Activity.swift in Sources */,
 				CB4BB7F620A1046900F756D3 /* SavedTripsCell.swift in Sources */,
 				CBF4138220A9CCBC0038340F /* PreferenceCollectionCell.swift in Sources */,
 				CB4BB80120A109D600F756D3 /* SearchViewController.swift in Sources */,
 				CB4BB7F020A0F5B100F756D3 /* Itinerary.swift in Sources */,
 				CBADC0B920BE6727007A7A95 /* NextButtonCollectionCell.swift in Sources */,
+				CB709D9820D551A000EA7C81 /* ActivityDescriptionTableViewCell.swift in Sources */,
+				CB8A9A4520C8C88D00A9E354 /* Review.swift in Sources */,
 				CBF4139C20A9DF820038340F /* EmailViewController.swift in Sources */,
 				CBF4137F20A5F2120038340F /* ResultsCell.swift in Sources */,
 				FE8E69D120B5D5FD00BCED6A /* FirebaseHelper.swift in Sources */,
+				CB709D9C20D551CB00EA7C81 /* ActivityRatingTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		CB4BB7DA20A0DC8E00F756D3 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CB4BB7DB20A0DC8E00F756D3 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		CB4BB7DF20A0DC8E00F756D3 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -736,12 +828,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CR4T3XR3PC;
+				DEVELOPMENT_TEAM = AJ7H86ML8P;
 				INFOPLIST_FILE = AwayGame/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.AwayGame.AwayGame;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.awaygame.app-awaygame";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -755,12 +848,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CR4T3XR3PC;
+				DEVELOPMENT_TEAM = AJ7H86ML8P;
 				INFOPLIST_FILE = AwayGame/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.AwayGame.AwayGame;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.awaygame.app-awaygame";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

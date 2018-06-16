@@ -15,7 +15,7 @@ protocol NextDelegate: class {
 class NextButtonCell: UITableViewCell {
     
     static let identifier = "NextButtonCell"
-    static let height: CGFloat = 76.0
+    static let height: CGFloat = 96.0
     
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var roundedView: UIView!

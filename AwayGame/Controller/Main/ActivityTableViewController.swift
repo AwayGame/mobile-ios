@@ -10,86 +10,92 @@ import UIKit
 
 class ActivityTableViewController: UITableViewController {
 
+    public var activity: Activity? {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.separatorStyle = .none
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 2
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return section == 0 ? 1 : 5
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        if indexPath.section == 0 {
+            if let pageCell = tableView.dequeueReusableCell(withIdentifier: TripHeaderCell.identifier, for: indexPath) as? TripHeaderCell {
+                return pageCell
+            }
+        } else {
+            
+            switch indexPath.row {
+            case 0:
+                if let activityImageCell = tableView.dequeueReusableCell(withIdentifier: ActivityImageTableViewCell.identifier, for: indexPath) as? ActivityImageTableViewCell {
+                    activityImageCell.configureCell(withActivity: activity)
+                    return activityImageCell
+                }
+                break
+            case 1:
+                if let activityDescriptionCell = tableView.dequeueReusableCell(withIdentifier: ActivityDescriptionTableViewCell.identifier, for: indexPath) as? ActivityDescriptionTableViewCell {
+                    ActivityDescriptionTableViewCell.height = activityDescriptionCell.sizeThatFits(CGSize(width: tableView.bounds.width - 80.0, height: .greatestFiniteMagnitude)).height
+                    activityDescriptionCell.configureCell(withActivity: activity)
+                    return activityDescriptionCell
+                }
+                break
+            case 2:
+                if let activityDateTimeCell = tableView.dequeueReusableCell(withIdentifier: ActivityDateTimeTableViewCell.identifier, for: indexPath) as? ActivityDateTimeTableViewCell {
+                    activityDateTimeCell.configureCell(withActivity: activity)
+                    return activityDateTimeCell
+                }
+                break
+            case 3:
+                if let activityRatingCell = tableView.dequeueReusableCell(withIdentifier: ActivityRatingTableViewCell.identifier, for: indexPath) as? ActivityRatingTableViewCell {
+                    activityRatingCell.configureCell(withActivity: activity)
+                    return activityRatingCell
+                }
+                break
+            case 4:
+                if let activityMapsCell = tableView.dequeueReusableCell(withIdentifier: ActivityMapsTableViewCell.identifier, for: indexPath) as? ActivityMapsTableViewCell {
+                    activityMapsCell.configureCell(withActivity: activity)
+                    return activityMapsCell
+                }
+                break
+            default:
+                return UITableViewCell()
+            }
 
-        // Configure the cell...
-
-        return cell
+        }
+        return UITableViewCell()
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 0 { return TripHeaderCell.height}
+        
+        switch indexPath.row {
+        case 0 :
+            return ActivityImageTableViewCell.height
+        case 1:
+            return ActivityDescriptionTableViewCell.height
+        case 2:
+            return ActivityDateTimeTableViewCell.height
+        case 3:
+            return ActivityRatingTableViewCell.height
+        case 4:
+            return ActivityMapsTableViewCell.height
+        default:
+            return 0.0
+        }
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

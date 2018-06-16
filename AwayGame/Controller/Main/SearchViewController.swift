@@ -51,6 +51,7 @@ class SearchViewController: HitsTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         styleViews()
+        datePicker.minuteInterval = 15
         hitsTableView = teamSearchResults
         InstantSearch.shared.registerAllWidgets(in: self.view)
     }
@@ -109,7 +110,7 @@ class SearchViewController: HitsTableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath, containing hit: [String : Any]) -> UITableViewCell {
         if let hitCell = tableView.dequeueReusableCell(withIdentifier: SearchHitCell.identifier, for: indexPath) as? SearchHitCell {
-            hitCell.configureCell(with: hit["name"] as? String)
+            hitCell.configureCell(with: hit["Display Name"] as? String)
             return hitCell
         }
         
@@ -118,7 +119,7 @@ class SearchViewController: HitsTableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath, containing hit: [String : Any]) {
         teamSearchResults.isHidden = true
-        teamInstantSearchField.text = hit["name"] as? String
+        teamInstantSearchField.text = hit["Display Name"] as? String
         view.endEditing(true)
     }
     
@@ -154,7 +155,7 @@ class SearchViewController: HitsTableViewController {
         let dateFormatter = DateFormatter()
         let neatFormatter = DateFormatter()
         neatFormatter.dateFormat = "EEEE, MMM d HH:mm"
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:00"
         if buttonType == .arrive {
             arriveString = dateFormatter.string(from: (datePicker?.date) ?? Date())
             arriveButton.setTitle(neatFormatter.string(from: (datePicker?.date) ?? Date()), for: .normal)

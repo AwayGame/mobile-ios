@@ -11,7 +11,10 @@ import UIKit
 
 class TripViewController: UIViewController {
 
+    // MARK: - Properties
+    
     public var tripRequest: TripRequest?
+    public var trip: Trip?
     
     @IBOutlet weak var tripContainerView: UIView!
     @IBOutlet weak var loadingBackgroundView: UIView!
@@ -20,15 +23,23 @@ class TripViewController: UIViewController {
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var tempLabel: UILabel!
     
+    // MARK: - Initialization
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLoadingScreen()
         AwayGameAPI.createTrip(request: tripRequest) { response in
-            self.tempLabel.text = response
+            self.trip = response
             self.tearDownLoadingScreen()
+            
+            if let itineraryVC = self.childViewControllers[0] as? ItineraryTableViewController {
+                itineraryVC.trip = self.trip
+            }
         }
-        
-        // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        setupNavigation(controller: self.navigationController, hidesBar: true)
     }
 
     func setupLoadingScreen() {
@@ -36,9 +47,10 @@ class TripViewController: UIViewController {
         tripContainerView.isHidden = true
         loadingBackgroundView.backgroundColor = Theme.Color.Green.primary
         loadingLabel.text = "Building your AwayGame..."
+        loadingLabel.textColor = Theme.Color.white
         logoImageView.image = #imageLiteral(resourceName: "AwayGameLogo")
         loadingIndicator.color = Theme.Color.white
-        loadingIndicator.type = .audioEqualizer
+        loadingIndicator.type = .ballSpinFadeLoader
         loadingIndicator.startAnimating()
     }
 
@@ -46,19 +58,9 @@ class TripViewController: UIViewController {
         UIView.animate(withDuration: 1.0) {
             self.loadingBackgroundView.alpha = 0.0
             self.tripContainerView.isHidden = false
-            self.loadingLabel.text = "Building your AwayGame..."
             self.loadingIndicator.stopAnimating()
+            setupNavigation(controller: self.navigationController, hidesBar: false)
         }
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
