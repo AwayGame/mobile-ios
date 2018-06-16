@@ -14,7 +14,9 @@ enum Router: URLRequestConvertible {
     case verifyUser(parameters: Parameters)
     case searchForGames(parameters: Parameters)
     case createTrip(parameters: Parameters)
-
+    case saveTrip(parameters: Parameters)
+    case deleteTrip(parameters: Parameters)
+    
     static let baseURLString = "https://us-central1-awaygame-api.cloudfunctions.net/api"
 
     var method: HTTPMethod {
@@ -25,8 +27,10 @@ enum Router: URLRequestConvertible {
             return .post
         case .createTrip:
             return .post
-//        case .destroyUser:
-//            return .delete
+        case .deleteTrip:
+            return .post
+        case .saveTrip:
+            return .post
         }
     }
 
@@ -38,6 +42,10 @@ enum Router: URLRequestConvertible {
             return "/ticketmaster/searchForGames"
         case .createTrip:
             return "/trip/createTrip"
+        case .saveTrip:
+            return"/trip/save"
+        case .deleteTrip:
+            return "/trip/delete"
         }
         
     }
@@ -56,6 +64,10 @@ enum Router: URLRequestConvertible {
         case .searchForGames(let parameters):
             urlRequest = try URLEncoding.default.encode(urlRequest, with: parameters)
         case .createTrip(let parameters):
+            urlRequest = try URLEncoding.default.encode(urlRequest, with: parameters)
+        case .saveTrip(let parameters):
+            urlRequest = try URLEncoding.default.encode(urlRequest, with: parameters)
+        case .deleteTrip(parameters: let parameters):
             urlRequest = try URLEncoding.default.encode(urlRequest, with: parameters)
         default:
             break

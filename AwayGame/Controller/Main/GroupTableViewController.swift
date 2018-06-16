@@ -12,6 +12,9 @@ class GroupTableViewController: UITableViewController {
 
     public var tripRequest: TripRequest?
     
+    
+    weak var delegate: UserDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.allowsSelection = true
@@ -88,6 +91,7 @@ class GroupTableViewController: UITableViewController {
                 
                 preferencesVC.tripRequest = self.tripRequest
                 preferencesVC.type = .Food
+                preferencesVC.delegate = self
                 
             }
         }
@@ -107,4 +111,12 @@ extension GroupTableViewController: NextDelegate {
         }
     }
     
+}
+
+extension GroupTableViewController: UserDelegate {
+    func user(_ user: User, didSaveTrip trip: Trip) {
+        print("popping Group...")
+    navigationController?.popViewController(animated: false)
+        delegate?.user(user, didSaveTrip: trip)
+    }
 }

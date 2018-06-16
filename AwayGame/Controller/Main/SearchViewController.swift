@@ -31,6 +31,8 @@ class SearchViewController: HitsTableViewController {
     private var arriveString: String?
     private var departString: String?
     
+    weak var delegate: UserDelegate?
+    
     enum ButtonType {
         case arrive
         case depart
@@ -194,8 +196,17 @@ class SearchViewController: HitsTableViewController {
                 print(gameData)
                 resultsVC.tripRequest = self.tripRequest
                 resultsVC.resultsData = self.gameData
+                resultsVC.delegate = self
             }
         }
     }
     
+}
+
+extension SearchViewController: UserDelegate {
+    func user(_ user: User, didSaveTrip trip: Trip) {
+       print("popping SEARCH...")
+        navigationController?.popViewController(animated: false)
+        delegate?.user(user, didSaveTrip: trip)
+    }
 }

@@ -12,6 +12,7 @@ import UIKit
 protocol TripDelegate: class {
     func previousDayTapped()
     func nextDayTapped()
+    func saveTapped()
 }
 
 class TripHeaderCell: UITableViewCell {
@@ -52,6 +53,11 @@ class TripHeaderCell: UITableViewCell {
     
     @IBAction func nextDayButtonTapped(_ sender: Any) {
         delegate?.nextDayTapped()
+    }
+    
+    @IBAction func saveButtonTapped(_ sender: Any) {
+        print("SAVE TAPPED")
+        delegate?.saveTapped()
     }
     
 }

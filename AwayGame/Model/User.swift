@@ -9,6 +9,12 @@
 import ObjectMapper
 import Foundation
 
+
+protocol UserDelegate: class {
+    func user(_ user: User, didSaveTrip trip: Trip)
+}
+
+
 final class User: Mappable {
     
     static var currentUser = User()
@@ -19,7 +25,7 @@ final class User: Mappable {
     public var uid: String?
     public var tripIds: [String]?
     public var preferences: Preferences?
-    public var trips: [Trip]?
+    public var tripStubs: [TripStub]?
     private init() {}
     
     required init?(map: Map) {
@@ -32,8 +38,8 @@ final class User: Mappable {
         photoUrl <- map["photoUrl"]
         uid <- map["uid"]
         preferences <- map["preferences"]
-        trips <- map["trips"]
+        tripStubs <- map["tripStubs"]
     }
+    
 }
-
 

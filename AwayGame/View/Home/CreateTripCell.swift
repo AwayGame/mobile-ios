@@ -15,6 +15,7 @@ protocol CreateTripDelegate: class {
 class CreateTripCell: UITableViewCell {
 
     static let identifier = "CreateTripCell"
+    static let height: CGFloat = 120.0
     
     @IBOutlet weak var createTripLabel: UILabel!
     @IBOutlet weak var background: UIView!

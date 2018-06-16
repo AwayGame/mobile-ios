@@ -23,6 +23,8 @@ class ItineraryTableViewController: UITableViewController {
         }
     }
     
+    weak var delegate: UserDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -101,6 +103,12 @@ extension ItineraryTableViewController: TripDelegate {
             currentItineraryIndex += 1
             currentItinerary = trip?.itineraries?[currentItineraryIndex]
         }
+    }
+    
+    func saveTapped() {
+        // TODO: Clean up errors
+        guard let trip = trip else { return }
+        delegate?.user(User.currentUser, didSaveTrip: trip)
     }
     
 }

@@ -16,6 +16,8 @@ class AppLaunchViewController: UIViewController {
     
     @IBOutlet weak var logoImageView: UIImageView!
     
+    private var homeViewController: HomeTableViewController?
+    
     @IBOutlet weak var mainContainerView: UIView!
     @IBOutlet weak var loginContainerView: UIView!
     @IBOutlet weak var signupContainerView: UIView!
@@ -38,14 +40,20 @@ class AppLaunchViewController: UIViewController {
         // Firebase Login Listener
         handle = Auth.auth().addStateDidChangeListener { (auth, user) in
             if user != nil {
-                
                 User.currentUser.email = Auth.auth().currentUser?.email
                 User.currentUser.name = Auth.auth().currentUser?.displayName
                 User.currentUser.uid = Auth.auth().currentUser?.uid
-                AwayGameAPI.verifyUser(with: User.currentUser)
-                
-                self.proceedToDashboard()
-                
+                AwayGameAPI.verifyUser(with: User.currentUser) {user in
+                    User.currentUser = user
+                    print(User.currentUser.photoUrl)
+                    print(User.currentUser.name)
+                    if let homeVC = self.homeViewController {
+                        print("HERE")
+                        homeVC.setupFirebase()
+                    }
+                    self.proceedToDashboard()
+                }
+
             } else {
                 if UserDefaults.isFirstLaunch() {
                     self.proceedToSignup()
@@ -54,7 +62,6 @@ class AppLaunchViewController: UIViewController {
                 }
             }
         }
-        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -95,6 +102,13 @@ class AppLaunchViewController: UIViewController {
         if segue.identifier == "SignupEmbedSegue", let signupVC = segue.destination as? SignupViewController  {
             signupVC.delegate = self
         }
+        
+        if segue.identifier == "HomeEmbedSegue", let navVC = segue.destination as? UINavigationController {
+            if let homeVC = navVC.viewControllers.first as? HomeTableViewController {
+                homeViewController = homeVC
+            }
+        }
+        
     }
     
 }
@@ -129,4 +143,5 @@ extension AppLaunchViewController: HomeDelegate {
     func userDidLogout() {
         proceedToLogin()
     }
+    
 }
