@@ -73,45 +73,28 @@ class LoginViewController: UIViewController {
     // MARK: - Styling
     
     func styleViews() {
-        facebookButtonLabel.font = Theme.Font.h1
-        twitterButtonLabel.font = Theme.Font.h1
-        emailButtonLabel.font = Theme.Font.h1
-
-        styleButtons()
-    }
-    
-    func styleButtons() {
-        styleFacebookButton()
-        styleTwitterButton()
-        styleEmailButton()
-    }
-    
-    func styleFacebookButton() {
+        for buttonView in [facebookBackgroundView, twitterBackgroundView, emailBackgroundView] {
+            buttonView?.layer.cornerRadius = 5.0
+            buttonView?.clipsToBounds = true
+            
+        }
+        for label in [facebookButtonLabel, twitterButtonLabel, emailButtonLabel, createAccountButton.titleLabel] {
+            label?.font = Theme.Font.p1
+        }
         facebookBackgroundView.backgroundColor = Theme.Color.Login.facebook
-        facebookBackgroundView.layer.cornerRadius = 5.0
-    }
-    
-    func styleTwitterButton() {
         twitterBackgroundView.backgroundColor = Theme.Color.Login.twitter
-        twitterBackgroundView.layer.cornerRadius = 5.0
-        twitterBackgroundView.clipsToBounds = true
-    }
-    
-    func styleEmailButton() {
         emailBackgroundView.backgroundColor = Theme.Color.clear
         emailBackgroundView.layer.borderWidth = 2.0
         emailBackgroundView.layer.borderColor = Theme.Color.Login.email.cgColor
-        emailBackgroundView.layer.cornerRadius = 5.0
-        emailBackgroundView.clipsToBounds = true
+        createAccountButton.setTitleColor(Theme.Color.white, for: .normal)
+        createAccountButton.setTitleColor(Theme.Color.Background.primary, for: .highlighted)
+        
     }
-    
     
     // MARK: - Actions
     
     @IBAction func facebookButtonTapped(_ sender: Any) {
-        print("facebook tapped")
         facebookSDKButton.sendActions(for: .touchUpInside)
-        
     }
     
     @IBAction func twitterButtonTapped(_ sender: Any) {

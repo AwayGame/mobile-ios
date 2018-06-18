@@ -15,6 +15,31 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    // TODO: POST RELEASE TODO LIST
+    /*
+     
+     // ABSTRACT STYLING FUNCTIONALITY.. too much repeated code
+     - Create custom label class
+     - Create custom button class
+     - Create custom view class
+     - Create custom tableview classes that extend a custom base tableview class
+     
+     // DELEGATES
+     - Better deleagation patterns
+     - More organized code
+     - Reduce delegates
+
+     // NAMING CONVENTION
+     - Better delegate naming convention
+     - More consistent property naming
+     
+     // COMMENTS
+     - Come up with a consistent commenting structure
+ 
+     //...
+     
+     */
+    
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
