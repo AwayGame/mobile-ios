@@ -181,6 +181,41 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CB20DD7C20D88FD40028AA4B /* Preferenes */ = {
+			isa = PBXGroup;
+			children = (
+				CBF4138520A9CCFF0038340F /* PreferencesCollectionViewController.swift */,
+				CBCE1B9A20B9162C0010967E /* GroupTableViewController.swift */,
+			);
+			path = Preferenes;
+			sourceTree = "<group>";
+		};
+		CB20DD7D20D88FD70028AA4B /* Results */ = {
+			isa = PBXGroup;
+			children = (
+				CB4BB80220A109F100F756D3 /* ResultsTableViewController.swift */,
+			);
+			path = Results;
+			sourceTree = "<group>";
+		};
+		CB20DD7E20D88FD90028AA4B /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				CB4BB80020A109D600F756D3 /* SearchViewController.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		CB20DD7F20D88FDB0028AA4B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				CB709DC420D5875500EA7C81 /* HomeTableViewController+FirebaseSubscription.swift */,
+				CB4BB7D820A0DC8E00F756D3 /* HomeTableViewController.swift */,
+				CBCE1B9E20BA5A4D0010967E /* SettingsViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		CB4BB7CA20A0DC8E00F756D3 = {
 			isa = PBXGroup;
 			children = (
@@ -221,8 +256,12 @@
 			isa = PBXGroup;
 			children = (
 				CBF4139220A9D71B0038340F /* AppLaunchViewController.swift */,
+				CB20DD7F20D88FDB0028AA4B /* Home */,
+				CB20DD7E20D88FD90028AA4B /* Search */,
+				CB20DD7D20D88FD70028AA4B /* Results */,
+				CB20DD7C20D88FD40028AA4B /* Preferenes */,
 				CBF4137C20A5EEE30038340F /* Login+Signup */,
-				CBF4137B20A5EEC70038340F /* Main */,
+				CBF4137B20A5EEC70038340F /* Trip */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -388,21 +427,14 @@
 			path = Search;
 			sourceTree = "<group>";
 		};
-		CBF4137B20A5EEC70038340F /* Main */ = {
+		CBF4137B20A5EEC70038340F /* Trip */ = {
 			isa = PBXGroup;
 			children = (
-				CB4BB7D820A0DC8E00F756D3 /* HomeTableViewController.swift */,
-				CB709DC420D5875500EA7C81 /* HomeTableViewController+FirebaseSubscription.swift */,
-				CBCE1B9E20BA5A4D0010967E /* SettingsViewController.swift */,
-				CB4BB80020A109D600F756D3 /* SearchViewController.swift */,
-				CB4BB80220A109F100F756D3 /* ResultsTableViewController.swift */,
-				CBCE1B9A20B9162C0010967E /* GroupTableViewController.swift */,
-				CBF4138520A9CCFF0038340F /* PreferencesCollectionViewController.swift */,
 				CB765ABA20BF6D8400912B51 /* TripViewController.swift */,
 				CB765ABC20BF6DA300912B51 /* ItineraryTableViewController.swift */,
 				CB765ABE20BF6DBF00912B51 /* ActivityTableViewController.swift */,
 			);
-			path = Main;
+			path = Trip;
 			sourceTree = "<group>";
 		};
 		CBF4137C20A5EEE30038340F /* Login+Signup */ = {

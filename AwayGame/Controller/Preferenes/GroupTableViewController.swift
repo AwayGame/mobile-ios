@@ -23,6 +23,7 @@ class GroupTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         setupNavigation(controller: self.navigationController, hidesBar: false)
+        self.title = tripRequest?.eventName ?? ""
     }
 
     // MARK: - Table view data source
@@ -90,7 +91,7 @@ class GroupTableViewController: UITableViewController {
                 preferencesVC.setup(with: tripRequest?.eventName ?? "", textData: Preferences.Food.text, imageData: Preferences.Food.images)
                 
                 preferencesVC.tripRequest = self.tripRequest
-                preferencesVC.type = .Food
+                preferencesVC.preferenceType = .Food
                 preferencesVC.delegate = self
                 
             }

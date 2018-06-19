@@ -10,7 +10,7 @@ import UIKit
 
 class PreferencesCollectionViewController: UICollectionViewController {
 
-    public var type: PreferenceType?
+    public var preferenceType: PreferenceType?
     public var tripRequest: TripRequest?
     public var textData: [String]?
     public var imageData: [UIImage]?
@@ -21,13 +21,6 @@ class PreferencesCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print("\n\n\n-----------------------")
-        print(self.type)
-        print(tripRequest?.preferences?.group)
-        print(tripRequest?.preferences?.food)
-        print(tripRequest?.preferences?.interests)
-        print("\n\n\n-----------------------")
         
         guard let collectionView = self.collectionView else { return }
         collectionView.delegate = self
@@ -53,12 +46,14 @@ class PreferencesCollectionViewController: UICollectionViewController {
     // MARK: UICollectionView Data Source
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 2
+        return 3
     }
     
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 0 {
+            return 1
+        } else if section == 1 {
             return 10
         } else {
             return 1
@@ -66,7 +61,23 @@ class PreferencesCollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         if indexPath.section == 0 {
+            if let preferenceHeaderCell = collectionView.dequeueReusableCell(withReuseIdentifier: PreferenceHeaderCell.identifier, for: indexPath) as? PreferenceHeaderCell {
+                
+                guard let type = preferenceType else { return UICollectionViewCell() }
+                
+                switch type {
+                case .Food:
+                    preferenceHeaderCell.configureCell(text: "What's to eat?")
+                case .Interest:
+                    preferenceHeaderCell.configureCell(text: "What do you want to do?")
+                case .Nightlife:
+                    preferenceHeaderCell.configureCell(text: "What's the nighttime move?")
+                }
+                return preferenceHeaderCell
+            }
+        } else if indexPath.section == 1 {
             if let preferenceCell = collectionView.dequeueReusableCell(withReuseIdentifier: PreferenceCollectionCell.identifier, for: indexPath) as? PreferenceCollectionCell {
                 preferenceCell.configureCell(title: textData?[indexPath.row], image: imageData?[indexPath.row])
                 return preferenceCell
@@ -95,7 +106,7 @@ class PreferencesCollectionViewController: UICollectionViewController {
                     }
                 }
                 preferencesVC.tripRequest = self.tripRequest
-                preferencesVC.type = .Interest
+                preferencesVC.preferenceType = .Interest
                 preferencesVC.delegate = self
                 preferencesVC.setup(with: tripRequest?.eventName ?? "", textData: Preferences.Interest.text, imageData: Preferences.Interest.images)
             }
@@ -109,7 +120,7 @@ class PreferencesCollectionViewController: UICollectionViewController {
                     }
                 }
                 preferencesVC.tripRequest = self.tripRequest
-                preferencesVC.type = .Nightlife
+                preferencesVC.preferenceType = .Nightlife
                 preferencesVC.delegate = self
                 preferencesVC.setup(with: tripRequest?.eventName ?? "", textData: Preferences.Nightlife.text, imageData: Preferences.Nightlife.images)
             }
@@ -136,6 +147,8 @@ extension PreferencesCollectionViewController: UICollectionViewDelegateFlowLayou
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if indexPath.section == 0 {
+            return CGSize(width: self.view.bounds.width - 40, height: 56.0)
+        } else if indexPath.section == 1 {
             return CGSize(width: self.view.bounds.width / 2 - 30, height: 120.0)
         } else {
             return CGSize(width: self.view.bounds.width - 40, height: 60.0)
@@ -154,14 +167,20 @@ extension PreferencesCollectionViewController: NextDelegate {
     
     func didTapNext() {
         
-        if type == .Food {
-            performSegue(withIdentifier: "InterestsSegue", sender: self)
-        } else if type == .Interest {
-            performSegue(withIdentifier: "NightlifeSegue", sender: self)
-        } else if type == .Nightlife {
-            performSegue(withIdentifier: "TripSegue", sender: self)
+        if let paths = collectionView?.indexPathsForSelectedItems {
+            if paths.count < 3 {
+                print("Need to select at least 3 items")
+                return
+            }
         }
         
+        if preferenceType == .Food {
+            performSegue(withIdentifier: "InterestsSegue", sender: self)
+        } else if preferenceType == .Interest {
+            performSegue(withIdentifier: "NightlifeSegue", sender: self)
+        } else if preferenceType == .Nightlife {
+            performSegue(withIdentifier: "TripSegue", sender: self)
+        }
     }
     
 }

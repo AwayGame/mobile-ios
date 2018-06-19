@@ -1,16 +1,16 @@
 //
-//  SectionHeaderCell.swift
+//  PreferenceHeaderCell.swift
 //  AwayGame
 //
-//  Created by Blake Swaidner on 5/16/18.
+//  Created by Blake Swaidner on 6/18/18.
 //  Copyright © 2018 AwayGame. All rights reserved.
 //
 
 import UIKit
 
-class SectionHeaderCell: UITableViewCell {
+class PreferenceHeaderCell: UICollectionViewCell {
     
-    static let identifier = "SectionHeaderCell"
+    static let identifier = "PreferenceHeaderCell"
     static let height: CGFloat = 56.0
     
     @IBOutlet weak var headerLabel: UILabel!
@@ -20,7 +20,6 @@ class SectionHeaderCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.selectionStyle = .none
     }
     
     func configureCell(text: String?) {
@@ -35,5 +34,5 @@ class SectionHeaderCell: UITableViewCell {
         headerLabel.textColor = Theme.Color.darkText
         underlineView.backgroundColor = Theme.Color.Green.primary
     }
-
+    
 }
