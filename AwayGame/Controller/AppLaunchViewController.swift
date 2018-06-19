@@ -50,6 +50,7 @@ class AppLaunchViewController: UIViewController {
                     if let homeVC = self.homeViewController {
                         print("HERE")
                         homeVC.setupFirebase()
+                        homeVC.updateProfileImage()
                     }
                     self.proceedToDashboard()
                 }

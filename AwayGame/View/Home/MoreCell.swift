@@ -46,6 +46,7 @@ class MoreCell: UITableViewCell {
     func styleButton(btn: UIButton, title: String) {
         btn.setTitle(title, for: .normal)
         btn.titleLabel?.font = Theme.Font.p1
+        btn.backgroundColor = Theme.Color.Background.primary
         btn.setTitleColor(Theme.Color.darkText, for: .normal)
         btn.layer.cornerRadius = 10.0
     }

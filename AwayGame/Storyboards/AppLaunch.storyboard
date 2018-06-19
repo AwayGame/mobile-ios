@@ -325,53 +325,42 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="130.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fro-1T-qoO">
-                                            <rect key="frame" x="-20" y="-20" width="415" height="170.5"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v9d-3f-duf">
-                                                    <rect key="frame" x="20" y="0.0" width="42" height="170.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kjG-if-2XN">
-                                                    <rect key="frame" x="353" y="0.0" width="42" height="170.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gdm-Gu-C4P">
-                                                    <rect key="frame" x="0.0" y="0.0" width="415" height="171"/>
-                                                    <connections>
-                                                        <action selector="createTripTapped:" destination="kqD-X0-GBH" eventType="touchUpInside" id="eCW-xd-F0Z"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gdm-Gu-C4P">
+                                            <rect key="frame" x="20" y="20" width="335" height="90"/>
                                             <color key="backgroundColor" red="0.94791666669999997" green="0.9407679739" blue="0.93853081599999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="gdm-Gu-C4P" secondAttribute="trailing" id="9dD-QW-tE6"/>
-                                                <constraint firstItem="gdm-Gu-C4P" firstAttribute="leading" secondItem="fro-1T-qoO" secondAttribute="leading" id="AIW-l9-77c"/>
-                                                <constraint firstAttribute="trailing" secondItem="kjG-if-2XN" secondAttribute="trailing" constant="20" id="L54-6y-yfg"/>
-                                                <constraint firstAttribute="bottom" secondItem="v9d-3f-duf" secondAttribute="bottom" id="Mkq-Vn-gp0"/>
-                                                <constraint firstItem="v9d-3f-duf" firstAttribute="top" secondItem="fro-1T-qoO" secondAttribute="top" id="XpW-Os-Ggt"/>
-                                                <constraint firstAttribute="bottom" secondItem="gdm-Gu-C4P" secondAttribute="bottom" id="cRU-Ga-LAu"/>
-                                                <constraint firstItem="gdm-Gu-C4P" firstAttribute="top" secondItem="fro-1T-qoO" secondAttribute="top" id="ehi-11-EPM"/>
-                                                <constraint firstItem="v9d-3f-duf" firstAttribute="leading" secondItem="fro-1T-qoO" secondAttribute="leading" constant="20" id="fYC-Au-96M"/>
-                                                <constraint firstItem="kjG-if-2XN" firstAttribute="top" secondItem="fro-1T-qoO" secondAttribute="top" id="tJi-6n-BiA"/>
-                                                <constraint firstAttribute="bottom" secondItem="kjG-if-2XN" secondAttribute="bottom" id="tuQ-y0-1pi"/>
-                                            </constraints>
-                                        </view>
+                                            <connections>
+                                                <action selector="createTripTapped:" destination="kqD-X0-GBH" eventType="touchUpInside" id="eCW-xd-F0Z"/>
+                                            </connections>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kjG-if-2XN">
+                                            <rect key="frame" x="20" y="20" width="42" height="90.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v9d-3f-duf">
+                                            <rect key="frame" x="313" y="20" width="42" height="90.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="fro-1T-qoO" secondAttribute="bottom" constant="-20" id="fmU-YH-ju3"/>
-                                        <constraint firstItem="fro-1T-qoO" firstAttribute="leading" secondItem="Twr-ED-1pj" secondAttribute="leading" constant="-20" id="gBj-l4-fqQ"/>
-                                        <constraint firstItem="fro-1T-qoO" firstAttribute="top" secondItem="Twr-ED-1pj" secondAttribute="top" constant="-20" id="sBb-ae-szt"/>
-                                        <constraint firstAttribute="trailing" secondItem="fro-1T-qoO" secondAttribute="trailing" constant="-20" id="wav-qr-Xaz"/>
+                                        <constraint firstAttribute="bottom" secondItem="gdm-Gu-C4P" secondAttribute="bottom" constant="20" id="9jV-pa-kKw"/>
+                                        <constraint firstAttribute="trailing" secondItem="gdm-Gu-C4P" secondAttribute="trailing" constant="20" id="EpQ-LS-3JU"/>
+                                        <constraint firstItem="gdm-Gu-C4P" firstAttribute="top" secondItem="Twr-ED-1pj" secondAttribute="top" constant="20" id="J4d-7z-oOf"/>
+                                        <constraint firstItem="v9d-3f-duf" firstAttribute="bottom" secondItem="gdm-Gu-C4P" secondAttribute="bottom" id="QaN-eY-pys"/>
+                                        <constraint firstItem="kjG-if-2XN" firstAttribute="top" secondItem="gdm-Gu-C4P" secondAttribute="top" id="Rij-PA-OFF"/>
+                                        <constraint firstItem="gdm-Gu-C4P" firstAttribute="leading" secondItem="Twr-ED-1pj" secondAttribute="leading" constant="20" id="UgA-hs-fM7"/>
+                                        <constraint firstItem="kjG-if-2XN" firstAttribute="leading" secondItem="gdm-Gu-C4P" secondAttribute="leading" id="X7I-Tn-KXM"/>
+                                        <constraint firstItem="v9d-3f-duf" firstAttribute="trailing" secondItem="gdm-Gu-C4P" secondAttribute="trailing" id="bQu-dD-HEA"/>
+                                        <constraint firstItem="kjG-if-2XN" firstAttribute="bottom" secondItem="gdm-Gu-C4P" secondAttribute="bottom" id="juK-8y-Jwl"/>
+                                        <constraint firstItem="v9d-3f-duf" firstAttribute="top" secondItem="gdm-Gu-C4P" secondAttribute="top" id="lQg-ku-ua8"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="addLabel" destination="kjG-if-2XN" id="KZs-dp-J2l"/>
-                                    <outlet property="background" destination="fro-1T-qoO" id="5KL-L3-d8W"/>
+                                    <outlet property="createTripButton" destination="gdm-Gu-C4P" id="Cdq-7Z-h7L"/>
                                     <outlet property="createTripLabel" destination="v9d-3f-duf" id="uop-cs-fJu"/>
                                 </connections>
                             </tableViewCell>

@@ -12,7 +12,6 @@ class GroupTableViewController: UITableViewController {
 
     public var tripRequest: TripRequest?
     
-    
     weak var delegate: UserDelegate?
     
     override func viewDidLoad() {

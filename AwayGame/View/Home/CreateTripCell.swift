@@ -15,11 +15,11 @@ protocol CreateTripDelegate: class {
 class CreateTripCell: UITableViewCell {
 
     static let identifier = "CreateTripCell"
-    static let height: CGFloat = 120.0
+    static let height: CGFloat = 60.0
     
+    @IBOutlet weak var createTripButton: UIButton!
     @IBOutlet weak var addLabel: UILabel!
     @IBOutlet weak var createTripLabel: UILabel!
-    @IBOutlet weak var background: UIView!
     
     weak var delegate: CreateTripDelegate?
     
@@ -30,10 +30,8 @@ class CreateTripCell: UITableViewCell {
     }
     
     func configureCell() {
-        
         styleBackground()
         styleLabels()
-        
         createTripLabel.text = "Create a new trip"
         addLabel.text = "┼"
 
@@ -42,9 +40,9 @@ class CreateTripCell: UITableViewCell {
     // MARK: - Styling
     
     func styleBackground() {
-        background.clipsToBounds = true
-        background.layer.cornerRadius = 10.0
-        background.backgroundColor = Theme.Color.Background.primary
+        createTripButton.clipsToBounds = true
+        createTripButton.layer.cornerRadius = 10.0
+        createTripButton.backgroundColor = Theme.Color.Background.primary
     }
     
     func styleLabels() {

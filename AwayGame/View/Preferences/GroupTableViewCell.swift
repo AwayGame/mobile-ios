@@ -26,6 +26,7 @@ class GroupTableViewCell: UITableViewCell {
     
     func configureCell(text: String?, image: UIImage?) {
         groupLabel.text = text ?? ""
+        groupImageView.image = image 
         styleViews()
     }
     

@@ -38,6 +38,7 @@ class HomeTableViewController: UITableViewController {
         self.title = "AwayGame"
         setupNavigation(controller: self.navigationController, hidesBar: false)
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: profileImageView)
+        updateProfileImage()
     }
     
     func updateProfileImage() {
@@ -85,11 +86,9 @@ class HomeTableViewController: UITableViewController {
             if let createTripCell = tableView.dequeueReusableCell(withIdentifier: CreateTripCell.identifier, for: indexPath) as? CreateTripCell {
                 createTripCell.configureCell()
                 createTripCell.delegate = self
-                print(createTripCell.bounds.width)
                 return createTripCell
             }
         } else if indexPath.section == 1 || indexPath.section == 3 || indexPath.section == 5 {
-            
             var title = ""
             if indexPath.section == 1 {
                 title = "Upcoming Trips"
@@ -305,7 +304,9 @@ extension HomeTableViewController: UserDelegate {
         navigationController?.popViewController(animated: false)
         print("Saving trip...")
         AwayGameAPI.saveTrip(trip, user: user, completion: {
-            "TRIP SAVED"
+            print("TRIP SAVED")
         })
     }
+    
+    
 }
