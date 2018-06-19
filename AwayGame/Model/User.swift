@@ -14,7 +14,6 @@ protocol UserDelegate: class {
     func user(_ user: User, didSaveTrip trip: Trip)
 }
 
-
 final class User: Mappable {
     
     static var currentUser = User()
