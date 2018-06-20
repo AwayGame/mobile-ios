@@ -16,9 +16,12 @@ class ItineraryTableViewController: UITableViewController {
         }
     }
     
+    private var cellHeights: [CGFloat] = []
+    
     private var currentItineraryIndex: Int = 0
     private var currentItinerary: Itinerary? {
         didSet {
+            cellHeights = [CGFloat].init(repeating: 0.0, count: currentItinerary?.activities?.count ?? 0)
             tableView.reloadData()
         }
     }
@@ -33,15 +36,16 @@ class ItineraryTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return currentItinerary?.activities?.count ?? 0
+        guard let itinerary = currentItinerary else { return 0 }
+        return section == 1 ? (itinerary.activities?.count ?? 0) : 1
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == 0 {
+        if indexPath.section == 0 {
             if let headerCell = tableView.dequeueReusableCell(withIdentifier: TripHeaderCell.identifier, for: indexPath) as? TripHeaderCell {
                 let dateFormatterGet = DateFormatter()
                 dateFormatterGet.dateFormat = "yyyy-MM-dd"
@@ -55,6 +59,8 @@ class ItineraryTableViewController: UITableViewController {
         } else {
             if let activityCell = tableView.dequeueReusableCell(withIdentifier: ActivityCell.identifier, for: indexPath) as? ActivityCell {
                 activityCell.configureCell(with: currentItinerary?.activities?[indexPath.row])
+                cellHeights[indexPath.row] = activityCell.cellHeight
+                activityCell.delegate = self
                 return activityCell
             }
         }
@@ -62,10 +68,11 @@ class ItineraryTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        print("Calling height for row at: \(cellHeights)")
         if indexPath.section == 0 {
             return TripHeaderCell.height
         } else {
-            return ActivityCell.height
+            return cellHeights[indexPath.row]
         }
     }
 
@@ -111,4 +118,12 @@ extension ItineraryTableViewController: TripDelegate {
         delegate?.user(User.currentUser, didSaveTrip: trip)
     }
     
+}
+
+// MARK: - ActivityDelegate
+
+extension ItineraryTableViewController: ActivityDelegate {
+    func didTapUber() {
+        print("Uber tap received in controller")
+    }
 }

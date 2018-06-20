@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		92E485D8569B6576B4B8E53A /* Pods_AwayGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD86D8DB69F99BDD0F42CF35 /* Pods_AwayGame.framework */; };
+		AF035E0B20DA994F00DA9C95 /* PreferenceHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF035E0A20DA994F00DA9C95 /* PreferenceHeaderCell.swift */; };
 		CB20DD7720D878420028AA4B /* EmailSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB20DD7620D878420028AA4B /* EmailSignupViewController.swift */; };
 		CB20DD7920D878AD0028AA4B /* Signup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB20DD7820D878AD0028AA4B /* Signup.storyboard */; };
 		CB4BB7D720A0DC8E00F756D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BB7D620A0DC8E00F756D3 /* AppDelegate.swift */; };
@@ -23,7 +24,6 @@
 		CB4BB7FF20A109AC00F756D3 /* EmailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BB7FE20A109AB00F756D3 /* EmailLoginViewController.swift */; };
 		CB4BB80120A109D600F756D3 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BB80020A109D600F756D3 /* SearchViewController.swift */; };
 		CB4BB80320A109F100F756D3 /* ResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BB80220A109F100F756D3 /* ResultsTableViewController.swift */; };
-		CB4BB80820A10A4D00F756D3 /* UberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BB80720A10A4D00F756D3 /* UberCell.swift */; };
 		CB4BB80A20A10A6800F756D3 /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BB80920A10A6800F756D3 /* ActivityCell.swift */; };
 		CB4BB81320A207EF00F756D3 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BB81220A207EF00F756D3 /* Theme.swift */; };
 		CB57BD9920AC943A004FEE89 /* SectionHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB57BD9820AC943A004FEE89 /* SectionHeaderCell.swift */; };
@@ -79,6 +79,7 @@
 
 /* Begin PBXFileReference section */
 		28AF8AA9864EEC04093B98D2 /* Pods-AwayGame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AwayGame.release.xcconfig"; path = "Pods/Target Support Files/Pods-AwayGame/Pods-AwayGame.release.xcconfig"; sourceTree = "<group>"; };
+		AF035E0A20DA994F00DA9C95 /* PreferenceHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceHeaderCell.swift; sourceTree = "<group>"; };
 		BC0FA84464268D0D4AF996AD /* Pods-AwayGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AwayGame.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AwayGame/Pods-AwayGame.debug.xcconfig"; sourceTree = "<group>"; };
 		CB20DD7620D878420028AA4B /* EmailSignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignupViewController.swift; sourceTree = "<group>"; };
 		CB20DD7820D878AD0028AA4B /* Signup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Signup.storyboard; sourceTree = "<group>"; };
@@ -88,7 +89,7 @@
 		CB4BB7DD20A0DC8E00F756D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB4BB7E020A0DC8E00F756D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CB4BB7E220A0DC8E00F756D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CB4BB7EB20A0E11100F756D3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CB4BB7EB20A0E11100F756D3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CB4BB7EF20A0F5B100F756D3 /* Itinerary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Itinerary.swift; sourceTree = "<group>"; };
 		CB4BB7F120A0F5DA00F756D3 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		CB4BB7F320A1042B00F756D3 /* CreateTripCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTripCell.swift; sourceTree = "<group>"; };
@@ -97,7 +98,6 @@
 		CB4BB7FE20A109AB00F756D3 /* EmailLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginViewController.swift; sourceTree = "<group>"; };
 		CB4BB80020A109D600F756D3 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		CB4BB80220A109F100F756D3 /* ResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsTableViewController.swift; sourceTree = "<group>"; };
-		CB4BB80720A10A4D00F756D3 /* UberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UberCell.swift; sourceTree = "<group>"; };
 		CB4BB80920A10A6800F756D3 /* ActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
 		CB4BB81220A207EF00F756D3 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		CB57BD9820AC943A004FEE89 /* SectionHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderCell.swift; sourceTree = "<group>"; };
@@ -336,7 +336,6 @@
 				CB4BB80920A10A6800F756D3 /* ActivityCell.swift */,
 				CB62238720C031E500690031 /* ActivityCollectionViewCell.swift */,
 				CB709D8D20D0874D00EA7C81 /* TripHeaderCell.swift */,
-				CB4BB80720A10A4D00F756D3 /* UberCell.swift */,
 			);
 			path = Itenerary;
 			sourceTree = "<group>";
@@ -458,6 +457,7 @@
 		CBF4138020A9CC650038340F /* Preferences */ = {
 			isa = PBXGroup;
 			children = (
+				AF035E0A20DA994F00DA9C95 /* PreferenceHeaderCell.swift */,
 				CBCE1B9C20B91CB50010967E /* GroupTableViewCell.swift */,
 				CBF4138120A9CCBC0038340F /* PreferenceCollectionCell.swift */,
 				CBF4137520A4BFBC0038340F /* NextButtonCell.swift */,
@@ -687,7 +687,6 @@
 				CB709DC720D58F4900EA7C81 /* NoSavedTripsCell.swift in Sources */,
 				CB4BB7F420A1042B00F756D3 /* CreateTripCell.swift in Sources */,
 				CB4BB80A20A10A6800F756D3 /* ActivityCell.swift in Sources */,
-				CB4BB80820A10A4D00F756D3 /* UberCell.swift in Sources */,
 				CBF4137020A49A6A0038340F /* SearchTeamCell.swift in Sources */,
 				CBCE1BA320BB17A80010967E /* TripRequest.swift in Sources */,
 				CB4BB81320A207EF00F756D3 /* Theme.swift in Sources */,
@@ -709,6 +708,7 @@
 				CBF4137F20A5F2120038340F /* ResultsCell.swift in Sources */,
 				FE8E69D120B5D5FD00BCED6A /* FirebaseSubscription.swift in Sources */,
 				CB709D9C20D551CB00EA7C81 /* ActivityRatingTableViewCell.swift in Sources */,
+				AF035E0B20DA994F00DA9C95 /* PreferenceHeaderCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

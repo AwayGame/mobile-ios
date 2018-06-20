@@ -58,7 +58,7 @@ class TripViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        setupNavigation(controller: self.navigationController, hidesBar: true)
+        setupNavigation(controller: self.navigationController, hidesBar: false)
     }
 
     func setupLoadingScreen() {
