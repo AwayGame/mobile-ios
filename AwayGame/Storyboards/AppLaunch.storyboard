@@ -308,6 +308,14 @@
             </objects>
             <point key="canvasLocation" x="-58" y="869"/>
         </scene>
+        <!--Trip-->
+        <scene sceneID="GLK-jf-5pT">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Trip" id="GGm-4o-Btw" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8RD-s1-VDe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2238" y="-1"/>
+        </scene>
         <!--Home Table View Controller-->
         <scene sceneID="seO-H8-7LU">
             <objects>
@@ -383,14 +391,24 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ndp-xt-U45">
+                                                    <rect key="frame" x="0.0" y="0.0" width="335" height="114.5"/>
+                                                    <connections>
+                                                        <action selector="didTapCell:" destination="pcG-wf-MY6" eventType="touchUpInside" id="LvI-Bi-zbQ"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                             <constraints>
+                                                <constraint firstItem="Ndp-xt-U45" firstAttribute="leading" secondItem="4cY-xD-4Lv" secondAttribute="leading" id="9gk-Su-LtS"/>
+                                                <constraint firstAttribute="bottom" secondItem="Ndp-xt-U45" secondAttribute="bottom" id="C1P-5j-8hb"/>
+                                                <constraint firstItem="Ndp-xt-U45" firstAttribute="top" secondItem="4cY-xD-4Lv" secondAttribute="top" id="JIj-uu-Cyn"/>
                                                 <constraint firstAttribute="trailing" secondItem="Mzi-p8-sRE" secondAttribute="trailing" constant="12" id="a3Z-XD-QQ2"/>
                                                 <constraint firstAttribute="bottom" secondItem="Mzi-p8-sRE" secondAttribute="bottom" constant="12" id="fLn-BL-eHG"/>
                                                 <constraint firstItem="pDI-Lj-H0d" firstAttribute="centerY" secondItem="4cY-xD-4Lv" secondAttribute="centerY" id="srz-Vh-unk"/>
                                                 <constraint firstItem="Mzi-p8-sRE" firstAttribute="top" secondItem="4cY-xD-4Lv" secondAttribute="top" constant="12" id="txU-OT-qmF"/>
                                                 <constraint firstItem="pDI-Lj-H0d" firstAttribute="leading" secondItem="4cY-xD-4Lv" secondAttribute="leading" constant="10" id="ubK-Hz-74P"/>
+                                                <constraint firstAttribute="trailing" secondItem="Ndp-xt-U45" secondAttribute="trailing" id="xCX-Lp-q1J"/>
                                             </constraints>
                                         </view>
                                     </subviews>
@@ -495,6 +513,7 @@
                     <connections>
                         <segue destination="ZkY-Aq-Qhd" kind="show" identifier="CreateTripSegue" id="But-rQ-TSs"/>
                         <segue destination="dNN-vZ-kqS" kind="show" identifier="SettingsSegue" id="rv6-Fy-DqW"/>
+                        <segue destination="GGm-4o-Btw" kind="show" identifier="TripSegue" id="o7h-5H-uls"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3GZ-eL-hzD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -515,7 +534,7 @@
                 <viewControllerPlaceholder storyboardName="Search" id="ZkY-Aq-Qhd" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yj6-HG-Ex0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2239" y="98"/>
+            <point key="canvasLocation" x="2166" y="205"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oe3-4S-UuS">

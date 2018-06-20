@@ -113,6 +113,7 @@ class HomeTableViewController: UITableViewController {
                 }
             } else {
                 if let savedTripCell = tableView.dequeueReusableCell(withIdentifier: SavedTripCell.identifier, for: indexPath) as? SavedTripCell {
+                    savedTripCell.delegate = self
                     savedTripCell.configureCell(tripStub: tripStubData[index][indexPath.row])
                     return savedTripCell
                 }
@@ -243,8 +244,15 @@ class HomeTableViewController: UITableViewController {
             }
         }
         
-    }
+        if segue.identifier == "TripSegue" {
+            if let tripVC = segue.destination as? TripViewController {
+                guard let tripStub = sender as? TripStub else { return }
+                tripVC.id = tripStub.id
+                tripVC.delegate = self
+            }
+        }
         
+    }
 }
 
 // MARK: - CreateTripDelegate
@@ -299,6 +307,8 @@ extension HomeTableViewController: SettingsDelegate {
     
 }
 
+// MARK: - UserDelegate
+
 extension HomeTableViewController: UserDelegate {
     func user(_ user: User, didSaveTrip trip: Trip) {
         navigationController?.popViewController(animated: false)
@@ -307,6 +317,14 @@ extension HomeTableViewController: UserDelegate {
             print("TRIP SAVED")
         })
     }
-    
-    
 }
+
+// MARK: - SavedTripDelegate
+
+extension HomeTableViewController: SavedTripDelegate {
+    func didSelectTrip(withStub tripStub: TripStub?) {
+        performSegue(withIdentifier: "TripSegue", sender: tripStub)
+    }
+}
+
+

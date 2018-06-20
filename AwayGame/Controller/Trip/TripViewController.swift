@@ -14,7 +14,13 @@ class TripViewController: UIViewController {
     // MARK: - Properties
     
     public var tripRequest: TripRequest?
-    public var trip: Trip?
+    public var trip: Trip? {
+        didSet {
+            self.tearDownLoadingScreen()
+        }
+    }
+    public var id: String?
+    public var shouldCreateTrip: Bool = true
     
     weak var delegate: UserDelegate?
     
@@ -30,15 +36,25 @@ class TripViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLoadingScreen()
-        AwayGameAPI.createTrip(request: tripRequest) { response in
-            self.trip = response
-            self.tearDownLoadingScreen()
-            
-            if let itineraryVC = self.childViewControllers[0] as? ItineraryTableViewController {
-                itineraryVC.trip = self.trip
-                itineraryVC.delegate = self
+        if shouldCreateTrip {
+            AwayGameAPI.createTrip(request: tripRequest) { response in
+                self.trip = response
+                if let itineraryVC = self.childViewControllers[0] as? ItineraryTableViewController {
+                    itineraryVC.trip = self.trip
+                    itineraryVC.delegate = self
+                }
+            }
+        } else {
+            guard let id = id else { return }
+            AwayGameAPI.getTrip(withId: id) { (trip) in
+                self.trip = trip
+                if let itineraryVC = self.childViewControllers[0] as? ItineraryTableViewController {
+                    itineraryVC.trip = self.trip
+                    itineraryVC.delegate = self
+                }
             }
         }
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {

@@ -9,16 +9,24 @@
 import UIKit
 import Kingfisher
 
+protocol SavedTripDelegate: class {
+    func didSelectTrip(withStub tripStub: TripStub?)
+}
+
 class SavedTripCell: UITableViewCell {
 
     static let identifier = "SavedTripCell"
     static let height: CGFloat = 120.0
+    
+    private var tripStub: TripStub?
     
     // MARK: - Initialization
     
     @IBOutlet weak var roundedView: UIView!
     @IBOutlet weak var tripImageView: UIImageView!
     @IBOutlet weak var tripTitleLabel: UILabel!
+    
+    weak var delegate: SavedTripDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -36,11 +44,14 @@ class SavedTripCell: UITableViewCell {
     
     func configureCell(tripStub: TripStub?) {
         guard let stub = tripStub else { return }
+        self.tripStub = stub
         tripTitleLabel.text = stub.title ?? ""
         tripImageView.kf.setImage(with: URL(string: stub.imageUrl ?? ""))
     }
 
+    @IBAction func didTapCell(_ sender: Any) {
+        delegate?.didSelectTrip(withStub: tripStub)
+    }
     
-
 
 }

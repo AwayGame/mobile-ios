@@ -136,5 +136,22 @@ final class AwayGameAPI {
         }
         
     }
+    
+    class func getTrip(withId id: String?, completion: @escaping (Trip) -> ()) {
+        Alamofire.request(Router.getTrip(withId: id ?? "")).responseObject { (response: DataResponse<Trip>) in
+            print("\n\n--------------------------")
+            print("TRIP\n\n")
+            print(response)
+            
+            print(response.result)
+            print(response.result.value)
+            
+            guard let tempTrip = response.result.value else {
+                print("ERROR")
+                return
+            }
+            completion(tempTrip)
+        }
+    }
 
 }
