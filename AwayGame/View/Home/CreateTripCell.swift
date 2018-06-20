@@ -15,11 +15,12 @@ protocol CreateTripDelegate: class {
 class CreateTripCell: UITableViewCell {
 
     static let identifier = "CreateTripCell"
-    static let height: CGFloat = 60.0
+    static let height: CGFloat = 100.0
+        
+    var createTripButton = UIButton()
+    var addLabel = UILabel()
+    var createTripLabel = UILabel()
     
-    @IBOutlet weak var createTripButton: UIButton!
-    @IBOutlet weak var addLabel: UILabel!
-    @IBOutlet weak var createTripLabel: UILabel!
     
     weak var delegate: CreateTripDelegate?
     
@@ -29,12 +30,42 @@ class CreateTripCell: UITableViewCell {
         self.selectionStyle = .none
     }
     
+    func layoutConstraints() {
+        
+        createTripButton.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor, constant: 4.0).isActive = true
+        createTripButton.trailingAnchor.constraint(equalTo: self.layoutMarginsGuide.trailingAnchor, constant: -4.0).isActive = true
+        createTripButton.topAnchor.constraint(equalTo: self.layoutMarginsGuide.topAnchor, constant: 20.0).isActive = true
+        createTripButton.bottomAnchor.constraint(equalTo: self.layoutMarginsGuide.bottomAnchor).isActive = true
+        createTripButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        
+        createTripLabel.leadingAnchor.constraint(equalTo: createTripButton.leadingAnchor, constant: 20.0).isActive = true
+        createTripLabel.topAnchor.constraint(equalTo: createTripButton.topAnchor).isActive = true
+        createTripLabel.bottomAnchor.constraint(equalTo: createTripButton.bottomAnchor).isActive = true
+        createTripLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        
+        addLabel.trailingAnchor.constraint(equalTo: createTripButton.trailingAnchor, constant: -20.0).isActive = true
+        addLabel.topAnchor.constraint(equalTo: createTripButton.topAnchor).isActive = true
+        addLabel.bottomAnchor.constraint(equalTo: createTripButton.bottomAnchor).isActive = true
+        addLabel.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
     func configureCell() {
+        addViews()
         styleBackground()
         styleLabels()
-        createTripLabel.text = "Create a new trip"
+        layoutConstraints()
+        createTripLabel.text = "Create a new trip..."
         addLabel.text = "┼"
+        createTripButton.addTarget(self, action: #selector(createTripTapped), for: .touchUpInside)
 
+    }
+    
+    func addViews() {
+        self.addSubview(createTripButton)
+        self.addSubview(createTripLabel)
+        self.addSubview(addLabel)
     }
     
     // MARK: - Styling
@@ -54,7 +85,7 @@ class CreateTripCell: UITableViewCell {
     
     // MARK: - Actions
     
-    @IBAction func createTripTapped(_ sender: Any) {
+    @objc func createTripTapped() {
         delegate?.didCreatNewTrip()
     }
 }

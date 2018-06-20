@@ -324,45 +324,7 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kqD-X0-GBH" id="Twr-ED-1pj" customClass="CreateTripCell" customModule="AwayGame" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="130.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gdm-Gu-C4P">
-                                            <rect key="frame" x="20" y="20" width="335" height="90"/>
-                                            <color key="backgroundColor" red="0.94791666669999997" green="0.9407679739" blue="0.93853081599999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <connections>
-                                                <action selector="createTripTapped:" destination="kqD-X0-GBH" eventType="touchUpInside" id="eCW-xd-F0Z"/>
-                                            </connections>
-                                        </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kjG-if-2XN">
-                                            <rect key="frame" x="20" y="20" width="42" height="90.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v9d-3f-duf">
-                                            <rect key="frame" x="313" y="20" width="42" height="90.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="gdm-Gu-C4P" secondAttribute="bottom" constant="20" id="9jV-pa-kKw"/>
-                                        <constraint firstAttribute="trailing" secondItem="gdm-Gu-C4P" secondAttribute="trailing" constant="20" id="EpQ-LS-3JU"/>
-                                        <constraint firstItem="gdm-Gu-C4P" firstAttribute="top" secondItem="Twr-ED-1pj" secondAttribute="top" constant="20" id="J4d-7z-oOf"/>
-                                        <constraint firstItem="v9d-3f-duf" firstAttribute="bottom" secondItem="gdm-Gu-C4P" secondAttribute="bottom" id="QaN-eY-pys"/>
-                                        <constraint firstItem="kjG-if-2XN" firstAttribute="top" secondItem="gdm-Gu-C4P" secondAttribute="top" id="Rij-PA-OFF"/>
-                                        <constraint firstItem="gdm-Gu-C4P" firstAttribute="leading" secondItem="Twr-ED-1pj" secondAttribute="leading" constant="20" id="UgA-hs-fM7"/>
-                                        <constraint firstItem="kjG-if-2XN" firstAttribute="leading" secondItem="gdm-Gu-C4P" secondAttribute="leading" id="X7I-Tn-KXM"/>
-                                        <constraint firstItem="v9d-3f-duf" firstAttribute="trailing" secondItem="gdm-Gu-C4P" secondAttribute="trailing" id="bQu-dD-HEA"/>
-                                        <constraint firstItem="kjG-if-2XN" firstAttribute="bottom" secondItem="gdm-Gu-C4P" secondAttribute="bottom" id="juK-8y-Jwl"/>
-                                        <constraint firstItem="v9d-3f-duf" firstAttribute="top" secondItem="gdm-Gu-C4P" secondAttribute="top" id="lQg-ku-ua8"/>
-                                    </constraints>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="addLabel" destination="kjG-if-2XN" id="KZs-dp-J2l"/>
-                                    <outlet property="createTripButton" destination="gdm-Gu-C4P" id="Cdq-7Z-h7L"/>
-                                    <outlet property="createTripLabel" destination="v9d-3f-duf" id="uop-cs-fJu"/>
-                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SectionHeaderCell" rowHeight="127" id="XfF-9e-kzu" customClass="SectionHeaderCell" customModule="AwayGame" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="159" width="375" height="127"/>
