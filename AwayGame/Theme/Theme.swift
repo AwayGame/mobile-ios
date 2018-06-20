@@ -21,6 +21,8 @@ struct Theme {
         static let h1: UIFont = UIFont(name: "DINAlternate-Bold", size: 24)!
         static let h2: UIFont = UIFont.systemFont(ofSize: 18, weight: UIFont.Weight.bold)
         static let p1: UIFont = UIFont(name: "DINAlternate-Bold", size: 19)!
+        static let p2: UIFont = UIFont(name: "DINAlternate-Bold", size: 16)!
+        static let p3: UIFont = UIFont(name: "DINAlternate-Bold", size: 14)!
         static let body: UIFont = UIFont.systemFont(ofSize: 18, weight: UIFont.Weight.light)
         
     }

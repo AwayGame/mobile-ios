@@ -8,6 +8,7 @@
 
 import Firebase
 import FirebaseAuth
+import SafariServices
 import UIKit
 
 protocol SettingsDelegate: class {
@@ -27,17 +28,40 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupViews()
+        styleViews()
+    }
+    
+    func setupViews() {
+        aboutButton.setTitle("About", for: .normal)
+        websiteButton.setTitle("Website", for: .normal)
+        logoutButton.setTitle("Logout ▶︎", for: .normal)
+        copyrightLabel.text = Settings.copyrightText
+    }
+    
+    func styleViews() {
+        aboutButton.setTitleColor(Theme.Color.darkText, for: .normal)
+        websiteButton.setTitleColor(Theme.Color.darkText, for: .normal)
+        logoutButton.setTitleColor(Theme.Color.darkText, for: .normal)
+        copyrightLabel.textColor = Theme.Color.darkText
+        
+        aboutButton.titleLabel?.font = Theme.Font.p2
+        websiteButton.titleLabel?.font = Theme.Font.p2
+        logoutButton.titleLabel?.font = Theme.Font.p2
+        copyrightLabel.font = Theme.Font.p3
     }
     
     // MARK: - Actions
     
     @IBAction func aboutTapped(_ sender: Any) {
-        
+        performSegue(withIdentifier: "AboutSegue", sender: self)
     }
     
     @IBAction func websiteTapped(_ sender: Any) {
-        
+        let svc = SFSafariViewController(url: Settings.websiteUrl)
+        svc.preferredBarTintColor = Theme.Color.Green.primary
+        svc.preferredControlTintColor = Theme.Color.white
+        self.present(svc, animated: true, completion: nil)
     }
     
     @IBAction func logoutTapped(_ sender: Any) {
