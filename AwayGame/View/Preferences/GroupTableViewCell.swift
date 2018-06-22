@@ -33,41 +33,16 @@ class GroupTableViewCell: UITableViewCell {
     // MARK: - Styling
     
     func styleViews() {
-        styleNormal()
+        roundedView.backgroundColor = Theme.Color.Background.primary
         groupLabel.font = Theme.Font.p1
         groupLabel.textColor = Theme.Color.darkText
     }
     
-    func styleSelected() {
-        roundedView.backgroundColor = Theme.Color.Green.selected
-        roundedView.layer.borderColor = Theme.Color.Green.border.cgColor
-        roundedView.layer.borderWidth = 1.0
-    }
-    
-    func styleHighlighted() {
-        roundedView.backgroundColor = Theme.Color.Background.highlighted
-        roundedView.layer.borderWidth = 0.0
-    }
-    
-    func styleNormal() {
-        roundedView.backgroundColor = Theme.Color.Background.primary
-        roundedView.layer.borderWidth = 0.0
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        if selected == true {
-            styleSelected()
-        } else {
-            styleNormal()
-        }
-    }
-    
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {
         if highlighted {
-            styleHighlighted()
+            roundedView.backgroundColor = Theme.Color.Background.highlighted
         } else {
-            styleNormal()
+            roundedView.backgroundColor = Theme.Color.Background.primary
         }
     }
     

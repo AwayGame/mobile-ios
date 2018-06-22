@@ -10,6 +10,8 @@ import UIKit
 
 class ItineraryTableViewController: UITableViewController {
 
+    var tripRequest: TripRequest?
+    
     public var trip: Trip? {
         didSet {
             currentItinerary = trip?.itineraries?[currentItineraryIndex]
@@ -30,6 +32,7 @@ class ItineraryTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.separatorStyle = .none
     }
 
 
@@ -88,6 +91,7 @@ class ItineraryTableViewController: UITableViewController {
             if let activityVC = segue.destination as? ActivityTableViewController {
                 guard let indexPath = sender as? IndexPath else { return }
                 activityVC.activity = currentItinerary?.activities?[indexPath.row]
+                activityVC.tripRequest = self.tripRequest
             }
         }
     }

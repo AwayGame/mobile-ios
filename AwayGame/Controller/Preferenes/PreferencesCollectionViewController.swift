@@ -17,30 +17,30 @@ class PreferencesCollectionViewController: UICollectionViewController {
     
     weak var delegate: UserDelegate?
     
+    let titleView = NavigationBarTitleView(frame: CGRect(origin: .zero, size: CGSize(width: 240.0, height: 36.0)))
+    
     // MARK: - Initialization
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         guard let collectionView = self.collectionView else { return }
         collectionView.delegate = self
         collectionView.allowsMultipleSelection = true
-        collectionView.contentInset = .init(top: 8.0, left: 0.0, bottom: 8.0, right: 0.0)
+        //collectionView.contentInset = .init(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
         collectionView.alwaysBounceVertical = true
     }
     
     override func viewDidAppear(_ animated: Bool) {
         setupNavigation(controller: navigationController, hidesBar: false)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: titleView)
+        titleView.setTitle(tripRequest?.eventName ?? "")
         guard let collectionView = self.collectionView else { return }
         collectionView.reloadData()
-        
     }
     
     func setup(with title: String?, textData: [String]?, imageData: [UIImage]?) {
-        self.title = title ?? ""
         self.textData = textData
         self.imageData = imageData
-        
     }
     
     // MARK: UICollectionView Data Source
@@ -48,7 +48,6 @@ class PreferencesCollectionViewController: UICollectionViewController {
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 3
     }
-    
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 0 {

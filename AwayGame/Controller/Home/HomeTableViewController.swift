@@ -19,6 +19,8 @@ protocol HomeDelegate: class {
 class HomeTableViewController: UITableViewController {
     
     let profileImageView = ProfileImageView(frame: CGRect(origin: .zero, size: CGSize(width: 36.0, height: 36.0)), imageUrl: User.currentUser.photoUrl)
+    let titleView = NavigationBarTitleView(frame: CGRect(origin: .zero, size: CGSize(width: 240.0, height: 36.0)))
+    
     
     private var user = User.currentUser {
         didSet {
@@ -35,9 +37,10 @@ class HomeTableViewController: UITableViewController {
     weak var delegate: HomeDelegate?
     
     override func viewDidAppear(_ animated: Bool) {
-        self.title = "AwayGame"
         setupNavigation(controller: self.navigationController, hidesBar: false)
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: profileImageView)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: titleView)
+        titleView.setTitle("AwayGame")
         updateProfileImage()
     }
     

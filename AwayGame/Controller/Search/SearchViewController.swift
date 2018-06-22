@@ -31,6 +31,8 @@ class SearchViewController: HitsTableViewController {
     private var arriveString: String?
     private var departString: String?
     
+    let titleView = NavigationBarTitleView(frame: CGRect(origin: .zero, size: CGSize(width: 240.0, height: 36.0)))
+    
     weak var delegate: UserDelegate?
     
     enum ButtonType {
@@ -59,7 +61,8 @@ class SearchViewController: HitsTableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.title = "Search for a Game"
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: titleView)
+        titleView.setTitle("New Trip")
         doneButton.isHidden = true
         datePicker.isHidden = true
         setupNavigation(controller: self.navigationController, hidesBar: false)

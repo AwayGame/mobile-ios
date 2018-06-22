@@ -53,5 +53,13 @@ class SavedTripCell: UITableViewCell {
         delegate?.didSelectTrip(withStub: tripStub)
     }
     
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        if highlighted {
+            roundedView.backgroundColor = Theme.Color.Background.highlighted
+        } else {
+            roundedView.backgroundColor = Theme.Color.Background.primary
+        }
+    }
+    
 
 }

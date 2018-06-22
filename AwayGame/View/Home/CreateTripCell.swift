@@ -88,4 +88,12 @@ class CreateTripCell: UITableViewCell {
     @objc func createTripTapped() {
         delegate?.didCreatNewTrip()
     }
+    
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        if highlighted {
+            createTripButton.backgroundColor = Theme.Color.Background.highlighted
+        } else {
+            createTripButton.backgroundColor = Theme.Color.Background.primary
+        }
+    }
 }

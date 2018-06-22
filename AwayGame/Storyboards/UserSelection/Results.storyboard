@@ -79,7 +79,13 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Va-9s-JC8">
-                                                    <rect key="frame" x="20" y="82" width="175" height="20.5"/>
+                                                    <rect key="frame" x="20" y="79" width="175" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nm0-8h-32e">
+                                                    <rect key="frame" x="123" y="78.5" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -87,11 +93,13 @@
                                             </subviews>
                                             <color key="backgroundColor" red="0.94791666669999997" green="0.9407679739" blue="0.93853081599999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
+                                                <constraint firstItem="QMa-CX-fOn" firstAttribute="leading" secondItem="Nm0-8h-32e" secondAttribute="trailing" constant="38" id="0c3-a3-lIg"/>
                                                 <constraint firstItem="QMa-CX-fOn" firstAttribute="leading" secondItem="Wkx-KJ-LWT" secondAttribute="trailing" constant="8" id="9YZ-o6-GMo"/>
-                                                <constraint firstItem="2Va-9s-JC8" firstAttribute="top" secondItem="Wkx-KJ-LWT" secondAttribute="bottom" constant="8" id="HZ5-yI-4wY"/>
                                                 <constraint firstItem="QMa-CX-fOn" firstAttribute="top" secondItem="Bsf-5J-qh6" secondAttribute="top" constant="12" id="OGD-95-Wcc"/>
                                                 <constraint firstAttribute="bottom" secondItem="QMa-CX-fOn" secondAttribute="bottom" constant="12" id="RR0-5e-OKQ"/>
                                                 <constraint firstItem="Wkx-KJ-LWT" firstAttribute="top" secondItem="Bsf-5J-qh6" secondAttribute="top" constant="12" id="c8j-J5-0ev"/>
+                                                <constraint firstItem="Nm0-8h-32e" firstAttribute="bottom" secondItem="2Va-9s-JC8" secondAttribute="bottom" id="g31-tG-EYF"/>
+                                                <constraint firstItem="QMa-CX-fOn" firstAttribute="bottom" secondItem="Nm0-8h-32e" secondAttribute="bottom" id="lo9-3O-28z"/>
                                                 <constraint firstItem="QMa-CX-fOn" firstAttribute="leading" secondItem="2Va-9s-JC8" secondAttribute="trailing" constant="8" id="lqH-qz-b7F"/>
                                                 <constraint firstAttribute="trailing" secondItem="QMa-CX-fOn" secondAttribute="trailing" constant="12" id="r0W-1k-JTM"/>
                                                 <constraint firstItem="2Va-9s-JC8" firstAttribute="leading" secondItem="Bsf-5J-qh6" secondAttribute="leading" constant="20" id="wC6-pX-bLm"/>
@@ -107,10 +115,11 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="dateLabel" destination="2Va-9s-JC8" id="wRp-xd-AVn"/>
                                     <outlet property="gameImageView" destination="QMa-CX-fOn" id="lpJ-3r-Jed"/>
                                     <outlet property="gameLabel" destination="Wkx-KJ-LWT" id="G0p-ym-gIx"/>
                                     <outlet property="roundedView" destination="Bsf-5J-qh6" id="IHU-oM-9ag"/>
-                                    <outlet property="timeLabel" destination="2Va-9s-JC8" id="853-Tp-sz0"/>
+                                    <outlet property="timeLabel" destination="Nm0-8h-32e" id="bFd-4W-USu"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

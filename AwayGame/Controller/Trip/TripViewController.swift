@@ -31,6 +31,8 @@ class TripViewController: UIViewController {
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var tempLabel: UILabel!
     
+    let titleView = NavigationBarTitleView(frame: CGRect(origin: .zero, size: CGSize(width: 240.0, height: 36.0)))
+    
     // MARK: - Initialization
     
     override func viewDidLoad() {
@@ -50,6 +52,7 @@ class TripViewController: UIViewController {
                 self.trip = trip
                 if let itineraryVC = self.childViewControllers[0] as? ItineraryTableViewController {
                     itineraryVC.trip = self.trip
+                    itineraryVC.tripRequest = self.tripRequest
                     itineraryVC.delegate = self
                 }
             }
@@ -59,6 +62,8 @@ class TripViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         setupNavigation(controller: self.navigationController, hidesBar: false)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: titleView)
+        titleView.setTitle(tripRequest?.eventName ?? "")
     }
 
     func setupLoadingScreen() {

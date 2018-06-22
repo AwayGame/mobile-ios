@@ -10,16 +10,26 @@ import UIKit
 
 class ActivityTableViewController: UITableViewController {
 
-    public var activity: Activity? {
+    var tripRequest: TripRequest?
+    
+    var activity: Activity? {
         didSet {
             tableView.reloadData()
         }
     }
     
+    let titleView = NavigationBarTitleView(frame: CGRect(origin: .zero, size: CGSize(width: 240.0, height: 36.0)))
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.separatorStyle = .none
 
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        setupNavigation(controller: self.navigationController, hidesBar: false)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: titleView)
+        titleView.setTitle(tripRequest?.eventName ?? "")
     }
 
     // MARK: - Table view data source

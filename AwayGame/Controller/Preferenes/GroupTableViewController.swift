@@ -14,21 +14,25 @@ class GroupTableViewController: UITableViewController {
     
     weak var delegate: UserDelegate?
     
+    let titleView = NavigationBarTitleView(frame: CGRect(origin: .zero, size: CGSize(width: 240.0, height: 36.0)))
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.allowsSelection = true
         tableView.separatorStyle = .none
+        self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 40, right: 0)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         setupNavigation(controller: self.navigationController, hidesBar: false)
-        self.title = tripRequest?.eventName ?? ""
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: titleView)
+        titleView.setTitle(tripRequest?.eventName ?? "")
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return 2
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -38,7 +42,6 @@ class GroupTableViewController: UITableViewController {
             return 1
         }
     }
-
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -52,25 +55,18 @@ class GroupTableViewController: UITableViewController {
                 groupCell.configureCell(text: Preferences.Group.text[indexPath.row], image: Preferences.Group.images[indexPath.row])
                 return groupCell
             }
-        } else if indexPath.section == 2 {
-            if let nextCell = tableView.dequeueReusableCell(withIdentifier: NextButtonCell.identifier, for: indexPath) as? NextButtonCell {
-                nextCell.configureCell()
-                nextCell.delegate = self
-                return nextCell
-            }
         }
-        
+    
         return UITableViewCell()
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tripRequest?.preferences?.group = Preferences.Group.text[indexPath.row]
+        performSegue(withIdentifier: "NextSegue", sender: self)
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == 0 {
-            return SectionHeaderCell.height
-        } else if indexPath.section == 1 {
-            return GroupTableViewCell.height
-        } else {
-            return NextButtonCell.height
-        }
+        return indexPath.section == 0 ? SectionHeaderCell.height : GroupTableViewCell.height
     }    
 
     
@@ -79,19 +75,9 @@ class GroupTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "NextSegue" {
             if let preferencesVC = segue.destination as? PreferencesCollectionViewController {
-                
-                if let index = tableView.indexPathForSelectedRow {
-                    if let cell = tableView.cellForRow(at: index) as? GroupTableViewCell {
-                        tripRequest?.preferences?.group = cell.groupLabel.text ?? ""
-                        print("Group type: ", tripRequest?.preferences?.group ?? "error")
-                    }
-                }
-                
                 preferencesVC.setup(with: tripRequest?.eventName ?? "", textData: Preferences.Food.text, imageData: Preferences.Food.images)
-                
                 preferencesVC.tripRequest = self.tripRequest
                 preferencesVC.preferenceType = .Food
-                preferencesVC.delegate = self
                 
             }
         }
@@ -101,17 +87,6 @@ class GroupTableViewController: UITableViewController {
 
 // MARK: - NextDelegate
 
-extension GroupTableViewController: NextDelegate {
-    
-    func didTapNext() {
-        if tableView.indexPathForSelectedRow != nil {
-            performSegue(withIdentifier: "NextSegue", sender: self)
-        } else {
-            print ("Must select group type")
-        }
-    }
-    
-}
 
 extension GroupTableViewController: UserDelegate {
     func user(_ user: User, didSaveTrip trip: Trip) {

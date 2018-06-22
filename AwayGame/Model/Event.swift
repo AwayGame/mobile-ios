@@ -12,43 +12,22 @@ class Event: Mappable {
 
     public var name: String?
     public var id: String?
-    public var longitude: String?
-    public var latitude: String?
+    public var date: String?
     public var images: [TicketmasterImage]?
-    public var date: EventDate?
+    public var time: String?
+    public var ticketUrl: String?
 
     required init?(map: Map) {}
     
     func mapping(map: Map) {
         name <- map["name"]
+        ticketUrl <- map["ticketUrl"]
         id <- map["id"]
-        longitude <- map["stadium.location.longitude"]
-        latitude <- map["stadium.location.latitude"]
         images <- map["images"]
-        date <- map["date.start"]
+        date <- map["date"]
+        time <- map["time"]
     }
-    
-    
-}
 
-struct EventDate: Mappable {
-    
-    public var localDate: String?
-    public var dateTBD: Bool?
-    public var dateTBA: Bool?
-    public var timeTBA: Bool?
-    public var noSpecificTime: Bool?
-    
-    init?(map: Map) {}
-    
-    mutating func mapping(map: Map) {
-        localDate <- map["localDate"]
-        dateTBD <- map["dateTBD"]
-        dateTBA <- map["dateTBA"]
-        timeTBA <- map["timeTBA"]
-        noSpecificTime <- map["noSpecificTime"]
-    }
-    
 }
 
 

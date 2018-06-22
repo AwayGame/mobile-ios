@@ -8,9 +8,6 @@
 
 import UIKit
 
-protocol NextDelegate: class {
-    func didTapNext()
-}
 
 class NextButtonCell: UITableViewCell {
     

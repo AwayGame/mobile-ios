@@ -40,7 +40,7 @@ class ActivityCell: UITableViewCell {
     
     // MARK: - Initialization
     
-    func setup() {
+    override func awakeFromNib() {
         roundedView.layer.cornerRadius = 10.0
         roundedView.clipsToBounds = true
         timeLabel.font = Theme.Font.p1
@@ -51,10 +51,10 @@ class ActivityCell: UITableViewCell {
         activityImageView.clipsToBounds = true
         uberBackgroundView.layer.cornerRadius = 10.0
         uberBackgroundView.clipsToBounds = true
+        selectionStyle = .none
     }
     
     func configureCell(with activity: Activity?) {
-        setup()
         print("ActivityCell configured")
         self.activity = activity
         guard let activity = activity else { return }
@@ -84,7 +84,13 @@ class ActivityCell: UITableViewCell {
         delegate?.didTapUber()
     }
     
-
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        if highlighted {
+            roundedView.backgroundColor = Theme.Color.Background.highlighted
+        } else {
+            roundedView.backgroundColor = Theme.Color.Background.primary
+        }
+    }
 
 }
 

@@ -7,8 +7,11 @@
 //
 
 import Foundation
-
 import UIKit
+
+protocol NextDelegate: class {
+    func didTapNext()
+}
 
 class NextButtonCollectionCell: UICollectionViewCell {
     

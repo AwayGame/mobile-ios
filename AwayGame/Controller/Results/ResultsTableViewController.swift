@@ -21,10 +21,18 @@ class ResultsTableViewController: UITableViewController {
         }
     }
     
+    let titleView = NavigationBarTitleView(frame: CGRect(origin: .zero, size: CGSize(width: 240.0, height: 36.0)))
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.separatorStyle = .none
-        
+        self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 40, right: 0)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        setupNavigation(controller: self.navigationController, hidesBar: false)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: titleView)
+        titleView.setTitle("New Trip")
     }
 
     // MARK: - Tableview data source
@@ -71,8 +79,7 @@ class ResultsTableViewController: UITableViewController {
         guard let event = resultsData?[indexPath.row] else {
             return
         }
-        tripRequest?.lat = Double(event.latitude ?? "")
-        tripRequest?.long = Double(event.longitude ?? "")
+        
         tripRequest?.eventId = event.id ?? ""
         tripRequest?.eventName = event.name ?? ""
         
