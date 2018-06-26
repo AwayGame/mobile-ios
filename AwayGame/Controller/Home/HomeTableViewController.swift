@@ -7,6 +7,7 @@
 //  Copyright © 2018 AwayGame. All rights reserved.
 //
 
+import CoreLocation
 import FBSDKLoginKit
 import FirebaseAuth
 import MessageUI
@@ -19,8 +20,6 @@ protocol HomeDelegate: class {
 class HomeTableViewController: UITableViewController {
     
     let profileImageView = ProfileImageView(frame: CGRect(origin: .zero, size: CGSize(width: 36.0, height: 36.0)), imageUrl: User.currentUser.photoUrl)
-    let titleView = NavigationBarTitleView(frame: CGRect(origin: .zero, size: CGSize(width: 240.0, height: 36.0)))
-    
     
     private var user = User.currentUser {
         didSet {
@@ -36,11 +35,17 @@ class HomeTableViewController: UITableViewController {
     
     weak var delegate: HomeDelegate?
     
-    override func viewDidAppear(_ animated: Bool) {
-        setupNavigation(controller: self.navigationController, hidesBar: false)
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupTableView()
+        let locationManager = CLLocationManager()
+        locationManager.requestAlwaysAuthorization()
+        locationManager.requestWhenInUseAuthorization()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        NavigationHelper.setupNavigationController(self, withTitle: "AwayGame")
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: profileImageView)
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: titleView)
-        titleView.setTitle("AwayGame")
         updateProfileImage()
     }
     
@@ -48,18 +53,14 @@ class HomeTableViewController: UITableViewController {
         profileImageView.setImageUrl(User.currentUser.photoUrl)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupTableView()
-    }
-    
     func setupTableView() {
         tableView.separatorInset = .zero
         tableView.separatorStyle = .none
-        tableView.allowsSelection = true
+        tableView.isUserInteractionEnabled = true
         tableView.backgroundColor = Theme.Color.white
         tableView.delegate = self
         tableView.dataSource = self
+        self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 40, right: 0)
     }
     
     // MARK: - Firebase
@@ -71,11 +72,14 @@ class HomeTableViewController: UITableViewController {
     func updateTripStubs(forUser user: User) {
         guard let stubs = user.tripStubs else { return }
         tripStubData = [[],[]]
+        print("YAH")
         for stub in stubs {
             if let deleted = stub.isDeleted, !deleted {
                 if let isCompleted = stub.isCompleted, isCompleted {
+                    print("COMPLETED")
                     tripStubData[1].append(stub)
                 } else {
+                    print("NOT COMPLETED")
                     tripStubData[0].append(stub)
                 }
             }
@@ -183,6 +187,7 @@ class HomeTableViewController: UITableViewController {
         if tripStubData.isEmpty { return [] }
         
         let index = editActionsForRowAt.section == 2 ? 0 : 1
+        if tripStubData[index].isEmpty { return [] }
         let stub = tripStubData[index][editActionsForRowAt.row]
         
         let delete = UITableViewRowAction(style: .default, title: "Delete") { action, index in
@@ -250,7 +255,8 @@ class HomeTableViewController: UITableViewController {
         if segue.identifier == "TripSegue" {
             if let tripVC = segue.destination as? TripViewController {
                 guard let tripStub = sender as? TripStub else { return }
-                tripVC.id = tripStub.id
+                tripVC.trip?.id = tripStub.id
+                tripVC.tripTitle = tripStub.title
                 tripVC.delegate = self
             }
         }

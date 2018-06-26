@@ -112,10 +112,10 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UJh-tE-wvc">
-                                            <rect key="frame" x="0.0" y="0.0" width="201" height="70"/>
+                                            <rect key="frame" x="0.0" y="20" width="201" height="50"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8gy-zO-hQL">
-                                                    <rect key="frame" x="0.0" y="0.0" width="201" height="70"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="201" height="50"/>
                                                     <state key="normal" title="Button"/>
                                                     <connections>
                                                         <action selector="nextTapped:" destination="8OG-Zr-MW2" eventType="touchUpInside" id="BHn-zL-FLA"/>
@@ -133,10 +133,10 @@
                                     </subviews>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="UJh-tE-wvc" firstAttribute="top" secondItem="8OG-Zr-MW2" secondAttribute="top" id="HDZ-15-jLd"/>
-                                    <constraint firstAttribute="trailing" secondItem="UJh-tE-wvc" secondAttribute="trailing" id="Kfm-3Q-4oc"/>
-                                    <constraint firstAttribute="bottom" secondItem="UJh-tE-wvc" secondAttribute="bottom" constant="20" id="PCN-2i-SKk"/>
-                                    <constraint firstItem="UJh-tE-wvc" firstAttribute="leading" secondItem="8OG-Zr-MW2" secondAttribute="leading" id="rjx-cW-Zll"/>
+                                    <constraint firstAttribute="bottom" secondItem="UJh-tE-wvc" secondAttribute="bottom" constant="20" id="PLJ-AS-Vvm"/>
+                                    <constraint firstAttribute="trailing" secondItem="UJh-tE-wvc" secondAttribute="trailing" id="Q6I-gm-TI4"/>
+                                    <constraint firstItem="UJh-tE-wvc" firstAttribute="top" secondItem="8OG-Zr-MW2" secondAttribute="top" constant="20" id="e1Z-ME-BDO"/>
+                                    <constraint firstItem="UJh-tE-wvc" firstAttribute="leading" secondItem="8OG-Zr-MW2" secondAttribute="leading" id="skE-f4-mDr"/>
                                 </constraints>
                                 <size key="customSize" width="201" height="90"/>
                                 <connections>

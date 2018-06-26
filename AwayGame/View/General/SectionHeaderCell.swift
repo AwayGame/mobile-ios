@@ -11,7 +11,7 @@ import UIKit
 class SectionHeaderCell: UITableViewCell {
     
     static let identifier = "SectionHeaderCell"
-    static let height: CGFloat = 56.0
+    static let height: CGFloat = 60.0
     
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var underlineView: UIView!

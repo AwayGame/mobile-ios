@@ -13,10 +13,12 @@ class Trip: Mappable {
     
     public var itineraries: [Itinerary]?
     public var preferences: TripRequest?
+    public var id: String?
     
     required init?(map: Map) {}
 
     func mapping(map: Map) {
+        id <- map["id"]
         itineraries <- map["itineraries"]
         preferences <- map["preferencesUsed"]
     }

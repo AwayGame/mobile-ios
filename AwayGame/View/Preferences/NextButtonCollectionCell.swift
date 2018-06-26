@@ -16,19 +16,28 @@ protocol NextDelegate: class {
 class NextButtonCollectionCell: UICollectionViewCell {
     
     static let identifier = "NextButtonCollectionCell"
-    static let height: CGFloat = 96.0
+    static let height: CGFloat = 100.0
     
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var roundedView: UIView!
     weak var delegate: NextDelegate?
     
+    override var isHighlighted: Bool {
+        didSet {
+            print("HERE")
+            if isHighlighted {
+                roundedView.backgroundColor = Theme.Color.Background.highlighted
+            } else {
+                roundedView.backgroundColor = Theme.Color.Background.primary
+            }
+        }
+    }
+    
+    
     // MARK: - Initialization
     
     override func awakeFromNib() {
         roundedView.clipsToBounds = true
-    }
-    
-    func configureCell() {
         styleButton()
         styleView()
     }
@@ -41,12 +50,12 @@ class NextButtonCollectionCell: UICollectionViewCell {
     }
     
     func styleButton() {
-        nextButton.backgroundColor = Theme.Color.Background.primary
+        nextButton.backgroundColor = .clear
         nextButton.setTitle("Next", for: .normal)
         nextButton.setTitleColor(Theme.Color.darkText, for: .normal)
         nextButton.titleLabel?.font = Theme.Font.p1
     }
-    
+
     // MARK: - Actions
     
     @IBAction func nextTapped(_ sender: Any) {

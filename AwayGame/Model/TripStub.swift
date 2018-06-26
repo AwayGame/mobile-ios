@@ -26,7 +26,7 @@ class TripStub: Mappable {
         title <- map["title"]
         id <- map["id"]
         imageUrl <- map["imageUrl"]
-        isCompleted <- map["isCompleted"]
+        isCompleted <- map["completed"]
         startDate <- map["startDate"]
         createdAt <- map["createdAt"]
         isDeleted <- map["deleted"]

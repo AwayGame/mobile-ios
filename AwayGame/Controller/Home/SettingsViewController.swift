@@ -32,6 +32,10 @@ class SettingsViewController: UIViewController {
         styleViews()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        NavigationHelper.setupNavigationController(self, withTitle: "Settings")
+    }
+    
     func setupViews() {
         aboutButton.setTitle("About", for: .normal)
         websiteButton.setTitle("Website", for: .normal)
@@ -59,8 +63,8 @@ class SettingsViewController: UIViewController {
     
     @IBAction func websiteTapped(_ sender: Any) {
         let svc = SFSafariViewController(url: Settings.websiteUrl)
-        svc.preferredBarTintColor = Theme.Color.Green.primary
-        svc.preferredControlTintColor = Theme.Color.white
+        svc.preferredBarTintColor = Theme.Color.white
+        svc.preferredControlTintColor = Theme.Color.black
         self.present(svc, animated: true, completion: nil)
     }
     

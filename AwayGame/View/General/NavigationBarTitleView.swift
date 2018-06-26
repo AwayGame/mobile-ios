@@ -12,17 +12,16 @@ class NavigationBarTitleView: UIView {
     
     private var titleLabel = UILabel()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init(withTitle title: String?) {
+        super.init(frame: CGRect(x: 0.0, y: 0.0, width: 240.0, height: 36.0))
         self.addSubview(titleLabel)
         titleLabel.frame = frame
         titleLabel.textColor = Theme.Color.white
         titleLabel.font = Theme.Font.p1
         titleLabel.textAlignment = .right
-    }
-    
-    func setTitle(_ title: String?) {
-        self.titleLabel.text = title ?? ""
+        titleLabel.minimumScaleFactor = 0.5
+        titleLabel.adjustsFontSizeToFitWidth = true
+        titleLabel.text = title ?? ""
     }
     
     required init?(coder aDecoder: NSCoder) {

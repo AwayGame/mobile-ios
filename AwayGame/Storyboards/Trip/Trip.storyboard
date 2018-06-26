@@ -99,10 +99,10 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="108"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Pwj-ab-LsH" id="MNj-h0-jgY">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="107.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="108"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="September 23rd" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z0p-I4-plr">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="September 23rd" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z0p-I4-plr">
                                             <rect key="frame" x="123" y="58" width="130" height="20.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="130" id="xLe-bF-0Ph"/>
@@ -118,7 +118,7 @@
                                                 <constraint firstAttribute="width" constant="30" id="xjK-0o-zds"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                            <state key="normal" title="&lt;"/>
+                                            <state key="normal" title="◀︎"/>
                                             <connections>
                                                 <action selector="previousDayButtonTapped:" destination="Pwj-ab-LsH" eventType="touchUpInside" id="qtu-tH-vUp"/>
                                             </connections>
@@ -148,7 +148,7 @@
                                                 <constraint firstAttribute="height" constant="30" id="GUg-ft-rJ0"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                            <state key="normal" title="&gt;"/>
+                                            <state key="normal" title="▶︎"/>
                                             <connections>
                                                 <action selector="nextDayButtonTapped:" destination="Pwj-ab-LsH" eventType="touchUpInside" id="Zpq-8o-ryx"/>
                                             </connections>
@@ -170,6 +170,8 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="dateLabel" destination="z0p-I4-plr" id="22V-M8-5Ev"/>
+                                    <outlet property="nextButton" destination="dUK-DW-dmP" id="fWN-pc-9hV"/>
+                                    <outlet property="previousButton" destination="pN4-Sc-78E" id="7Lq-EC-M04"/>
                                     <outlet property="saveButton" destination="BCS-UM-QnI" id="hmC-7w-b0Z"/>
                                     <outlet property="underlineView" destination="GRm-e7-31N" id="Ryq-NM-rzN"/>
                                 </connections>
@@ -178,7 +180,7 @@
                                 <rect key="frame" x="0.0" y="136" width="375" height="284"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9VO-y8-XEr" id="MKL-rd-cWO">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="283.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="284"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="svZ-bg-DuE">
@@ -215,7 +217,7 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N6r-E6-TyK">
                                             <rect key="frame" x="20" y="84" width="335" height="192"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CDx-hF-cv6">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CDx-hF-cv6">
                                                     <rect key="frame" x="20" y="12" width="179" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>

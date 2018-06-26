@@ -23,9 +23,6 @@ class NextButtonCell: UITableViewCell {
     override func awakeFromNib() {
         self.selectionStyle = .none
         roundedView.clipsToBounds = true
-    }
-    
-    func configureCell() {
         styleButton()
         styleView()
     }

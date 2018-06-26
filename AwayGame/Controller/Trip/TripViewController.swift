@@ -13,13 +13,20 @@ class TripViewController: UIViewController {
 
     // MARK: - Properties
     
-    public var tripRequest: TripRequest?
+    public var tripRequest: TripRequest?  {
+        didSet {
+            tripTitle = tripRequest?.eventName
+        }
+    }
+    
+    var tripTitle: String?
+    
     public var trip: Trip? {
         didSet {
             self.tearDownLoadingScreen()
         }
     }
-    public var id: String?
+    
     public var shouldCreateTrip: Bool = true
     
     weak var delegate: UserDelegate?
@@ -30,8 +37,6 @@ class TripViewController: UIViewController {
     @IBOutlet weak var loadingLabel: UILabel!
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var tempLabel: UILabel!
-    
-    let titleView = NavigationBarTitleView(frame: CGRect(origin: .zero, size: CGSize(width: 240.0, height: 36.0)))
     
     // MARK: - Initialization
     
@@ -44,29 +49,29 @@ class TripViewController: UIViewController {
                 if let itineraryVC = self.childViewControllers[0] as? ItineraryTableViewController {
                     itineraryVC.trip = self.trip
                     itineraryVC.delegate = self
+                    itineraryVC.tripTitle = self.tripTitle
                 }
             }
         } else {
-            guard let id = id else { return }
-            AwayGameAPI.getTrip(withId: id) { (trip) in
+            AwayGameAPI.getTrip(withId: trip?.id) { (trip) in
                 self.trip = trip
                 if let itineraryVC = self.childViewControllers[0] as? ItineraryTableViewController {
                     itineraryVC.trip = self.trip
                     itineraryVC.tripRequest = self.tripRequest
                     itineraryVC.delegate = self
+                    itineraryVC.tripTitle = self.tripTitle
                 }
             }
         }
         
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        setupNavigation(controller: self.navigationController, hidesBar: false)
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: titleView)
-        titleView.setTitle(tripRequest?.eventName ?? "")
+    override func viewWillAppear(_ animated: Bool) {
+        NavigationHelper.setupNavigationController(self, withTitle: tripTitle ?? "")
     }
 
     func setupLoadingScreen() {
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
         loadingBackgroundView.alpha = 1.0
         tripContainerView.isHidden = true
         loadingBackgroundView.backgroundColor = Theme.Color.Green.primary
@@ -79,11 +84,11 @@ class TripViewController: UIViewController {
     }
 
     func tearDownLoadingScreen() {
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
         UIView.animate(withDuration: 1.0) {
             self.loadingBackgroundView.alpha = 0.0
             self.tripContainerView.isHidden = false
             self.loadingIndicator.stopAnimating()
-            setupNavigation(controller: self.navigationController, hidesBar: false)
         }
     }
 

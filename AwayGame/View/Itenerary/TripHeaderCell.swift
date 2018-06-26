@@ -25,12 +25,13 @@ class TripHeaderCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var underlineView: UIView!
-    
+    @IBOutlet weak var previousButton: UIButton!
+    @IBOutlet weak var nextButton: UIButton!
     weak var delegate: TripDelegate?
     
     // MARK: - Initialization
     
-    func setup() {
+    override func awakeFromNib() {
         saveButton.layer.cornerRadius = 10.0
         saveButton.clipsToBounds = true
         saveButton.titleLabel?.font = Theme.Font.p1
@@ -39,10 +40,14 @@ class TripHeaderCell: UITableViewCell {
         underlineView.backgroundColor = Theme.Color.Green.primary
         dateLabel.font = Theme.Font.p1
         dateLabel.textColor = Theme.Color.darkText
+        nextButton.titleLabel?.font = Theme.Font.p1
+        nextButton.setTitleColor(Theme.Color.darkText, for: .normal)
+        previousButton.titleLabel?.font = Theme.Font.p1
+        previousButton.setTitleColor(Theme.Color.darkText, for: .normal)
+        self.selectionStyle = .none
     }
     
     func configureCell(withTitle title: String?) {
-        setup()
         print("TripHeaderCell configured")
         dateLabel.text = title
     }

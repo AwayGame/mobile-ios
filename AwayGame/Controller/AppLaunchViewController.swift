@@ -13,10 +13,10 @@ import UIKit
 class AppLaunchViewController: UIViewController {
 
     private var handle: AuthStateDidChangeListenerHandle?
+    private var homeViewController: HomeTableViewController?
     
     @IBOutlet weak var logoImageView: UIImageView!
-    
-    private var homeViewController: HomeTableViewController?
+    @IBOutlet weak var background: UIView!
     
     @IBOutlet weak var mainContainerView: UIView!
     @IBOutlet weak var loginContainerView: UIView!
@@ -25,12 +25,11 @@ class AppLaunchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-
-    func hideAllContainers() {
-        logoImageView.isHidden = true
-        mainContainerView.isHidden = true
-        loginContainerView.isHidden = true
+        background.backgroundColor = Theme.Color.Green.primary
+        background.alpha = 1.0
+        logoImageView.alpha = 1.0
+        mainContainerView.alpha = 0.0
+        loginContainerView.alpha = 0.0
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -45,10 +44,7 @@ class AppLaunchViewController: UIViewController {
                 
                 AwayGameAPI.verifyUser(with: User.currentUser) {user in
                     User.currentUser = user
-                    print(User.currentUser.photoUrl)
-                    print(User.currentUser.name)
                     if let homeVC = self.homeViewController {
-                        print("HERE")
                         homeVC.setupFirebase()
                         homeVC.updateProfileImage()
                     }
@@ -68,17 +64,19 @@ class AppLaunchViewController: UIViewController {
     // MARK: - Login
         
     func proceedToDashboard() {
-        hideAllContainers()
-        mainContainerView.isHidden = false
-        UIView.transition(with: mainContainerView, duration: 1.0, options: .transitionCrossDissolve, animations: {
-        }, completion: nil)
+        mainContainerView.alpha = 1.0
+        loginContainerView.alpha = 0.0
+        UIView.animate(withDuration: 1.0, animations: {
+            self.background.alpha = 0.0
+        })
     }
     
     func proceedToLogin() {
-        hideAllContainers()
-        loginContainerView.isHidden = false
-        UIView.transition(with: loginContainerView, duration: 1.0, options: .transitionCrossDissolve, animations: {
-        }, completion: nil)
+        mainContainerView.alpha = 0.0
+        loginContainerView.alpha = 1.0
+        UIView.animate(withDuration: 1.0, animations: {
+            self.background.alpha = 0.0
+        })
     }
 
     
@@ -103,6 +101,7 @@ class AppLaunchViewController: UIViewController {
 
 extension AppLaunchViewController: SignInDelegate {
     func userDidSignIn() {
+        background.alpha = 1.0
         proceedToDashboard()
     }
 }
@@ -111,6 +110,7 @@ extension AppLaunchViewController: SignInDelegate {
 
 extension AppLaunchViewController: HomeDelegate {
     func userDidLogout() {
+        background.alpha = 1.0
         proceedToLogin()
     }
     

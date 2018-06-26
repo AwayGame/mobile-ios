@@ -10,11 +10,14 @@ import TwitterKit
 import FBSDKCoreKit
 import Firebase
 import InstantSearch
+import Kingfisher
 import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+   // KingfisherManager.shared.cache.pathExtension = "jpg"
+    
     // TODO: POST RELEASE TODO LIST
     /*
      

@@ -37,7 +37,7 @@ class ActivityImageTableViewCell: UITableViewCell {
     func configureCell(withActivity activity: Activity?) {
         self.activity = activity
         guard let activity = activity else { return }
-        activityImageView.kf.setImage(with: URL(string: activity.displayImage ?? ""))
+        activityImageView.setImage(withUrlString: activity.displayImage)
     }
     
     // MARK: - Styling

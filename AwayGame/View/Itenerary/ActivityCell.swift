@@ -10,7 +10,7 @@ import UIKit
 // import Uber
 
 protocol ActivityDelegate: class {
-    func didTapUber()
+    func didTapUber(withActivity activity: Activity?)
 }
 
 class ActivityCell: UITableViewCell {
@@ -60,7 +60,7 @@ class ActivityCell: UITableViewCell {
         guard let activity = activity else { return }
         titleLabel.text = activity.name ?? ""
         timeLabel.text = activity.startTime ?? ""
-        activityImageView.kf.setImage(with: URL(string: activity.displayImage ?? ""))
+        activityImageView.setImage(withUrlString: activity.displayImage)
     }
     
     override func updateConstraints() {
@@ -81,7 +81,7 @@ class ActivityCell: UITableViewCell {
     
     @IBAction func uberUbttonTapped(_ sender: Any) {
         print("Uber tapped")
-        delegate?.didTapUber()
+        delegate?.didTapUber(withActivity: activity)
     }
     
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {

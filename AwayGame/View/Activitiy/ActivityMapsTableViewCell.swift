@@ -26,20 +26,14 @@ class ActivityMapsTableViewCell: UITableViewCell {
         background.backgroundColor = Theme.Color.Background.primary
         background.clipsToBounds = true
         background.layer.cornerRadius = 10.0
+        mapsImageView.layer.cornerRadius = 10.0
+        mapsImageView.clipsToBounds = true
         mapsImageView.backgroundColor = Theme.Color.Background.darkGray
     }
     
-    
     func configureCell(withActivity activity: Activity?) {
         self.activity = activity
-        mapsImageView.kf.setImage(with: URL(string: activity?.mapsUrl ?? ""))
-        print(activity?.mapsUrl ?? "")
+        mapsImageView.setImage(withUrlString: activity?.mapsUrl)
     }
     
-    // MARK: - Styling
-    
-    
-    func styleViews() {
-        
-    }
 }

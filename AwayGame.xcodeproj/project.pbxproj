@@ -13,6 +13,8 @@
 		CB20DD7920D878AD0028AA4B /* Signup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB20DD7820D878AD0028AA4B /* Signup.storyboard */; };
 		CB20DD8720DCA72F0028AA4B /* NextButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB20DD8620DCA72E0028AA4B /* NextButtonCell.swift */; };
 		CB20DD8920DCA7F00028AA4B /* NavigationBarTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB20DD8820DCA7F00028AA4B /* NavigationBarTitleView.swift */; };
+		CB20DD8B20E1D5EE0028AA4B /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB20DD8A20E1D5ED0028AA4B /* AboutViewController.swift */; };
+		CB275AC520E1E25700B0E827 /* UIImageView+Kingfisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB275AC420E1E25700B0E827 /* UIImageView+Kingfisher.swift */; };
 		CB4BB7D720A0DC8E00F756D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BB7D620A0DC8E00F756D3 /* AppDelegate.swift */; };
 		CB4BB7D920A0DC8E00F756D3 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BB7D820A0DC8E00F756D3 /* HomeTableViewController.swift */; };
 		CB4BB7DE20A0DC8E00F756D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB4BB7DD20A0DC8E00F756D3 /* Assets.xcassets */; };
@@ -34,7 +36,6 @@
 		CB57BD9F20ACA36C004FEE89 /* AwayGameAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB57BD9E20ACA36C004FEE89 /* AwayGameAPI.swift */; };
 		CB57BDA320ADE877004FEE89 /* UserDefaults+FirstLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB57BDA220ADE877004FEE89 /* UserDefaults+FirstLaunch.swift */; };
 		CB57BDA820B50530004FEE89 /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB57BDA720B50530004FEE89 /* UserPreferences.swift */; };
-		CB62238820C031E500690031 /* ActivityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB62238720C031E500690031 /* ActivityCollectionViewCell.swift */; };
 		CB709D8E20D0874D00EA7C81 /* TripHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB709D8D20D0874D00EA7C81 /* TripHeaderCell.swift */; };
 		CB709D9020D0903C00EA7C81 /* TicketmasterImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB709D8F20D0903C00EA7C81 /* TicketmasterImage.swift */; };
 		CB709D9620D5519000EA7C81 /* ActivityImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB709D9520D5519000EA7C81 /* ActivityImageTableViewCell.swift */; };
@@ -86,6 +87,8 @@
 		CB20DD7820D878AD0028AA4B /* Signup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Signup.storyboard; sourceTree = "<group>"; };
 		CB20DD8620DCA72E0028AA4B /* NextButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextButtonCell.swift; sourceTree = "<group>"; };
 		CB20DD8820DCA7F00028AA4B /* NavigationBarTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarTitleView.swift; sourceTree = "<group>"; };
+		CB20DD8A20E1D5ED0028AA4B /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		CB275AC420E1E25700B0E827 /* UIImageView+Kingfisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Kingfisher.swift"; sourceTree = "<group>"; };
 		CB4BB7D320A0DC8E00F756D3 /* AwayGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AwayGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB4BB7D620A0DC8E00F756D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB4BB7D820A0DC8E00F756D3 /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
@@ -109,7 +112,6 @@
 		CB57BD9E20ACA36C004FEE89 /* AwayGameAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwayGameAPI.swift; sourceTree = "<group>"; };
 		CB57BDA220ADE877004FEE89 /* UserDefaults+FirstLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+FirstLaunch.swift"; sourceTree = "<group>"; };
 		CB57BDA720B50530004FEE89 /* UserPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferences.swift; sourceTree = "<group>"; };
-		CB62238720C031E500690031 /* ActivityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCollectionViewCell.swift; sourceTree = "<group>"; };
 		CB709D8D20D0874D00EA7C81 /* TripHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripHeaderCell.swift; sourceTree = "<group>"; };
 		CB709D8F20D0903C00EA7C81 /* TicketmasterImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketmasterImage.swift; sourceTree = "<group>"; };
 		CB709D9520D5519000EA7C81 /* ActivityImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityImageTableViewCell.swift; sourceTree = "<group>"; };
@@ -186,8 +188,8 @@
 		CB20DD7C20D88FD40028AA4B /* Preferenes */ = {
 			isa = PBXGroup;
 			children = (
-				CBF4138520A9CCFF0038340F /* PreferencesCollectionViewController.swift */,
 				CBCE1B9A20B9162C0010967E /* GroupTableViewController.swift */,
+				CBF4138520A9CCFF0038340F /* PreferencesCollectionViewController.swift */,
 			);
 			path = Preferenes;
 			sourceTree = "<group>";
@@ -211,6 +213,7 @@
 		CB20DD7F20D88FDB0028AA4B /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				CB20DD8A20E1D5ED0028AA4B /* AboutViewController.swift */,
 				CB709DC420D5875500EA7C81 /* HomeTableViewController+FirebaseSubscription.swift */,
 				CB4BB7D820A0DC8E00F756D3 /* HomeTableViewController.swift */,
 				CBCE1B9E20BA5A4D0010967E /* SettingsViewController.swift */,
@@ -336,7 +339,6 @@
 			isa = PBXGroup;
 			children = (
 				CB4BB80920A10A6800F756D3 /* ActivityCell.swift */,
-				CB62238720C031E500690031 /* ActivityCollectionViewCell.swift */,
 				CB709D8D20D0874D00EA7C81 /* TripHeaderCell.swift */,
 			);
 			path = Itenerary;
@@ -405,7 +407,9 @@
 			isa = PBXGroup;
 			children = (
 				CB57BD9820AC943A004FEE89 /* SectionHeaderCell.swift */,
+				CB20DD8620DCA72E0028AA4B /* NextButtonCell.swift */,
 				CB20DD8820DCA7F00028AA4B /* NavigationBarTitleView.swift */,
+				CB275AC420E1E25700B0E827 /* UIImageView+Kingfisher.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -460,7 +464,6 @@
 		CBF4138020A9CC650038340F /* Preferences */ = {
 			isa = PBXGroup;
 			children = (
-				CB20DD8620DCA72E0028AA4B /* NextButtonCell.swift */,
 				AF035E0A20DA994F00DA9C95 /* PreferenceHeaderCell.swift */,
 				CBCE1B9C20B91CB50010967E /* GroupTableViewCell.swift */,
 				CBF4138120A9CCBC0038340F /* PreferenceCollectionCell.swift */,
@@ -596,6 +599,8 @@
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/UberCore/UberCore.framework",
+				"${BUILT_PRODUCTS_DIR}/UberRides/UberRides.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
@@ -620,6 +625,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UberCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UberRides.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
@@ -659,7 +666,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB62238820C031E500690031 /* ActivityCollectionViewCell.swift in Sources */,
 				CB765ABF20BF6DBF00912B51 /* ActivityTableViewController.swift in Sources */,
 				CB4BB80320A109F100F756D3 /* ResultsTableViewController.swift in Sources */,
 				CBF4138620A9CCFF0038340F /* PreferencesCollectionViewController.swift in Sources */,
@@ -672,6 +678,7 @@
 				CB4BB7D720A0DC8E00F756D3 /* AppDelegate.swift in Sources */,
 				CB4BB7FD20A1099600F756D3 /* LoginViewController.swift in Sources */,
 				CBF4138D20A9D4160038340F /* User.swift in Sources */,
+				CB20DD8B20E1D5EE0028AA4B /* AboutViewController.swift in Sources */,
 				CBCE1B9D20B91CB50010967E /* GroupTableViewCell.swift in Sources */,
 				CB709D9620D5519000EA7C81 /* ActivityImageTableViewCell.swift in Sources */,
 				CBF4139320A9D71B0038340F /* AppLaunchViewController.swift in Sources */,
@@ -706,6 +713,7 @@
 				CB4BB80120A109D600F756D3 /* SearchViewController.swift in Sources */,
 				CB4BB7F020A0F5B100F756D3 /* Itinerary.swift in Sources */,
 				CBADC0B920BE6727007A7A95 /* NextButtonCollectionCell.swift in Sources */,
+				CB275AC520E1E25700B0E827 /* UIImageView+Kingfisher.swift in Sources */,
 				CB20DD7720D878420028AA4B /* EmailSignupViewController.swift in Sources */,
 				CB709D9820D551A000EA7C81 /* ActivityDescriptionTableViewCell.swift in Sources */,
 				CB8A9A4520C8C88D00A9E354 /* Review.swift in Sources */,

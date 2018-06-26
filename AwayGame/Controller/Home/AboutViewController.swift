@@ -12,13 +12,12 @@ class AboutViewController: UIViewController {
 
     @IBOutlet weak var aboutLabel: UILabel!
     
+    override func viewWillAppear(_ animated: Bool) {
+        NavigationHelper.setupNavigationController(self, withTitle: "About")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupLabel()
-        self.title = "About"
-    }
-
-    func setupLabel() {
         aboutLabel.text = Settings.About.text
         aboutLabel.textColor = Theme.Color.darkText
         aboutLabel.font = Theme.Font.p3

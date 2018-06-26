@@ -45,10 +45,10 @@ enum Theme {
         }
         
         enum Green {
-            static let primary: UIColor = UIColor(displayP3Red: 83.0/255.0, green: 185.0/255.0, blue: 114.0/255.0, alpha: 1.0)
+            static let primary: UIColor = UIColor(displayP3Red: 110.0/255.0, green: 185.0/255.0, blue: 121.0/255.0, alpha: 1.0)
             static let secondary: UIColor = UIColor(displayP3Red: 115.0/255.0, green: 183.0/255.0, blue: 87.0/255.0, alpha: 1.0)
-            static let selected: UIColor = UIColor(displayP3Red: 83.0/255.0, green: 185.0/255.0, blue: 114.0/255.0, alpha: 0.15)
-            static let border: UIColor = UIColor(displayP3Red: 83.0/255.0, green: 185.0/255.0, blue: 114.0/255.0, alpha: 0.80)
+            static let selected: UIColor = UIColor(displayP3Red: 110.0/255.0, green: 185.0/255.0, blue: 121.0/255.0, alpha: 0.15)
+
         }
         
         enum Gradient {

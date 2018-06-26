@@ -14,9 +14,9 @@ enum Preferences {
         
     enum Group {
         static let title: String = "Who are you going with?"
-        static let text: [String] = ["Friends", "Significant Other", "Family", "Colleagues", "Just me"]
+        static let text: [String] = ["Family", "Friends", "Colleagues", "Significant Other", "Just me"]
         static let requestStrings: [String] = []
-        static let images: [UIImage] = [#imageLiteral(resourceName: "Friends"), #imageLiteral(resourceName: "Couple_1"), #imageLiteral(resourceName: "Family"), #imageLiteral(resourceName: "Colleagues"), #imageLiteral(resourceName: "Just Me")]
+        static let images: [UIImage] = [#imageLiteral(resourceName: "Family"), #imageLiteral(resourceName: "Friends"), #imageLiteral(resourceName: "Colleagues"), #imageLiteral(resourceName: "Couple_1"), #imageLiteral(resourceName: "Just Me")]
     }
     
     enum Food {
@@ -28,9 +28,9 @@ enum Preferences {
     
     enum Interest {
         static let title: String = "What do you want to do?"
-        static let text: [String] = ["Shopping", "Museums", "Famous Sights", "Shows", "Guided Tours", "Active Tourism", "Special Events", "Health/Wellness", "Historic Places", "Parks"]
+        static let text: [String] = ["Shopping", "Museums", "Famous Sights", "Guided Tours", "Active Tourism", "Health/Wellness", "Historic Places", "Parks"]
         static let requestStrings: [String] = ["shopping", "museums", "famousSights", "shows", "guidedTours", "activeTourism", "specialEvents", "healthAndWellness", "historicalPlaces", "parks"]
-        static let images: [UIImage] = [#imageLiteral(resourceName: "shopping-1"), #imageLiteral(resourceName: "museum-1"), #imageLiteral(resourceName: "famoussight-1"), #imageLiteral(resourceName: "show-1"), #imageLiteral(resourceName: "tour-1"), #imageLiteral(resourceName: "active-1"), #imageLiteral(resourceName: "specialevent-1"), #imageLiteral(resourceName: "wellness-1"), #imageLiteral(resourceName: "historical-2"), #imageLiteral(resourceName: "parks")]
+        static let images: [UIImage] = [#imageLiteral(resourceName: "shopping-1"), #imageLiteral(resourceName: "museum-1"), #imageLiteral(resourceName: "famoussight-1"), #imageLiteral(resourceName: "tour-1"), #imageLiteral(resourceName: "active-1"), #imageLiteral(resourceName: "wellness-1"), #imageLiteral(resourceName: "historical-2"), #imageLiteral(resourceName: "parks")]
     }
     
     enum Nightlife {

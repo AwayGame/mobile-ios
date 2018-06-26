@@ -17,8 +17,6 @@ class PreferencesCollectionViewController: UICollectionViewController {
     
     weak var delegate: UserDelegate?
     
-    let titleView = NavigationBarTitleView(frame: CGRect(origin: .zero, size: CGSize(width: 240.0, height: 36.0)))
-    
     // MARK: - Initialization
     
     override func viewDidLoad() {
@@ -30,10 +28,8 @@ class PreferencesCollectionViewController: UICollectionViewController {
         collectionView.alwaysBounceVertical = true
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        setupNavigation(controller: navigationController, hidesBar: false)
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: titleView)
-        titleView.setTitle(tripRequest?.eventName ?? "")
+    override func viewWillAppear(_ animated: Bool) {
+        NavigationHelper.setupNavigationController(self, withTitle: tripRequest?.eventName ?? "")
         guard let collectionView = self.collectionView else { return }
         collectionView.reloadData()
     }
@@ -50,13 +46,7 @@ class PreferencesCollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if section == 0 {
-            return 1
-        } else if section == 1 {
-            return 10
-        } else {
-            return 1
-        }
+        return section == 1 ? (textData?.count ?? 0) : 1
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -83,7 +73,6 @@ class PreferencesCollectionViewController: UICollectionViewController {
             }
         } else {
             if let nextCell = collectionView.dequeueReusableCell(withReuseIdentifier: NextButtonCollectionCell.identifier, for: indexPath) as? NextButtonCollectionCell {
-                nextCell.configureCell()
                 nextCell.delegate = self
                 return nextCell
             }
@@ -99,9 +88,7 @@ class PreferencesCollectionViewController: UICollectionViewController {
             if let preferencesVC = segue.destination as? PreferencesCollectionViewController {
                 if let paths = collectionView?.indexPathsForSelectedItems {
                     for indexPath in paths {
-                        if let cell = collectionView?.cellForItem(at: indexPath) as? PreferenceCollectionCell {
-                            tripRequest?.preferences?.food?.append(Preferences.Food.requestStrings[indexPath.row])
-                        }
+                        tripRequest?.preferences?.food?.append(Preferences.Food.requestStrings[indexPath.row])
                     }
                 }
                 preferencesVC.tripRequest = self.tripRequest
@@ -113,9 +100,7 @@ class PreferencesCollectionViewController: UICollectionViewController {
             if let preferencesVC = segue.destination as? PreferencesCollectionViewController {
                 if let paths = collectionView?.indexPathsForSelectedItems {
                     for indexPath in paths {
-                        if let cell = collectionView?.cellForItem(at: indexPath) as? PreferenceCollectionCell {
-                            tripRequest?.preferences?.interests?.append(Preferences.Interest.requestStrings[indexPath.row])
-                        }
+                        tripRequest?.preferences?.interests?.append(Preferences.Interest.requestStrings[indexPath.row])
                     }
                 }
                 preferencesVC.tripRequest = self.tripRequest
@@ -127,9 +112,7 @@ class PreferencesCollectionViewController: UICollectionViewController {
             if let tripVC = segue.destination as? TripViewController {
                 if let paths = collectionView?.indexPathsForSelectedItems {
                     for indexPath in paths {
-                        if let cell = collectionView?.cellForItem(at: indexPath) as? PreferenceCollectionCell {
-                            tripRequest?.preferences?.nightlife?.append(Preferences.Nightlife.requestStrings[indexPath.row])
-                        }
+                        tripRequest?.preferences?.nightlife?.append(Preferences.Nightlife.requestStrings[indexPath.row])
                     }
                 }
                 tripVC.tripRequest = self.tripRequest
@@ -146,16 +129,18 @@ extension PreferencesCollectionViewController: UICollectionViewDelegateFlowLayou
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if indexPath.section == 0 {
-            return CGSize(width: self.view.bounds.width - 40, height: 56.0)
+            return CGSize(width: self.view.bounds.width - 40, height: PreferenceHeaderCell.height)
         } else if indexPath.section == 1 {
-            return CGSize(width: self.view.bounds.width / 2 - 30, height: 120.0)
+            return CGSize(width: self.view.bounds.width / 2 - 30, height: PreferenceCollectionCell.height)
         } else {
-            return CGSize(width: self.view.bounds.width - 40, height: 60.0)
+            return CGSize(width: self.view.bounds.width - 40, height: NextButtonCollectionCell.height)
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-            return UIEdgeInsets(top: 8, left: 20, bottom: 20, right: 20)
+        return section == 0 ? UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20) :
+               section == 1 ? UIEdgeInsets(top: 8, left: 20, bottom: 0, right: 20) :
+                              UIEdgeInsets(top: 0, left: 20, bottom: 20, right: 20)
     }
     
 }

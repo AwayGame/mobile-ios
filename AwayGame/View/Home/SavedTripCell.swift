@@ -46,7 +46,9 @@ class SavedTripCell: UITableViewCell {
         guard let stub = tripStub else { return }
         self.tripStub = stub
         tripTitleLabel.text = stub.title ?? ""
-        tripImageView.kf.setImage(with: URL(string: stub.imageUrl ?? ""))
+        print("\(stub.imageUrl ?? "")")
+        print("KINGFISHER\n-------------------\n")
+        tripImageView.setImage(withUrlString: stub.imageUrl)
     }
 
     @IBAction func didTapCell(_ sender: Any) {

@@ -19,16 +19,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AwayGameLogo" translatesAutoresizingMaskIntoConstraints="NO" id="xeD-DC-cI3">
-                                <rect key="frame" x="112.5" y="258.5" width="150" height="150"/>
+                                <rect key="frame" x="112.5" y="241.5" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="XOE-CC-7a8"/>
                                     <constraint firstAttribute="width" constant="150" id="tfN-fi-X8p"/>
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.32549019607843138" green="0.72549019607843135" blue="0.44705882352941173" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.43137254901960786" green="0.71655184030532837" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="xeD-DC-cI3" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="eKu-EP-45r"/>
+                            <constraint firstItem="xeD-DC-cI3" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-17" id="eKu-EP-45r"/>
                             <constraint firstItem="xeD-DC-cI3" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="m4u-2u-0VN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

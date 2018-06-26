@@ -14,8 +14,6 @@ class GroupTableViewController: UITableViewController {
     
     weak var delegate: UserDelegate?
     
-    let titleView = NavigationBarTitleView(frame: CGRect(origin: .zero, size: CGSize(width: 240.0, height: 36.0)))
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.allowsSelection = true
@@ -24,9 +22,7 @@ class GroupTableViewController: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        setupNavigation(controller: self.navigationController, hidesBar: false)
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: titleView)
-        titleView.setTitle(tripRequest?.eventName ?? "")
+        NavigationHelper.setupNavigationController(self, withTitle: tripRequest?.eventName ?? "")
     }
 
     // MARK: - Table view data source
@@ -86,7 +82,6 @@ class GroupTableViewController: UITableViewController {
 }
 
 // MARK: - NextDelegate
-
 
 extension GroupTableViewController: UserDelegate {
     func user(_ user: User, didSaveTrip trip: Trip) {

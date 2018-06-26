@@ -53,10 +53,10 @@ class ResultsCell: UITableViewCell {
         print(event.time)
         print(event.ticketUrl)
         
-        if images.count > 1 {
-            gameImageView.kf.setImage(with: URL(string: images[1].url ?? ""))
+        if images.count > 3 {
+            gameImageView.setImage(withUrlString: images[2].url)
         } else if images.count > 0 {
-            gameImageView.kf.setImage(with: URL(string: images[0].url ?? ""))
+            gameImageView.setImage(withUrlString: images[0].url)
         }
 
     }

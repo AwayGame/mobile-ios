@@ -94,6 +94,9 @@ PODS:
   - TwitterCore (3.0.2)
   - TwitterKit (3.2.1):
     - TwitterCore (>= 3.0.2)
+  - UberCore (0.10.0)
+  - UberRides (0.10.0):
+    - UberCore
 
 DEPENDENCIES:
   - Alamofire (~> 4.5)
@@ -106,6 +109,7 @@ DEPENDENCIES:
   - NVActivityIndicatorView
   - ObjectMapper (~> 3.1)
   - TwitterKit
+  - UberRides (~> 0.9)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -138,6 +142,8 @@ SPEC REPOS:
     - Protobuf
     - TwitterCore
     - TwitterKit
+    - UberCore
+    - UberRides
 
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
@@ -162,14 +168,16 @@ SPEC CHECKSUMS:
   InstantSearch-Core-Swift: 40cf5cf38d04d08d54f9d633f1551b19d989bf48
   InstantSearch-iOS: e35549e03232c65f40d3bef672ff2d711fc85d09
   Kingfisher: 9ee7e788d8ba07c3f21ce0d43f33cec310a4f781
-  leveldb-library: 44ef425bfde64f5b41daef86b38db2d13edbbee1
+  leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   NVActivityIndicatorView: 54c9b93b6f25a4f467512680c0c90c09a1095cf2
   ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
   Protobuf: 03eef2ee0b674770735cf79d9c4d3659cf6908e8
   TwitterCore: e0420b01e02e7d20e94690e37f43e75de219ab8d
   TwitterKit: 205ac89824bbfe9e85a16c420d30bb7bcbedac45
+  UberCore: 512950407dadc8045a583e4a509da2750ae7dc21
+  UberRides: cc6d7c5232966e45229dda1534106b33e379dfbe
 
-PODFILE CHECKSUM: 58e2d889b4fe66b434738c4f78a0cde68276b305
+PODFILE CHECKSUM: 7aba3254249604ea9c68ec3dfe6d89fed189c2e6
 
 COCOAPODS: 1.5.0

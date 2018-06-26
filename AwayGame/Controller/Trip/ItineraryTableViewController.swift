@@ -6,11 +6,16 @@
 //  Copyright © 2018 AwayGame. All rights reserved.
 //
 
+import CoreLocation
+import UberRides
 import UIKit
 
 class ItineraryTableViewController: UITableViewController {
 
     var tripRequest: TripRequest?
+    var tripTitle: String?
+    
+    private var currentLocation: CLLocationCoordinate2D?
     
     public var trip: Trip? {
         didSet {
@@ -33,6 +38,7 @@ class ItineraryTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.separatorStyle = .none
+        self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 40, right: 0)
     }
 
 
@@ -50,12 +56,9 @@ class ItineraryTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             if let headerCell = tableView.dequeueReusableCell(withIdentifier: TripHeaderCell.identifier, for: indexPath) as? TripHeaderCell {
-                let dateFormatterGet = DateFormatter()
-                dateFormatterGet.dateFormat = "yyyy-MM-dd"
-                let dateFormatterPrint = DateFormatter()
-                dateFormatterPrint.dateFormat = "MMMM dd"
-                let date: Date? = dateFormatterGet.date(from: currentItinerary?.date ?? "")
-                headerCell.configureCell(withTitle: dateFormatterPrint.string(from: date!))
+                headerCell.nextButton.isHidden = currentItineraryIndex >= (trip?.itineraries?.count ?? 0) - 1
+                headerCell.previousButton.isHidden = currentItineraryIndex == 0
+                headerCell.configureCell(withTitle: currentItinerary?.date ?? "" )
                 headerCell.delegate = self
                 return headerCell
             }
@@ -71,7 +74,6 @@ class ItineraryTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        print("Calling height for row at: \(cellHeights)")
         if indexPath.section == 0 {
             return TripHeaderCell.height
         } else {
@@ -80,7 +82,9 @@ class ItineraryTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "ActivitySegue", sender: indexPath)
+        if indexPath.section != 0 {
+            performSegue(withIdentifier: "ActivitySegue", sender: indexPath)
+        }
     }
     
 
@@ -92,6 +96,8 @@ class ItineraryTableViewController: UITableViewController {
                 guard let indexPath = sender as? IndexPath else { return }
                 activityVC.activity = currentItinerary?.activities?[indexPath.row]
                 activityVC.tripRequest = self.tripRequest
+                activityVC.tripTitle = self.tripTitle
+                activityVC.currentItinerary = self.currentItinerary
             }
         }
     }
@@ -110,14 +116,13 @@ extension ItineraryTableViewController: TripDelegate {
     }
     
     func nextDayTapped() {
-        if currentItineraryIndex < trip?.itineraries?.count ?? 0 - 1 {
+        if currentItineraryIndex < (trip?.itineraries?.count ?? 0) - 1 {
             currentItineraryIndex += 1
             currentItinerary = trip?.itineraries?[currentItineraryIndex]
         }
     }
     
     func saveTapped() {
-        // TODO: Clean up errors
         guard let trip = trip else { return }
         delegate?.user(User.currentUser, didSaveTrip: trip)
     }
@@ -127,7 +132,32 @@ extension ItineraryTableViewController: TripDelegate {
 // MARK: - ActivityDelegate
 
 extension ItineraryTableViewController: ActivityDelegate {
-    func didTapUber() {
-        print("Uber tap received in controller")
+    func didTapUber(withActivity activity: Activity?) {
+        
+        let locationManager = CLLocationManager()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
+        
+        let builder = RideParametersBuilder()
+        let pickupLocation = currentLocation
+        let dropoffLocation = CLLocation(latitude: activity?.location?.latitude ?? 0.0, longitude: activity?.location?.longitude ?? 0.0)
+        builder.dropoffNickname = activity?.name ?? ""
+        builder.dropoffAddress = activity?.address ?? ""
+        let rideParameters = builder.build()
+        let deeplink = RequestDeeplink(rideParameters: rideParameters, fallbackType: .mobileWeb)
+        deeplink.execute()
     }
+}
+
+extension ItineraryTableViewController: CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+        currentLocation = locValue
+    }
+    
 }

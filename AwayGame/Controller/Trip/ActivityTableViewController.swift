@@ -10,26 +10,23 @@ import UIKit
 
 class ActivityTableViewController: UITableViewController {
 
+    var currentItinerary: Itinerary?
     var tripRequest: TripRequest?
-    
+    var tripTitle: String?
     var activity: Activity? {
         didSet {
             tableView.reloadData()
         }
     }
     
-    let titleView = NavigationBarTitleView(frame: CGRect(origin: .zero, size: CGSize(width: 240.0, height: 36.0)))
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.separatorStyle = .none
-
+        self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 40, right: 0)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        setupNavigation(controller: self.navigationController, hidesBar: false)
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: titleView)
-        titleView.setTitle(tripRequest?.eventName ?? "")
+    override func viewWillAppear(_ animated: Bool) {
+        NavigationHelper.setupNavigationController(self, withTitle: tripTitle ?? "")
     }
 
     // MARK: - Table view data source
@@ -45,6 +42,11 @@ class ActivityTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             if let pageCell = tableView.dequeueReusableCell(withIdentifier: TripHeaderCell.identifier, for: indexPath) as? TripHeaderCell {
+                // TODO: Cleanup
+                pageCell.nextButton.isHidden = self.activity?.placeId == currentItinerary?.activities?.last?.placeId
+                pageCell.previousButton.isHidden = self.activity?.placeId == currentItinerary?.activities?.first?.placeId
+                pageCell.saveButton.isHidden = true
+                pageCell.dateLabel.text = self.activity?.name ?? ""
                 return pageCell
             }
         } else {
