@@ -10,14 +10,26 @@ import ObjectMapper
 
 class Activity: Mappable {
     
+    public var category: String?
+    public var date: String?
+    public var location: Location?
+    
+    var isGame: Bool {
+        return category == "game"
+    }
+    
+    var isYelp: Bool {
+        return provider == "yelp"
+    }
+    
+    // MARK: - Activity
+    
     public var name: String?
     public var description: String?
     public var startTime: String?
-    public var date: String?
     public var placeId: String?
     public var phone: String?
     public var address: String?
-    public var location: Location?
     public var website: String?
     public var reviews: [Review]?
     public var rating: Double?
@@ -25,6 +37,17 @@ class Activity: Mappable {
     public var photos: [String]?
     public var mapsUrl: String?
     public var needsUber: Bool?
+    public var subCategory: String?
+    public var provider: String?
+    
+    // MARK: - Game
+    
+    public var title: String?
+    public var classification: String?
+    public var id: String?
+    public var ticketUrl: String?
+    public var timeToBeAtStadium: String?
+    public var isTBA: Bool?
     
     required init?(map: Map) {}
     
@@ -42,7 +65,13 @@ class Activity: Mappable {
         backups <- map["backups"]
         photos <- map["photos"]
         mapsUrl <- map["mapsUrl"]
+        category <- map["category"]
         needsUber <- map["needsUber"]
+        classification <- map["classification"]
+        id <- map["id"]
+        ticketUrl <- map["ticketUrl"]
+        isTBA <- map["isTBA"]
+        
     }
     
     var displayImage: String? {

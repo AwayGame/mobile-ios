@@ -124,7 +124,8 @@ extension ItineraryTableViewController: TripDelegate {
     
     func saveTapped() {
         guard let trip = trip else { return }
-        delegate?.user(User.currentUser, didSaveTrip: trip)
+        print("BLAKE: ITINERARY -> \(tripRequest?.eventName)")
+        delegate?.user(User.currentUser, didSaveTrip: trip, tripRequest: self.tripRequest)
     }
     
 }
@@ -133,7 +134,7 @@ extension ItineraryTableViewController: TripDelegate {
 
 extension ItineraryTableViewController: ActivityDelegate {
     func didTapUber(withActivity activity: Activity?) {
-        
+        AGAnalytics.logEvent(.uberTapped, parameters: nil)
         let locationManager = CLLocationManager()
         
         if CLLocationManager.locationServicesEnabled() {
@@ -145,6 +146,7 @@ extension ItineraryTableViewController: ActivityDelegate {
         let builder = RideParametersBuilder()
         let pickupLocation = currentLocation
         let dropoffLocation = CLLocation(latitude: activity?.location?.latitude ?? 0.0, longitude: activity?.location?.longitude ?? 0.0)
+        builder.dropoffLocation = dropoffLocation
         builder.dropoffNickname = activity?.name ?? ""
         builder.dropoffAddress = activity?.address ?? ""
         let rideParameters = builder.build()

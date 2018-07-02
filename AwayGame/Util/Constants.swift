@@ -22,7 +22,7 @@ enum Preferences {
     enum Food {
         static let title: String = "What's to eat?"
         static let text: [String] = ["Local Cuisine", "Fast Food", "Upscale", "Famous Spots", "Fast Casual", "Tapas", "Bar Food", "Street Food", "Coffee Shops", "Intimate"]
-        static let requestStrings: [String] = ["coffeeShops", "localCusine", "fastFood", "upscale", "famousSpots", "fastCasual", "tapas", "barFood", "streetFood", "intimate"]
+        static let requestStrings: [String] = ["coffeeShops", "localCuisine", "fastFood", "upscale", "famousSpots", "fastCasual", "tapas", "barFood", "streetFood", "intimate"]
         static let images: [UIImage] = [#imageLiteral(resourceName: "local"), #imageLiteral(resourceName: "fastfood-1"), #imageLiteral(resourceName: "upscale-1"), #imageLiteral(resourceName: "famous-1"), #imageLiteral(resourceName: "fastcasual-1"), #imageLiteral(resourceName: "tapas-1"), #imageLiteral(resourceName: "barfood-1"), #imageLiteral(resourceName: "street-food-1"), #imageLiteral(resourceName: "coffeeshop-1"), #imageLiteral(resourceName: "intimate-1")]
     }
     
@@ -46,16 +46,22 @@ enum Preferences {
 enum Settings {
     
     static let websiteUrl: URL! = URL(string: "https://awaygame.co")!
-    static let copyrightText = "Copyright 2018 AwayGame, LLC. All Right Reserved."
+    static let privacyUrl: URL! = URL(string: "https://bit.ly/AwayGamePrivacy1")!
+    static let termsUrl: URL! = URL(string: "https://bit.ly/AwayGameTerms1")!
+    static let copyrightText = "Copyright 2018 AwayGame, LLC. All Rights Reserved."
     
     enum Support {
-        static let email = "support@awaygame.co"
+        static let email = "contact@awaygame.co"
         static let subject = "AwayGame Support"
         static let message = "<p>Hello<p>" // TODO
     }
     
     enum About {
-        static let text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent facilisis quam enim, vel posuere ligula blandit sed. Mauris a rutrum neque. Phasellus sit amet nulla eget lorem elementum tempus eu sodales nulla. Nam vehicula elit massa, cursus elementum erat rhoncus vel. Pellentesque sit amet enim tortor. Mauris accumsan, nisi sed vestibulum euismod, ligula ipsum pretium sapien, et tempus ipsum neque at odio. Mauris at velit at arcu posuere egestas vitae non arcu. Mauris varius tellus eros, quis vehicula diam commodo et."
+        static let p1 = "The AwayGame app is developed, created, and maintained by AwayGame, LLC in Lexington, KY. The AwayGame app is copyright 2018 AwayGame, LLC, all rights reserved. \n\nVisit AwayGame on the web at awaygame.co. Contact the team at contact@awaygame.co."
+        
+        static let p2 = "The creation of an itinerary, schedule, or trip consisting of events and locations does not constitute an endorsement of those events or locations by AwayGame, LLC nor hold AwayGame, LLC responsible for occurrences or experiences that happen prior, during, or after the scheduled time of the event or location. Location and event data including names, physical locations, ratings, descriptions, and more is owned by data partners of AwayGame, LLC. \n\nView the full https://www.awaygame.co/terms and http://awaygame.co/privacy."
+        
+        static let p3 = "Icon artwork provided by the Noun Project from artists Chameleon Design, sanjivini, sofi, praveen patchu, and Anastasia Latysheva.\n\nLoader animation copyright 2016 Vinh Nguyen.\n\nApple, the Apple logo, iPhone, and iPad are trademarks of Apple Inc., registered in the U.S. and other countries and regions. App Store is a service mark of Apple Inc."
     }
     
 }

@@ -58,10 +58,12 @@ class SettingsViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction func aboutTapped(_ sender: Any) {
+        AGAnalytics.logEvent(.aboutTapped, parameters: nil)
         performSegue(withIdentifier: "AboutSegue", sender: self)
     }
     
     @IBAction func websiteTapped(_ sender: Any) {
+        AGAnalytics.logEvent(.websiteTapped, parameters: nil)
         let svc = SFSafariViewController(url: Settings.websiteUrl)
         svc.preferredBarTintColor = Theme.Color.white
         svc.preferredControlTintColor = Theme.Color.black
@@ -69,6 +71,7 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func logoutTapped(_ sender: Any) {
+        AGAnalytics.logEvent(.logoutTapped, parameters: nil)
         navigationController?.popViewController(animated: true)
         self.delegate?.userDidLogout()
     }

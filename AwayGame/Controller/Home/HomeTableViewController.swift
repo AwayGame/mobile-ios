@@ -191,6 +191,11 @@ class HomeTableViewController: UITableViewController {
         let stub = tripStubData[index][editActionsForRowAt.row]
         
         let delete = UITableViewRowAction(style: .default, title: "Delete") { action, index in
+            if index.section == 0 {
+                AGAnalytics.logEvent(.savedTripDeleted, parameters: nil)
+            } else {
+                AGAnalytics.logEvent(.pastTripDeleted, parameters: nil)
+            }
             print("delete tapped")
             AwayGameAPI.deleteTrip(stub, user: User.currentUser, completion: {
                 print("trip deleted")
@@ -255,7 +260,8 @@ class HomeTableViewController: UITableViewController {
         if segue.identifier == "TripSegue" {
             if let tripVC = segue.destination as? TripViewController {
                 guard let tripStub = sender as? TripStub else { return }
-                tripVC.trip?.id = tripStub.id
+                tripVC.shouldCreateTrip = false
+                tripVC.tripId = tripStub.id
                 tripVC.tripTitle = tripStub.title
                 tripVC.delegate = self
             }
@@ -269,6 +275,7 @@ class HomeTableViewController: UITableViewController {
 extension HomeTableViewController: CreateTripDelegate {
     
     func didCreatNewTrip() {
+        AGAnalytics.logEvent(.createTripTapped, parameters: nil)
         performSegue(withIdentifier: "CreateTripSegue", sender: self)
     }
     
@@ -284,6 +291,7 @@ extension HomeTableViewController: MFMailComposeViewControllerDelegate {
 
 extension HomeTableViewController: MoreCellDelegate {
     func supportTapped() {
+        AGAnalytics.logEvent(.supportTapped, parameters: nil)
         let alertController = UIAlertController(title: "Contact Support", message: "Send an email to AwayGame support, we'll get back to you ASAP", preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         alertController.addAction(UIAlertAction(title: "Send Email", style: .default, handler: { (alert) in
@@ -293,6 +301,7 @@ extension HomeTableViewController: MoreCellDelegate {
     }
     
     func settingsTapped() {
+        AGAnalytics.logEvent(.settingsTapped, parameters: nil)
         performSegue(withIdentifier: "SettingsSegue", sender: self)
     }
 
@@ -319,10 +328,11 @@ extension HomeTableViewController: SettingsDelegate {
 // MARK: - UserDelegate
 
 extension HomeTableViewController: UserDelegate {
-    func user(_ user: User, didSaveTrip trip: Trip) {
+    func user(_ user: User, didSaveTrip trip: Trip, tripRequest: TripRequest?) {
         navigationController?.popViewController(animated: false)
         print("Saving trip...")
-        AwayGameAPI.saveTrip(trip, user: user, completion: {
+        AGAnalytics.logEvent(.tripSaved, parameters: nil)
+        AwayGameAPI.saveTrip(trip, tripRequest: tripRequest, user: user, completion: {
             print("TRIP SAVED")
         })
     }
@@ -332,7 +342,9 @@ extension HomeTableViewController: UserDelegate {
 
 extension HomeTableViewController: SavedTripDelegate {
     func didSelectTrip(withStub tripStub: TripStub?) {
-        performSegue(withIdentifier: "TripSegue", sender: tripStub)
+        AGAnalytics.logEvent(.savedTripTapped, parameters: nil)
+        guard let stub = tripStub else { return }
+        performSegue(withIdentifier: "TripSegue", sender: stub)
     }
 }
 

@@ -24,10 +24,9 @@ class ResultsCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-       roundedView.layer.cornerRadius = 10.0
+        roundedView.layer.cornerRadius = 10.0
         roundedView.clipsToBounds = true
-        gameImageView.backgroundColor = Theme.Color.Background.primary
+        gameImageView.backgroundColor = Theme.Color.white
         gameImageView.layer.cornerRadius = 10.0
         gameImageView.clipsToBounds = true
         gameLabel.textColor = Theme.Color.darkText
@@ -46,12 +45,6 @@ class ResultsCell: UITableViewCell {
         gameLabel.text = event.name ?? ""
         timeLabel.text = event.time ?? ""
         dateLabel.text = event.date ?? ""
-        
-        
-        print(event.name)
-        print(event.date)
-        print(event.time)
-        print(event.ticketUrl)
         
         if images.count > 3 {
             gameImageView.setImage(withUrlString: images[2].url)

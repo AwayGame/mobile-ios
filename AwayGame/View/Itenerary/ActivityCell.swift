@@ -17,7 +17,7 @@ class ActivityCell: UITableViewCell {
 
     static let identifier = "ActivityCell"
     
-    var cellHeight: CGFloat = 220.0
+    var cellHeight: CGFloat = 200.0
     
     var activity: Activity? {
         didSet {
@@ -34,6 +34,8 @@ class ActivityCell: UITableViewCell {
     
     // Uber views
     
+    @IBOutlet weak var uberLogo: UIImageView!
+    @IBOutlet weak var uberLabel: UILabel!
     @IBOutlet weak var uberBackgroundView: UIView!
     @IBOutlet weak var uberBackgroundHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var uberBackgroundBottomConstraint: NSLayoutConstraint!
@@ -52,12 +54,25 @@ class ActivityCell: UITableViewCell {
         uberBackgroundView.layer.cornerRadius = 10.0
         uberBackgroundView.clipsToBounds = true
         selectionStyle = .none
+        uberLogo.layer.cornerRadius = 2.0
+        uberLogo.clipsToBounds = true
+        uberLogo.layer.borderColor = Theme.Color.white.cgColor
+        uberLogo.layer.borderWidth = 0.5
+        uberLabel.textColor = Theme.Color.white
+        uberLabel.font = Theme.Font.p3
     }
     
     func configureCell(with activity: Activity?) {
         print("ActivityCell configured")
         self.activity = activity
         guard let activity = activity else { return }
+        
+        uberLogo.image = #imageLiteral(resourceName: "uber-logo")
+        uberLabel.text = "Ride there with Uber"
+        
+        if activity.isGame {
+            roundedView.backgroundColor = Theme.Color.Green.selected
+        }
         titleLabel.text = activity.name ?? ""
         timeLabel.text = activity.startTime ?? ""
         activityImageView.setImage(withUrlString: activity.displayImage)
@@ -74,8 +89,8 @@ class ActivityCell: UITableViewCell {
             return
         }
         print("This Cell Needs Uber \(activity.name ?? "")")
-        cellHeight = 220.0
-        uberBackgroundHeightConstraint.constant = 60.0
+        cellHeight = 200.0
+        uberBackgroundHeightConstraint.constant = 40.0
         uberBackgroundBottomConstraint.constant = 16.0
     }
     
@@ -88,7 +103,7 @@ class ActivityCell: UITableViewCell {
         if highlighted {
             roundedView.backgroundColor = Theme.Color.Background.highlighted
         } else {
-            roundedView.backgroundColor = Theme.Color.Background.primary
+            roundedView.backgroundColor = (activity?.isGame ?? false) ?  Theme.Color.Green.selected : Theme.Color.Background.primary
         }
     }
 

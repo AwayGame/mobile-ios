@@ -27,6 +27,7 @@ class TripViewController: UIViewController {
         }
     }
     
+    public var tripId: String?
     public var shouldCreateTrip: Bool = true
     
     weak var delegate: UserDelegate?
@@ -50,10 +51,11 @@ class TripViewController: UIViewController {
                     itineraryVC.trip = self.trip
                     itineraryVC.delegate = self
                     itineraryVC.tripTitle = self.tripTitle
+                    itineraryVC.tripRequest = self.tripRequest
                 }
             }
         } else {
-            AwayGameAPI.getTrip(withId: trip?.id) { (trip) in
+            AwayGameAPI.getTrip(withId: tripId) { trip in
                 self.trip = trip
                 if let itineraryVC = self.childViewControllers[0] as? ItineraryTableViewController {
                     itineraryVC.trip = self.trip
@@ -81,6 +83,7 @@ class TripViewController: UIViewController {
         loadingIndicator.color = Theme.Color.white
         loadingIndicator.type = .ballSpinFadeLoader
         loadingIndicator.startAnimating()
+        loadingLabel.font = Theme.Font.p1
     }
 
     func tearDownLoadingScreen() {
@@ -97,10 +100,11 @@ class TripViewController: UIViewController {
 // MARK: - User Delegate
 
 extension TripViewController: UserDelegate {
-    func user(_ user: User, didSaveTrip trip: Trip) {
+    func user(_ user: User, didSaveTrip trip: Trip, tripRequest: TripRequest?) {
         print("popping TRIP...")
         navigationController?.popViewController(animated: false)
-        delegate?.user(user, didSaveTrip: trip)
+        delegate?.user(user, didSaveTrip: trip, tripRequest: tripRequest)
     }
+    
 }
 

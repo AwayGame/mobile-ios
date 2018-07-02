@@ -18,5 +18,6 @@ class TripRequest {
     public var eventId: String?
     public var eventName: String?
     public var event: Event?
+    public var imageUrl: String?
     
 }

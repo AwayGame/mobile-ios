@@ -114,7 +114,7 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UJh-tE-wvc">
                                             <rect key="frame" x="0.0" y="20" width="201" height="50"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8gy-zO-hQL">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8gy-zO-hQL" customClass="AGButton" customModule="AwayGame" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="201" height="50"/>
                                                     <state key="normal" title="Button"/>
                                                     <connections>

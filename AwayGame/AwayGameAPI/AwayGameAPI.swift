@@ -64,8 +64,6 @@ final class AwayGameAPI {
     class func createTrip(request: TripRequest?, completion: @escaping (Trip) -> ()) {
         
         let parameters: [String: Any] = [
-            "lat": request?.lat ?? "",
-            "long": request?.long ?? "",
             "arrivalTime": request?.arrivalTime ?? "",
             "departureTime": request?.departureTime ?? "",
             "gameId": request?.eventId ?? "",
@@ -100,17 +98,25 @@ final class AwayGameAPI {
     
     // MARK: - Save Trip
     
-    class func saveTrip(_ trip: Trip, user: User, completion: @escaping () -> ()) {
+    class func saveTrip(_ trip: Trip, tripRequest: TripRequest?, user: User, completion: @escaping () -> ()) {
         
         guard let JSONString = trip.toJSONString(prettyPrint: false) else { return }
         
         print("\n\n\(JSONString) \n\n")
         
-        let parameters: [String: Any] = [
+        print(tripRequest?.imageUrl, tripRequest?.arrivalTime, tripRequest?.eventName)
+        
+        var parameters: [String: Any] = [
             "userId": user.uid ?? "",
             "trip": JSONString,
-            "id": trip.id
+            "imageUrl": tripRequest?.imageUrl ?? "",
+            "startDate": tripRequest?.arrivalTime ?? "",
+            "title": tripRequest?.eventName ?? ""
         ]
+        
+        if let _ = trip.id {
+            parameters["id"] = trip.id ?? ""
+        }
         
         Alamofire.request(Router.saveTrip(parameters: parameters)).responseObject { (response: DataResponse<Trip>) in
             print("\n\n--------------------------")
@@ -158,10 +164,15 @@ final class AwayGameAPI {
             print(response.result)
             print(response.result.value)
             
+            print(id ?? "")
+            
             guard let tempTrip = response.result.value else {
                 print("ERROR COULD NOT GET TRIP FROM ID")
                 return
             }
+            
+            print(tempTrip.itineraries?.count ?? 0)
+            
             completion(tempTrip)
         }
     }

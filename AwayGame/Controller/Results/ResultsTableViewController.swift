@@ -34,7 +34,7 @@ class ResultsTableViewController: UITableViewController {
     // MARK: - Tableview data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -46,11 +46,7 @@ class ResultsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == 0 {
-            return SectionHeaderCell.height
-        } else {
-            return ResultsCell.height
-        }
+        return indexPath.section == 0 ? SectionHeaderCell.height : (indexPath.section == 1 ? ResultsCell.height : TicketmasterCell.height)
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -60,10 +56,14 @@ class ResultsTableViewController: UITableViewController {
                 sectionHeaderCell.configureCell(text: "Which game?")
                 return sectionHeaderCell
             }
-        } else {
+        } else if indexPath.section == 1 {
             if let resultsCell = tableView.dequeueReusableCell(withIdentifier: ResultsCell.identifier, for: indexPath) as? ResultsCell {
                 resultsCell.configureCell(event: resultsData?[indexPath.row])
                 return resultsCell
+            }
+        } else {
+            if let ticketmasterCell = tableView.dequeueReusableCell(withIdentifier: TicketmasterCell.identifier, for: indexPath) as? TicketmasterCell {
+                return ticketmasterCell
             }
         }
         
@@ -72,12 +72,17 @@ class ResultsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        if indexPath.section != 1 {
+            return
+        }
+        
         guard let event = resultsData?[indexPath.row] else {
             return
         }
         
         tripRequest?.eventId = event.id ?? ""
         tripRequest?.eventName = event.name ?? ""
+        tripRequest?.imageUrl = event.images?[0].url ?? ""
         
         performSegue(withIdentifier: "GroupSegue", sender: self)
         
@@ -97,9 +102,9 @@ class ResultsTableViewController: UITableViewController {
 }
 
 extension ResultsTableViewController: UserDelegate {
-    func user(_ user: User, didSaveTrip trip: Trip) {
-       print("popping RESULTS...")
+    func user(_ user: User, didSaveTrip trip: Trip, tripRequest: TripRequest?) {
+        print("popping RESULTS...")
         navigationController?.popViewController(animated: false)
-        delegate?.user(user, didSaveTrip: trip)
+        delegate?.user(user, didSaveTrip: trip, tripRequest: tripRequest)
     }
 }

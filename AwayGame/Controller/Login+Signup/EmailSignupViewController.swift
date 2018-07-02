@@ -59,10 +59,13 @@ class EmailSignupViewController: UIViewController {
     func configureViews() {
         switch state {
         case .name:
+            AGAnalytics.logEvent(.emailSignupFirstPageDidDisplay, parameters: nil)
             configureNameViews()
         case .email:
+            AGAnalytics.logEvent(.emailSignupSecondPageDidDisplay, parameters: nil)
             configureEmailViews()
         case .password:
+            AGAnalytics.logEvent(.emailSignupThirdPageDidDisplay, parameters: nil)
             configurePasswordViews()
         }
     

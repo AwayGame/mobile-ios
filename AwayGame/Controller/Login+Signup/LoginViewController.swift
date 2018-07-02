@@ -94,10 +94,12 @@ class LoginViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction func facebookButtonTapped(_ sender: Any) {
+        AGAnalytics.logEvent(.loginWithFacebookTapped, parameters: nil)
         facebookSDKButton.sendActions(for: .touchUpInside)
     }
     
     @IBAction func twitterButtonTapped(_ sender: Any) {
+        AGAnalytics.logEvent(.loginWithTwitterTapped, parameters: nil)
         Twitter.sharedInstance().logIn { (session, error) in
             if (session != nil) {
                 print("signed in as \(session?.userName)");
@@ -116,6 +118,7 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func emailButtonTapped(_ sender: Any) {
+        AGAnalytics.logEvent(.loginWithEmailTapped, parameters: nil)
         performSegue(withIdentifier: "EmailLoginSegue", sender: self)
     }
         

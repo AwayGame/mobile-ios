@@ -15,6 +15,7 @@ class GroupTableViewController: UITableViewController {
     weak var delegate: UserDelegate?
     
     override func viewDidLoad() {
+        AGAnalytics.logEvent(.groupSelectionDidDisplay, parameters: nil)
         super.viewDidLoad()
         tableView.allowsSelection = true
         tableView.separatorStyle = .none
@@ -57,6 +58,7 @@ class GroupTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        AGAnalytics.logEvent(.groupTypeSelected(type: Preferences.Group.text[indexPath.row]), parameters: nil)
         tripRequest?.preferences?.group = Preferences.Group.text[indexPath.row]
         performSegue(withIdentifier: "NextSegue", sender: self)
     }
@@ -74,7 +76,7 @@ class GroupTableViewController: UITableViewController {
                 preferencesVC.setup(with: tripRequest?.eventName ?? "", textData: Preferences.Food.text, imageData: Preferences.Food.images)
                 preferencesVC.tripRequest = self.tripRequest
                 preferencesVC.preferenceType = .Food
-                
+                preferencesVC.delegate = self
             }
         }
     }
@@ -84,9 +86,9 @@ class GroupTableViewController: UITableViewController {
 // MARK: - NextDelegate
 
 extension GroupTableViewController: UserDelegate {
-    func user(_ user: User, didSaveTrip trip: Trip) {
+    func user(_ user: User, didSaveTrip trip: Trip, tripRequest: TripRequest?) {
         print("popping Group...")
-    navigationController?.popViewController(animated: false)
-        delegate?.user(user, didSaveTrip: trip)
+        navigationController?.popViewController(animated: false)
+        delegate?.user(user, didSaveTrip: trip, tripRequest: tripRequest)
     }
 }

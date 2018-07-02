@@ -122,6 +122,30 @@
                                     <outlet property="timeLabel" destination="Nm0-8h-32e" id="bFd-4W-USu"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TicketmasterCell" rowHeight="110" id="MBU-yQ-oQj" customClass="TicketmasterCell" customModule="AwayGame" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="243" width="375" height="110"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MBU-yQ-oQj" id="v5a-ez-25t">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="109.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ticketmaster-logo" translatesAutoresizingMaskIntoConstraints="NO" id="KrO-8g-lKZ">
+                                            <rect key="frame" x="20" y="8" width="200" height="93.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="200" id="lxI-Y8-8Ig"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="KrO-8g-lKZ" firstAttribute="leading" secondItem="v5a-ez-25t" secondAttribute="leading" constant="20" id="12Q-25-vUU"/>
+                                        <constraint firstAttribute="bottom" secondItem="KrO-8g-lKZ" secondAttribute="bottom" constant="8" id="Dk4-Wa-FK5"/>
+                                        <constraint firstItem="KrO-8g-lKZ" firstAttribute="top" secondItem="v5a-ez-25t" secondAttribute="top" constant="8" id="N7G-ZU-KZt"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="ticketmasterImageView" destination="KrO-8g-lKZ" id="rj4-zN-kCP"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="o4q-w0-s5t" id="OpN-oa-uhC"/>
@@ -134,7 +158,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vMH-d8-z6M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2710" y="-430"/>
+            <point key="canvasLocation" x="2709.5999999999999" y="-430.43478260869568"/>
         </scene>
         <!--Groups-->
         <scene sceneID="eBs-vF-grH">
@@ -145,4 +169,7 @@
             <point key="canvasLocation" x="3433" y="-431"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ticketmaster-logo" width="264" height="264"/>
+    </resources>
 </document>

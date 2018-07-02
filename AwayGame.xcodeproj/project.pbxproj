@@ -13,7 +13,7 @@
 		CB20DD7920D878AD0028AA4B /* Signup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB20DD7820D878AD0028AA4B /* Signup.storyboard */; };
 		CB20DD8720DCA72F0028AA4B /* NextButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB20DD8620DCA72E0028AA4B /* NextButtonCell.swift */; };
 		CB20DD8920DCA7F00028AA4B /* NavigationBarTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB20DD8820DCA7F00028AA4B /* NavigationBarTitleView.swift */; };
-		CB20DD8B20E1D5EE0028AA4B /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB20DD8A20E1D5ED0028AA4B /* AboutViewController.swift */; };
+		CB20DD8B20E1D5EE0028AA4B /* AboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB20DD8A20E1D5ED0028AA4B /* AboutTableViewController.swift */; };
 		CB275AC520E1E25700B0E827 /* UIImageView+Kingfisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB275AC420E1E25700B0E827 /* UIImageView+Kingfisher.swift */; };
 		CB4BB7D720A0DC8E00F756D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BB7D620A0DC8E00F756D3 /* AppDelegate.swift */; };
 		CB4BB7D920A0DC8E00F756D3 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BB7D820A0DC8E00F756D3 /* HomeTableViewController.swift */; };
@@ -36,6 +36,7 @@
 		CB57BD9F20ACA36C004FEE89 /* AwayGameAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB57BD9E20ACA36C004FEE89 /* AwayGameAPI.swift */; };
 		CB57BDA320ADE877004FEE89 /* UserDefaults+FirstLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB57BDA220ADE877004FEE89 /* UserDefaults+FirstLaunch.swift */; };
 		CB57BDA820B50530004FEE89 /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB57BDA720B50530004FEE89 /* UserPreferences.swift */; };
+		CB5DFEB520E2F84600155E37 /* String+HTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5DFEB420E2F84600155E37 /* String+HTML.swift */; };
 		CB709D8E20D0874D00EA7C81 /* TripHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB709D8D20D0874D00EA7C81 /* TripHeaderCell.swift */; };
 		CB709D9020D0903C00EA7C81 /* TicketmasterImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB709D8F20D0903C00EA7C81 /* TicketmasterImage.swift */; };
 		CB709D9620D5519000EA7C81 /* ActivityImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB709D9520D5519000EA7C81 /* ActivityImageTableViewCell.swift */; };
@@ -58,8 +59,13 @@
 		CB765ABB20BF6D8400912B51 /* TripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB765ABA20BF6D8400912B51 /* TripViewController.swift */; };
 		CB765ABD20BF6DA300912B51 /* ItineraryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB765ABC20BF6DA300912B51 /* ItineraryTableViewController.swift */; };
 		CB765ABF20BF6DBF00912B51 /* ActivityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB765ABE20BF6DBF00912B51 /* ActivityTableViewController.swift */; };
+		CB7791FD20EA703700F4582E /* AGAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7791FC20EA703700F4582E /* AGAnalytics.swift */; };
 		CB8A9A4520C8C88D00A9E354 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8A9A4420C8C88D00A9E354 /* Review.swift */; };
+		CB96A16520E9214C00F089A2 /* AGButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB96A16420E9214C00F089A2 /* AGButton.swift */; };
+		CB96A16720E974B300F089A2 /* TicketmasterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB96A16620E974B300F089A2 /* TicketmasterCell.swift */; };
 		CBADC0B920BE6727007A7A95 /* NextButtonCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBADC0B820BE6727007A7A95 /* NextButtonCollectionCell.swift */; };
+		CBC673BA20E5C501004B04AF /* AboutButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC673B920E5C501004B04AF /* AboutButtonTableViewCell.swift */; };
+		CBC673BC20E5C519004B04AF /* AboutTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC673BB20E5C519004B04AF /* AboutTextTableViewCell.swift */; };
 		CBCE1B9820B7D5A40010967E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCE1B9720B7D5A40010967E /* Constants.swift */; };
 		CBCE1B9B20B9162C0010967E /* GroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCE1B9A20B9162C0010967E /* GroupTableViewController.swift */; };
 		CBCE1B9D20B91CB50010967E /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCE1B9C20B91CB50010967E /* GroupTableViewCell.swift */; };
@@ -67,7 +73,7 @@
 		CBCE1BA120BA5A840010967E /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBCE1BA020BA5A840010967E /* Settings.storyboard */; };
 		CBCE1BA320BB17A80010967E /* TripRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCE1BA220BB17A80010967E /* TripRequest.swift */; };
 		CBF4136B20A490160038340F /* NavigationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4136A20A490160038340F /* NavigationHelper.swift */; };
-		CBF4137020A49A6A0038340F /* SearchTeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4136F20A49A6A0038340F /* SearchTeamCell.swift */; };
+		CBF4137020A49A6A0038340F /* SearchHitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4136F20A49A6A0038340F /* SearchHitCell.swift */; };
 		CBF4137820A5ED500038340F /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4137720A5ED500038340F /* Event.swift */; };
 		CBF4137F20A5F2120038340F /* ResultsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4137E20A5F2120038340F /* ResultsCell.swift */; };
 		CBF4138220A9CCBC0038340F /* PreferenceCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4138120A9CCBC0038340F /* PreferenceCollectionCell.swift */; };
@@ -87,7 +93,7 @@
 		CB20DD7820D878AD0028AA4B /* Signup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Signup.storyboard; sourceTree = "<group>"; };
 		CB20DD8620DCA72E0028AA4B /* NextButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextButtonCell.swift; sourceTree = "<group>"; };
 		CB20DD8820DCA7F00028AA4B /* NavigationBarTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarTitleView.swift; sourceTree = "<group>"; };
-		CB20DD8A20E1D5ED0028AA4B /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		CB20DD8A20E1D5ED0028AA4B /* AboutTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutTableViewController.swift; sourceTree = "<group>"; };
 		CB275AC420E1E25700B0E827 /* UIImageView+Kingfisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Kingfisher.swift"; sourceTree = "<group>"; };
 		CB4BB7D320A0DC8E00F756D3 /* AwayGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AwayGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB4BB7D620A0DC8E00F756D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +118,7 @@
 		CB57BD9E20ACA36C004FEE89 /* AwayGameAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwayGameAPI.swift; sourceTree = "<group>"; };
 		CB57BDA220ADE877004FEE89 /* UserDefaults+FirstLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+FirstLaunch.swift"; sourceTree = "<group>"; };
 		CB57BDA720B50530004FEE89 /* UserPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferences.swift; sourceTree = "<group>"; };
+		CB5DFEB420E2F84600155E37 /* String+HTML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+HTML.swift"; sourceTree = "<group>"; };
 		CB709D8D20D0874D00EA7C81 /* TripHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripHeaderCell.swift; sourceTree = "<group>"; };
 		CB709D8F20D0903C00EA7C81 /* TicketmasterImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketmasterImage.swift; sourceTree = "<group>"; };
 		CB709D9520D5519000EA7C81 /* ActivityImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityImageTableViewCell.swift; sourceTree = "<group>"; };
@@ -134,8 +141,13 @@
 		CB765ABA20BF6D8400912B51 /* TripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripViewController.swift; sourceTree = "<group>"; };
 		CB765ABC20BF6DA300912B51 /* ItineraryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItineraryTableViewController.swift; sourceTree = "<group>"; };
 		CB765ABE20BF6DBF00912B51 /* ActivityTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTableViewController.swift; sourceTree = "<group>"; };
+		CB7791FC20EA703700F4582E /* AGAnalytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGAnalytics.swift; sourceTree = "<group>"; };
 		CB8A9A4420C8C88D00A9E354 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		CB96A16420E9214C00F089A2 /* AGButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGButton.swift; sourceTree = "<group>"; };
+		CB96A16620E974B300F089A2 /* TicketmasterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketmasterCell.swift; sourceTree = "<group>"; };
 		CBADC0B820BE6727007A7A95 /* NextButtonCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextButtonCollectionCell.swift; sourceTree = "<group>"; };
+		CBC673B920E5C501004B04AF /* AboutButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutButtonTableViewCell.swift; sourceTree = "<group>"; };
+		CBC673BB20E5C519004B04AF /* AboutTextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTextTableViewCell.swift; sourceTree = "<group>"; };
 		CBCE1B9720B7D5A40010967E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CBCE1B9A20B9162C0010967E /* GroupTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewController.swift; sourceTree = "<group>"; };
 		CBCE1B9C20B91CB50010967E /* GroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
@@ -143,7 +155,7 @@
 		CBCE1BA020BA5A840010967E /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		CBCE1BA220BB17A80010967E /* TripRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripRequest.swift; sourceTree = "<group>"; };
 		CBF4136A20A490160038340F /* NavigationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationHelper.swift; sourceTree = "<group>"; };
-		CBF4136F20A49A6A0038340F /* SearchTeamCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTeamCell.swift; sourceTree = "<group>"; };
+		CBF4136F20A49A6A0038340F /* SearchHitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHitCell.swift; sourceTree = "<group>"; };
 		CBF4137720A5ED500038340F /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		CBF4137E20A5F2120038340F /* ResultsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsCell.swift; sourceTree = "<group>"; };
 		CBF4138120A9CCBC0038340F /* PreferenceCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceCollectionCell.swift; sourceTree = "<group>"; };
@@ -213,7 +225,7 @@
 		CB20DD7F20D88FDB0028AA4B /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				CB20DD8A20E1D5ED0028AA4B /* AboutViewController.swift */,
+				CB20DD8A20E1D5ED0028AA4B /* AboutTableViewController.swift */,
 				CB709DC420D5875500EA7C81 /* HomeTableViewController+FirebaseSubscription.swift */,
 				CB4BB7D820A0DC8E00F756D3 /* HomeTableViewController.swift */,
 				CBCE1B9E20BA5A4D0010967E /* SettingsViewController.swift */,
@@ -261,11 +273,11 @@
 			isa = PBXGroup;
 			children = (
 				CBF4139220A9D71B0038340F /* AppLaunchViewController.swift */,
+				CBF4137C20A5EEE30038340F /* Login+Signup */,
 				CB20DD7F20D88FDB0028AA4B /* Home */,
 				CB20DD7E20D88FD90028AA4B /* Search */,
 				CB20DD7D20D88FD70028AA4B /* Results */,
 				CB20DD7C20D88FD40028AA4B /* Preferenes */,
-				CBF4137C20A5EEE30038340F /* Login+Signup */,
 				CBF4137B20A5EEC70038340F /* Trip */,
 			);
 			path = Controller;
@@ -307,9 +319,9 @@
 			children = (
 				CB4BB7DF20A0DC8E00F756D3 /* LaunchScreen.storyboard */,
 				CBF4138E20A9D60E0038340F /* AppLaunch.storyboard */,
+				CB709DB020D56ABB00EA7C81 /* Home */,
 				CB709DB420D56B5900EA7C81 /* Login+Signup */,
 				CB709DB320D56B0600EA7C81 /* UserSelection */,
-				CB709DB020D56ABB00EA7C81 /* Home */,
 				CB709D9F20D5699A00EA7C81 /* Trip */,
 			);
 			path = Storyboards;
@@ -331,6 +343,8 @@
 				CB57BD9A20AC97DA004FEE89 /* MoreCell.swift */,
 				CB709DC620D58F4900EA7C81 /* NoSavedTripsCell.swift */,
 				CB709DC820D5C4DC00EA7C81 /* ProfileImageView.swift */,
+				CBC673BB20E5C519004B04AF /* AboutTextTableViewCell.swift */,
+				CBC673B920E5C501004B04AF /* AboutButtonTableViewCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -406,6 +420,7 @@
 		CBADC0BA20BF6121007A7A95 /* General */ = {
 			isa = PBXGroup;
 			children = (
+				CB96A16420E9214C00F089A2 /* AGButton.swift */,
 				CB57BD9820AC943A004FEE89 /* SectionHeaderCell.swift */,
 				CB20DD8620DCA72E0028AA4B /* NextButtonCell.swift */,
 				CB20DD8820DCA7F00028AA4B /* NavigationBarTitleView.swift */,
@@ -417,10 +432,12 @@
 		CBF4136920A490010038340F /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				CB7791FC20EA703700F4582E /* AGAnalytics.swift */,
 				CBF4136A20A490160038340F /* NavigationHelper.swift */,
 				CBCE1B9720B7D5A40010967E /* Constants.swift */,
 				CB57BDA220ADE877004FEE89 /* UserDefaults+FirstLaunch.swift */,
 				FE8E69D020B5D5FD00BCED6A /* FirebaseSubscription.swift */,
+				CB5DFEB420E2F84600155E37 /* String+HTML.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -428,7 +445,7 @@
 		CBF4136E20A499F50038340F /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				CBF4136F20A49A6A0038340F /* SearchTeamCell.swift */,
+				CBF4136F20A49A6A0038340F /* SearchHitCell.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -457,6 +474,7 @@
 			isa = PBXGroup;
 			children = (
 				CBF4137E20A5F2120038340F /* ResultsCell.swift */,
+				CB96A16620E974B300F089A2 /* TicketmasterCell.swift */,
 			);
 			path = Results;
 			sourceTree = "<group>";
@@ -507,7 +525,7 @@
 				TargetAttributes = {
 					CB4BB7D220A0DC8E00F756D3 = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
 								enabled = 0;
@@ -666,6 +684,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBC673BC20E5C519004B04AF /* AboutTextTableViewCell.swift in Sources */,
 				CB765ABF20BF6DBF00912B51 /* ActivityTableViewController.swift in Sources */,
 				CB4BB80320A109F100F756D3 /* ResultsTableViewController.swift in Sources */,
 				CBF4138620A9CCFF0038340F /* PreferencesCollectionViewController.swift in Sources */,
@@ -675,10 +694,11 @@
 				CB57BDA820B50530004FEE89 /* UserPreferences.swift in Sources */,
 				CB57BD9920AC943A004FEE89 /* SectionHeaderCell.swift in Sources */,
 				CB4BB7D920A0DC8E00F756D3 /* HomeTableViewController.swift in Sources */,
+				CB5DFEB520E2F84600155E37 /* String+HTML.swift in Sources */,
 				CB4BB7D720A0DC8E00F756D3 /* AppDelegate.swift in Sources */,
 				CB4BB7FD20A1099600F756D3 /* LoginViewController.swift in Sources */,
 				CBF4138D20A9D4160038340F /* User.swift in Sources */,
-				CB20DD8B20E1D5EE0028AA4B /* AboutViewController.swift in Sources */,
+				CB20DD8B20E1D5EE0028AA4B /* AboutTableViewController.swift in Sources */,
 				CBCE1B9D20B91CB50010967E /* GroupTableViewCell.swift in Sources */,
 				CB709D9620D5519000EA7C81 /* ActivityImageTableViewCell.swift in Sources */,
 				CBF4139320A9D71B0038340F /* AppLaunchViewController.swift in Sources */,
@@ -692,18 +712,20 @@
 				CB709DC520D5875500EA7C81 /* HomeTableViewController+FirebaseSubscription.swift in Sources */,
 				CB709DC920D5C4DC00EA7C81 /* ProfileImageView.swift in Sources */,
 				CB709D9E20D551DA00EA7C81 /* ActivityMapsTableViewCell.swift in Sources */,
+				CB7791FD20EA703700F4582E /* AGAnalytics.swift in Sources */,
 				CBF4136B20A490160038340F /* NavigationHelper.swift in Sources */,
 				CB709DC720D58F4900EA7C81 /* NoSavedTripsCell.swift in Sources */,
 				CB4BB7F420A1042B00F756D3 /* CreateTripCell.swift in Sources */,
 				CB20DD8920DCA7F00028AA4B /* NavigationBarTitleView.swift in Sources */,
 				CB4BB80A20A10A6800F756D3 /* ActivityCell.swift in Sources */,
-				CBF4137020A49A6A0038340F /* SearchTeamCell.swift in Sources */,
+				CBF4137020A49A6A0038340F /* SearchHitCell.swift in Sources */,
 				CBCE1BA320BB17A80010967E /* TripRequest.swift in Sources */,
 				CB4BB81320A207EF00F756D3 /* Theme.swift in Sources */,
 				CB4BB7FF20A109AC00F756D3 /* EmailLoginViewController.swift in Sources */,
 				CB765ABD20BF6DA300912B51 /* ItineraryTableViewController.swift in Sources */,
 				CB57BD9B20AC97DA004FEE89 /* MoreCell.swift in Sources */,
 				CB57BD9F20ACA36C004FEE89 /* AwayGameAPI.swift in Sources */,
+				CB96A16520E9214C00F089A2 /* AGButton.swift in Sources */,
 				CBF4137820A5ED500038340F /* Event.swift in Sources */,
 				CB709D9020D0903C00EA7C81 /* TicketmasterImage.swift in Sources */,
 				CB4BB7F220A0F5DA00F756D3 /* Activity.swift in Sources */,
@@ -713,12 +735,14 @@
 				CB4BB80120A109D600F756D3 /* SearchViewController.swift in Sources */,
 				CB4BB7F020A0F5B100F756D3 /* Itinerary.swift in Sources */,
 				CBADC0B920BE6727007A7A95 /* NextButtonCollectionCell.swift in Sources */,
+				CB96A16720E974B300F089A2 /* TicketmasterCell.swift in Sources */,
 				CB275AC520E1E25700B0E827 /* UIImageView+Kingfisher.swift in Sources */,
 				CB20DD7720D878420028AA4B /* EmailSignupViewController.swift in Sources */,
 				CB709D9820D551A000EA7C81 /* ActivityDescriptionTableViewCell.swift in Sources */,
 				CB8A9A4520C8C88D00A9E354 /* Review.swift in Sources */,
 				CBF4137F20A5F2120038340F /* ResultsCell.swift in Sources */,
 				FE8E69D120B5D5FD00BCED6A /* FirebaseSubscription.swift in Sources */,
+				CBC673BA20E5C501004B04AF /* AboutButtonTableViewCell.swift in Sources */,
 				CB709D9C20D551CB00EA7C81 /* ActivityRatingTableViewCell.swift in Sources */,
 				AF035E0B20DA994F00DA9C95 /* PreferenceHeaderCell.swift in Sources */,
 			);
@@ -851,8 +875,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AJ7H86ML8P;
 				INFOPLIST_FILE = AwayGame/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -871,8 +895,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AJ7H86ML8P;
 				INFOPLIST_FILE = AwayGame/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

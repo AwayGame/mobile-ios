@@ -44,6 +44,8 @@ class TripHeaderCell: UITableViewCell {
         nextButton.setTitleColor(Theme.Color.darkText, for: .normal)
         previousButton.titleLabel?.font = Theme.Font.p1
         previousButton.setTitleColor(Theme.Color.darkText, for: .normal)
+        dateLabel.minimumScaleFactor = 0.5
+        dateLabel.adjustsFontSizeToFitWidth = true
         self.selectionStyle = .none
     }
     

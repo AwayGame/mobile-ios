@@ -6,6 +6,7 @@
 //  Copyright © 2018 AwayGame. All rights reserved.
 //
 
+import MapKit
 import UIKit
 
 class ActivityTableViewController: UITableViewController {
@@ -21,6 +22,7 @@ class ActivityTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        AGAnalytics.logEvent(.activitySelected, parameters: nil)
         tableView.separatorStyle = .none
         self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 40, right: 0)
     }
@@ -36,7 +38,7 @@ class ActivityTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return section == 0 ? 1 : 5
+        return section == 0 ? 1 : (activity?.isYelp ?? false) ? 5 : 4
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -72,9 +74,16 @@ class ActivityTableViewController: UITableViewController {
                 }
                 break
             case 3:
-                if let activityRatingCell = tableView.dequeueReusableCell(withIdentifier: ActivityRatingTableViewCell.identifier, for: indexPath) as? ActivityRatingTableViewCell {
-                    activityRatingCell.configureCell(withActivity: activity)
-                    return activityRatingCell
+                if activity?.isYelp ?? false {
+                    if let activityRatingCell = tableView.dequeueReusableCell(withIdentifier: ActivityRatingTableViewCell.identifier, for: indexPath) as? ActivityRatingTableViewCell {
+                        activityRatingCell.configureCell(withActivity: activity)
+                        return activityRatingCell
+                    }
+                } else {
+                    if let activityMapsCell = tableView.dequeueReusableCell(withIdentifier: ActivityMapsTableViewCell.identifier, for: indexPath) as? ActivityMapsTableViewCell {
+                        activityMapsCell.configureCell(withActivity: activity)
+                        return activityMapsCell
+                    }
                 }
                 break
             case 4:
@@ -91,6 +100,30 @@ class ActivityTableViewController: UITableViewController {
         return UITableViewCell()
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if (activity?.isYelp ?? false) && indexPath.row == 4 {
+            openMapForPlace()
+        } else if !(activity?.isYelp ?? true) && indexPath.row == 3 {
+            openMapForPlace()
+        }
+    }
+    
+    func openMapForPlace() {
+        AGAnalytics.logEvent(.mapTapped, parameters: nil)
+        guard let activity = activity else { return }
+        let regionDistance:CLLocationDistance = 10000
+        let coordinates = CLLocationCoordinate2DMake(activity.location?.latitude ?? 0.0, activity.location?.longitude ?? 0.0)
+        let regionSpan = MKCoordinateRegionMakeWithDistance(coordinates, regionDistance, regionDistance)
+        let options = [
+            MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center),
+            MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)
+        ]
+        let placemark = MKPlacemark(coordinate: coordinates, addressDictionary: nil)
+        let mapItem = MKMapItem(placemark: placemark)
+        mapItem.name = activity.name ?? ""
+        mapItem.openInMaps(launchOptions: options)
+    }
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 { return TripHeaderCell.height}
         
@@ -102,6 +135,9 @@ class ActivityTableViewController: UITableViewController {
         case 2:
             return ActivityDateTimeTableViewCell.height
         case 3:
+            if !(activity?.isYelp ?? true) {
+                return ActivityMapsTableViewCell.height
+            }
             return ActivityRatingTableViewCell.height
         case 4:
             return ActivityMapsTableViewCell.height

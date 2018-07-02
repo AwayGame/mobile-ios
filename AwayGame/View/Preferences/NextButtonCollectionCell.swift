@@ -18,7 +18,7 @@ class NextButtonCollectionCell: UICollectionViewCell {
     static let identifier = "NextButtonCollectionCell"
     static let height: CGFloat = 100.0
     
-    @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var nextButton: AGButton!
     @IBOutlet weak var roundedView: UIView!
     weak var delegate: NextDelegate?
     

@@ -25,7 +25,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>[Your Bundle ID Here]</string>
+				<string>com.awaygame.awaygame-app</string>
 			</array>
 		</dict>
 		<dict>
@@ -37,7 +37,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>5</string>
+	<string>8</string>
 	<key>FacebookAppID</key>
 	<string>203949387063600</string>
 	<key>FacebookDisplayName</key>
@@ -76,14 +76,14 @@
 	<array>
 		<dict>
 			<key>URIString</key>
-			<string>[Your Bundle ID Here]://oauth/consumer</string>
+			<string>com.awaygame.awaygame-app://oauth/consumer</string>
 			<key>UberCallbackURIType</key>
 			<string>General</string>
 		</dict>
 	</array>
 	<key>UberClientID</key>
-	<string>[ClientID]</string>
+	<string>lACYmZhDku3zJOasftuir5xPBzIKzOeU</string>
 	<key>UberDisplayName</key>
-	<string>[App Name]</string>
+	<string>AwayGame</string>
 </dict>
 </plist>

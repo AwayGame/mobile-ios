@@ -22,7 +22,10 @@ class ActivityDescriptionTableViewCell: UITableViewCell {
     // MARK: - Initialization
     
     override func awakeFromNib() {
+        selectionStyle = .none
         background.backgroundColor = Theme.Color.Background.primary
+        descriptionLabel.font = Theme.Font.p1
+        descriptionLabel.textColor = Theme.Color.darkText
     }
     
     override func sizeThatFits(_ size: CGSize) -> CGSize {
@@ -33,6 +36,9 @@ class ActivityDescriptionTableViewCell: UITableViewCell {
     func configureCell(withActivity activity: Activity?) {
         self.activity = activity
         guard let activity = activity else { return }
+        if activity.isGame {
+            background.backgroundColor = Theme.Color.Green.selected
+        }
         descriptionLabel.text = activity.description ?? ""
     }
     

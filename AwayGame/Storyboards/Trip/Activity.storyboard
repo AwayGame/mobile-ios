@@ -27,16 +27,13 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="September 23rd" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DBc-Sw-lq2">
-                                            <rect key="frame" x="123" y="58" width="130" height="20.5"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="130" id="Tzi-xb-j1y"/>
-                                            </constraints>
+                                            <rect key="frame" x="58" y="58" width="259" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aHP-WD-WTW">
-                                            <rect key="frame" x="85" y="53.5" width="30" height="30"/>
+                                            <rect key="frame" x="20" y="53.5" width="30" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="30" id="LLd-IE-94S"/>
                                                 <constraint firstAttribute="height" constant="30" id="bbT-Ax-szj"/>
@@ -66,7 +63,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QAl-hD-jze">
-                                            <rect key="frame" x="261" y="53" width="30" height="30"/>
+                                            <rect key="frame" x="325" y="53" width="30" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="8w9-mO-nWv"/>
                                                 <constraint firstAttribute="width" constant="30" id="vaF-mI-9jH"/>
@@ -79,7 +76,9 @@
                                         </button>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="QAl-hD-jze" firstAttribute="trailing" secondItem="xlr-c7-aJT" secondAttribute="trailing" id="9w1-P5-Ttl"/>
                                         <constraint firstAttribute="bottom" secondItem="xlr-c7-aJT" secondAttribute="bottom" constant="8" id="A7T-eI-WFu"/>
+                                        <constraint firstItem="aHP-WD-WTW" firstAttribute="leading" secondItem="xlr-c7-aJT" secondAttribute="leading" id="BHN-RX-oi1"/>
                                         <constraint firstItem="xlr-c7-aJT" firstAttribute="top" secondItem="DBc-Sw-lq2" secondAttribute="bottom" constant="20" id="CSJ-sK-Vfw"/>
                                         <constraint firstItem="DBc-Sw-lq2" firstAttribute="centerX" secondItem="H7n-ed-X44" secondAttribute="centerX" id="Efq-gh-oaL"/>
                                         <constraint firstItem="xlr-c7-aJT" firstAttribute="leading" secondItem="H7n-ed-X44" secondAttribute="leading" constant="20" id="GFv-se-6Sg"/>
@@ -265,7 +264,7 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hT0-oH-ukJ">
                                             <rect key="frame" x="20" y="-10" width="335" height="208.5"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0B0-z0-H5U">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0B0-z0-H5U">
                                                     <rect key="frame" x="20" y="14" width="295" height="186.5"/>
                                                 </imageView>
                                             </subviews>

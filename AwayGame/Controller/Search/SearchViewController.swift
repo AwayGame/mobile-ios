@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlgoliaSearch
 import InstantSearch
 import InstantSearchCore
 
@@ -23,10 +24,18 @@ class SearchViewController: HitsTableViewController {
     @IBOutlet weak var departLabel: UILabel!
     @IBOutlet weak var searchUnderlineView: UIView!
     @IBOutlet weak var searchLabel: UILabel!
-    @IBOutlet weak var teamInstantSearchField: TextFieldWidget!
     @IBOutlet weak var teamSearchResults: HitsTableWidget!
-    @IBOutlet weak var nextButton: UIButton!
-    @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak var nextButton: AGButton!
+    @IBOutlet weak var doneButton: AGButton!
+    @IBOutlet weak var algoliaSearchWidget: SearchBarWidget!
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    @IBOutlet weak var hitsTableViewHeightConstraint: NSLayoutConstraint!
+    
+    let maxTableViewHeight = 5 * SearchHitCell.height
+    
+    let friday5PM = Calendar.current.nextDate(after: Date(), matching: DateComponents(calendar: Calendar.current, day: 6, hour: 17), matchingPolicy: .nextTime)!
+    let saturday11AM = Calendar.current.nextDate(after: Date(), matching: DateComponents(calendar: Calendar.current, day: 7, hour: 11), matchingPolicy: .nextTime)!
     
     private var arriveString: String?
     private var departString: String?
@@ -52,16 +61,24 @@ class SearchViewController: HitsTableViewController {
     // MARK: - Initialization
     override func viewDidLoad() {
         super.viewDidLoad()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:00"
+        arriveString = dateFormatter.string(from: friday5PM)
+        departString = dateFormatter.string(from: saturday11AM)
+        searchBar.delegate = self
         styleViews()
         datePicker.minuteInterval = 15
+        datePicker.minimumDate = Date() + 3600
         hitsTableView = teamSearchResults
         InstantSearch.shared.registerAllWidgets(in: self.view)
+        hitsTableView.register(SearchHitCell.self, forCellReuseIdentifier: SearchHitCell.identifier)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         NavigationHelper.setupNavigationController(self, withTitle: "New Trip")
         doneButton.isHidden = true
         datePicker.isHidden = true
+        hitsTableView.isHidden = true
     }
 
     // MARK: - Styling
@@ -70,7 +87,17 @@ class SearchViewController: HitsTableViewController {
         styleUnderlines()
         styleButtons()
         styleLabels()
-        teamInstantSearchField.backgroundColor = Theme.Color.Background.primary
+        searchBar.backgroundImage = UIImage()
+        searchBar.tintColor = Theme.Color.darkText
+        for subview in searchBar.subviews {
+            for view in subview.subviews {
+                if let textField = view as? UITextField {
+                    textField.font = Theme.Font.p1
+                    textField.textColor = Theme.Color.darkText
+                }
+            }
+
+        }
     }
     
     func styleUnderlines() {
@@ -80,17 +107,13 @@ class SearchViewController: HitsTableViewController {
     }
     
     func styleButtons() {
-        arriveButton.setTitle("Set Date", for: .normal)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEEE, MMMM d h:mm a"
+        arriveButton.setTitle(dateFormatter.string(from: friday5PM), for: .normal)
         arriveButton.setTitleColor(Theme.Color.darkText, for: .normal)
-        departButton.setTitle("Set Date", for: .normal)
+        departButton.setTitle(dateFormatter.string(from: saturday11AM), for: .normal)
         departButton.setTitleColor(Theme.Color.darkText, for: .normal)
-        doneButton.backgroundColor = Theme.Color.Background.primary
-        doneButton.clipsToBounds = true
-        doneButton.layer.cornerRadius = 10.0
         doneButton.setTitle("Done", for: .normal)
-        nextButton.backgroundColor = Theme.Color.Background.primary
-        nextButton.clipsToBounds = true
-        nextButton.layer.cornerRadius = 10.0
         nextButton.setTitle("Next", for: .normal)
     }
     
@@ -111,7 +134,11 @@ class SearchViewController: HitsTableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath, containing hit: [String : Any]) -> UITableViewCell {
         if let hitCell = tableView.dequeueReusableCell(withIdentifier: SearchHitCell.identifier, for: indexPath) as? SearchHitCell {
-            hitCell.configureCell(with: hit["Display Name"] as? String)
+            hitCell.backgroundColor = indexPath.row % 2 == 0 ? Theme.Color.Background.primary : Theme.Color.Background.highlighted
+            guard let team = hit["Display Name"] as? String else { return UITableViewCell() }
+            guard let league = hit["League"] as? String else { return UITableViewCell() }
+                
+            hitCell.configureCell(with: team + " (" + league + ")")
             return hitCell
         }
         
@@ -120,7 +147,7 @@ class SearchViewController: HitsTableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath, containing hit: [String : Any]) {
         teamSearchResults.isHidden = true
-        teamInstantSearchField.text = hit["Display Name"] as? String
+        searchBar.text = hit["Display Name"] as? String
         view.endEditing(true)
     }
     
@@ -130,8 +157,8 @@ class SearchViewController: HitsTableViewController {
     
     // MARK: - API
     
-    func findGames() {
-        let team = teamInstantSearchField.text ?? ""
+    func findGames(withTeam team: String?) {
+        let team = team ?? ""
         let arrive = "\(arriveString ?? "")Z"
         let depart = "\(departString ?? "")Z"
         print(team, arrive, depart)
@@ -143,33 +170,41 @@ class SearchViewController: HitsTableViewController {
     
     // MARK: - Actions
     
+    func setButtonText() {
+        let dateFormatter = DateFormatter()
+        let neatFormatter = DateFormatter()
+        neatFormatter.dateFormat = "EEEE, MMMM d h:mm a"
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:00"
+        if buttonType == .arrive {
+            AGAnalytics.logEvent(.arriveTimeSelected, parameters: nil)
+            arriveString = dateFormatter.string(from: (datePicker?.date) ?? Date())
+            arriveButton.setTitle(neatFormatter.string(from: (datePicker?.date) ?? Date()), for: .normal)
+        } else {
+            AGAnalytics.logEvent(.departTimeSelected, parameters: nil)
+            departString = dateFormatter.string(from: (datePicker?.date) ?? Date())
+            departButton.setTitle(neatFormatter.string(from: (datePicker?.date) ?? Date()), for: .normal)
+        }
+    }
+    
     @IBAction func arriveButtonTapped(_ sender: Any) {
+        setButtonText()
+        buttonType = .arrive
         datePicker.isHidden = false
         doneButton.isHidden = false
         nextButton.isHidden = true
-        buttonType = .arrive
         datePicker.isEnabled = true
         view.endEditing(true)
     }
     
     @IBAction func doneButtonTapped(_ sender: Any) {
-        let dateFormatter = DateFormatter()
-        let neatFormatter = DateFormatter()
-        neatFormatter.dateFormat = "EEEE, MMM d HH:mm"
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:00"
-        if buttonType == .arrive {
-            arriveString = dateFormatter.string(from: (datePicker?.date) ?? Date())
-            arriveButton.setTitle(neatFormatter.string(from: (datePicker?.date) ?? Date()), for: .normal)
-        } else {
-            departString = dateFormatter.string(from: (datePicker?.date) ?? Date())
-            departButton.setTitle(neatFormatter.string(from: (datePicker?.date) ?? Date()), for: .normal)
-        }
+        setButtonText()
         doneButton.isHidden = true
         nextButton.isHidden = false
-        datePicker.isEnabled = false
+        datePicker.isHidden = true
     }
     
     @IBAction func departButtonTapped(_ sender: Any) {
+        setButtonText()
         buttonType = .depart
         datePicker.isHidden = false
         doneButton.isHidden = false
@@ -179,7 +214,7 @@ class SearchViewController: HitsTableViewController {
     }
     
     @IBAction func nextButtonTapped(_ sender: Any) {
-        findGames()
+        findGames(withTeam: searchBar.text ?? "")
     }
     
     // MARK: - Navigation
@@ -203,9 +238,38 @@ class SearchViewController: HitsTableViewController {
 }
 
 extension SearchViewController: UserDelegate {
-    func user(_ user: User, didSaveTrip trip: Trip) {
-       print("popping SEARCH...")
+    func user(_ user: User, didSaveTrip trip: Trip, tripRequest: TripRequest?) {
+        print("popping SEARCH...")
         navigationController?.popViewController(animated: false)
-        delegate?.user(user, didSaveTrip: trip)
+        delegate?.user(user, didSaveTrip: trip, tripRequest: tripRequest)
     }
 }
+
+
+
+extension SearchViewController: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText == "" {
+            hitsTableView.isHidden = true
+            return
+        }
+        hitsTableView.isHidden = false
+        print("Search Text: \(searchText)")
+        algoliaSearchWidget.searchBar(algoliaSearchWidget, textDidChange: searchText)
+        print("NUMBER OF ROWS\(tableView(hitsTableView, numberOfRowsInSection: 0))")
+        
+        let tableViewHeight = SearchHitCell.height * CGFloat(tableView(hitsTableView, numberOfRowsInSection: 0))
+        hitsTableViewHeightConstraint.constant =  (tableViewHeight > maxTableViewHeight) ? maxTableViewHeight : tableViewHeight
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        algoliaSearchWidget.searchBarTextDidBeginEditing(algoliaSearchWidget)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        algoliaSearchWidget.onReset()
+    }
+    
+}
+

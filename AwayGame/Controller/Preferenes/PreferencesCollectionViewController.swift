@@ -10,22 +10,29 @@ import UIKit
 
 class PreferencesCollectionViewController: UICollectionViewController {
 
-    public var preferenceType: PreferenceType?
+    public var preferenceType: PreferenceType? = .Food
     public var tripRequest: TripRequest?
     public var textData: [String]?
     public var imageData: [UIImage]?
     
     weak var delegate: UserDelegate?
     
+    private var nextIsEnabled = false
+    
     // MARK: - Initialization
     
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let collectionView = self.collectionView else { return }
+        self.clearsSelectionOnViewWillAppear = false
         collectionView.delegate = self
         collectionView.allowsMultipleSelection = true
-        //collectionView.contentInset = .init(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
         collectionView.alwaysBounceVertical = true
+        
+        guard let type = preferenceType else { return }
+        AGAnalytics.logEvent(.preferencesPageDidDisplay(type: type.description), parameters: nil)
+
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -74,11 +81,30 @@ class PreferencesCollectionViewController: UICollectionViewController {
         } else {
             if let nextCell = collectionView.dequeueReusableCell(withReuseIdentifier: NextButtonCollectionCell.identifier, for: indexPath) as? NextButtonCollectionCell {
                 nextCell.delegate = self
+                nextCell.nextButton.isEnabled = nextIsEnabled
                 return nextCell
             }
         }
         return UICollectionViewCell()
+    }
     
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let preferenceCell = collectionView.dequeueReusableCell(withReuseIdentifier: PreferenceCollectionCell.identifier, for: indexPath) as? PreferenceCollectionCell {
+            AGAnalytics.logEvent(.preferenceSelected(title: preferenceCell.preferenceLabel.text ?? "", type: preferenceType?.description ?? ""), parameters: nil)
+        }
+       
+        
+        if let paths = collectionView.indexPathsForSelectedItems {
+            nextIsEnabled = paths.count > 2
+            collectionView.reloadItems(at: [IndexPath(row: 0, section: 2)])
+        }
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        if let paths = collectionView.indexPathsForSelectedItems {
+            nextIsEnabled = paths.count > 2
+            collectionView.reloadItems(at: [IndexPath(row: 0, section: 2)])
+        }
     }
     
     // MARK: - Storyboard
@@ -86,6 +112,7 @@ class PreferencesCollectionViewController: UICollectionViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "InterestsSegue" {
             if let preferencesVC = segue.destination as? PreferencesCollectionViewController {
+                tripRequest?.preferences?.food = []
                 if let paths = collectionView?.indexPathsForSelectedItems {
                     for indexPath in paths {
                         tripRequest?.preferences?.food?.append(Preferences.Food.requestStrings[indexPath.row])
@@ -98,6 +125,7 @@ class PreferencesCollectionViewController: UICollectionViewController {
             }
         } else if segue.identifier == "NightlifeSegue" {
             if let preferencesVC = segue.destination as? PreferencesCollectionViewController {
+                tripRequest?.preferences?.interests = []
                 if let paths = collectionView?.indexPathsForSelectedItems {
                     for indexPath in paths {
                         tripRequest?.preferences?.interests?.append(Preferences.Interest.requestStrings[indexPath.row])
@@ -110,6 +138,7 @@ class PreferencesCollectionViewController: UICollectionViewController {
             }
         } else if segue.identifier == "TripSegue" {
             if let tripVC = segue.destination as? TripViewController {
+                tripRequest?.preferences?.nightlife = []
                 if let paths = collectionView?.indexPathsForSelectedItems {
                     for indexPath in paths {
                         tripRequest?.preferences?.nightlife?.append(Preferences.Nightlife.requestStrings[indexPath.row])
@@ -170,9 +199,9 @@ extension PreferencesCollectionViewController: NextDelegate {
 }
 
 extension PreferencesCollectionViewController: UserDelegate {
-    func user(_ user: User, didSaveTrip trip: Trip) {
+    func user(_ user: User, didSaveTrip trip: Trip, tripRequest: TripRequest?) {
         navigationController?.popViewController(animated: false)
         print("popping Preferences...")
-        delegate?.user(user, didSaveTrip: trip)
+        delegate?.user(user, didSaveTrip: trip, tripRequest: tripRequest)
     }
 }

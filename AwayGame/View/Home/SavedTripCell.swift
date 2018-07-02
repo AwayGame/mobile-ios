@@ -38,6 +38,7 @@ class SavedTripCell: UITableViewCell {
         tripTitleLabel.textColor = Theme.Color.darkText
         tripTitleLabel.font = Theme.Font.p1
         
+        tripImageView.backgroundColor = Theme.Color.white
         tripImageView.layer.cornerRadius = 5.0
         tripImageView.clipsToBounds = true
     }
