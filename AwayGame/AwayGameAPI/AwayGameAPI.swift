@@ -11,6 +11,8 @@ import AlamofireObjectMapper
 
 final class AwayGameAPI {
     
+    // MARK: - Verify User
+    
     class func verifyUser(with user: User, completion: @escaping (User) -> ()) {
         
         let parameters: [String: Any] = [
@@ -24,13 +26,14 @@ final class AwayGameAPI {
             
             print(response.result.value)
             guard let user = response.result.value else {
-                print("ERROR")
+                print("ERROR USER NOT RETURNED")
                 return
             }
             completion(user)
         }
     }
     
+    // MARK: - Search For Games
     
     class func searchForGames(team: String, startDate: String, endDate: String, completion: @escaping ([Event]) -> ()) {
         
@@ -46,7 +49,7 @@ final class AwayGameAPI {
             
             print(response.result.value)
             guard let eventsList = response.result.value else {
-                print("ERROR")
+                print("ERROR NO GAMES RETURNED")
                 return
             }
             events = eventsList
@@ -56,11 +59,11 @@ final class AwayGameAPI {
             
     }
     
+    // MARK: - Create Trip
+    
     class func createTrip(request: TripRequest?, completion: @escaping (Trip) -> ()) {
         
         let parameters: [String: Any] = [
-            "lat": request?.lat ?? "",
-            "long": request?.long ?? "",
             "arrivalTime": request?.arrivalTime ?? "",
             "departureTime": request?.departureTime ?? "",
             "gameId": request?.eventId ?? "",
@@ -84,7 +87,7 @@ final class AwayGameAPI {
             print(response.result.value)
             
             guard let tempTrip = response.result.value else {
-                print("ERROR")
+                print("ERROR COULD NOT CREATE TRIP")
                 return
             }
             completion(tempTrip)
@@ -93,16 +96,27 @@ final class AwayGameAPI {
         
     }
     
-    class func saveTrip(_ trip: Trip, user: User, completion: @escaping () -> ()) {
+    // MARK: - Save Trip
+    
+    class func saveTrip(_ trip: Trip, tripRequest: TripRequest?, user: User, completion: @escaping () -> ()) {
         
         guard let JSONString = trip.toJSONString(prettyPrint: false) else { return }
         
         print("\n\n\(JSONString) \n\n")
         
-        let parameters: [String: Any] = [
+        print(tripRequest?.imageUrl, tripRequest?.arrivalTime, tripRequest?.eventName)
+        
+        var parameters: [String: Any] = [
             "userId": user.uid ?? "",
-            "trip": JSONString
+            "trip": JSONString,
+            "imageUrl": tripRequest?.imageUrl ?? "",
+            "startDate": tripRequest?.arrivalTime ?? "",
+            "title": tripRequest?.eventName ?? ""
         ]
+        
+        if let _ = trip.id {
+            parameters["id"] = trip.id ?? ""
+        }
         
         Alamofire.request(Router.saveTrip(parameters: parameters)).responseObject { (response: DataResponse<Trip>) in
             print("\n\n--------------------------")
@@ -116,6 +130,8 @@ final class AwayGameAPI {
         }
         
     }
+    
+    // MARK: - Delete Trip
     
     class func deleteTrip(_ tripStub: TripStub, user: User, completion: @escaping () -> ()) {
         
@@ -135,6 +151,30 @@ final class AwayGameAPI {
             completion()
         }
         
+    }
+    
+    // MARK: - Get Trip
+    
+    class func getTrip(withId id: String?, completion: @escaping (Trip) -> ()) {
+        Alamofire.request(Router.getTrip(withId: id ?? "")).responseObject { (response: DataResponse<Trip>) in
+            print("\n\n--------------------------")
+            print("TRIP\n\n")
+            print(response)
+            
+            print(response.result)
+            print(response.result.value)
+            
+            print(id ?? "")
+            
+            guard let tempTrip = response.result.value else {
+                print("ERROR COULD NOT GET TRIP FROM ID")
+                return
+            }
+            
+            print(tempTrip.itineraries?.count ?? 0)
+            
+            completion(tempTrip)
+        }
     }
 
 }

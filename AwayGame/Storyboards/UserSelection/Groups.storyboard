@@ -18,11 +18,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SectionHeaderCell" rowHeight="127" id="tJB-yB-tXW" customClass="SectionHeaderCell" customModule="AwayGame" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="127"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SectionHeaderCell" rowHeight="82" id="tJB-yB-tXW" customClass="SectionHeaderCell" customModule="AwayGame" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="82"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tJB-yB-tXW" id="tl0-zN-alb">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="126.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="81.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhe-Hk-vzH">
@@ -54,7 +54,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GroupCell" rowHeight="123" id="pmA-6p-wgz" customClass="GroupTableViewCell" customModule="AwayGame" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="155" width="375" height="123"/>
+                                <rect key="frame" x="0.0" y="110" width="375" height="123"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pmA-6p-wgz" id="QiW-M9-jVQ">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="122.5"/>
@@ -70,9 +70,9 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qwr-DH-x7p">
-                                                    <rect key="frame" x="115" y="8" width="200" height="91"/>
+                                                    <rect key="frame" x="215" y="20" width="100" height="66.5"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="200" id="QZN-dT-Z0t"/>
+                                                        <constraint firstAttribute="width" constant="100" id="QZN-dT-Z0t"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
@@ -81,8 +81,8 @@
                                                 <constraint firstAttribute="trailing" secondItem="qwr-DH-x7p" secondAttribute="trailing" constant="20" id="5Gd-XU-mqY"/>
                                                 <constraint firstItem="p9Y-e8-kab" firstAttribute="leading" secondItem="YGp-j6-2nC" secondAttribute="leading" constant="20" id="A5N-JK-ttp"/>
                                                 <constraint firstItem="p9Y-e8-kab" firstAttribute="top" secondItem="YGp-j6-2nC" secondAttribute="top" constant="8" id="R5p-Cq-kR2"/>
-                                                <constraint firstItem="qwr-DH-x7p" firstAttribute="top" secondItem="YGp-j6-2nC" secondAttribute="top" constant="8" id="fco-SV-p37"/>
-                                                <constraint firstAttribute="bottom" secondItem="qwr-DH-x7p" secondAttribute="bottom" constant="8" id="r82-tG-Bcx"/>
+                                                <constraint firstItem="qwr-DH-x7p" firstAttribute="top" secondItem="YGp-j6-2nC" secondAttribute="top" constant="20" id="fco-SV-p37"/>
+                                                <constraint firstAttribute="bottom" secondItem="qwr-DH-x7p" secondAttribute="bottom" constant="20" id="r82-tG-Bcx"/>
                                             </constraints>
                                         </view>
                                     </subviews>
@@ -99,47 +99,6 @@
                                     <outlet property="roundedView" destination="YGp-j6-2nC" id="7tZ-nZ-AlW"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NextButtonCell" rowHeight="239" id="S3m-JK-UDG" customClass="NextButtonCell" customModule="AwayGame" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="278" width="375" height="239"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="S3m-JK-UDG" id="yxB-oc-7Nv">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="238.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2iS-JU-Uc5">
-                                            <rect key="frame" x="20" y="8" width="335" height="202.5"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NVO-Fz-P2d">
-                                                    <rect key="frame" x="0.0" y="0.0" width="335" height="202.5"/>
-                                                    <state key="normal" title="Next">
-                                                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="nextTapped:" destination="S3m-JK-UDG" eventType="touchUpInside" id="C0r-5o-obI"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="NVO-Fz-P2d" secondAttribute="trailing" id="B7S-fQ-U8T"/>
-                                                <constraint firstItem="NVO-Fz-P2d" firstAttribute="top" secondItem="2iS-JU-Uc5" secondAttribute="top" id="Oxb-45-Zko"/>
-                                                <constraint firstItem="NVO-Fz-P2d" firstAttribute="leading" secondItem="2iS-JU-Uc5" secondAttribute="leading" id="hqt-Ab-vgo"/>
-                                                <constraint firstAttribute="bottom" secondItem="NVO-Fz-P2d" secondAttribute="bottom" id="w7C-f8-bb6"/>
-                                            </constraints>
-                                        </view>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="2iS-JU-Uc5" secondAttribute="trailing" constant="20" id="4lK-Qb-7zj"/>
-                                        <constraint firstAttribute="bottom" secondItem="2iS-JU-Uc5" secondAttribute="bottom" constant="28" id="MDo-21-eIh"/>
-                                        <constraint firstItem="2iS-JU-Uc5" firstAttribute="leading" secondItem="yxB-oc-7Nv" secondAttribute="leading" constant="20" id="N1f-1w-9Xl"/>
-                                        <constraint firstItem="2iS-JU-Uc5" firstAttribute="top" secondItem="yxB-oc-7Nv" secondAttribute="top" constant="8" id="naG-8b-sEe"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="nextButton" destination="NVO-Fz-P2d" id="gIQ-XO-Vcr"/>
-                                    <outlet property="roundedView" destination="2iS-JU-Uc5" id="nYb-ao-mZC"/>
-                                </connections>
-                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="3Om-dr-8pv" id="E0U-0U-PrY"/>
@@ -152,7 +111,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YQI-RG-Zjr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3149.5999999999999" y="62.807881773399018"/>
+            <point key="canvasLocation" x="3149.5999999999999" y="62.518740629685162"/>
         </scene>
         <!--Preferences-->
         <scene sceneID="sgO-lX-oZ4">

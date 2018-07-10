@@ -16,5 +16,6 @@ target 'AwayGame' do
   pod 'FBSDKLoginKit'
   pod 'TwitterKit'
   pod 'NVActivityIndicatorView'
-
+  pod 'UberRides', '~> 0.9'
+ 
 end

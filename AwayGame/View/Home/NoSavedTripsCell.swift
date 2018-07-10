@@ -40,6 +40,4 @@ class NoSavedTripsCell: UITableViewCell {
     }
     
     
-    
-    
 }

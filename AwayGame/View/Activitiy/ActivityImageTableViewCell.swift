@@ -25,10 +25,8 @@ class ActivityImageTableViewCell: UITableViewCell {
     // MARK: - Initialization
     
     override func awakeFromNib() {
+        selectionStyle = .none
         background.backgroundColor = Theme.Color.Background.primary
-        background.clipsToBounds = true
-        background.layer.cornerRadius = 10.0
-        
         activityImageView.layer.cornerRadius = 10.0
         activityImageView.clipsToBounds = true
         activityImageView.backgroundColor = Theme.Color.Background.highlighted
@@ -37,7 +35,10 @@ class ActivityImageTableViewCell: UITableViewCell {
     func configureCell(withActivity activity: Activity?) {
         self.activity = activity
         guard let activity = activity else { return }
-        activityImageView.kf.setImage(with: URL(string: activity.displayImage ?? ""))
+        if activity.isGame {
+            background.backgroundColor = Theme.Color.Green.selected
+        }
+        activityImageView.setImage(withUrlString: activity.displayImage)
     }
     
     // MARK: - Styling

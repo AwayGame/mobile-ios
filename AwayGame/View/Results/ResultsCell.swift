@@ -19,20 +19,22 @@ class ResultsCell: UITableViewCell {
     @IBOutlet weak var roundedView: UIView!
     @IBOutlet weak var gameLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var gameImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-       roundedView.layer.cornerRadius = 10.0
+        roundedView.layer.cornerRadius = 10.0
         roundedView.clipsToBounds = true
-        gameImageView.backgroundColor = Theme.Color.Background.primary
+        gameImageView.backgroundColor = Theme.Color.white
         gameImageView.layer.cornerRadius = 10.0
         gameImageView.clipsToBounds = true
         gameLabel.textColor = Theme.Color.darkText
         gameLabel.font = Theme.Font.p1
         timeLabel.textColor = Theme.Color.darkText
         timeLabel.font = Theme.Font.p1
+        dateLabel.textColor = Theme.Color.darkText
+        dateLabel.font = Theme.Font.p1
         self.selectionStyle = .none
     }
     
@@ -41,13 +43,22 @@ class ResultsCell: UITableViewCell {
         guard let images = event.images else { return }
         
         gameLabel.text = event.name ?? ""
-        timeLabel.text = event.date?.localDate ?? ""
+        timeLabel.text = event.time ?? ""
+        dateLabel.text = event.date ?? ""
         
-        if images.count > 1 {
-            gameImageView.kf.setImage(with: URL(string: images[1].url ?? ""))
+        if images.count > 3 {
+            gameImageView.setImage(withUrlString: images[2].url)
         } else if images.count > 0 {
-            gameImageView.kf.setImage(with: URL(string: images[0].url ?? ""))
+            gameImageView.setImage(withUrlString: images[0].url)
         }
 
+    }
+    
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        if highlighted {
+            roundedView.backgroundColor = Theme.Color.Background.highlighted
+        } else {
+            roundedView.backgroundColor = Theme.Color.Background.primary
+        }
     }
 }

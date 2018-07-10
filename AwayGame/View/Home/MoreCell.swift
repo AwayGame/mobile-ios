@@ -16,7 +16,7 @@ protocol MoreCellDelegate: class {
 class MoreCell: UITableViewCell {
     
     static let identifier = "MoreCell"
-    static let height: CGFloat = 80.0
+    static let height: CGFloat = 90.0
     
     @IBOutlet weak var supportButton: UIButton!
     @IBOutlet weak var settingsButton: UIButton!
@@ -46,6 +46,7 @@ class MoreCell: UITableViewCell {
     func styleButton(btn: UIButton, title: String) {
         btn.setTitle(title, for: .normal)
         btn.titleLabel?.font = Theme.Font.p1
+        btn.backgroundColor = Theme.Color.Background.primary
         btn.setTitleColor(Theme.Color.darkText, for: .normal)
         btn.layer.cornerRadius = 10.0
     }

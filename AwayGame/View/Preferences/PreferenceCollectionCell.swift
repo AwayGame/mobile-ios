@@ -11,6 +11,7 @@ import UIKit
 class PreferenceCollectionCell: UICollectionViewCell {
     
     static let identifier = "PreferenceCell"
+    static let height: CGFloat = 120.0
     
     @IBOutlet weak var roundedView: UIView!
     @IBOutlet weak var preferenceImageView: UIImageView!
@@ -30,7 +31,6 @@ class PreferenceCollectionCell: UICollectionViewCell {
     func configureCell(title: String?, image: UIImage?) {
         guard let title = title else { return }
         guard let image = image else { return }
-        print(title)
         preferenceLabel.text = title
         preferenceImageView.image = image
     }
@@ -39,11 +39,6 @@ class PreferenceCollectionCell: UICollectionViewCell {
     
     func styleSelected() {
         roundedView.backgroundColor = Theme.Color.Green.selected
-        roundedView.layer.borderColor = Theme.Color.Green.border.cgColor
-        roundedView.layer.borderWidth = 1.0
-        preferenceImageView.layer.shadowRadius = 8.0
-        preferenceImageView.layer.shadowColor = Theme.Color.black.cgColor
-        preferenceImageView.layer.shadowOpacity = 1.0
     }
     
     func styleNormal() {

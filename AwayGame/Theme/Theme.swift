@@ -9,11 +9,11 @@
 import Foundation
 import UIKit
 
-struct Theme {
+enum Theme {
     
     // MARK: - Font
     
-    struct Font {
+    enum Font {
         
         // TODO: Filler fonts
         
@@ -21,13 +21,15 @@ struct Theme {
         static let h1: UIFont = UIFont(name: "DINAlternate-Bold", size: 24)!
         static let h2: UIFont = UIFont.systemFont(ofSize: 18, weight: UIFont.Weight.bold)
         static let p1: UIFont = UIFont(name: "DINAlternate-Bold", size: 19)!
+        static let p2: UIFont = UIFont(name: "DINAlternate-Bold", size: 16)!
+        static let p3: UIFont = UIFont(name: "DINAlternate-Bold", size: 14)!
         static let body: UIFont = UIFont.systemFont(ofSize: 18, weight: UIFont.Weight.light)
         
     }
     
     // MARK: - Color
     
-    struct Color {
+    enum Color {
         
         // TODO: Filler colors
         
@@ -42,19 +44,19 @@ struct Theme {
             static let email: UIColor = UIColor(displayP3Red: 112.0/255.0, green: 112.0/255.0, blue: 112.0/255.0, alpha: 1.0)
         }
         
-        struct Green {
-            static let primary: UIColor = UIColor(displayP3Red: 83.0/255.0, green: 185.0/255.0, blue: 114.0/255.0, alpha: 1.0)
+        enum Green {
+            static let primary: UIColor = UIColor(displayP3Red: 110.0/255.0, green: 185.0/255.0, blue: 121.0/255.0, alpha: 1.0)
             static let secondary: UIColor = UIColor(displayP3Red: 115.0/255.0, green: 183.0/255.0, blue: 87.0/255.0, alpha: 1.0)
-            static let selected: UIColor = UIColor(displayP3Red: 83.0/255.0, green: 185.0/255.0, blue: 114.0/255.0, alpha: 0.15)
-            static let border: UIColor = UIColor(displayP3Red: 83.0/255.0, green: 185.0/255.0, blue: 114.0/255.0, alpha: 0.80)
+            static let selected: UIColor = UIColor(displayP3Red: 110.0/255.0, green: 185.0/255.0, blue: 121.0/255.0, alpha: 0.15)
+
         }
         
-        struct Gradient {
+        enum Gradient {
             static let green: UIColor = UIColor(displayP3Red: 115.0/255.0, green: 183.0/255.0, blue: 87.0/255.0, alpha: 1.0)
             static let blue: UIColor = UIColor(displayP3Red: 0.0/255.0, green: 73.0/255.0, blue: 114.0/255.0, alpha: 0.9)
         }
         
-        struct Background {
+        enum Background {
             static let primary: UIColor = UIColor(displayP3Red: 252.0/255.0, green: 249.0/255.0, blue: 249.0/255.0, alpha: 1.0)
             static let highlighted: UIColor = UIColor(displayP3Red: 242.0/255.0, green: 239.0/255.0, blue: 239.0/255.0, alpha: 1.0)
             static let darkGray: UIColor = UIColor(displayP3Red: 142.0/255.0, green: 142.0/255.0, blue: 142.0/255.0, alpha: 1.0)
@@ -67,3 +69,8 @@ struct Theme {
     }
     
 }
+
+
+
+
+

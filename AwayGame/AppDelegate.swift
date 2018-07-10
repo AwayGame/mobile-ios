@@ -10,11 +10,39 @@ import TwitterKit
 import FBSDKCoreKit
 import Firebase
 import InstantSearch
+import Kingfisher
 import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+   // KingfisherManager.shared.cache.pathExtension = "jpg"
+    
+    // TODO: POST RELEASE TODO LIST
+    /*
+     
+     // ABSTRACT STYLING FUNCTIONALITY.. too much repeated code
+     - Create custom label class
+     - Create custom button class
+     - Create custom view class
+     - Create custom tableview classes that extend a custom base tableview class
+     
+     // DELEGATES
+     - Better deleagation patterns
+     - More organized code
+     - Reduce delegates
+
+     // NAMING CONVENTION
+     - Better delegate naming convention
+     - More consistent property naming
+     
+     // COMMENTS
+     - Come up with a consistent commenting structure
+ 
+     //...
+     
+     */
+    
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -47,6 +75,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        AGAnalytics.logEvent(.appExited, parameters: nil)
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {

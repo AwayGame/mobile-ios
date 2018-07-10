@@ -13,26 +13,23 @@ import UIKit
 class AppLaunchViewController: UIViewController {
 
     private var handle: AuthStateDidChangeListenerHandle?
+    private var homeViewController: HomeTableViewController?
     
     @IBOutlet weak var logoImageView: UIImageView!
-    
-    private var homeViewController: HomeTableViewController?
+    @IBOutlet weak var background: UIView!
     
     @IBOutlet weak var mainContainerView: UIView!
     @IBOutlet weak var loginContainerView: UIView!
-    @IBOutlet weak var signupContainerView: UIView!
     
     // MARK: - Initialization
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-
-    func hideAllContainers() {
-        logoImageView.isHidden = true
-        mainContainerView.isHidden = true
-        loginContainerView.isHidden = true
-        signupContainerView.isHidden = true
+        background.backgroundColor = Theme.Color.Green.primary
+        background.alpha = 1.0
+        logoImageView.alpha = 1.0
+        mainContainerView.alpha = 0.0
+        loginContainerView.alpha = 0.0
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,23 +40,19 @@ class AppLaunchViewController: UIViewController {
                 User.currentUser.email = Auth.auth().currentUser?.email
                 User.currentUser.name = Auth.auth().currentUser?.displayName
                 User.currentUser.uid = Auth.auth().currentUser?.uid
+                User.currentUser.photoUrl = Auth.auth().currentUser?.photoURL?.absoluteString
+                
                 AwayGameAPI.verifyUser(with: User.currentUser) {user in
                     User.currentUser = user
-                    print(User.currentUser.photoUrl)
-                    print(User.currentUser.name)
                     if let homeVC = self.homeViewController {
-                        print("HERE")
                         homeVC.setupFirebase()
+                        homeVC.updateProfileImage()
                     }
                     self.proceedToDashboard()
                 }
 
             } else {
-                if UserDefaults.isFirstLaunch() {
-                    self.proceedToSignup()
-                } else {
-                    self.proceedToLogin()
-                }
+                self.proceedToLogin()
             }
         }
     }
@@ -71,36 +64,27 @@ class AppLaunchViewController: UIViewController {
     // MARK: - Login
         
     func proceedToDashboard() {
-        hideAllContainers()
-        mainContainerView.isHidden = false
-        UIView.transition(with: mainContainerView, duration: 1.0, options: .transitionCrossDissolve, animations: {
-        }, completion: nil)
+        mainContainerView.alpha = 1.0
+        loginContainerView.alpha = 0.0
+        UIView.animate(withDuration: 1.0, animations: {
+            self.background.alpha = 0.0
+        })
     }
     
     func proceedToLogin() {
-        hideAllContainers()
-        loginContainerView.isHidden = false
-        UIView.transition(with: loginContainerView, duration: 1.0, options: .transitionCrossDissolve, animations: {
-        }, completion: nil)
+        mainContainerView.alpha = 0.0
+        loginContainerView.alpha = 1.0
+        UIView.animate(withDuration: 1.0, animations: {
+            self.background.alpha = 0.0
+        })
     }
-    
-    func proceedToSignup() {
-        hideAllContainers()
-        signupContainerView.isHidden = false
-        UIView.transition(with: signupContainerView, duration: 1.0, options: .transitionCrossDissolve, animations: {
-        }, completion: nil)
-    }
+
     
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "LoginEmbedSegue", let loginVC = segue.destination as? LoginViewController  {
-            loginVC.delegate = self
             loginVC.signInDelegate = self
-        }
-        
-        if segue.identifier == "SignupEmbedSegue", let signupVC = segue.destination as? SignupViewController  {
-            signupVC.delegate = self
         }
         
         if segue.identifier == "HomeEmbedSegue", let navVC = segue.destination as? UINavigationController {
@@ -113,26 +97,11 @@ class AppLaunchViewController: UIViewController {
     
 }
 
-// MARK: - LoginToSignupDelegate
-
-extension AppLaunchViewController: LoginToSignupDelegate {
-    func didSwitchToSignup() {
-        proceedToSignup()
-    }
-}
-
-// MARK: - SignuptoLoginDelegate
-
-extension AppLaunchViewController: SignupToLoginDelegate {
-    func didSwitchToLogin() {
-        proceedToLogin()
-    }
-}
-
 // MARK: - EmailSignInDelegate
 
 extension AppLaunchViewController: SignInDelegate {
     func userDidSignIn() {
+        background.alpha = 1.0
         proceedToDashboard()
     }
 }
@@ -141,6 +110,7 @@ extension AppLaunchViewController: SignInDelegate {
 
 extension AppLaunchViewController: HomeDelegate {
     func userDidLogout() {
+        background.alpha = 1.0
         proceedToLogin()
     }
     

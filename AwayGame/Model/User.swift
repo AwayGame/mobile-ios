@@ -11,9 +11,8 @@ import Foundation
 
 
 protocol UserDelegate: class {
-    func user(_ user: User, didSaveTrip trip: Trip)
+    func user(_ user: User, didSaveTrip trip: Trip, tripRequest: TripRequest?)
 }
-
 
 final class User: Mappable {
     

@@ -64,11 +64,20 @@
                         <outlet property="copyrightLabel" destination="8A2-ws-Wg2" id="2fO-nx-bQo"/>
                         <outlet property="logoutButton" destination="WEj-Rw-rNW" id="Ls8-pa-xbW"/>
                         <outlet property="websiteButton" destination="MzP-27-ugU" id="oxd-RB-ARD"/>
+                        <segue destination="eBO-Rk-bR5" kind="show" identifier="AboutSegue" id="q1b-tv-4q5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b9r-72-hno" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1585" y="837"/>
+        </scene>
+        <!--About-->
+        <scene sceneID="aXm-Gv-rSy">
+            <objects>
+                <viewControllerPlaceholder storyboardName="About" id="eBO-Rk-bR5" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="awh-ou-VMw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2166" y="836"/>
         </scene>
     </scenes>
 </document>

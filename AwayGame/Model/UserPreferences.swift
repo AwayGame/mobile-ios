@@ -12,6 +12,17 @@ enum PreferenceType {
     case Food
     case Interest
     case Nightlife
+    
+    var description: String {
+        switch self {
+        case .Food:
+            return "Food"
+        case .Interest:
+            return "Interest"
+        case .Nightlife:
+            return "Nightlife"
+        }
+    }
 }
 
 class UserPreferences {

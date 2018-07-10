@@ -23,23 +23,19 @@ class ActivityMapsTableViewCell: UITableViewCell {
     // MARK: - Initialization
     
     override func awakeFromNib() {
+        selectionStyle = .none
         background.backgroundColor = Theme.Color.Background.primary
-        background.clipsToBounds = true
-        background.layer.cornerRadius = 10.0
-        mapsImageView.backgroundColor = Theme.Color.Background.darkGray
+        mapsImageView.layer.cornerRadius = 10.0
+        mapsImageView.clipsToBounds = true
+        mapsImageView.backgroundColor = Theme.Color.Background.primary
     }
-    
     
     func configureCell(withActivity activity: Activity?) {
         self.activity = activity
-        mapsImageView.kf.setImage(with: URL(string: activity?.mapsUrl ?? ""))
-        print(activity?.mapsUrl ?? "")
+        if activity?.isGame ?? false{
+            background.backgroundColor = Theme.Color.Green.selected
+        }
+        mapsImageView.setImage(withUrlString: activity?.mapsUrl)
     }
     
-    // MARK: - Styling
-    
-    
-    func styleViews() {
-        
-    }
 }

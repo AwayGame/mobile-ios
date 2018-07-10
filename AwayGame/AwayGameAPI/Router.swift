@@ -16,6 +16,7 @@ enum Router: URLRequestConvertible {
     case createTrip(parameters: Parameters)
     case saveTrip(parameters: Parameters)
     case deleteTrip(parameters: Parameters)
+    case getTrip(withId: String)
     
     static let baseURLString = "https://us-central1-awaygame-api.cloudfunctions.net/api"
 
@@ -31,6 +32,8 @@ enum Router: URLRequestConvertible {
             return .post
         case .saveTrip:
             return .post
+        case .getTrip:
+            return .get
         }
     }
 
@@ -46,6 +49,8 @@ enum Router: URLRequestConvertible {
             return"/trip/save"
         case .deleteTrip:
             return "/trip/delete"
+        case .getTrip(let id):
+            return "/trip/\(id)"
         }
         
     }
@@ -69,6 +74,8 @@ enum Router: URLRequestConvertible {
             urlRequest = try URLEncoding.default.encode(urlRequest, with: parameters)
         case .deleteTrip(parameters: let parameters):
             urlRequest = try URLEncoding.default.encode(urlRequest, with: parameters)
+        case .getTrip:
+            urlRequest = try URLEncoding.default.encode(urlRequest, with: nil)
         default:
             break
         }

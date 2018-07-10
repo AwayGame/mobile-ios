@@ -15,11 +15,12 @@ protocol CreateTripDelegate: class {
 class CreateTripCell: UITableViewCell {
 
     static let identifier = "CreateTripCell"
-    static let height: CGFloat = 120.0
+    static let height: CGFloat = 100.0
+        
+    var createTripButton = UIButton()
+    var addLabel = UILabel()
+    var createTripLabel = UILabel()
     
-    @IBOutlet weak var createTripLabel: UILabel!
-    @IBOutlet weak var background: UIView!
-    @IBOutlet weak var addButton: UIButton!
     
     weak var delegate: CreateTripDelegate?
     
@@ -29,38 +30,70 @@ class CreateTripCell: UITableViewCell {
         self.selectionStyle = .none
     }
     
+    func layoutConstraints() {
+        
+        createTripButton.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor, constant: 4.0).isActive = true
+        createTripButton.trailingAnchor.constraint(equalTo: self.layoutMarginsGuide.trailingAnchor, constant: -4.0).isActive = true
+        createTripButton.topAnchor.constraint(equalTo: self.layoutMarginsGuide.topAnchor, constant: 20.0).isActive = true
+        createTripButton.bottomAnchor.constraint(equalTo: self.layoutMarginsGuide.bottomAnchor).isActive = true
+        createTripButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        
+        createTripLabel.leadingAnchor.constraint(equalTo: createTripButton.leadingAnchor, constant: 20.0).isActive = true
+        createTripLabel.topAnchor.constraint(equalTo: createTripButton.topAnchor).isActive = true
+        createTripLabel.bottomAnchor.constraint(equalTo: createTripButton.bottomAnchor).isActive = true
+        createTripLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        
+        addLabel.trailingAnchor.constraint(equalTo: createTripButton.trailingAnchor, constant: -20.0).isActive = true
+        addLabel.topAnchor.constraint(equalTo: createTripButton.topAnchor).isActive = true
+        addLabel.bottomAnchor.constraint(equalTo: createTripButton.bottomAnchor).isActive = true
+        addLabel.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
     func configureCell() {
-        
+        addViews()
         styleBackground()
-        styleTripLabel()
-        styleAddButton()
-        
-        createTripLabel.text = "Create a new trip"
-        addButton.setTitle("+", for: .normal)
+        styleLabels()
+        layoutConstraints()
+        createTripLabel.text = "Create a new trip..."
+        addLabel.text = "┼"
+        createTripButton.addTarget(self, action: #selector(createTripTapped), for: .touchUpInside)
 
+    }
+    
+    func addViews() {
+        self.addSubview(createTripButton)
+        self.addSubview(createTripLabel)
+        self.addSubview(addLabel)
     }
     
     // MARK: - Styling
     
     func styleBackground() {
-        background.clipsToBounds = true
-        background.layer.cornerRadius = 10.0
-        background.backgroundColor = Theme.Color.Background.primary
+        createTripButton.clipsToBounds = true
+        createTripButton.layer.cornerRadius = 10.0
+        createTripButton.backgroundColor = Theme.Color.Background.primary
     }
     
-    func styleTripLabel() {
+    func styleLabels() {
         createTripLabel.font = Theme.Font.p1
-        createTripLabel.textColor = Theme.Color.black
-    }
-    
-    func styleAddButton() {
-        addButton.titleLabel?.font = Theme.Font.h1
-        addButton.setTitleColor(Theme.Color.black, for: .normal)
+        createTripLabel.textColor = Theme.Color.darkText
+        addLabel.font = Theme.Font.p1
+        addLabel.textColor = Theme.Color.darkText
     }
     
     // MARK: - Actions
     
-    @IBAction func addTripTapped(_ sender: Any) {
+    @objc func createTripTapped() {
         delegate?.didCreatNewTrip()
+    }
+    
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        if highlighted {
+            createTripButton.backgroundColor = Theme.Color.Background.highlighted
+        } else {
+            createTripButton.backgroundColor = Theme.Color.Background.primary
+        }
     }
 }
