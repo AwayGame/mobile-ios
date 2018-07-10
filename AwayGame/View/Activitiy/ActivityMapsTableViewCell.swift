@@ -27,7 +27,7 @@ class ActivityMapsTableViewCell: UITableViewCell {
         background.backgroundColor = Theme.Color.Background.primary
         mapsImageView.layer.cornerRadius = 10.0
         mapsImageView.clipsToBounds = true
-        mapsImageView.backgroundColor = Theme.Color.Background.darkGray
+        mapsImageView.backgroundColor = Theme.Color.Background.primary
     }
     
     func configureCell(withActivity activity: Activity?) {
