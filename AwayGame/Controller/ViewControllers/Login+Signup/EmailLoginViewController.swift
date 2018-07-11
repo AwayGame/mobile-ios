@@ -71,18 +71,25 @@ class EmailLoginViewController: UIViewController {
     }
     
     func login(withEmail email: String, password: String) {
-
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
             if error != nil {
-                // TODO: Handle errors here
-                print(error)
+                guard let err = AuthErrorCode(rawValue: error!._code) else { return }
+                switch err {
+                case .userNotFound:
+                    self.present(ErrorManager.noAccountFound, animated: true, completion: nil)
+                case .invalidEmail, .invalidSender, .invalidRecipientEmail:
+                    self.present(ErrorManager.emailInvalidAlert, animated: true, completion: nil)
+                case .wrongPassword:
+                    self.present(ErrorManager.incorrectPasswordAlert, animated: true, completion: nil)
+                default:
+                    return
+                }
             } else {
                 print("User Signed in.")
                 self.delegate?.userSignedIn()
                 self.dismiss(animated: true, completion: nil)
             }
         }
-        
     }
 
     @IBAction func cancelButtonTapped(_ sender: Any) {
@@ -93,15 +100,23 @@ class EmailLoginViewController: UIViewController {
     @IBAction func doneButtonTapped(_ sender: Any) {
         guard let email = emailTextField.text else {
             // TODO: Error Handling
-            print("Email text field is empty")
+            self.present(ErrorManager.emailInvalidAlert, animated: true, completion: nil)
+            return
+        }
+        
+        if ErrorManager.emailIsInvalid(email) {
+            self.present(ErrorManager.emailInvalidAlert, animated: true, completion: nil)
             return
         }
         
         guard let password = passwordTextField.text else {
-            // TODO: Error Handling
+        
             print("Password text field is empty")
+            self.present(ErrorManager.incorrectPasswordAlert, animated: true, completion: nil)
             return
         }
+        
+        
         
         login(withEmail: email, password: password)
     }

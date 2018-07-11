@@ -55,12 +55,8 @@ class SearchViewController: HitsTableViewController {
             if gameData.count > 0 {
                 self.performSegue(withIdentifier: "NextButtonSegue", sender: self)
             } else {
-                // There were no games - show an alert
-                let noGamesAlert = UIAlertController(title: "No Games Found", message: "No games found on selected dates.", preferredStyle: UIAlertControllerStyle.alert)
-                
-                noGamesAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
 
-                self.present(noGamesAlert, animated: true, completion: nil)
+                self.present(ErrorManager.noGamesAlert, animated: true, completion: nil)
             }
         }
     }

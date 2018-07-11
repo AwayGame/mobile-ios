@@ -136,6 +136,15 @@ class EmailSignupViewController: UIViewController {
             if error != nil {
                 // TODO: Handle errors here
                 print(error)
+                guard let err = AuthErrorCode(rawValue: error!._code) else { return }
+                switch err {
+                case .invalidEmail, .invalidSender, .invalidRecipientEmail:
+                    self.present(ErrorManager.emailInvalidAlert, animated: true, completion: nil)
+                case .accountExistsWithDifferentCredential, .emailAlreadyInUse:
+                    self.present(ErrorManager.accountAlreadyExists, animated: true, completion: nil)
+                default:
+                    return
+                }
             } else {
                 print("User Signed up.")
                 self.delegate?.userDidSignup()
@@ -166,6 +175,10 @@ class EmailSignupViewController: UIViewController {
             
         case .email:
             guard let email = topTextField.text else { return }
+            if ErrorManager.emailIsInvalid(email) {
+                self.present(ErrorManager.emailInvalidAlert, animated: true, completion: nil)
+                return
+            }
             self.email = email
             
             UIView.animate(withDuration: 1.0, animations: {
@@ -181,12 +194,12 @@ class EmailSignupViewController: UIViewController {
             guard let confirmedPassword = bottomTextField.text else { return }
             if password == confirmedPassword {
                 self.password = password
+            } else {
+                self.present(ErrorManager.passwordsDoNotMatch, animated: true, completion: nil)
+                return
             }
             guard let email = email else { return }
             signup(withEmail: email, password: password)
-            
-            self.delegate?.userDidSignup()
-            self.dismiss(animated: true, completion:nil)
         }
         
     }
