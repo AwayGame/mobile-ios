@@ -86,6 +86,8 @@ class EmailSignupViewController: UIViewController {
         topTextField.text = ""
         bottomTextField.text = ""
         topTextFieldLabel.text = "First Name"
+        topTextField.autocapitalizationType = .words
+        bottomTextField.autocapitalizationType = .words
         bottomTextFieldLabel.text = "Last Name"
     }
     

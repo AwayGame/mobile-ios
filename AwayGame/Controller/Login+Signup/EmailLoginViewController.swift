@@ -22,6 +22,7 @@ class EmailLoginViewController: UIViewController {
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak var forgotPasswordButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var logoImageViewWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var logoImageViewHeightConstraint: NSLayoutConstraint!
@@ -38,6 +39,7 @@ class EmailLoginViewController: UIViewController {
     func configureViews () {
         emailLabel.text = "Email"
         passwordLabel.text = "Password"
+        forgotPasswordButton.setTitle("Forgot Password", for: .normal)
         passwordTextField.isSecureTextEntry = true
         doneButton.setTitle("Log in", for: .normal)
         cancelButton.setTitle("✕", for: .normal)
@@ -68,6 +70,8 @@ class EmailLoginViewController: UIViewController {
         passwordTextField.textColor = Theme.Color.white
         emailTextField.font = Theme.Font.p1
         passwordTextField.font = Theme.Font.p1
+        forgotPasswordButton.setTitleColor(Theme.Color.white, for: .normal)
+        forgotPasswordButton.titleLabel?.font = Theme.Font.p1
     }
     
     func login(withEmail email: String, password: String) {
@@ -84,7 +88,33 @@ class EmailLoginViewController: UIViewController {
         }
         
     }
-
+    
+    // @IBActions
+    
+    @IBAction func forgotPasswordTapped(_ sender: Any) {
+        let forgotPasswordAlert = UIAlertController(title: "Forgot password?", message: "Enter email address", preferredStyle: .alert)
+        forgotPasswordAlert.addTextField { (textField) in
+            textField.placeholder = "Enter email..."
+        }
+        forgotPasswordAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        forgotPasswordAlert.addAction(UIAlertAction(title: "Reset Password", style: .default, handler: { (action) in
+            guard let resetEmail = forgotPasswordAlert.textFields?.first?.text else { return }
+            Auth.auth().sendPasswordReset(withEmail: resetEmail, completion: { (error) in
+                if error != nil{
+                    let resetFailedAlert = UIAlertController(title: "Reset Failed", message: "There was an error sending your password. Please try again.", preferredStyle: .alert)
+                    resetFailedAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    self.present(resetFailedAlert, animated: true, completion: nil)
+                }else {
+                    let resetEmailSentAlert = UIAlertController(title: "Success", message: "Check your email to reset your password.", preferredStyle: .alert)
+                    resetEmailSentAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    self.present(resetEmailSentAlert, animated: true, completion: nil)
+                }
+            })
+        }))
+        //PRESENT ALERT
+        self.present(forgotPasswordAlert, animated: true, completion: nil)
+    }
+    
     @IBAction func cancelButtonTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
