@@ -50,6 +50,7 @@ final class AwayGameAPI {
             print(response.result.value)
             guard let eventsList = response.result.value else {
                 print("ERROR NO GAMES RETURNED")
+                completion(events)
                 return
             }
             events = eventsList
