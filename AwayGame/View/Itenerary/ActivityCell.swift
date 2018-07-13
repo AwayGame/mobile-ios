@@ -49,6 +49,9 @@ class ActivityCell: UITableViewCell {
         timeLabel.textColor = Theme.Color.darkText
         titleLabel.font = Theme.Font.p1
         titleLabel.textColor = Theme.Color.darkText
+        titleLabel.numberOfLines = 3
+        titleLabel.adjustsFontSizeToFitWidth = true
+        titleLabel.minimumScaleFactor = 0.5
         activityImageView.layer.cornerRadius = 10.0
         activityImageView.clipsToBounds = true
         uberBackgroundView.layer.cornerRadius = 10.0
