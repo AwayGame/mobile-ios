@@ -233,10 +233,10 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N6r-E6-TyK">
                                             <rect key="frame" x="20" y="64" width="335" height="141.5"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CDx-hF-cv6">
-                                                    <rect key="frame" x="20" y="12" width="179" height="60"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label Labelaslksfjasd;fkjasd;lkfjasdlfkjasd;klfjasd;kfjla;sdjkfas;fjas;kldfjas" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CDx-hF-cv6">
+                                                    <rect key="frame" x="20" y="12" width="175" height="70"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="60" id="nTq-qf-vdj"/>
+                                                        <constraint firstAttribute="height" constant="70" id="nTq-qf-vdj"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -258,7 +258,7 @@
                                             </subviews>
                                             <color key="backgroundColor" red="0.94791666669999997" green="0.9407679739" blue="0.93853081599999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
-                                                <constraint firstItem="4NC-9h-PN9" firstAttribute="leading" secondItem="CDx-hF-cv6" secondAttribute="trailing" constant="4" id="ApO-o9-Rsa"/>
+                                                <constraint firstItem="4NC-9h-PN9" firstAttribute="leading" secondItem="CDx-hF-cv6" secondAttribute="trailing" constant="8" id="ApO-o9-Rsa"/>
                                                 <constraint firstAttribute="bottom" secondItem="gYa-dP-T6y" secondAttribute="bottom" constant="12" id="B3t-u3-2mc"/>
                                                 <constraint firstItem="CDx-hF-cv6" firstAttribute="leading" secondItem="N6r-E6-TyK" secondAttribute="leading" constant="20" id="H4B-xV-tj1"/>
                                                 <constraint firstAttribute="trailing" secondItem="4NC-9h-PN9" secondAttribute="trailing" constant="12" id="HtJ-hU-rSv"/>
