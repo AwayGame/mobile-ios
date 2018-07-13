@@ -260,7 +260,7 @@ class HomeTableViewController: UITableViewController {
         if segue.identifier == "TripSegue" {
             if let tripVC = segue.destination as? TripViewController {
                 guard let tripStub = sender as? TripStub else { return }
-                tripVC.shouldCreateTrip = false
+                tripVC.isNewTrip = false
                 tripVC.tripId = tripStub.id
                 tripVC.tripTitle = tripStub.title
                 tripVC.delegate = self
