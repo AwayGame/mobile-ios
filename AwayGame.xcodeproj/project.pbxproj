@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		92E485D8569B6576B4B8E53A /* Pods_AwayGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD86D8DB69F99BDD0F42CF35 /* Pods_AwayGame.framework */; };
 		AF035E0B20DA994F00DA9C95 /* PreferenceHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF035E0A20DA994F00DA9C95 /* PreferenceHeaderCell.swift */; };
+		CB18F1F120F57A5400CBC694 /* ErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB18F1F020F57A5400CBC694 /* ErrorManager.swift */; };
+		CB18F1F420F57AA700CBC694 /* AGAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB18F1F320F57AA700CBC694 /* AGAlertController.swift */; };
 		CB20DD7720D878420028AA4B /* EmailSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB20DD7620D878420028AA4B /* EmailSignupViewController.swift */; };
 		CB20DD7920D878AD0028AA4B /* Signup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB20DD7820D878AD0028AA4B /* Signup.storyboard */; };
 		CB20DD8720DCA72F0028AA4B /* NextButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB20DD8620DCA72E0028AA4B /* NextButtonCell.swift */; };
@@ -89,6 +91,8 @@
 		28AF8AA9864EEC04093B98D2 /* Pods-AwayGame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AwayGame.release.xcconfig"; path = "Pods/Target Support Files/Pods-AwayGame/Pods-AwayGame.release.xcconfig"; sourceTree = "<group>"; };
 		AF035E0A20DA994F00DA9C95 /* PreferenceHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceHeaderCell.swift; sourceTree = "<group>"; };
 		BC0FA84464268D0D4AF996AD /* Pods-AwayGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AwayGame.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AwayGame/Pods-AwayGame.debug.xcconfig"; sourceTree = "<group>"; };
+		CB18F1F020F57A5400CBC694 /* ErrorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorManager.swift; sourceTree = "<group>"; };
+		CB18F1F320F57AA700CBC694 /* AGAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGAlertController.swift; sourceTree = "<group>"; };
 		CB20DD7620D878420028AA4B /* EmailSignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignupViewController.swift; sourceTree = "<group>"; };
 		CB20DD7820D878AD0028AA4B /* Signup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Signup.storyboard; sourceTree = "<group>"; };
 		CB20DD8620DCA72E0028AA4B /* NextButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextButtonCell.swift; sourceTree = "<group>"; };
@@ -197,6 +201,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CB18F1F220F57A6B00CBC694 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CBF4139220A9D71B0038340F /* AppLaunchViewController.swift */,
+				CBF4137B20A5EEC70038340F /* Trip */,
+				CB20DD7C20D88FD40028AA4B /* Preferenes */,
+				CB20DD7D20D88FD70028AA4B /* Results */,
+				CBF4137C20A5EEE30038340F /* Login+Signup */,
+				CB20DD7F20D88FDB0028AA4B /* Home */,
+				CB20DD7E20D88FD90028AA4B /* Search */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		CB20DD7C20D88FD40028AA4B /* Preferenes */ = {
 			isa = PBXGroup;
 			children = (
@@ -272,13 +290,8 @@
 		CB4BB7E820A0DCCA00F756D3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				CBF4139220A9D71B0038340F /* AppLaunchViewController.swift */,
-				CBF4137C20A5EEE30038340F /* Login+Signup */,
-				CB20DD7F20D88FDB0028AA4B /* Home */,
-				CB20DD7E20D88FD90028AA4B /* Search */,
-				CB20DD7D20D88FD70028AA4B /* Results */,
-				CB20DD7C20D88FD40028AA4B /* Preferenes */,
-				CBF4137B20A5EEC70038340F /* Trip */,
+				CB18F1F220F57A6B00CBC694 /* ViewControllers */,
+				CB18F1F320F57AA700CBC694 /* AGAlertController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -438,6 +451,7 @@
 				CB57BDA220ADE877004FEE89 /* UserDefaults+FirstLaunch.swift */,
 				FE8E69D020B5D5FD00BCED6A /* FirebaseSubscription.swift */,
 				CB5DFEB420E2F84600155E37 /* String+HTML.swift */,
+				CB18F1F020F57A5400CBC694 /* ErrorManager.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -711,7 +725,9 @@
 				CBCE1B9820B7D5A40010967E /* Constants.swift in Sources */,
 				CB709DC520D5875500EA7C81 /* HomeTableViewController+FirebaseSubscription.swift in Sources */,
 				CB709DC920D5C4DC00EA7C81 /* ProfileImageView.swift in Sources */,
+				CB18F1F420F57AA700CBC694 /* AGAlertController.swift in Sources */,
 				CB709D9E20D551DA00EA7C81 /* ActivityMapsTableViewCell.swift in Sources */,
+				CB18F1F120F57A5400CBC694 /* ErrorManager.swift in Sources */,
 				CB7791FD20EA703700F4582E /* AGAnalytics.swift in Sources */,
 				CBF4136B20A490160038340F /* NavigationHelper.swift in Sources */,
 				CB709DC720D58F4900EA7C81 /* NoSavedTripsCell.swift in Sources */,

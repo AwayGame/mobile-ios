@@ -28,7 +28,7 @@ class TripViewController: UIViewController {
     }
     
     public var tripId: String?
-    public var shouldCreateTrip: Bool = true
+    public var isNewTrip: Bool = true
     
     weak var delegate: UserDelegate?
     
@@ -43,8 +43,8 @@ class TripViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupLoadingScreen()
-        if shouldCreateTrip {
+        setupLoadingScreen(isNewTrip: isNewTrip)
+        if isNewTrip {
             AwayGameAPI.createTrip(request: tripRequest) { response in
                 self.trip = response
                 if let itineraryVC = self.childViewControllers[0] as? ItineraryTableViewController {
@@ -70,14 +70,20 @@ class TripViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         NavigationHelper.setupNavigationController(self, withTitle: tripTitle ?? "")
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        self.navigationController?.hidesBarsOnTap = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        self.navigationController?.hidesBarsOnTap = false
     }
 
-    func setupLoadingScreen() {
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
+    func setupLoadingScreen(isNewTrip: Bool) {
         loadingBackgroundView.alpha = 1.0
         tripContainerView.isHidden = true
         loadingBackgroundView.backgroundColor = Theme.Color.Green.primary
-        loadingLabel.text = "Building your AwayGame..."
+        loadingLabel.text = isNewTrip ? "Building your AwayGame..." : "Getting your AwayGame..."
         loadingLabel.textColor = Theme.Color.white
         logoImageView.image = #imageLiteral(resourceName: "AwayGameLogo")
         loadingIndicator.color = Theme.Color.white
