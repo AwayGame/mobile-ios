@@ -141,7 +141,7 @@ class SearchViewController: HitsTableViewController {
             guard let team = hit["Display Name"] as? String else { return UITableViewCell() }
             guard let league = hit["League"] as? String else { return UITableViewCell() }
                 
-            hitCell.configureCell(with: team + " (" + league + ")")
+            hitCell.configureCell(team: team, league: league)
             return hitCell
         }
         
