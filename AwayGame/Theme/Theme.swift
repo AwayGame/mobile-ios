@@ -36,6 +36,7 @@ enum Theme {
         static let white: UIColor = .white
         static let black: UIColor = .black
         static let darkText: UIColor = UIColor(displayP3Red: 92.0/255.0, green: 92.0/255.0, blue: 92.0/255.0, alpha: 1.0)
+        static let lightText: UIColor = UIColor(displayP3Red: 92.0/255.0, green: 92.0/255.0, blue: 92.0/255.0, alpha: 0.8)
         static let clear: UIColor = UIColor(displayP3Red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0)
         
         struct Login {

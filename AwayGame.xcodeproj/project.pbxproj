@@ -205,12 +205,12 @@
 			isa = PBXGroup;
 			children = (
 				CBF4139220A9D71B0038340F /* AppLaunchViewController.swift */,
-				CBF4137B20A5EEC70038340F /* Trip */,
-				CB20DD7C20D88FD40028AA4B /* Preferenes */,
-				CB20DD7D20D88FD70028AA4B /* Results */,
 				CBF4137C20A5EEE30038340F /* Login+Signup */,
 				CB20DD7F20D88FDB0028AA4B /* Home */,
 				CB20DD7E20D88FD90028AA4B /* Search */,
+				CB20DD7D20D88FD70028AA4B /* Results */,
+				CB20DD7C20D88FD40028AA4B /* Preferenes */,
+				CBF4137B20A5EEC70038340F /* Trip */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
