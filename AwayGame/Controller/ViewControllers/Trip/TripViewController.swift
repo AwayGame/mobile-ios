@@ -70,16 +70,11 @@ class TripViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         NavigationHelper.setupNavigationController(self, withTitle: tripTitle ?? "")
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
-        self.navigationController?.hidesBarsOnTap = true
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
-        self.navigationController?.hidesBarsOnTap = false
     }
 
     func setupLoadingScreen(isNewTrip: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        self.navigationController?.hidesBarsOnTap = true
         loadingBackgroundView.alpha = 1.0
         tripContainerView.isHidden = true
         loadingBackgroundView.backgroundColor = Theme.Color.Green.primary
@@ -94,11 +89,13 @@ class TripViewController: UIViewController {
 
     func tearDownLoadingScreen() {
         self.navigationController?.setNavigationBarHidden(false, animated: true)
+        self.navigationController?.hidesBarsOnTap = false
         UIView.animate(withDuration: 1.0) {
             self.loadingBackgroundView.alpha = 0.0
             self.tripContainerView.isHidden = false
             self.loadingIndicator.stopAnimating()
         }
+        
     }
 
 }

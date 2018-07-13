@@ -51,11 +51,9 @@ class SearchViewController: HitsTableViewController {
     
     fileprivate var gameData: [Event] = [] {
         didSet {
-            print(gameData)
             if gameData.count > 0 {
                 self.performSegue(withIdentifier: "NextButtonSegue", sender: self)
             } else {
-
                 self.present(ErrorManager.noGamesAlert, animated: true, completion: nil)
             }
         }
@@ -168,6 +166,8 @@ class SearchViewController: HitsTableViewController {
         AwayGameAPI.searchForGames(team: team, startDate:
             arrive, endDate: depart, completion: { events in
                 self.gameData = events
+                self.nextButton.setTitle("Next", for: .normal)
+                self.nextButton.isEnabled = true
         })
     }
     
@@ -217,6 +217,8 @@ class SearchViewController: HitsTableViewController {
     }
     
     @IBAction func nextButtonTapped(_ sender: Any) {
+        nextButton.setTitle("Loading...", for: .normal)
+        nextButton.isEnabled = false
         findGames(withTeam: searchBar.text ?? "")
     }
     
@@ -230,7 +232,6 @@ class SearchViewController: HitsTableViewController {
             tripRequest.departureTime = departString
             
             if let resultsVC = segue.destination as? ResultsTableViewController {
-                print(gameData)
                 resultsVC.tripRequest = self.tripRequest
                 resultsVC.resultsData = self.gameData
                 resultsVC.delegate = self

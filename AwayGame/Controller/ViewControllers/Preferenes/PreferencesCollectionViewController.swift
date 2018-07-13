@@ -93,14 +93,6 @@ class PreferencesCollectionViewController: UICollectionViewController {
             AGAnalytics.logEvent(.preferenceSelected(title: preferenceCell.preferenceLabel.text ?? "", type: preferenceType?.description ?? ""), parameters: nil)
         }
        
-        
-        if let paths = collectionView.indexPathsForSelectedItems {
-            nextIsEnabled = paths.count > 2
-            collectionView.reloadItems(at: [IndexPath(row: 0, section: 2)])
-        }
-    }
-    
-    override func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         if let paths = collectionView.indexPathsForSelectedItems {
             nextIsEnabled = paths.count > 2
             collectionView.reloadItems(at: [IndexPath(row: 0, section: 2)])
@@ -179,7 +171,6 @@ extension PreferencesCollectionViewController: UICollectionViewDelegateFlowLayou
 extension PreferencesCollectionViewController: NextDelegate {
     
     func didTapNext() {
-        
         if let paths = collectionView?.indexPathsForSelectedItems {
             if paths.count < 3 {
                 print("Need to select at least 3 items")
