@@ -124,7 +124,6 @@ extension ItineraryTableViewController: TripDelegate {
     
     func saveTapped() {
         guard let trip = trip else { return }
-        print("BLAKE: ITINERARY -> \(tripRequest?.eventName)")
         delegate?.user(User.currentUser, didSaveTrip: trip, tripRequest: self.tripRequest)
     }
     

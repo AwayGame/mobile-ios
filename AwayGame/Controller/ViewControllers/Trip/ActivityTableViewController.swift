@@ -45,8 +45,11 @@ class ActivityTableViewController: UITableViewController {
         if indexPath.section == 0 {
             if let pageCell = tableView.dequeueReusableCell(withIdentifier: TripHeaderCell.identifier, for: indexPath) as? TripHeaderCell {
                 // TODO: Cleanup
-                pageCell.nextButton.isHidden = self.activity?.placeId == currentItinerary?.activities?.last?.placeId
-                pageCell.previousButton.isHidden = self.activity?.placeId == currentItinerary?.activities?.first?.placeId
+                
+                pageCell.nextButton.isHidden = self.activity?.startTime == currentItinerary?.activities?.last?.startTime
+                pageCell.previousButton.isHidden = self.activity?.startTime == currentItinerary?.activities?.first?.startTime
+                
+                
                 pageCell.saveButton.isHidden = true
                 pageCell.dateLabel.text = self.activity?.name ?? ""
                 return pageCell

@@ -68,8 +68,7 @@ class SearchViewController: HitsTableViewController {
         departString = dateFormatter.string(from: saturday11AM)
         searchBar.delegate = self
         styleViews()
-        datePicker.minuteInterval = 15
-        datePicker.minimumDate = Date() + 3600
+        setupPickers()
         hitsTableView = teamSearchResults
         InstantSearch.shared.registerAllWidgets(in: self.view)
         hitsTableView.register(SearchHitCell.self, forCellReuseIdentifier: SearchHitCell.identifier)
@@ -82,6 +81,11 @@ class SearchViewController: HitsTableViewController {
         hitsTableView.isHidden = true
     }
 
+    func setupPickers() {
+        datePicker.minuteInterval = 15
+        datePicker.minimumDate = Calendar.current.nextDate(after: Date(), matching: DateComponents(calendar: Calendar.current, second: 0), matchingPolicy: .nextTime)!
+    }
+    
     // MARK: - Styling
 
     func styleViews() {
@@ -261,7 +265,6 @@ extension SearchViewController: UISearchBarDelegate {
         hitsTableView.isHidden = false
         print("Search Text: \(searchText)")
         algoliaSearchWidget.searchBar(algoliaSearchWidget, textDidChange: searchText)
-        print("NUMBER OF ROWS\(tableView(hitsTableView, numberOfRowsInSection: 0))")
         
         let tableViewHeight = SearchHitCell.height * CGFloat(tableView(hitsTableView, numberOfRowsInSection: 0))
         hitsTableViewHeightConstraint.constant =  (tableViewHeight > maxTableViewHeight) ? maxTableViewHeight : tableViewHeight

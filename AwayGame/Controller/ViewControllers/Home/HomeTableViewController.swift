@@ -46,6 +46,9 @@ class HomeTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         NavigationHelper.setupNavigationController(self, withTitle: "AwayGame")
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: profileImageView)
+        navigationController?.hidesBarsOnSwipe = false
+        navigationController?.hidesBarsOnTap = false
+        navigationController?.setNavigationBarHidden(false, animated: false)
         updateProfileImage()
     }
     
@@ -72,7 +75,6 @@ class HomeTableViewController: UITableViewController {
     func updateTripStubs(forUser user: User) {
         guard let stubs = user.tripStubs else { return }
         tripStubData = [[],[]]
-        print("YAH")
         for stub in stubs {
             if let deleted = stub.isDeleted, !deleted {
                 if let isCompleted = stub.isCompleted, isCompleted {

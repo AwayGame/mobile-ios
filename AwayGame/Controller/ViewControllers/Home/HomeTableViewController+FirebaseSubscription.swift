@@ -24,7 +24,6 @@ extension HomeTableViewController: FirebaseSubcription {
                 print("Error fetching document: \(error!)")
                 return
             }
-            print("HERREEE")
             self.handleUpdate(data: document.data())
         }
     }
