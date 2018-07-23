@@ -29,6 +29,8 @@ class ResultsCell: UITableViewCell {
         gameImageView.backgroundColor = Theme.Color.white
         gameImageView.layer.cornerRadius = 10.0
         gameImageView.clipsToBounds = true
+        gameLabel.adjustsFontSizeToFitWidth = true
+        gameLabel.minimumScaleFactor = 0.7
         gameLabel.textColor = Theme.Color.darkText
         gameLabel.font = Theme.Font.p1
         timeLabel.textColor = Theme.Color.darkText

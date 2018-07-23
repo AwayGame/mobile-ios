@@ -95,6 +95,7 @@ class ItineraryTableViewController: UITableViewController {
             if let activityVC = segue.destination as? ActivityTableViewController {
                 guard let indexPath = sender as? IndexPath else { return }
                 activityVC.activity = currentItinerary?.activities?[indexPath.row]
+                activityVC.activityIndex = indexPath.row
                 activityVC.tripRequest = self.tripRequest
                 activityVC.tripTitle = self.tripTitle
                 activityVC.currentItinerary = self.currentItinerary

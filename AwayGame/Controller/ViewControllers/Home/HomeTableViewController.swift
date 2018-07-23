@@ -325,6 +325,17 @@ extension HomeTableViewController: SettingsDelegate {
         print("USER LOGGED OUT.")
     }
     
+    func userDidDeleteAccount() {
+        Auth.auth().currentUser?.delete(completion: { (error) in
+            if error != nil {
+                print("ERROR: \(error?.localizedDescription)")
+                return
+            }
+            self.delegate?.userDidLogout()
+        })
+        
+    }
+    
 }
 
 // MARK: - UserDelegate

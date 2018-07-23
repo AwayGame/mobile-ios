@@ -14,6 +14,7 @@ class ActivityTableViewController: UITableViewController {
     var currentItinerary: Itinerary?
     var tripRequest: TripRequest?
     var tripTitle: String?
+    var activityIndex: Int?
     var activity: Activity? {
         didSet {
             tableView.reloadData()
@@ -45,11 +46,9 @@ class ActivityTableViewController: UITableViewController {
         if indexPath.section == 0 {
             if let pageCell = tableView.dequeueReusableCell(withIdentifier: TripHeaderCell.identifier, for: indexPath) as? TripHeaderCell {
                 // TODO: Cleanup
-                
                 pageCell.nextButton.isHidden = self.activity?.startTime == currentItinerary?.activities?.last?.startTime
                 pageCell.previousButton.isHidden = self.activity?.startTime == currentItinerary?.activities?.first?.startTime
-                
-                
+                pageCell.delegate = self
                 pageCell.saveButton.isHidden = true
                 pageCell.dateLabel.text = self.activity?.name ?? ""
                 return pageCell
@@ -128,7 +127,7 @@ class ActivityTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == 0 { return TripHeaderCell.height}
+        if indexPath.section == 0 { return TripHeaderCell.activityHeight}
         
         switch indexPath.row {
         case 0 :
@@ -150,3 +149,27 @@ class ActivityTableViewController: UITableViewController {
     }
 
 }
+
+
+extension ActivityTableViewController: TripDelegate {
+    
+    func previousDayTapped() {
+        guard let currentItinerary = currentItinerary, let index = activityIndex else { return }
+        if index > 0 {
+            self.activity = currentItinerary.activities?[index - 1]
+            activityIndex = index - 1
+        }
+    }
+    
+    func nextDayTapped() {
+        guard let currentItinerary = currentItinerary, let index = activityIndex else { return }
+        if index < currentItinerary.activities?.endIndex ?? 0 {
+            self.activity = currentItinerary.activities?[index + 1]
+            activityIndex = index + 1
+        }
+    }
+    
+    func saveTapped() {}
+
+}
+

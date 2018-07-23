@@ -26,42 +26,54 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MzP-27-ugU">
-                                <rect key="frame" x="140" y="250" width="94" height="30"/>
+                                <rect key="frame" x="140" y="210" width="94" height="30"/>
                                 <state key="normal" title="awaygame.co"/>
                                 <connections>
                                     <action selector="websiteTapped:" destination="pWo-hp-QlH" eventType="touchUpInside" id="qOW-YL-Unu"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WEj-Rw-rNW">
-                                <rect key="frame" x="163" y="380" width="48" height="30"/>
+                                <rect key="frame" x="163" y="300" width="48" height="30"/>
                                 <state key="normal" title="Logout"/>
                                 <connections>
                                     <action selector="logoutTapped:" destination="pWo-hp-QlH" eventType="touchUpInside" id="Nay-a4-KPb"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8A2-ws-Wg2">
-                                <rect key="frame" x="166.5" y="510" width="42" height="21"/>
+                                <rect key="frame" x="166.5" y="480" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2sD-5d-Ntx">
+                                <rect key="frame" x="140" y="392" width="105" height="30"/>
+                                <state key="normal" title="Delete Account">
+                                    <color key="titleColor" red="0.76369900170000005" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="deleteAccountTapped:" destination="pWo-hp-QlH" eventType="touchUpInside" id="mYg-se-evr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="MzP-27-ugU" firstAttribute="top" secondItem="UvE-Pn-Hsj" secondAttribute="bottom" constant="100" id="74G-5W-K8f"/>
+                            <constraint firstItem="MzP-27-ugU" firstAttribute="top" secondItem="UvE-Pn-Hsj" secondAttribute="bottom" constant="60" id="74G-5W-K8f"/>
+                            <constraint firstItem="2sD-5d-Ntx" firstAttribute="centerX" secondItem="VRR-bj-GQf" secondAttribute="centerX" id="8An-FG-jBs"/>
                             <constraint firstItem="UvE-Pn-Hsj" firstAttribute="top" secondItem="mWd-YN-asx" secondAttribute="top" constant="100" id="HfM-Vr-uSa"/>
                             <constraint firstItem="MzP-27-ugU" firstAttribute="centerX" secondItem="VRR-bj-GQf" secondAttribute="centerX" id="IQ3-wL-ltN"/>
                             <constraint firstItem="WEj-Rw-rNW" firstAttribute="centerX" secondItem="VRR-bj-GQf" secondAttribute="centerX" id="WoE-pC-Dvl"/>
+                            <constraint firstItem="2sD-5d-Ntx" firstAttribute="top" secondItem="WEj-Rw-rNW" secondAttribute="bottom" constant="60" id="YC2-TV-dQL"/>
                             <constraint firstItem="8A2-ws-Wg2" firstAttribute="centerX" secondItem="VRR-bj-GQf" secondAttribute="centerX" id="eGh-br-VeQ"/>
-                            <constraint firstItem="8A2-ws-Wg2" firstAttribute="top" secondItem="WEj-Rw-rNW" secondAttribute="bottom" constant="100" id="iDs-75-6sE"/>
                             <constraint firstItem="UvE-Pn-Hsj" firstAttribute="centerX" secondItem="VRR-bj-GQf" secondAttribute="centerX" id="sRx-IP-6oU"/>
-                            <constraint firstItem="WEj-Rw-rNW" firstAttribute="top" secondItem="MzP-27-ugU" secondAttribute="bottom" constant="100" id="wds-vQ-WEc"/>
+                            <constraint firstItem="8A2-ws-Wg2" firstAttribute="top" secondItem="2sD-5d-Ntx" secondAttribute="bottom" constant="60" id="uvH-LX-QyB"/>
+                            <constraint firstItem="WEj-Rw-rNW" firstAttribute="top" secondItem="MzP-27-ugU" secondAttribute="bottom" constant="60" id="wds-vQ-WEc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mWd-YN-asx"/>
                     </view>
                     <connections>
                         <outlet property="aboutButton" destination="UvE-Pn-Hsj" id="Nrz-Dj-uDU"/>
                         <outlet property="copyrightLabel" destination="8A2-ws-Wg2" id="2fO-nx-bQo"/>
+                        <outlet property="deleteAccountButton" destination="2sD-5d-Ntx" id="kGR-cB-bBR"/>
                         <outlet property="logoutButton" destination="WEj-Rw-rNW" id="Ls8-pa-xbW"/>
                         <outlet property="websiteButton" destination="MzP-27-ugU" id="oxd-RB-ARD"/>
                         <segue destination="eBO-Rk-bR5" kind="show" identifier="AboutSegue" id="q1b-tv-4q5"/>

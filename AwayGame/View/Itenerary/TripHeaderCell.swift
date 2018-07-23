@@ -21,6 +21,7 @@ class TripHeaderCell: UITableViewCell {
     
     static let identifier = "TripHeaderCell"
     static let height: CGFloat = 120.0
+    static let activityHeight: CGFloat = 90.0
     
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var saveButton: UIButton!

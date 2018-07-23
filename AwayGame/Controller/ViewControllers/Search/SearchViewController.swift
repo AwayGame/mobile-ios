@@ -194,7 +194,6 @@ class SearchViewController: HitsTableViewController {
     }
     
     @IBAction func arriveButtonTapped(_ sender: Any) {
-        setButtonText()
         buttonType = .arrive
         datePicker.isHidden = false
         doneButton.isHidden = false
@@ -204,6 +203,7 @@ class SearchViewController: HitsTableViewController {
     }
     
     @IBAction func doneButtonTapped(_ sender: Any) {
+        guard let minimumDate = datePicker.minimumDate, datePicker.date > minimumDate else { return }
         setButtonText()
         doneButton.isHidden = true
         nextButton.isHidden = false
@@ -211,7 +211,6 @@ class SearchViewController: HitsTableViewController {
     }
     
     @IBAction func departButtonTapped(_ sender: Any) {
-        setButtonText()
         buttonType = .depart
         datePicker.isHidden = false
         doneButton.isHidden = false
@@ -221,6 +220,21 @@ class SearchViewController: HitsTableViewController {
     }
     
     @IBAction func nextButtonTapped(_ sender: Any) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:00"
+
+        guard let arrive = dateFormatter.date(from: arriveString ?? ""),
+            let depart = dateFormatter.date(from: departString ?? "") else { return }
+        
+        if  depart < arrive {
+            present(ErrorManager.departureBeforeArrival, animated: true, completion: nil)
+            return
+        }
+        
+        if (Calendar.current.dateComponents([.day], from: arrive, to: depart).day ?? 0) > 14 {
+            present(ErrorManager.tripTooLong, animated: true, completion: nil)
+            return
+        }
         nextButton.setTitle("Loading...", for: .normal)
         nextButton.isEnabled = false
         findGames(withTeam: searchBar.text ?? "")
