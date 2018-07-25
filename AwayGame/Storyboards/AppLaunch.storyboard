@@ -391,8 +391,17 @@
                                                         <constraint firstAttribute="width" constant="120" id="Wqh-RO-Ypg"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pDI-Lj-H0d">
-                                                    <rect key="frame" x="10" y="47" width="173" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UWL-EW-csc">
+                                                    <rect key="frame" x="12" y="72" width="183" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pDI-Lj-H0d">
+                                                    <rect key="frame" x="12" y="12" width="171" height="56"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="56" id="Lkw-Z1-724"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -406,15 +415,18 @@
                                             </subviews>
                                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                             <constraints>
+                                                <constraint firstItem="UWL-EW-csc" firstAttribute="top" secondItem="pDI-Lj-H0d" secondAttribute="bottom" constant="4" id="0Dx-HB-gZl"/>
+                                                <constraint firstItem="UWL-EW-csc" firstAttribute="leading" secondItem="pDI-Lj-H0d" secondAttribute="leading" id="6If-z3-61Y"/>
                                                 <constraint firstItem="Ndp-xt-U45" firstAttribute="leading" secondItem="4cY-xD-4Lv" secondAttribute="leading" id="9gk-Su-LtS"/>
+                                                <constraint firstItem="Mzi-p8-sRE" firstAttribute="top" secondItem="pDI-Lj-H0d" secondAttribute="top" id="A6M-SG-ldh"/>
                                                 <constraint firstAttribute="bottom" secondItem="Ndp-xt-U45" secondAttribute="bottom" id="C1P-5j-8hb"/>
                                                 <constraint firstItem="Mzi-p8-sRE" firstAttribute="leading" secondItem="pDI-Lj-H0d" secondAttribute="trailing" constant="20" id="CQ1-4N-JLd"/>
                                                 <constraint firstItem="Ndp-xt-U45" firstAttribute="top" secondItem="4cY-xD-4Lv" secondAttribute="top" id="JIj-uu-Cyn"/>
                                                 <constraint firstAttribute="trailing" secondItem="Mzi-p8-sRE" secondAttribute="trailing" constant="12" id="a3Z-XD-QQ2"/>
+                                                <constraint firstItem="Mzi-p8-sRE" firstAttribute="leading" secondItem="UWL-EW-csc" secondAttribute="trailing" constant="8" id="emE-cX-Ws7"/>
                                                 <constraint firstAttribute="bottom" secondItem="Mzi-p8-sRE" secondAttribute="bottom" constant="12" id="fLn-BL-eHG"/>
-                                                <constraint firstItem="pDI-Lj-H0d" firstAttribute="centerY" secondItem="4cY-xD-4Lv" secondAttribute="centerY" id="srz-Vh-unk"/>
                                                 <constraint firstItem="Mzi-p8-sRE" firstAttribute="top" secondItem="4cY-xD-4Lv" secondAttribute="top" constant="12" id="txU-OT-qmF"/>
-                                                <constraint firstItem="pDI-Lj-H0d" firstAttribute="leading" secondItem="4cY-xD-4Lv" secondAttribute="leading" constant="10" id="ubK-Hz-74P"/>
+                                                <constraint firstItem="pDI-Lj-H0d" firstAttribute="leading" secondItem="4cY-xD-4Lv" secondAttribute="leading" constant="12" id="ubK-Hz-74P"/>
                                                 <constraint firstAttribute="trailing" secondItem="Ndp-xt-U45" secondAttribute="trailing" id="xCX-Lp-q1J"/>
                                             </constraints>
                                         </view>
@@ -428,6 +440,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="roundedView" destination="4cY-xD-4Lv" id="tXn-NY-HHR"/>
+                                    <outlet property="tripDateLabel" destination="UWL-EW-csc" id="VWh-HX-kjG"/>
                                     <outlet property="tripImageView" destination="Mzi-p8-sRE" id="JIV-u4-xK8"/>
                                     <outlet property="tripTitleLabel" destination="pDI-Lj-H0d" id="bd6-y4-9Js"/>
                                 </connections>

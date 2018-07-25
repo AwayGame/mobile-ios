@@ -13,6 +13,7 @@ import UIKit
 
 protocol SettingsDelegate: class {
     func userDidLogout()
+    func userDidDeleteAccount()
 }
 
 class SettingsViewController: UIViewController {
@@ -20,7 +21,9 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var aboutButton: UIButton!
     @IBOutlet weak var websiteButton: UIButton!
     @IBOutlet weak var logoutButton: UIButton!
+    @IBOutlet weak var logoutImageView: UIImageView!
     @IBOutlet weak var copyrightLabel: UILabel!
+    @IBOutlet weak var deleteAccountButton: UIButton!
     
     weak var delegate: SettingsDelegate?
     
@@ -39,7 +42,10 @@ class SettingsViewController: UIViewController {
     func setupViews() {
         aboutButton.setTitle("About", for: .normal)
         websiteButton.setTitle("Website", for: .normal)
-        logoutButton.setTitle("Logout ▶︎", for: .normal)
+        logoutButton.setTitle("Logout", for: .normal)
+        logoutImageView.image = #imageLiteral(resourceName: "Logout").withRenderingMode(.alwaysTemplate)
+        logoutImageView.tintColor = Theme.Color.darkText
+        deleteAccountButton.setTitle("Delete Account", for: .normal)
         copyrightLabel.text = Settings.copyrightText
     }
     
@@ -47,11 +53,13 @@ class SettingsViewController: UIViewController {
         aboutButton.setTitleColor(Theme.Color.darkText, for: .normal)
         websiteButton.setTitleColor(Theme.Color.darkText, for: .normal)
         logoutButton.setTitleColor(Theme.Color.darkText, for: .normal)
+        deleteAccountButton.setTitleColor(.red, for: .normal)
         copyrightLabel.textColor = Theme.Color.darkText
         
         aboutButton.titleLabel?.font = Theme.Font.p2
         websiteButton.titleLabel?.font = Theme.Font.p2
         logoutButton.titleLabel?.font = Theme.Font.p2
+        deleteAccountButton.titleLabel?.font = Theme.Font.p2
         copyrightLabel.font = Theme.Font.p3
     }
     
@@ -75,4 +83,11 @@ class SettingsViewController: UIViewController {
         navigationController?.popViewController(animated: true)
         self.delegate?.userDidLogout()
     }
+    
+    @IBAction func deleteAccountTapped(_ sender: Any) {
+        AGAnalytics.logEvent(.logoutTapped, parameters: nil)
+        navigationController?.popViewController(animated: true)
+        self.delegate?.userDidDeleteAccount()
+    }
+    
 }

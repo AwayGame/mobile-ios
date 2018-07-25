@@ -95,6 +95,7 @@ class ItineraryTableViewController: UITableViewController {
             if let activityVC = segue.destination as? ActivityTableViewController {
                 guard let indexPath = sender as? IndexPath else { return }
                 activityVC.activity = currentItinerary?.activities?[indexPath.row]
+                activityVC.activityIndex = indexPath.row
                 activityVC.tripRequest = self.tripRequest
                 activityVC.tripTitle = self.tripTitle
                 activityVC.currentItinerary = self.currentItinerary
@@ -124,7 +125,6 @@ extension ItineraryTableViewController: TripDelegate {
     
     func saveTapped() {
         guard let trip = trip else { return }
-        print("BLAKE: ITINERARY -> \(tripRequest?.eventName)")
         delegate?.user(User.currentUser, didSaveTrip: trip, tripRequest: self.tripRequest)
     }
     

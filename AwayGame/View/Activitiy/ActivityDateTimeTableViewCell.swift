@@ -37,7 +37,9 @@ class ActivityDateTimeTableViewCell: UITableViewCell {
         if activity?.isGame ?? false {
             background.backgroundColor = Theme.Color.Green.selected
         }
+        print(activity?.startTime)
         print(activity?.date)
+        
         dateLabel.text = activity?.date ?? ""
         timeLabel.text = activity?.startTime ?? ""
     }

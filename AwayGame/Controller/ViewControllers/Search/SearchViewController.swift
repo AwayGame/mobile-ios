@@ -68,8 +68,7 @@ class SearchViewController: HitsTableViewController {
         departString = dateFormatter.string(from: saturday11AM)
         searchBar.delegate = self
         styleViews()
-        datePicker.minuteInterval = 15
-        datePicker.minimumDate = Date() + 3600
+        setupPickers()
         hitsTableView = teamSearchResults
         InstantSearch.shared.registerAllWidgets(in: self.view)
         hitsTableView.register(SearchHitCell.self, forCellReuseIdentifier: SearchHitCell.identifier)
@@ -82,6 +81,11 @@ class SearchViewController: HitsTableViewController {
         hitsTableView.isHidden = true
     }
 
+    func setupPickers() {
+        datePicker.minuteInterval = 15
+        datePicker.minimumDate = Calendar.current.nextDate(after: Date(), matching: DateComponents(calendar: Calendar.current, second: 0), matchingPolicy: .nextTime)!
+    }
+    
     // MARK: - Styling
 
     func styleViews() {
@@ -190,7 +194,6 @@ class SearchViewController: HitsTableViewController {
     }
     
     @IBAction func arriveButtonTapped(_ sender: Any) {
-        setButtonText()
         buttonType = .arrive
         datePicker.isHidden = false
         doneButton.isHidden = false
@@ -200,6 +203,7 @@ class SearchViewController: HitsTableViewController {
     }
     
     @IBAction func doneButtonTapped(_ sender: Any) {
+        guard let minimumDate = datePicker.minimumDate, datePicker.date > minimumDate else { return }
         setButtonText()
         doneButton.isHidden = true
         nextButton.isHidden = false
@@ -207,7 +211,6 @@ class SearchViewController: HitsTableViewController {
     }
     
     @IBAction func departButtonTapped(_ sender: Any) {
-        setButtonText()
         buttonType = .depart
         datePicker.isHidden = false
         doneButton.isHidden = false
@@ -217,6 +220,21 @@ class SearchViewController: HitsTableViewController {
     }
     
     @IBAction func nextButtonTapped(_ sender: Any) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:00"
+
+        guard let arrive = dateFormatter.date(from: arriveString ?? ""),
+            let depart = dateFormatter.date(from: departString ?? "") else { return }
+        
+        if  depart < arrive {
+            present(ErrorManager.departureBeforeArrival, animated: true, completion: nil)
+            return
+        }
+        
+        if (Calendar.current.dateComponents([.day], from: arrive, to: depart).day ?? 0) > 14 {
+            present(ErrorManager.tripTooLong, animated: true, completion: nil)
+            return
+        }
         nextButton.setTitle("Loading...", for: .normal)
         nextButton.isEnabled = false
         findGames(withTeam: searchBar.text ?? "")
@@ -261,7 +279,6 @@ extension SearchViewController: UISearchBarDelegate {
         hitsTableView.isHidden = false
         print("Search Text: \(searchText)")
         algoliaSearchWidget.searchBar(algoliaSearchWidget, textDidChange: searchText)
-        print("NUMBER OF ROWS\(tableView(hitsTableView, numberOfRowsInSection: 0))")
         
         let tableViewHeight = SearchHitCell.height * CGFloat(tableView(hitsTableView, numberOfRowsInSection: 0))
         hitsTableViewHeightConstraint.constant =  (tableViewHeight > maxTableViewHeight) ? maxTableViewHeight : tableViewHeight

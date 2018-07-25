@@ -52,8 +52,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="115.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tra-dX-cXe">
-                                            <rect key="frame" x="36" y="11" width="303" height="94"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tra-dX-cXe" customClass="AGButton" customModule="AwayGame" customModuleProvider="target">
+                                            <rect key="frame" x="20" y="11" width="335" height="94"/>
                                             <color key="backgroundColor" red="0.87038845486111116" green="0.83992513020833337" blue="0.82752821180555558" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                             <state key="normal" title="Button">
@@ -65,10 +65,10 @@
                                         </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailingMargin" secondItem="tra-dX-cXe" secondAttribute="trailing" constant="20" id="NCB-Ob-Jpw"/>
+                                        <constraint firstAttribute="trailing" secondItem="tra-dX-cXe" secondAttribute="trailing" constant="20" id="AEa-6G-rxa"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="tra-dX-cXe" secondAttribute="bottom" id="QRM-BW-wnk"/>
-                                        <constraint firstItem="tra-dX-cXe" firstAttribute="leading" secondItem="aa8-TS-m7D" secondAttribute="leadingMargin" constant="20" id="a2J-2I-Mqv"/>
                                         <constraint firstItem="tra-dX-cXe" firstAttribute="top" secondItem="aa8-TS-m7D" secondAttribute="topMargin" id="iuQ-xQ-DJ5"/>
+                                        <constraint firstItem="tra-dX-cXe" firstAttribute="leading" secondItem="aa8-TS-m7D" secondAttribute="leading" constant="20" id="rWu-wB-mX8"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>

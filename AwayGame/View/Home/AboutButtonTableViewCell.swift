@@ -15,9 +15,9 @@ protocol AboutButtonDelegate: class {
 class AboutButtonTableViewCell: UITableViewCell {
     
     static let identifier = "AboutButtonCell"
-    static let height: CGFloat = 64.0
+    static let height: CGFloat = 80.0
     
-    @IBOutlet weak var aboutButton: UIButton!
+    @IBOutlet weak var aboutButton: AGButton!
     
     private var link: URL?
     weak var delegate: AboutButtonDelegate?
@@ -25,7 +25,7 @@ class AboutButtonTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         aboutButton.setTitleColor(Theme.Color.darkText, for: .normal)
-            aboutButton.layer.cornerRadius = 10.0
+        aboutButton.layer.cornerRadius = 5.0
         aboutButton.clipsToBounds = true
     }
     

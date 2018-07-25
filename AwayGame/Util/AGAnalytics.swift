@@ -30,6 +30,7 @@ enum AGAnalytics {
 
     case aboutTapped
     case logoutTapped
+    case deleteAccountTapped
     case websiteTapped
     
     case arriveTimeSelected
@@ -89,6 +90,8 @@ enum AGAnalytics {
             return "LOGOUT_TAPPED"
         case .websiteTapped:
             return "WEBSITE_TAPPED"
+        case .deleteAccountTapped:
+            return "ACCOUNT_DELETED"
         case .arriveTimeSelected:
             return "ARRIVE_TIME_SELECTED"
         case .departTimeSelected:
@@ -114,6 +117,7 @@ enum AGAnalytics {
             return "MAP_TAPPED"
         case .appExited:
             return "APP_EXITED"
+            
         }
     }
     

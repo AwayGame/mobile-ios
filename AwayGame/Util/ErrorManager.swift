@@ -21,6 +21,8 @@ class ErrorManager {
     
     // MARK: - Alerts
     
+    // TODO: - Clean up with initializer for title and message
+    
     static let noGamesAlert: AGAlertController = {
         let alert = AGAlertController(title: "No Games Found", message: "No games found on selected dates.", preferredStyle: .alert)
         alert.addAction(ErrorManager.okAction)
@@ -53,6 +55,18 @@ class ErrorManager {
     
     static let passwordsDoNotMatch: AGAlertController = {
         let alert = AGAlertController(title: "Passwords do not match.", message: "Please check that the passwords you entered are the same.", preferredStyle: .alert)
+        alert.addAction(ErrorManager.okAction)
+        return alert
+    }()
+    
+    static let departureBeforeArrival: AGAlertController = {
+        let alert = AGAlertController(title: "Departure time before arrival", message: "The selected departure time is before your arrival time. Please try again.", preferredStyle: .alert)
+        alert.addAction(ErrorManager.okAction)
+        return alert
+    }()
+    
+    static let tripTooLong: AGAlertController = {
+        let alert = AGAlertController(title: "Trip too long", message: "Currently we only support making trips under 2 weeks in length. Please try a shorter trip.", preferredStyle: .alert)
         alert.addAction(ErrorManager.okAction)
         return alert
     }()
