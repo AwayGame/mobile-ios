@@ -25,6 +25,7 @@ class SavedTripCell: UITableViewCell {
     @IBOutlet weak var roundedView: UIView!
     @IBOutlet weak var tripImageView: UIImageView!
     @IBOutlet weak var tripTitleLabel: UILabel!
+    @IBOutlet weak var tripDateLabel: UILabel!
     
     weak var delegate: SavedTripDelegate?
     
@@ -37,6 +38,14 @@ class SavedTripCell: UITableViewCell {
         
         tripTitleLabel.textColor = Theme.Color.darkText
         tripTitleLabel.font = Theme.Font.p1
+        tripTitleLabel.numberOfLines = 3
+        tripTitleLabel.minimumScaleFactor = 0.5
+        tripTitleLabel.adjustsFontSizeToFitWidth = true
+        
+        tripDateLabel.textColor = Theme.Color.darkText
+        tripDateLabel.font = Theme.Font.p1
+        tripDateLabel.numberOfLines = 1
+        tripDateLabel.minimumScaleFactor = 0.5
         
         tripImageView.backgroundColor = Theme.Color.white
         tripImageView.layer.cornerRadius = 5.0
@@ -47,6 +56,13 @@ class SavedTripCell: UITableViewCell {
         guard let stub = tripStub else { return }
         self.tripStub = stub
         tripTitleLabel.text = stub.title ?? ""
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd"
+        
+        let date = dateFormatter.date(from: stub.startDate ?? "")
+        
+        tripDateLabel.text = dateFormatter.string(from: date ?? Date())
         print("\(stub.imageUrl ?? "")")
         print("KINGFISHER\n-------------------\n")
         tripImageView.setImage(withUrlString: stub.imageUrl)

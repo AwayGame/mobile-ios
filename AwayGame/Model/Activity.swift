@@ -54,6 +54,7 @@ class Activity: Mappable {
     func mapping(map: Map) {
         name <- map["name"]
         description <- map["description"]
+        date <- map["date"]
         startTime <- map["startTime"]
         placeId <- map["placeId"]
         phone <- map["phone"]

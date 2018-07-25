@@ -199,6 +199,7 @@ class HomeTableViewController: UITableViewController {
                 AGAnalytics.logEvent(.pastTripDeleted, parameters: nil)
             }
             print("delete tapped")
+            print(index.section)
             AwayGameAPI.deleteTrip(stub, user: User.currentUser, completion: {
                 print("trip deleted")
             })
