@@ -21,6 +21,7 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var aboutButton: UIButton!
     @IBOutlet weak var websiteButton: UIButton!
     @IBOutlet weak var logoutButton: UIButton!
+    @IBOutlet weak var logoutImageView: UIImageView!
     @IBOutlet weak var copyrightLabel: UILabel!
     @IBOutlet weak var deleteAccountButton: UIButton!
     
@@ -41,7 +42,9 @@ class SettingsViewController: UIViewController {
     func setupViews() {
         aboutButton.setTitle("About", for: .normal)
         websiteButton.setTitle("Website", for: .normal)
-        logoutButton.setTitle("Logout ▶︎", for: .normal)
+        logoutButton.setTitle("Logout", for: .normal)
+        logoutImageView.image = #imageLiteral(resourceName: "Logout").withRenderingMode(.alwaysTemplate)
+        logoutImageView.tintColor = Theme.Color.darkText
         deleteAccountButton.setTitle("Delete Account", for: .normal)
         copyrightLabel.text = Settings.copyrightText
     }
@@ -82,7 +85,7 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func deleteAccountTapped(_ sender: Any) {
-        AGAnalytics.logEvent(.deleteAccountTapped, parameters: nil)
+        AGAnalytics.logEvent(.logoutTapped, parameters: nil)
         navigationController?.popViewController(animated: true)
         self.delegate?.userDidDeleteAccount()
     }

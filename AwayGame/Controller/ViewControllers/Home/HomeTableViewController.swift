@@ -326,14 +326,9 @@ extension HomeTableViewController: SettingsDelegate {
     }
     
     func userDidDeleteAccount() {
-        Auth.auth().currentUser?.delete(completion: { (error) in
-            if error != nil {
-                print("ERROR: \(error?.localizedDescription)")
-                return
-            }
-            self.delegate?.userDidLogout()
-        })
-        
+        AwayGameAPI.deleteUser(withId: User.currentUser.uid ?? "") {
+            self.userDidLogout()
+        }
     }
     
 }

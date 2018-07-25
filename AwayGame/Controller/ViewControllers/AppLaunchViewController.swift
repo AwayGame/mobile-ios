@@ -42,7 +42,15 @@ class AppLaunchViewController: UIViewController {
                 User.currentUser.uid = Auth.auth().currentUser?.uid
                 User.currentUser.photoUrl = Auth.auth().currentUser?.photoURL?.absoluteString
                 
-                AwayGameAPI.verifyUser(with: User.currentUser) {user in
+                print("************************")
+                print(User.currentUser.uid)
+                print("************************")
+                
+                AwayGameAPI.verifyUser(with: User.currentUser) { user in
+                    guard let user = user else {
+                        self.proceedToLogin()
+                        return
+                    }
                     User.currentUser = user
                     if let homeVC = self.homeViewController {
                         homeVC.setupFirebase()
@@ -50,10 +58,10 @@ class AppLaunchViewController: UIViewController {
                     }
                     self.proceedToDashboard()
                 }
-
             } else {
-                self.proceedToLogin()
+                 self.proceedToLogin()
             }
+           
         }
     }
     
@@ -92,7 +100,6 @@ class AppLaunchViewController: UIViewController {
                 homeViewController = homeVC
             }
         }
-        
     }
     
 }

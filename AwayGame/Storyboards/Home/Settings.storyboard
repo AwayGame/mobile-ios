@@ -33,7 +33,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WEj-Rw-rNW">
-                                <rect key="frame" x="163" y="300" width="48" height="30"/>
+                                <rect key="frame" x="153.5" y="300" width="48" height="30"/>
                                 <state key="normal" title="Logout"/>
                                 <connections>
                                     <action selector="logoutTapped:" destination="pWo-hp-QlH" eventType="touchUpInside" id="Nay-a4-KPb"/>
@@ -54,6 +54,14 @@
                                     <action selector="deleteAccountTapped:" destination="pWo-hp-QlH" eventType="touchUpInside" id="mYg-se-evr"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logout" translatesAutoresizingMaskIntoConstraints="NO" id="Qbo-65-8Nb">
+                                <rect key="frame" x="205.5" y="305" width="20" height="20"/>
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="3JM-NV-4ud"/>
+                                    <constraint firstAttribute="width" constant="20" id="keb-8I-5uQ"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -61,10 +69,12 @@
                             <constraint firstItem="2sD-5d-Ntx" firstAttribute="centerX" secondItem="VRR-bj-GQf" secondAttribute="centerX" id="8An-FG-jBs"/>
                             <constraint firstItem="UvE-Pn-Hsj" firstAttribute="top" secondItem="mWd-YN-asx" secondAttribute="top" constant="100" id="HfM-Vr-uSa"/>
                             <constraint firstItem="MzP-27-ugU" firstAttribute="centerX" secondItem="VRR-bj-GQf" secondAttribute="centerX" id="IQ3-wL-ltN"/>
-                            <constraint firstItem="WEj-Rw-rNW" firstAttribute="centerX" secondItem="VRR-bj-GQf" secondAttribute="centerX" id="WoE-pC-Dvl"/>
+                            <constraint firstItem="Qbo-65-8Nb" firstAttribute="centerY" secondItem="WEj-Rw-rNW" secondAttribute="centerY" id="QPq-Mw-RW6"/>
+                            <constraint firstItem="WEj-Rw-rNW" firstAttribute="centerX" secondItem="VRR-bj-GQf" secondAttribute="centerX" constant="-10" id="WoE-pC-Dvl"/>
                             <constraint firstItem="2sD-5d-Ntx" firstAttribute="top" secondItem="WEj-Rw-rNW" secondAttribute="bottom" constant="60" id="YC2-TV-dQL"/>
                             <constraint firstItem="8A2-ws-Wg2" firstAttribute="centerX" secondItem="VRR-bj-GQf" secondAttribute="centerX" id="eGh-br-VeQ"/>
                             <constraint firstItem="UvE-Pn-Hsj" firstAttribute="centerX" secondItem="VRR-bj-GQf" secondAttribute="centerX" id="sRx-IP-6oU"/>
+                            <constraint firstItem="Qbo-65-8Nb" firstAttribute="leading" secondItem="WEj-Rw-rNW" secondAttribute="trailing" constant="4" id="tyy-Ci-M8v"/>
                             <constraint firstItem="8A2-ws-Wg2" firstAttribute="top" secondItem="2sD-5d-Ntx" secondAttribute="bottom" constant="60" id="uvH-LX-QyB"/>
                             <constraint firstItem="WEj-Rw-rNW" firstAttribute="top" secondItem="MzP-27-ugU" secondAttribute="bottom" constant="60" id="wds-vQ-WEc"/>
                         </constraints>
@@ -75,13 +85,14 @@
                         <outlet property="copyrightLabel" destination="8A2-ws-Wg2" id="2fO-nx-bQo"/>
                         <outlet property="deleteAccountButton" destination="2sD-5d-Ntx" id="kGR-cB-bBR"/>
                         <outlet property="logoutButton" destination="WEj-Rw-rNW" id="Ls8-pa-xbW"/>
+                        <outlet property="logoutImageView" destination="Qbo-65-8Nb" id="3Yw-so-qus"/>
                         <outlet property="websiteButton" destination="MzP-27-ugU" id="oxd-RB-ARD"/>
                         <segue destination="eBO-Rk-bR5" kind="show" identifier="AboutSegue" id="q1b-tv-4q5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b9r-72-hno" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1585" y="837"/>
+            <point key="canvasLocation" x="1584.8" y="836.13193403298362"/>
         </scene>
         <!--About-->
         <scene sceneID="aXm-Gv-rSy">
@@ -92,4 +103,7 @@
             <point key="canvasLocation" x="2166" y="836"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Logout" width="84" height="64"/>
+    </resources>
 </document>

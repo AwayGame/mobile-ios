@@ -13,6 +13,7 @@ extension HomeTableViewController: FirebaseSubcription {
     
     func initializeDatabaseSubscription() {
         
+        print("Whaddup")
         print(User.currentUser)
         
         guard let uid = User.currentUser.uid else {

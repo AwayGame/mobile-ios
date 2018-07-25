@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MessageUI
 import SafariServices
 
 class AboutTableViewController: UITableViewController {
@@ -108,9 +109,30 @@ class AboutTableViewController: UITableViewController {
 extension AboutTableViewController: AboutButtonDelegate {
     func didTapButton(_ button: UIButton?, withLink link: URL?) {
         guard let url = link else { return }
-        let svc = SFSafariViewController(url: url)
-        svc.preferredBarTintColor = Theme.Color.white
-        svc.preferredControlTintColor = Theme.Color.black
-        self.present(svc, animated: true, completion: nil)
+        if button?.titleLabel?.text?.uppercased() == "Count".uppercased() {
+            if MFMailComposeViewController.canSendMail() {
+                let mailVC = MFMailComposeViewController()
+                mailVC.mailComposeDelegate = self
+                
+                mailVC.setToRecipients([Settings.Support.email])
+                mailVC.setSubject(Settings.Support.subject)
+                mailVC.setMessageBody(Settings.Support.message, isHTML: true)
+                
+                present(mailVC, animated: true)
+            } else {
+                if let url = URL(string: "mailto:\(Settings.Support.email)") {
+                    UIApplication.shared.open(url)
+                }
+            }
+        } else {
+            let svc = SFSafariViewController(url: url)
+            svc.preferredBarTintColor = Theme.Color.white
+            svc.preferredControlTintColor = Theme.Color.black
+            self.present(svc, animated: true, completion: nil)
+        }
+        
+
     }
 }
+
+extension AboutTableViewController: MFMailComposeViewControllerDelegate {}

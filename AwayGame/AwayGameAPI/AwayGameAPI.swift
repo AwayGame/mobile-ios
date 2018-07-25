@@ -13,7 +13,7 @@ final class AwayGameAPI {
     
     // MARK: - Verify User
     
-    class func verifyUser(with user: User, completion: @escaping (User) -> ()) {
+    class func verifyUser(with user: User, completion: @escaping (User?) -> ()) {
         
         let parameters: [String: Any] = [
             "name": user.name ?? "",
@@ -27,9 +27,18 @@ final class AwayGameAPI {
             print(response.result.value)
             guard let user = response.result.value else {
                 print("ERROR USER NOT RETURNED")
+                completion(nil)
                 return
             }
             completion(user)
+        }
+    }
+    
+    // MARK: - Delete User
+    
+    class func deleteUser(withId id: String, completion: @escaping () -> ()) {
+        Alamofire.request(Router.deleteUser(withId: id)).response { (response) in
+            completion()
         }
     }
     
