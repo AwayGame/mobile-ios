@@ -27,7 +27,7 @@ class AboutTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 7
+        return 6
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -69,15 +69,6 @@ class AboutTableViewController: UITableViewController {
             }
         } else if indexPath.row == 4 {
             if let buttonCell = tableView.dequeueReusableCell(withIdentifier: AboutButtonTableViewCell.identifier, for: indexPath) as? AboutButtonTableViewCell {
-                buttonCell.configureCell(withText: "Contact", link: URL(string: "mailto:\(Settings.Support.email)"))
-                buttonCell.delegate = self
-                if cellHeights[indexPath.row] == 0 {
-                    cellHeights[indexPath.row] = AboutButtonTableViewCell.height
-                }
-                return buttonCell
-            }
-        } else if indexPath.row == 5 {
-            if let buttonCell = tableView.dequeueReusableCell(withIdentifier: AboutButtonTableViewCell.identifier, for: indexPath) as? AboutButtonTableViewCell {
                 buttonCell.configureCell(withText: "Privacy Policy", link: Settings.privacyUrl)
                 buttonCell.delegate = self
                 if cellHeights[indexPath.row] == 0 {
@@ -85,7 +76,7 @@ class AboutTableViewController: UITableViewController {
                 }
                 return buttonCell
             }
-        } else if indexPath.row == 6 {
+        } else if indexPath.row == 5 {
             if let buttonCell = tableView.dequeueReusableCell(withIdentifier: AboutButtonTableViewCell.identifier, for: indexPath) as? AboutButtonTableViewCell {
                 buttonCell.configureCell(withText: "Terms of Use", link: Settings.termsUrl)
                 buttonCell.delegate = self

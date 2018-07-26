@@ -58,11 +58,14 @@ class SavedTripCell: UITableViewCell {
         tripTitleLabel.text = stub.title ?? ""
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM/dd"
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:00"
+        
+        let neatFormatter = DateFormatter()
+        neatFormatter.dateFormat = "MM/dd"
         
         let date = dateFormatter.date(from: stub.startDate ?? "")
+        tripDateLabel.text = neatFormatter.string(from: date ?? Date())
         
-        tripDateLabel.text = dateFormatter.string(from: date ?? Date())
         print("\(stub.imageUrl ?? "")")
         print("KINGFISHER\n-------------------\n")
         tripImageView.setImage(withUrlString: stub.imageUrl)
