@@ -39,6 +39,8 @@ class EmailLoginViewController: UIViewController {
         emailLabel.text = "Email"
         passwordLabel.text = "Password"
         passwordTextField.isSecureTextEntry = true
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
         doneButton.setTitle("Log in", for: .normal)
         cancelButton.setTitle("✕", for: .normal)
         backgroundImageView.image = #imageLiteral(resourceName: "login-background")
@@ -121,5 +123,11 @@ class EmailLoginViewController: UIViewController {
         login(withEmail: email, password: password)
     }
 
+}
 
+extension EmailLoginViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return false
+    }
 }

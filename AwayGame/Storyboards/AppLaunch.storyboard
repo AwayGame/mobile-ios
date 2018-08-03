@@ -70,6 +70,7 @@
                         <outlet property="loginContainerView" destination="csI-Db-mC8" id="Ici-tn-HWb"/>
                         <outlet property="logoImageView" destination="OGV-YR-aqM" id="woJ-Z3-uBy"/>
                         <outlet property="mainContainerView" destination="aA5-o9-9Io" id="8R8-CW-dpQ"/>
+                        <outlet property="mainContainerViewTopConstraint" destination="sqA-Qc-dTG" id="qXM-Qy-qV3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PLh-SY-dlM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -303,6 +304,10 @@
                         <outlet property="facebookLoginButton" destination="KXD-R2-SyP" id="Wp3-l7-b5A"/>
                         <outlet property="facebookLogoImageView" destination="sND-Ut-qbd" id="bBs-mV-vjh"/>
                         <outlet property="logoImageView" destination="MV4-wB-UF7" id="rl7-H3-6xX"/>
+                        <outlet property="logoImageViewBottomConstraint" destination="2IL-mD-PEh" id="qsF-Ss-gKB"/>
+                        <outlet property="logoImageViewHeightConstraint" destination="iZs-AI-O5N" id="xIr-XA-XYN"/>
+                        <outlet property="logoImageViewTopConstraint" destination="Ib8-ac-arM" id="mSb-o8-oCG"/>
+                        <outlet property="logoImageViewWidthConstraint" destination="VE5-OW-0m3" id="DtQ-cj-bSA"/>
                         <outlet property="twitterBackgroundView" destination="5L1-3O-knS" id="JZf-QD-A9V"/>
                         <outlet property="twitterButtonLabel" destination="HZM-0M-MOz" id="XBZ-Uj-c6s"/>
                         <outlet property="twitterLogoImageView" destination="XX0-gJ-6nw" id="KRn-f1-92g"/>
