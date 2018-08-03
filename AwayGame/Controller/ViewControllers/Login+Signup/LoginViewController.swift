@@ -39,6 +39,10 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var createAccountButton: UIButton!
     
+    @IBOutlet weak var logoImageViewBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var logoImageViewTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var logoImageViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var logoImageViewWidthConstraint: NSLayoutConstraint!
     weak var signInDelegate: SignInDelegate?
     
     // MARK: - Initialization
@@ -48,6 +52,15 @@ class LoginViewController: UIViewController {
         setupViews()
         styleViews()
         facebookSDKButton.delegate = self
+    }
+    
+    func adjustForiPad() {
+        if UIScreen.main.bounds.height < 580.0 {
+            logoImageViewTopConstraint.constant = 60.0
+            logoImageViewHeightConstraint.constant = 120.0
+            logoImageViewWidthConstraint.constant = 120.0
+            logoImageViewBottomConstraint.constant = 20.0
+        }
     }
 
     func setupViews() {
@@ -73,6 +86,8 @@ class LoginViewController: UIViewController {
     // MARK: - Styling
     
     func styleViews() {
+        adjustForiPad()
+        
         for buttonView in [facebookBackgroundView, twitterBackgroundView, emailBackgroundView] {
             buttonView?.layer.cornerRadius = 5.0
             buttonView?.clipsToBounds = true

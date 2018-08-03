@@ -68,6 +68,9 @@ class EmailSignupViewController: UIViewController {
             AGAnalytics.logEvent(.emailSignupThirdPageDidDisplay, parameters: nil)
             configurePasswordViews()
         }
+        
+        topTextField.delegate = self
+        bottomTextField.delegate = self
     
         doneButton.setTitle("Next", for: .normal)
         cancelButton.setTitle("✕", for: .normal)
@@ -205,4 +208,11 @@ class EmailSignupViewController: UIViewController {
     }
     
     
+}
+
+extension EmailSignupViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return false
+    }
 }
