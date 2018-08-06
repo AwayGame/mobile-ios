@@ -77,7 +77,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W0g-Qc-kua" customClass="AGButton" customModule="AwayGame" customModuleProvider="target">
-                                <rect key="frame" x="20" y="567" width="335" height="60"/>
+                                <rect key="frame" x="20" y="557" width="335" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="00P-k8-wah"/>
                                 </constraints>
@@ -87,7 +87,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dPe-TV-IgF" customClass="AGButton" customModule="AwayGame" customModuleProvider="target">
-                                <rect key="frame" x="20" y="567" width="335" height="60"/>
+                                <rect key="frame" x="20" y="557" width="335" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="ncT-Hw-lxG"/>
                                 </constraints>
@@ -96,8 +96,8 @@
                                     <action selector="nextButtonTapped:" destination="1tr-SC-CnQ" eventType="touchUpInside" id="6nh-0n-RBA"/>
                                 </connections>
                             </button>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="E4Y-0L-Fdi">
-                                <rect key="frame" x="0.0" y="336" width="375" height="223"/>
+                            <datePicker contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="E4Y-0L-Fdi">
+                                <rect key="frame" x="0.0" y="336" width="375" height="213"/>
                                 <date key="date" timeIntervalSinceReferenceDate="549930372.89979303">
                                     <!--2018-06-05 22:26:12 +0000-->
                                 </date>
@@ -168,7 +168,7 @@
                             <constraint firstItem="lKL-5Z-cOw" firstAttribute="top" secondItem="M0l-wL-nE1" secondAttribute="top" id="apo-0E-i8N"/>
                             <constraint firstItem="E4Y-0L-Fdi" firstAttribute="top" secondItem="PU9-Oj-LLd" secondAttribute="bottom" constant="8" id="avf-Hn-Zz6"/>
                             <constraint firstItem="qVs-gv-Gsj" firstAttribute="leading" secondItem="0Ic-qs-kDU" secondAttribute="leading" constant="20" id="bzD-5V-yZA"/>
-                            <constraint firstItem="zaD-6P-QKg" firstAttribute="bottom" secondItem="dPe-TV-IgF" secondAttribute="bottom" constant="40" id="cIy-hl-NRm"/>
+                            <constraint firstItem="zaD-6P-QKg" firstAttribute="bottom" secondItem="dPe-TV-IgF" secondAttribute="bottom" constant="50" id="cIy-hl-NRm"/>
                             <constraint firstItem="U8z-oo-XAB" firstAttribute="top" secondItem="M0l-wL-nE1" secondAttribute="bottom" id="dP1-i5-OWi"/>
                             <constraint firstItem="PU9-Oj-LLd" firstAttribute="top" secondItem="LWY-C4-XUg" secondAttribute="bottom" constant="8" id="dkg-Ky-VfZ"/>
                             <constraint firstItem="jOs-zJ-2sK" firstAttribute="leading" secondItem="ph8-Hn-3rz" secondAttribute="leading" id="eMS-v2-oGP"/>
@@ -185,7 +185,7 @@
                             <constraint firstItem="lKL-5Z-cOw" firstAttribute="leading" secondItem="M0l-wL-nE1" secondAttribute="leading" id="uAv-q9-k5z"/>
                             <constraint firstItem="dlB-aF-dB3" firstAttribute="top" secondItem="u63-Eu-DE8" secondAttribute="bottom" constant="20" id="w8g-jB-rTC"/>
                             <constraint firstItem="u63-Eu-DE8" firstAttribute="trailing" secondItem="jOs-zJ-2sK" secondAttribute="trailing" id="yJ3-dl-4IO"/>
-                            <constraint firstItem="zaD-6P-QKg" firstAttribute="bottom" secondItem="W0g-Qc-kua" secondAttribute="bottom" constant="40" id="yUI-zR-gYW"/>
+                            <constraint firstItem="zaD-6P-QKg" firstAttribute="bottom" secondItem="W0g-Qc-kua" secondAttribute="bottom" constant="50" id="yUI-zR-gYW"/>
                             <constraint firstItem="zaD-6P-QKg" firstAttribute="trailing" secondItem="LIT-Jh-Jd8" secondAttribute="trailing" constant="20" id="ys6-w8-oNd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zaD-6P-QKg"/>

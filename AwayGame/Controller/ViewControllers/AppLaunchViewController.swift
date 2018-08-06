@@ -27,18 +27,11 @@ class AppLaunchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        adjustForiPad()
         background.backgroundColor = Theme.Color.Green.primary
         background.alpha = 1.0
         logoImageView.alpha = 1.0
         mainContainerView.alpha = 0.0
         loginContainerView.alpha = 0.0
-    }
-    
-    func adjustForiPad() {
-        if UIScreen.main.bounds.height < 580.0 {
-            mainContainerViewTopConstraint.constant = -20.0
-        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

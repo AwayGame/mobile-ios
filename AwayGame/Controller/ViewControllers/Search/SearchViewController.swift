@@ -122,6 +122,14 @@ class SearchViewController: HitsTableViewController {
         nextButton.setTitle("Next", for: .normal)
     }
     
+    func adjustForIpad() {
+        searchLabel.font = Theme.Font.h2
+        arriveLabel.font = Theme.Font.h2
+        departLabel.font = Theme.Font.h2
+        arriveButton.titleLabel?.font = UIFont.systemFont(ofSize: 18)
+        departButton.titleLabel?.font = UIFont.systemFont(ofSize: 18)
+    }
+    
     func styleLabels() {
         searchLabel.font = Theme.Font.h1
         searchLabel.textColor = Theme.Color.darkText
@@ -132,6 +140,10 @@ class SearchViewController: HitsTableViewController {
         departLabel.font = Theme.Font.h1
         departLabel.textColor = Theme.Color.darkText
         departLabel.text = "When are you leaving?"
+        
+        if UIScreen.main.bounds.height < 520.0 {
+            adjustForIpad()
+        }
         
     }
     

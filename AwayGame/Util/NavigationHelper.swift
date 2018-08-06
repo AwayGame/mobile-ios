@@ -14,6 +14,7 @@ class NavigationHelper {
         controller?.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: NavigationBarTitleView(withTitle: title ?? ""))
         navigationController.navigationBar.tintColor = Theme.Color.white
         navigationController.navigationBar.barTintColor = Theme.Color.Green.primary
+        navigationController.navigationBar.isTranslucent = false
     }
 }
 
