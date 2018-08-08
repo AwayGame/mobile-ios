@@ -25,6 +25,9 @@ class EmailLoginViewController: UIViewController {
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var logoImageViewWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var logoImageViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var logoImageViewTopConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var cancelButtonTopConstraint: NSLayoutConstraint!
     
     weak var delegate: EmailLoginDelegate?
     
@@ -47,8 +50,20 @@ class EmailLoginViewController: UIViewController {
         
         // Shrink logo if not iPhone X or plus sized device
         if UIScreen.main.bounds.height < 736.0 {
-            logoImageViewWidthConstraint.constant = 112.0
-            logoImageViewHeightConstraint.constant = 112.0
+            logoImageViewWidthConstraint.constant = 96.0
+            logoImageViewHeightConstraint.constant = 96.0
+        }
+        
+        adjustForiPad()
+        
+    }
+    
+    func adjustForiPad() {
+        if UIScreen.main.bounds.height < 580.0 {
+            logoImageViewWidthConstraint.constant = 0.0
+            logoImageViewHeightConstraint.constant = 0.0
+            logoImageViewTopConstraint.constant = 40.0
+            cancelButtonTopConstraint.constant = 0.0
         }
     }
     

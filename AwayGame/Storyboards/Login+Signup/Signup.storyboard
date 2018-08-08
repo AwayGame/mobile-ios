@@ -144,11 +144,14 @@
                         <outlet property="bottomTextFieldLabelHeightConstraint" destination="X7Q-3F-Dwf" id="tf3-R7-2Mf"/>
                         <outlet property="bottomUnderlineViewHeightConstraint" destination="vQ8-u4-5m4" id="oTG-cF-niJ"/>
                         <outlet property="cancelButton" destination="jAA-pn-pS8" id="llQ-aZ-MdG"/>
+                        <outlet property="cancelButtonTopConstraint" destination="mnR-jA-Y7H" id="k4l-SD-pSa"/>
                         <outlet property="doneButton" destination="2qP-vE-T3l" id="491-1J-ccZ"/>
                         <outlet property="logoImageView" destination="dU3-OF-Qnd" id="sEm-Ya-DDc"/>
                         <outlet property="logoImageViewHeightConstraint" destination="G0h-4K-7dT" id="NAp-GH-aXi"/>
+                        <outlet property="logoImageViewTopConstraint" destination="wJC-vl-neE" id="fWJ-1t-cgI"/>
                         <outlet property="logoImageViewWidthConstraint" destination="kbN-Ak-Eli" id="YcW-KF-x14"/>
                         <outlet property="titleLabel" destination="wTg-Gx-Cq9" id="NFN-4D-Nr3"/>
+                        <outlet property="titleLabelTopConstraint" destination="LpF-w2-8Ty" id="YFH-q3-nPT"/>
                         <outlet property="topTextField" destination="7Ly-9B-oQn" id="LPe-cb-mgG"/>
                         <outlet property="topTextFieldLabel" destination="Kcj-aH-bmd" id="xfL-i4-nvP"/>
                     </connections>

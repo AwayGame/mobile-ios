@@ -118,11 +118,13 @@
                     <connections>
                         <outlet property="backgroundImageView" destination="Ele-0T-haD" id="dMV-s6-pyH"/>
                         <outlet property="cancelButton" destination="GO3-L5-GtC" id="Q3K-Zh-Wgl"/>
+                        <outlet property="cancelButtonTopConstraint" destination="zTd-BP-FGf" id="bjE-Yy-mTl"/>
                         <outlet property="doneButton" destination="cib-qB-xDS" id="J4F-Bp-KrA"/>
                         <outlet property="emailLabel" destination="P0J-9p-gUS" id="kDj-ze-ph5"/>
                         <outlet property="emailTextField" destination="CoC-HD-7SZ" id="G8U-QV-NLV"/>
                         <outlet property="logoImageView" destination="2yC-MX-hrS" id="zL6-UF-7LQ"/>
                         <outlet property="logoImageViewHeightConstraint" destination="kdl-YP-2g8" id="0e1-et-gXg"/>
+                        <outlet property="logoImageViewTopConstraint" destination="zvg-Hm-33n" id="hwP-rN-EiC"/>
                         <outlet property="logoImageViewWidthConstraint" destination="UGQ-RB-wyQ" id="O6M-MT-Q7t"/>
                         <outlet property="passwordLabel" destination="TNV-sS-dct" id="dvz-Rd-cLQ"/>
                         <outlet property="passwordTextField" destination="cfN-WN-wWC" id="xZX-rN-guR"/>

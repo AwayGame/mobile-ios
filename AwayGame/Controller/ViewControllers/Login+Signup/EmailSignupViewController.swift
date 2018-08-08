@@ -35,10 +35,13 @@ class EmailSignupViewController: UIViewController {
     
     @IBOutlet weak var logoImageViewWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var logoImageViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var logoImageViewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var bottomTextFieldHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var bottomTextFieldLabelHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var bottomUnderlineViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var cancelButtonTopConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var titleLabelTopConstraint: NSLayoutConstraint!
     private var name: String?
     private var email: String?
     private var password: String?
@@ -78,8 +81,22 @@ class EmailSignupViewController: UIViewController {
         
         // Shrink logo if not iPhone X or plus sized device
         if UIScreen.main.bounds.height < 736.0 {
-            logoImageViewWidthConstraint.constant = 96.0
-            logoImageViewHeightConstraint.constant = 96.0
+            logoImageViewWidthConstraint.constant = 80.0
+            logoImageViewHeightConstraint.constant = 80.0
+        }
+        
+        adjustForiPad()
+
+    }
+    
+    func adjustForiPad() {
+        if UIScreen.main.bounds.height < 580.0 {
+            logoImageViewWidthConstraint.constant = 0.0
+            logoImageViewHeightConstraint.constant = 0.0
+            logoImageViewTopConstraint.constant = 40.0
+            cancelButtonTopConstraint.constant = 0.0
+            titleLabelTopConstraint.constant = 0.0
+            titleLabel.text = ""
         }
     }
     
